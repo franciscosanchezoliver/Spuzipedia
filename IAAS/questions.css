@@ -1,0 +1,39 @@
+.statisticsBox{
+    background-color:#333;
+    color: white;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    padding:5px;
+}
+
+.statisticInfo{
+    margin:0px;
+}
+
+.statisticInfo.correct{
+    color:green;
+}
+.statisticInfo.incorrect{
+    color:red;
+}
+.statisticInfo.total{
+    color:white;
+}
+.statisticInfo.percentage-success{
+    color:white;
+}
+
+#statistic-graph{
+    width: 100px;
+    height: 100px;
+   /* background-color: blueviolet;*/
+}
+
+question{
+    background-color:yellow;
+}
+
+.winning-box{
+    
+}

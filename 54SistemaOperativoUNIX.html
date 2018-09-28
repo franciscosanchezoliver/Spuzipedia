@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./estilos/estilos.css">
+    <title>El sistema operativo UNIX</title>
+</head>
+
+<body>
+
+    <h1>El sistema operativo UNIX.</h1>
+    <h2>Introducción</h2>
+    <p>
+        Una de las tareas más importantes de un S.O. es su administración. Los errores procedentes de una mala administración del
+        S.O. resultará en un funcionamiento inestable del S.O. y estos errores serán dificil de arreglar más tarde. Para
+        poder administrar correctamente el S.O. se necesita tener un conocimiento profundo del S.O. y del hardware sobre
+        el cual se está ejecutando. Normalmente los fabricantes de software publican unos controladores y herramientas para
+        facilitar su administración, pero el problema es que muchos de estos hardwares no son compatibles unos con otros.
+    </p>
+
+    <h2>Administración de UNIX</h2>
+    La administración es el mantenimiento diario que permite que el sistema pueda crecer y se pueda modificar.
+    <h3>Responsabilidades del administrador</h3>
+    <p>
+        Por tanto el administrador es otro usuario que se encarga de mantener el correcto funcionamiento del S.O. En UNIX hay un
+        id de presentación especial llamado "root", también denominado como "superusuario". Este tiene su propia contraseña
+        (que se establecerá durante la instalación) y también tiene permisos especiales, como el acceso completo a todos
+        los ficheros del sistema (y por tanto la capacidad de borrar todo). Entre las tareas de administración tenemos:
+        <ul>
+            <li>Alta y baja de identificadores de presentación de usuarios.</li>
+            <li>Instalación de nuevo software.</li>
+            <li>Modificación de ficheros de registro.</li>
+            <li>Hacer copias de seguridad.</li>
+            <li>Instalación de parches del S.O.</li>
+            <li>Actualizar paquetes del S.O. para arreglar errores funcionales o vulnerabilidades de seguridad.</li>
+        </ul>
+
+        Otras funciones del administrador del sistema son:
+        <ul>
+            <li>
+                <a href="sistemasOperativos/ArraqueYParadaDeUnix.html">Arrancar y apagar el sistema</a>: hay 7 niveles de ejecución.</li>
+            <ul>
+                <li>Nivel 0: Parada. halt(detiene el sistema) y apagado.</li>
+                <li>Nivel 1: monousuario.</li>
+                <li>Nivel 2: multiusuario sin red.</li>
+                <li>Nivel 3: multiusuario sin gráficos X Window</li>
+                <li>Nivel 4: igual que el 3.</li>
+                <li>Nivel 5: multiusuario con X Window</li>
+                <li>Nivel 6: reinicio</li>
+            </ul>
+            <li>Administrar la seguridad:
+                <ul>
+                    <li>Controlar el acceso de los usuarios.</li>
+                    <li>Gestionar las cuentas de los usuarios.</li>
+                    <li>Gestionar los permisos de los usuarios.</li>
+                </ul>
+            </li>
+            <li>Gestionar el espacio físico que el sistema monta durante el arranque.
+                <ul>
+                    <li>Las particiones.</li>
+                    <li>Unidades de disco.</li>
+                    <li>Backup</li>
+                </ul>
+            </li>
+            <li>Mantenimiento de archivos:
+                <ul>
+                    <li>Backups.</li>
+                    <li>Chequeo de discos.</li>
+                </ul>
+            </li>
+            <li>Monitorización del sistema:
+                <ul>
+                    <li>Comprobar el uso de:
+                        <ul>
+                            <li>La CPU.</li>
+                            <li>Los discos.</li>
+                            <li>La memoria.</li>
+                        </ul>
+                    </li>
+
+                    <li>Gestionar:
+                        <ul>
+                            <li>Las entradas/salidas.</li>
+                            <li>La red</li>
+                        </ul>
+                    </li>
+                    <li>Medir el throughput(volumen de trabajo).</li>
+                </ul>
+            </li>
+            <li>Identificar las causas de los problemas y solucinarlos.</li>
+        </ul>
+    </p>
+
+    <h3>Instalación</h3>
+    <p>A diferencia de Windows, la instalación de Linux no es una tarea sencilla ya que nos permite un mayor control y personalización
+        y esto resulta en que hay que tocar muchas más parámetros y opciones. Hay unas instrucciones detalladas en la iso o en el cd de instalación. 
+        Podemos encontrar la información de instalación de 2 formas: en los "HOWTO" y en los manuales desarrollados para la distribución. Además las distribuciones 
+        incluyen un manual de instalación de Linux en HTML o en pdf, dónde se explica con todo detalle que hay que saber a la hora de instalar el S.O.
+    </p>
+    <p>
+        Hay que tener muy en cuenta el concepto de partición. Cada S.O. organiza la información (los ficheros) de forma distinta, cada uno tiene tiene su propio 
+        sistema de archivos. Por esta razón no se pueden tener instalados a la vez varios S.O. mezclados en un mismo disco duro, para solucionar este problema surgieron las "particiones", 
+        con las que podemos dividir el disco duro y con esto conseguir tener varios sistemas operativos (podríamos tener un S.O. por partición, cada uno con su sistema de archivos).
+    </p>
+    <p>
+        Linux necesita dos particiones para poder funcionar, estas particiones se crearán durante la instalación:
+        <ul>
+            <li>Particion para el sistema de archivos en /.</li>
+            <li>Partición para el <a href="./sistemasOperativos/AreaDeIntercambioSwap.html">área de intercambio o Swap.</a></li>
+        </ul>
+    </p>
+
+
+</body>
+
+
+</html>

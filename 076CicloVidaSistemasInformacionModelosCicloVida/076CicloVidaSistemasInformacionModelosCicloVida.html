@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		El ciclo de vida de los Sistemas de Información. Modelos de Ciclo de Vida
+	</title>
+</head>
+
+<body>
+	<h1>El ciclo de vida de los Sistemas de información. Modelos de Ciclo de Vida.</h1>
+	<h2>Definicion</h2>
+		Teniendo en cuenta el estándar <question>ISO-12207</question> (estándar para los <question>procesos del ciclo de vida del software</question>). El <question>ciclo de vida</question> indica:
+		<ul>
+			<li><question>Procesos</question></li>
+			<li><question>Actividades</question></li>
+			<li><question>Tareas</question></li>
+			<li><question>Explotación</question></li>
+			<li><question>Mantenimiento</question></li>
+		</ul>
+		Abarca la vida del sistema software desde <question>la definición de los requisitos</question> hasta la <question>finalización</question> del sistema.
+		<br> Podemos hablar de MCV(<question>Modelo de Ciclo de Vida</question>) como un <question>conjunto de fases</question> por la que pasa el sistema desde que se <question>concibe</question>
+		hasta que se <question>retira</question> del servicio. El MCV indica qué <question>actividades</question> realizar y el <question>orden</question>.
+
+	<p>
+		Un <question>ciclo de vida</question> tiene que cumplir 3 objetivos:
+		<ul>
+			<li>Indicar las <question>actividades</question> y el <question>orden</question>.</li>
+			<li>Asegurar que el sistema es <question>consistente</question> con los demás sistemas de información de la oganización.</li>
+			<li>Gestionar el <question>tiempo</question> y el <question>presupuesto</question>.</li>
+		</ul>
+	</p>
+
+	<h2>Clasificación de los modelos de ciclo de vida</h2>
+	<p>
+		No es necesario formalizar un sistema para proyectos <question>sencillos</question> en organizaciones <question>pequeñas</question>. Pero es muy necesario cuando se
+		trata de <question>grandes</question> organizaciones o proyectos <question>complejos</question>.
+		<br> Podríamos clasificar los MCV en:
+		<ul>
+			<li><question>Tradicionales</question></li>
+			<li><question>Alternativos</question></li>
+		</ul>
+	</p>
+
+	<h3>MCV Tradicionales</h3>
+	<p>
+		Son los más utilizados. Dentro de los tradicionales tenemos varios tipos:
+		<ol>
+			<li><question>Cascada</question></li>
+			<li><question>Basados en prototipos</question>:</li>
+			<ol>
+				<li><question>Construcción de prototipos</question></li>
+				<li><question>Desarrollo incremental</question></li>
+				<li><question>Prototipado evolutivo</question></li>
+			</ol>
+		</ol>
+	</p>
+
+	<h3>MCV Alternativos</h3>
+	<p>
+		<ul>
+			<li>Espiral.</li>
+			<li>Basados en transformaciones, hay de dos tipos:</li>
+			<ul>
+				<li>Los que usan técnicas de 4 generación, utilizan lenguajes no procedimentales para consultas a BD, generadores de código,
+					de pantallas, de informes, herramientas de manipulación de datos, facilidades gráficas de alto nivel.</li>
+				<li>Los basados en modelos de transformación, basados en herraminetas CASE, utilizando el MCV clásico, pasan de una etapa
+					a otra aplicando transformaciones que ofrecen las herramientas.</li>
+				En ambos casos, lo que se intenta es generar código a partir de unas espeficicaciones y transformandolas usando herramientas.
+				La única diferencia entre los dos son las herramientas utilizadas
+			</ul>
+
+		</ul>
+	</p>
+
+	<h3>Otros MCV</h3>
+	<p>
+		A parte de los modelos tradiciones y alternativos, tenemos otros MCV como son:
+		<ul>
+			<li>Proceso Unificado de desarrollo de software (RUP).</li>
+			<li>MCV basado en desarrollo de componentes</li>
+			<li>MCV basado en Extreme Programming</li>
+		</ul>
+		En la práctica no se pueden seguir los modelos de forma estricta, ya que es necesario adaptarse a las necesidades del sistema
+		en particular y de la experiencia del jefe de proyecto. Por tanto podemos concluir que no existe un modelo mejor que otro,
+		cada uno tiene sus ventajas e inconvenientes.
+	</p>
+
+	<h2>Evolución de los MCV</h2>
+	<p>
+		Los MCV han evolucionado en el siguiente orden:
+		<ol>
+			<li>Code-and-Fix.</li>
+			<li>Por etapas.</li>
+			<li>Cascada (igual que el anterior solo que permite realimentación entre etapas).</li>
+			<li>Prototipado.</li>
+			<li>Transformación. Obtienen los resultados a partir de las espeficicaciones usando lenguajes de 4 generación que permiten
+				la generación automática de código.</li>
+		</ol>
+	</p>
+
+	<h3>CODE-AND-FIX</h3>
+	<p>
+		Fue el primer MCV y consistía basicamente en:
+		<ol>
+			<li>Escribir código.</li>
+			<li>Resolver los problemas que fuesen apareciendo.</li>
+		</ol>
+		Primero se codificaba y luego se pensaba en los requisitos, diseño, pruebas y mantenimiento. Este modelo genera 3 dificultades:
+		<ul>
+			<li>Después unos pocos ajustes el código el código no esta estructurado y por tanto los próximos ajustes se convierten en
+				muy costosos. Por esto se dieron cuenta que era importante introducir una fase de diseño antes de la codificación.</li>
+			<li>Normalmente el software no se adaptaba a los requisitos del cliente. Por esto se dieron cuenta de la necesidad de introducir
+				una fase de análisis de requisitos antes del diseño.</li>
+			<li>El ajuste del código era caro debido a su poca preparación para ser validado y modificado. Esto hizo pensar en la necesidad
+				de la planificación y preparación de las diferentes tareas a realizar en cada fase.</li>
+		</ul>
+	</p>
+
+	<h3>Por etapas (Stage-Wise)</h3>
+	<p>
+		El software se desarrolla por etapas (planificación, especificaciones de operación, especificaciones de codificación, codificación,
+		prueba de cada unidad, prueba de integración, eliminación de problemas y evaluación del sistema).
+	</p>
+
+	<h3>Cascada (Waterfall)</h3>
+	<p>
+		El cascada mejora el modelo por etapas introduciendo 2 mejoras:
+		<ul>
+			<li>Permite la realimentación por etapas, permitiendo resolver un problema de la etapa anterior tras detectar el problema
+				en una etapa posterior. Pero solo permite vueltas a la etapa anterior para evitar vueltas demasiadas largas y por tanto
+				cargas de trabajo excesiva.</li>
+			<li>Incluia un prototipado inicial en el ciclo de vida del software. Los prototipos permiten obtener especificaciones durante
+				el análisis, o para probar diferentes posibles soluciones durante el diseño, pero después de esto los prototipos de deben
+				desechar para crear una especificación formal.</li>
+		</ul>
+
+		El modelo en cascada tenía unos inconvenientes. Uno de ellos era que se hacía mucho énfasis en documentos totalmente elaborados
+		como criterio de terminación de las diferentes fases de análisis de requerimientos y diseño. Y esto puede ser conveniente
+		para algunos tipos de desarrollos (compiladores, o S.O.) pero para otros tipos de desarrollos no era adecuado (aplicaciones
+		interativas y de usuario final). Esta exigencia del cascada ha generado situaciones donde en muchos proyectos había toneladas
+		de documentación sobre las interfaces de usuario pobremente entendidas y al desarrollo de grandes cantidades de código
+		que no ha podido ser reutilizable.
+		<br> El cascada tiene varias fases que se suceden de forma secuencial, y en cada uno de las fases se genera algo que es necesario
+		para la siguiente fase.
+		<br>
+		<img src="../imagenes/ModeloWaterfall.jpg" alt="MCV Waterfall"></img>
+		<br>Existen muchas variantes del modelo básico, donde una etapa pueden ser dos etapas en otro modelo. En este modelo en particular
+		tenemos las siguientes fases:
+
+		<ol>
+			<li>Análisis: captamos los requisitos del software. Debemos comprender el ámbito de la información, el funcionamiento del
+				sistema, el rendimiento que tiene que tener, que interfaces necesitamos. Es necesario que estos requisitos se documenten
+				y que los requisitos puedan ser entendidos tanto por los usuarios como por el equipo de desarrollo. En esta fase se genera
+				la ERS(Especificación de Requisitos del Sofware) que es una espeficación precisa y completa de lo que debe hacer el sistema.</li>
+			<li>Diseño: descomponemos el sistema en elementos que puedan ser desarrollados por separado. Como resultado del diseño tendremos
+				la especificación de cada componente y por tanto el documento de diseño del software, el cual tendrá una descripción
+				de la estructura global del sistema.</li>
+			<li>Codificación: traducimos el diseño a un lenguaje que pueda entender el ordenador. Durante la codificación también se van
+				haciendo pruebas para comprobar que el código desarrollado funciona correctamente. El resultado de documentación de esta
+				fase será el propio código fuente. </li>
+			<li>Integración: se unen todas las partes y se prueba el sistema de forma completa, ya con todas sus partes integradas. El
+				resultado de esta fase será el sistema software funcionando.</li>
+			<li>Mantenimiento: durante el uso del sistema irán surgiendo cambios debido a requisitos no detectados hasta entonces o la
+				aparición de nuevos requisitos. Se deberá de hacer un documento de cambios ante cualquier modificación. Durante todas
+				las fases se deben de tener en cuenta la verificación y la validación. La verificación comprueba que el software cumple
+				con los requisitos y la validación comprueba que las funciones que realiza el software son las que quiere el cliente.
+			</li>
+		</ol>
+		El modelo en cascada intenta aislar cada fase con el objetivo de que cada fase pueda ser desarrollada por grupos de personas
+		distintas, facilitándose así la especialización. El número de fases del modelo en cascada no es muy importante (ya hemos
+		señalado que esto podrá variar de un modelo a otro). Pero lo que sí es importante es señalar es la secuencialidad entre
+		las fases y la necesidad de terminar una fase para pasar a la siguiente. Consideraremos por tanto terminado el sistema
+		cuando todas las fases hayan terminado.
+	</p>
+
+	<h4>Críticas al Cascada</h4>
+	<p>
+		Las críticas al cascada son críticas a sus dos características principales es decir:
+		<ul>
+			<li>Secuencialidad: en el mundo real los proyectos no suelen seguir un flujo secuencial estricto como propone el modelo. Además
+				siempre ocurren interacciones entre diferentes fases(el cascada solo adminte interacción con la anterior). Además hay
+				fases que se pueden hacer en paralelo como la codificación y las pruebas (algunos modelos de cascada proponen la codificación
+				y las pruebas como fases distintas). Si tuviésemos que ceñirnos al flujo secuencial de forma estricta que propone el
+				cascada tendríamos que congelar una fase posterior hasta que la anterior no estuviese totalmente completada, evitando
+				así el trabajo en paralelo que se puede realizar en distintas fases. Además el modelo en cascada solo considera la realimentación
+				entre una fase y su anterior, cuando en realidad puede haber realimentación entre fases mas alejadas.</li>
+			<li>Solo hay resultados totales: </li>
+		</ul>
+	</p>
+
+	<script src="testMode.js"></script>
+</body>
+
+
+</html>

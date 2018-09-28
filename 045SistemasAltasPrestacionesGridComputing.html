@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./estilos/estilos.css">
+
+        <title>
+            Sistemas de altas prestaciones. Grid computing.
+        </title>
+    </head>
+
+    <body>
+        <h1>Sistemas de altas prestaciones. Grid computing.</h1>
+        <h2>Definición</h2>
+        <p>
+            Un sistema de altas pretaciones es un ordenador con grandes capacidades de cómputo, capaz de 
+            procesar grandes volúmenes de información. Puede ser tanto en el ámbito de la gestión como del
+            ámbito técnico-científico.<br>
+            Podemos diseñar un sistema de altas prestaciones de dos formas:
+            <ul>
+                <li>Usando varios procesadores (Multiprocesadores): Usando una sola máquina pero con mucha potencia de cálculo, para ello
+                    es necesario utilizar la fuerza de varios procesadores.
+                </li>
+                <li>
+                    Usando varias máquinas (Multicomputadores): se usan varios ordenadores para diseñar el sistema. El sistema 
+                    tendrá la suma de las potencias de las máquinas.
+                </li>
+            </ul>
+            Podemos hacer otras divisiones dentro de cada tipo:
+            <ul>
+                <li>Multiprocesadores
+                    <ul>
+                        <li>SMP(Symmetric Multi-Processing)</li>
+                        <li>MPP(Massively parallel processors)</li>
+                    </ul>
+                </li>
+                <li>Multicomputador
+                    <ul>
+                        <li>Grid</li>
+                        <li>Clúster</li>
+                    </ul>
+                </li>
+            </ul>
+            Para los multiprocesadores usaremos la <a href="https://es.wikipedia.org/wiki/Taxonom%C3%ADa_de_Flynn">taxonomía de Flynn</a>. 
+            Para los multicomputadores se harán de 2 formas: Grid y Clúster.
+        </p>
+
+        <h2>Multiprocesadores. Taxonomía de Flynn</h2>
+        <p>
+            Es una clasificación de ordenadores según su arquitectura. Esta clasificación se basa en el flujo 
+            que siguen los datos dentro de la máquina y de las instrucciones que se han hecho sobre estos datos.<br>
+            Podemos definir:
+            <ul>
+                <li>Flujo de instrucciones: conjunto de instrucciones secuenciales que se enjecutan en un único procesador.</li>
+                <li>Flujo de datos: flujo de datos requeridos por el flujo de instrucciones.</li>
+            </ul>
+            Flynn hace 4 clasificaciones dentro de los multiprocesadores:
+            <ul>
+                <li>SISD (Single Instruction Single Data)</li>
+                <li>SIMD (Single Instruction Multiple Data)</li>
+                <li>MISD (Multiple Instruction Single Data)</li>
+                <li>MIMD (Multiple Instruction Multiple Data)</li>
+            </ul>
+        </p>
+
+        <h2>SISD</h2>
+        <p>
+            Como indica el nombre (Single Instruction Single Data) son ordenadores que su arquitectura solamente 
+            permite ejecutar una única instrucción con un solo dato en cada ciclo de reloj. Esta sería la <a href="https://es.wikipedia.org/wiki/Arquitectura_de_von_Neumann" target="_blank">arquitectura de Von-Neumann</a>.
+            Esta arquitectura no usa el paralelismo ni en las instrucciones ni en los datos, aunque se puede mejorar el rendimiento usando ténicas de <a href="https://es.wikipedia.org/wiki/Segmentaci%C3%B3n_(electr%C3%B3nica)" target="_blank">segmentación o pipelining</a>.<br>
+            La memoría del ordenador se divide en dos partes:
+            <ul>
+                <li>Parte para instrucciones: las instrucciones que se van a ejectuar, esto es el programa.</li>
+                <li>Parte para datos: los datos sobre los que se van a ejecutar las instrucciones.</li>
+            </ul>
+            Es necesario una Unidad Central de Procesamiento(CPU) que es el módulo que hace las operaciones matemáticas necesarias para poder
+            ejectuar las instrucciones del programa. Una CPU tiene que tener como mínimo la capacidad de sumar y de realizar operaciones lógicas.
+        </p>
+    </body>
+
+</html>

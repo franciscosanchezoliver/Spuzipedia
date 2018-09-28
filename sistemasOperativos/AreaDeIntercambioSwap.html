@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../estilos/estilos.css">
+    <title>Swap</title>
+</head>
+
+<body>
+    <h1>Swap o Área de intercambio</h1>
+    <h2>¿Para qué quiero saber que es la swap?</h2>
+    <p>
+        Si utilizas Linux y quieres sacarle un mayor rendimiento al S.O. y no tienes mucha memoria RAM (como es mi caso) entonces
+        deberías echarle un vistazo a este artículo ya que hablaremos de qué es la Swap y como modificarla para conseguir
+        un mejor rendimiento de nuestro sistema.
+    </p>
+
+    <h2>¿Qué es el swap?</h2>
+    <p>
+        El ordenador guarda en memoria RAM los procesos que están ejecutándose (el navegador con el que leemos en internet, la música
+        que estamos escuchando, etc...). Recordemos que acceder a RAM es mucho mas rápido que a disco duro, por tanto el S.O. intentará tener los procesos 
+        que cree que vamos a usar para no tener que tardar en ir a cargarlo desde disco.
+    </p>
+    <p>
+        Por esto cuando acabamos de inicar el ordenador en memoria RAM solo tendremos los procesos básicos para el funcionamientod el sistema, pero conforme vamos 
+        arrancando procesos, estos se irán alojando en RAM hasta que llegue un punto que la RAM esté llena. En este momento el S.O. tendrá que tomar la decisión de cuales son los
+        procesos más importantes y que merecen la pena tenerlos en la RAM, y por tanto empezará a matar los procesos que no sean necesarios para el funcionamiento básico del sistema.
+    </p>
+
+    <p>
+        Linux nos ofrece este espacio llamado "Swap" o "área de intercambio" que puede ser desde una partición del disco duro a un simple archivo. Pero la idea es la misma, intentaremos 
+        liberar un poco de carga a la RAM llevándonos estos procesos a disco duro (al Swap). De esta manera creamos una "memoria virtual" con el espacio sumado de la RAM y de la Swap, esto permitirá que Linux 
+        pueda ejecutar procesos que necesiten más memoria de la que hay físicamente en la RAM.
+    </p>
+    <h2>¿Puedo modificar la Swap para obtener un mejor rendimiento?</h2>
+    <p>
+        La respuesta rápida es sí, se puede. Hay un parámetro denominado "swappiness" que nos va a permitir configurar cómo y cuánto se usuará nuestra Swap. Por defecto el valor de swappiness es de 60 (porcentaje de 0 a 100, 60% por defecto). 
+        Lo importante aquí es saber que no hay un valor perfecto para todos los casos, ya que dependerá del tipo de hardware y del tipo de uso que le demos al ordenador.
+        Cuánto mayor sea el valor del Swap mayor uso hará Linux de ella. Por esta razón si tenemos bastante memoria RAM es recomendable tener un valor bajo de Swap para obligar al S.O. a usar la RAM en lugar de la Swap (ya que la RAM al ser memoria principal es mas rápida que la secundaria). Esto 
+        hará que mejore la velocidad general del S.O.
+    </p>
+    <p>Para modificar la Swap podemos hacerlo mediante el terminal o gráficamente (aunque en este artículo solo se explicará como hacerlo por medio de la terminal).</p>
+    <h2>Cambiar la Swap usando el terminal</h2>
+    <p>
+        Podemos modificar el valor de la variable swappiness en la siguiente ubicación:<br>
+        <em>/proc/sys/vm</em> 
+        <br>Es importante que lo hagamos como administrador si no, no podremos. Para consultar en valor que tenemos de Swap simplemente tecleamos el siguiente comando que nos debe de devolver el valor de 60 (valor por defecto de la Swap).<br>
+         <em>sudo cat /proc/sys/vm/swappiness</em><br>
+    </p>
+    <p>Si queremos modificarlo de forma temporal (cuando el ordenador reinicie volverá a 60%) escribimos el siguiente comando:<br>
+        <em>sudo sysctl -w vm.swappiness=20</em><br>
+        Con esto veremos si el rendimiento del S.O. operativo a mejorado, le pondremos diferentes valores hasta que veamos con qué valor se ha conseguido el mejor rendimiento.</p>
+    <p>Cuando finalmente veamos un valor que nos guste de Swap, lo podremos grabar de forma permanente escribiendo el siguiente comando:<br>
+        <em>sudo nano /etc/sysctl.conf</em> <br>
+    Y modificaremos el valor:<br>
+    <em>vm.swappiness=20</em></p>
+
+    <p>Pues esto es todo, espero que os haya servido para algo y que mejoréis el rendimiento de vuestro Linux.
+        Un saludo y hasta la próxima!
+    </p>
+</body>
+
+</html>

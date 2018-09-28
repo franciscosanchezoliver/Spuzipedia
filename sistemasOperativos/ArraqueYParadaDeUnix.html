@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="../estilos/estilos.css">
+        <title>Arraque y Parada de UNIX</title>
+    </head>
+
+    <body>
+        <h1>Arraque y Parada de UNIX</h1>
+        <h2>Introducción</h2>
+        <p>
+            En UNIX puede ser una tarea compleja el apagar o encender el S.O. Esta es una de las tareas del 
+            administrador, el cual debe conocer el proceso ya que el S.O. es especialmente vulnerable durante el arraque.
+            Antes de apagar la máquina es necesario detener el sistema. Además puede haber varias razones por las cuales el adminsitrador
+            quiera detener y arrancar el sistema en modo monousuario, como por ejemplo para tener el máximo control sobre el sistema. 
+            Algunas de las razones por las que el administrador pueda encender o apagar en monousuario son:
+            <ul>
+                <li>Añadir nuevo hardware al sistema.</li>
+                <li>Actualizar una aplicación.</li>
+                <li>El sistema de ficheros está corrupto.</li>
+                <li>Un hardware falla.</li>
+                <li>Realizar una copia de seguridad del sistema.</li>
+            </ul>
+        </p>
+
+        <h2>Niveles de Ejecución</h2>
+        <p>
+            UNIX tiene varios niveles de ejecución para poder limitar la actividad en el sistema mientras se hacen tareas administrativas.
+            Podemos decir que un "nivel de ejecución" es un método que configura el sistema, indicando qué procesos ejecutar, si el modo es monousuario o multiusuario, qué dispositivos, etc.
+            Hay 7 niveles de ejecución:
+
+            <table>
+                <tr>
+                    <th>Nivel</th>
+                    <th>Función</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>Parada</td>
+                    <td>
+                        <ul>
+                            <li>Finaliza los servicios y los programas.</li>
+                            <li>Desmonta el sistema de archivos.</li>
+                            <li>Para la CPU.</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>Monousuario</td>
+                    <td>
+                        <ul>
+                            <li>Finaliza la mayoria de servicios.</li>
+                            <li>Permite solo la entrada al administrador "root".</li>
+                            <li>Utilizado para las tareas de mantenimiento y corregir errores críticos.</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Multiusuario sin red.</td>
+                    <td>
+                        <ul>
+                            <li>No se inician los servicios de red.</li>
+                            <li>Solo se permiten las entradas locales al sistema.</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Multiusuario</td>
+                    <td>
+                        <ul>
+                            <li>Se inician todos los servicios menos los gráficos de X Window (Intefaz gráfica de UNIX).</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>Multiusuario</td>
+                    <td>
+                        <ul>
+                            <li>Igual que el 3.</li>
+                            <li>Usado para hacer pruebas.</li>
+                        </ul>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>5</td>
+                    <td>Multiusuario X</td>
+                    <td>
+                        <ul>
+                            <li>Inicia todos los servicios (= que el nivel 3).</li>
+                            <li>Permite el login gráfico de los usuarios con Window X</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>6</td>
+                    <td>Reinicio</td>
+                    <td>
+                        <ul>
+                            <li>Para todos los programas y servicios.</li>
+                            <li>Reinicia el sistema.</li>
+                        </ul>
+                    </td>
+                </tr>
+
+            </table>
+
+            Utilizamos el nivel 1 para realizar tareas administrativas ya que solo permite la entrada de root. Los niveles 2-5 permiten ejecutar el sistema 
+            con diferentes configuraciones, pudiendo iniciar (o no) X Window, elegir que dispositivos hardware iniciar, etc.
+
+        </p>
+
+
+        <h2>Arranque del Sistema</h2>
+        <p>
+            Al iniciar el sistema desde el estado de parada o pagado se denomina "booting" o "bootstrapping". Durante la fase de iniciar el sistema se carga 
+            en memoria un código denominado "boostrap loader" que se encarga de iniciar el S.O. Este trozo de código podemos almacenarlo:
+            <ul>
+                <li>En un disquete.</li>
+                <li>En disco duro.</li>
+                <li>En el <a href="https://es.wikipedia.org/wiki/Registro_de_arranque_principal" target="_blank">MBR (Master Boot Record)</a>.</li>
+            </ul>
+             <a href="http://wikis.uca.es/wikiunix/index.php/Arranque_y_parada_del_sistema">TODO:</a>
+        </p>
+
+    </body>
+
+</html>

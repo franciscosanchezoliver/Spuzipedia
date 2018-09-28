@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Arquitectura 3 capas.
+	</title>
+</head>
+
+<body>
+
+	<h1>Arquitectura en 3 capas.</h1>
+	<h2>¿Qué es la arquitectura software?</h2>
+	<p>Es el diseño a más alto nivel de la estructura de un sistema. La aquitectura se diseña en la fase posterior a la 
+		fase de requisitos.
+	</p>
+	<h2>Arquitetura en 3 capas</h2>
+	<p>Es el tipo de arquitectura utilizada en la mayor parte de sistemas. Se suele utilizar en sistemas que implementan un 
+		modelo de negocio como por ejemplo una tienda online, una app para gestionar ciertos datos, etc. Sin embargo no es 
+		recomendable usarla para sistemas de tiempo real como los de los coches o los aviones.
+	</p>
+	<p>
+		Todo sistema que gestiona datos tendrá una BD y una interfaz con la que interactuarán los usuarios. Además, una parte
+		del sistema se encargará de procesar datos y gestionar lo que hace con ellos. La arquitectura de 3 capas como su nombre
+		indica divide el sistema en 3 capas bien diferenciadas, de forma que cada capa se comunique con la inferior. Las capas son
+		las siguientes:
+	</p>
+	<u>
+		<li>Persistencia: En esta capa se almacenan los datos, y se hacen todas las operaciones relacionadas con las bases
+				de datos
+		</li>
+		<li>Negocio: esta capa gestiona la lógica de la aplicación. En esta capa se dice que hacer con los datos (guardados
+			en la capa de persistencia). Por ejemplo en una aplicación para la gestión de una biblioteca en esta capa se 
+			diría cuantos libros puede coger un usuario (esto dependenderá de la lógica del negocio) o que ocurre cuando
+			un usuario no devuelve un libro a tiempo. Esta capa como hemos dicho tiene que estar conectada con la capa de 
+			persistencia para poder realizar sus funciones.
+		</li>
+		<li>Presentación: En esta capa se crea la interfaz de usuario. Su función es pasarle las acciones que haga el usuario
+			a la capa de negocio. 
+		</li>
+	</u>
+
+	<p>
+		Ejemplo: Un usuario hace click en un botón para pedir prestado un libro, esta acción sería capturada por la 
+		capa de presentación. Dicha acción se enviaría a la capa de negocio dónde se analiza si el usuario puede pedir
+		o no prestado un libro. Para hacer esa comprobación hay que consultar en base de datos (capa de persistencia)
+		si el usuario tiene mas libros prestados o si tiene que pagar una multa antes. 
+	</p>
+	<p>
+		Como cada capa se comunica con la inferior, conseguimos que si hay que hacer un cambio no nos volvamos locos modificando
+		todo el sistema. Por ejemplo si tenemos que cambiar la forma en la que se almacenan los datos solo tendríamos que 
+		tocar la capa de persistencía.
+	</p>
+	
+
+	<h2>Ejemplo de arquitectura en 3 capas</h2>
+	<p>
+		En el siguiente ejemplo podemos ver el diseño arquitectónico de una aplicación sencilla organizada con el 
+		modelo de 3 capas:		
+	</p>
+	<img width="100%" src="arquitectura3capas.png">
+	<p>Esta aplicación gestiona el impuesto de circulación de los vehículos registrados en un ayuntamiento.
+		Podemos observar como está dividida en las 3 capas, cada una de las cuales cuenta con 2 componentes. Los 
+		componentes DAO son los de la capa de persistencia y se encargarían de almacenar en BD los vehículos y los
+		contribuyentes.
+	</p>
+
+
+
+	<script src="testMode.js"></script>
+</body>
+
+
+</html>
+
+
+
+

@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Spring Data
+	</title>
+</head>
+
+<body>
+
+	<h1>Spring Data</h1>
+	<h2>What is Spring Data for?</h2>
+	<p>
+		Spring data's mission is to provide a familiar and consistent Spring based programing model for data access, 
+		while still retaining the special traits of the underlying data store.
+	</p>
+	<p>
+		Before we go any further I think it is very important to get to know the Spring Data homepage: 
+		<a href="http://projects.spring.io/spring-data/" target="_blank">Spring data homepage</a>
+		In this page you will find a lot of examples and documentation.
+	</p>
+	<p>
+		The goal is to convert java object entities into target data source records and persist them, as well as 
+		convert the records back to entities.
+	</p>
+
+	<h2>Repository Pattern</h2>
+	<p>
+		The repository pattern is the abstraction used by Spring Data commons 
+		for creating, reading, updating, and deleting records by citing entities.
+	</p>
+	<p>
+		Any module for a particular data source has a repository that extends from the generic one. 
+		So for example, Spring Data JPA has a JPA repository, Spring Data mongo DB has a mongo repository,
+		 Spring Data gemfire has a gemfire repository, and so on.
+	</p>
+
+	<h2>Object Relational Mapping (ORM)</h2>
+	<p>
+		A classic problem in programming is mapping the physical model to the logical model. 
+		Typical physical models are relational database, and the logical model is the Java domain objects.
+	</p>
+	<p>
+		It is possible to do ORM in plain vanilla Java, but it's nasty.
+	</p>
+
+	<ol>
+		<li>Open a transaction</li>
+		<li>Query the database which returns the records</li>
+		<li>For each record iterate through the fields</li>
+		<li>For each field extract the data invoking the proper type conversion</li>
+		<li>Map the data to the Java object or object attribute</li>
+		<li>Close the transaction</li>
+	</ol>
+
+	<p>
+		Queries that modify the database require committing the transaction or rolling it back 
+		if an error occurs. Programming this way is tedious. The code is difficult to refactor and maintain.
+	</p>
+
+	<p>
+		Object to relational mapping frameworks solve this problem. With an ORM framework a developer declares
+		metadata to associate Java classes and attributes to database tables and columns. The framework then 
+		handles the actual database interactions. So the code is abstracted away from the database. This
+		makes it lighter and easier to maintain.
+	</p>
+
+	<h2>Java Persistence API (JPA)</h2>
+	<p>
+		Java persistence application programming interface is an ORM standard, it is not an actual framework.
+	</p>
+	<p>
+		Framework are Hibernate and EclipseLink, as well as Java Enterprise Edition. Those frameworks provide the 
+		implementation of the JPA. So even if we speak about a Java application that uses JPA, it is actually 
+		using another provider following the JPA specification.
+	</p>
+	<p>
+		The specification includes metadata declarations (XML or annotations) to map Java classes (now called entities) to database tables.
+	</p>
+	<p>
+		An EntityManager creates, reads, updates, and deletes the entities. Changes to the entity's state are reflected 
+		back to the database. The entity metadata is in the form of .xml files, or within Java classes, via Java 
+		annotations. This tutorial only demonstrates Java annotations. Please refer to the JPA specification if you 
+		prefer xml.
+	</p>
+
+	
+
+	<script src="testMode.js"></script>
+</body>
+
+
+</html>
+
+
+
