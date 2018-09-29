@@ -85,7 +85,66 @@
 		prefer xml.
 	</p>
 
-	
+	<h2>Map a Database table to a Java class</h2>
+	<p>Let's see a JPA entity. We'll start with a simple example where we map one database table to one JPA entity.</p>
+	<img width="100%" src="./spring_data01.png" alt="mapping-table-jpaentity">
+
+	<p>
+		On the left side is an ER diagram component representing a table called student. Student has four columns. 
+		Student_id, student_name, student_fulltime, and student_age. On the right side is a Java class called student 
+		with four attributes. Student_id of type integer, name, that's a string, fulltime, which is a boolean, and age,
+		which is an integer.
+	</p>
+	<p>
+		We have to use the followings annotations to do the mapping:
+	</p>
+	<ul>
+		<li>The class must be annotated with @Entity</li>
+		<li>@Table is where we specify the database table name</li>
+		<li>Entities must have a unique identifier attribute with @Id. If desired, @Generatedvalue tells JPA to 
+			generate the id when persisted. For this reason, we don't include student id in the constructor</li>
+		<li>@Column maps the class attributes to table columns</li>
+	</ul>
+
+	<p>
+		Now that we have mapped the java class with the database table, all of our coding can stay in the logical 
+		world because JPA will take care of the physical world for us.
+	</p>
+
+	<h2>Map multiple tables to java classes</h2>
+	<p>
+		Now let's look at an ER diagram with multiple tables. There are four tables in our University database. 
+		Department, course, enrollment and student. Department is the academic division of a university and has
+		 an ID and a name. Course is a particular class offered at the university. It also has an ID and a name as well 
+		 as an ID of its department. Students are enrolled in courses, so we have a join table called enrollment that 
+		 has a course ID and a student ID.
+	</p>
+	<img width="100%" src="./spring_data02.png" alt="mapping-multiple-table-jpaentity">
+
+	<p>Now let's see how to map the updated physical model to our logical model. There is a relationship many to one
+		 between department and course. So, how do we map this relationship? The Course has a "course_dept_id" so we 
+		 need an attribute anotated with @JoinColum and @ManyToOne. The @ManyToOne annotation shows cardinality (many 
+		 courses are mapped to one department). 
+	</p>
+	<img width="100%" src="./spring_data03.png" alt="one-to-many-relationship">
+	<p>
+		Now let's look at the other side of the relationship. Department to courses, the department has a list of courses
+		so we need an attribute List&ltCourse&gt courses. And we have to annotate this attirubte with @OneToMany. 
+		The parameters passed to @OneToMany express the following:
+	</p>
+
+	<ul>
+		<li>mappedBy="department" The mapped by equals department parameter refers to the department attribute back 
+			in the course class.
+			<img width="100%" src="./spring_data04.png" alt="mappedBy">
+		</li>
+		<li>fetch = FetchType.EAGER By default, one to many attributes are not automatically fetched from the database. 
+			This is called lazy loading, but we can override that with the fetchtype.eager setting. So when a department 
+			is read from the database, JPA also populates the associated courses</li>
+		<li>cascade = CascadeType.ALL The cascade parameter controls the state of the collection attributes for an entity. 
+			With cascade set to all, any state changes that are made in the department should apply to its courses as well.
+		</li>
+	</ul>
 
 	<script src="testMode.js"></script>
 </body>
