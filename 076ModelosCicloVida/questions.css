@@ -5,6 +5,8 @@
     top: 5px;
     right: 5px;
     padding:5px;
+    width: 250px;
+    height: 315px;
 }
 
 .statisticInfo{
@@ -25,9 +27,10 @@
 }
 
 #statistic-graph{
-    width: 100px;
-    height: 100px;
-   /* background-color: blueviolet;*/
+    /* Estilos para el gráfico */
+}
+#countDownTimer{
+    text-align:center;
 }
 
 question{

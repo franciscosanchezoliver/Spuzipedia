@@ -1,3 +1,4 @@
+var statisticBoxIsHidden = false;
 
 (function addStyleToThePage() {
     var cssId = 'questionsCss';
@@ -61,10 +62,26 @@ function startTest(){
     let startButton = document.getElementById("start-button")
     startButton.innerText = "Stop asking me!";
     startButton.addEventListener("click", stopTest);
+
+    let statisticBox = document.getElementsByClassName("statisticsBox");
+    statisticBox.addEventListener("click", function(){
+        console.log("click on the statistic box");
+        hide();
+    });
+
 }
 
 function stopTest(){
     restartTest();
+}
+
+/**
+ * Hide or show the statistic box by clickin on the div
+ */
+function hide(){
+    let statisticBox = document.getElementsByClassName("statisticsBox");
+    statisticBox.style.height = statisticBoxIsHidden ? "50px" : "315px";
+    statisticBoxIsHidden = !statisticBoxIsHidden;
 }
 
 function addClockToStatisticDiv(){
@@ -76,7 +93,8 @@ function addClockToStatisticDiv(){
     statisticBox.appendChild(clock);
 
     // Set the date we're counting down to
-    var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
+    //var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
+    var countDownDate = new Date().getTime();
 
     // Update the count down every 1 second
         var x = setInterval(function() {
@@ -85,18 +103,17 @@ function addClockToStatisticDiv(){
         var now = new Date().getTime();
 
         // Find the distance between now and the count down date
-        var distance = countDownDate - now;
+        var distance = now - countDownDate;
 
-        // Time calculations for days, hours, minutes and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        // Time calculations for hours, minutes and seconds
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 
         // Display the result in the element with id="demo"
-        clock.innerHTML = days + "d " + hours + "h "
-        + minutes + "m " + seconds + "s ";
+        clock.innerHTML = hours + ":"
+        + minutes + ":" + seconds;
 
         // If the count down is finished, write some text 
         if (distance < 0) {
@@ -128,8 +145,9 @@ function addGraphToDocument(){
  function createStatisticGraph(){
      let graphCanvas = document.createElement("canvas");
      graphCanvas.setAttribute("id", "statistic-graph");
-     graphCanvas.style.width ="150px";
-     graphCanvas.style.height ="150px";
+     // Width and height of the graph
+     graphCanvas.style.width ="250px";
+     graphCanvas.style.height ="185px";
     let statisticBox = document.getElementsByClassName("statisticsBox")[0];
     statisticBox.appendChild(graphCanvas);
 
@@ -139,7 +157,7 @@ function addGraphToDocument(){
         data: {
             labels: ["OK", "Fail", "Total"],
             datasets: [{
-                label: '# of Votes',
+                label: 'Success',
                 data: [0, 0, getTotalAnswer()],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -249,6 +267,9 @@ function detectKeyCombination(event, element) {
     // Control + Supr : Restart the test
     else if (isControlSupr(event)){
         restartTest();
+    }
+    else if (isControlH(event)){
+        hideGraph();
     }
 }
 
