@@ -1,5 +1,10 @@
 var statisticBoxIsHidden = false;
 
+document.addEventListener('keydown', function(event) {
+    detectKeyCombination(event, this)
+});
+
+
 (function addStyleToThePage() {
     var cssId = 'questionsCss';
     var head = document.getElementsByTagName('head')[0];
@@ -7,7 +12,7 @@ var statisticBoxIsHidden = false;
     link.id = cssId;
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = 'questions.css';
+    link.href = '../estilos/questions.css';
     link.media = 'all';
     head.appendChild(link);
 })();
@@ -79,9 +84,8 @@ function stopTest(){
  * Hide or show the statistic box by clickin on the div
  */
 function hide(){
-    let statisticBox = document.getElementsByClassName("statisticsBox");
-    statisticBox.style.height = statisticBoxIsHidden ? "50px" : "315px";
-    statisticBoxIsHidden = !statisticBoxIsHidden;
+    let statisticBox = document.getElementsByClassName("statisticsBox")[0];
+    statisticBox.style.visibility =  statisticBox.style.visibility != "hidden" ? "hidden" : "visible";
 }
 
 function addClockToStatisticDiv(){
@@ -269,9 +273,11 @@ function detectKeyCombination(event, element) {
         restartTest();
     }
     else if (isControlH(event)){
-        hideGraph();
+        hide();
     }
 }
+
+
 
 function restartTest(){
     location.reload();
@@ -287,6 +293,13 @@ function clearValueOfInput(element){
  */
 function isControlSupr(event){
     return event.ctrlKey && event.keyCode == 46;
+}
+
+/**
+ * Alt + h  ->  Hide/show statistic div
+ */
+function isControlH(event){
+    return event.altKey && event.keyCode == 72;
 }
 
 /**
