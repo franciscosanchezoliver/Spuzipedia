@@ -64,6 +64,14 @@ document.addEventListener('keydown', function(event) {
 
 })();
 
+
+function showAHrefElements(visible = true){
+    let aEleemnts = document.getElementsByTagName("a");
+    for(let eachA of aEleemnts){
+        eachA.style.visibility = visible;
+    }
+}
+
 function startTest(){
     changeQuestionsForInputs();
     addClockToStatisticDiv();
@@ -81,7 +89,10 @@ function stopTest(){
  */
 function hide(){
     let statisticBox = document.getElementsByClassName("statisticsBox")[0];
-    statisticBox.style.visibility =  statisticBox.style.visibility != "hidden" ? "hidden" : "visible";
+    let visibility = statisticBox.style.visibility != "hidden" ? "hidden" : "visible";
+    //show/hide a href elements
+    statisticBox.style.visibility =  visibility;
+    showAHrefElements(visibility);
 }
 
 function addClockToStatisticDiv(){

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Modelo Espiral
+	</title>
+</head>
+
+<body>
+	<h1>Modelo Espiral</h1>
+	<p>
+		Este modelo fue inventado por Barry Boehm en 1986.
+	</p>
+	<p>
+		Las actividades en este modelo se hacen en una <question>espiral</question>. En cada vuelta se hacen 
+		una serie de <question>actividades</question>.
+	</p>
+	<p>
+		Las actividades no tienen ninguna <question>prioridad</question> si no que se eligen en función de 
+		un <question>análisis de riesgo</question> (comenzando por el bucle <question>interior</question>).
+	</p>
+	<p>
+		En este modelo se toma muy seriamente el riesgo que aparece a la hora de desarrollar software. Para 
+		esto comenzamos mirando las diferentes posibilidades a la hora de crear el software, y optamos por 
+		la posibilidad de riesgo más asumible y hacemos un ciclo en espiral. En caso de que el cliente quiera
+		continuar haciendo mejoras al software, se tendría que evaluar de nuevo las diferentes alternativas y 
+		los riesgos que conllevan cada una de ellas, coger la alternativa con el riesgo más asumible y realizar
+		otra vuelta en la espiral. Repetimos este proceso hasta que el software se haya desarrollado y aceptado
+		y no necesite seguir mejorándose con otro ciclo.
+	</p>
+
+	<p>
+		Entonces podemos decir que el modelo en espiral consiste en una serie de ciclos que se repiten en forma
+		de espiral comenzando desde el centro. Se suele interpretar como que dentro de cada ciclo se sigue un 
+		modelo en cascada, aunque no tiene porque ser así. El modelo en espiral es más bien un modelo evolutivo
+		que junta la naturaleza de un Modelo de prototipos con los aspectos controlados y sistemáticos del modelo
+		en cascada, añadiendole además el análisis de riesgo que toma mucha importancia en el espiral.
+	</p>
+
+	<h2>Ciclos</h2>
+	<p>En cada vuelta tenemos que tener en cuenta:</p>
+	<ul>
+		<li>Los <question>objetivos</question>: cuales son las necesidades que tiene que cubrir el producto.</li>
+		<li>Las <question>alternativas</question>: qué alternativas tenemos para cumplir estos objetivos, para cada alternativa
+			tenemos que tener en cuenta:
+			<ul>
+				<li><question>Características</question>: experiencia de nuestros trabajadores, requisitos que tenemos que cumplir, ...</li>
+				<li>Formas de gestión del sistema.</li>
+				<li>Riesgo que tenemos que asumir con cada alternativa.</li>
+			</ul>
+		</li>
+		<li>Desarrollar y verificar: programar y testear el software.</li>
+	</ul>
+	<p>
+		Si tras el desarrollo y el testeo vemos que el resultado no es el que esperabamos o si se necesita implementar mejoras entonces 
+		tenemos que planificar otro ciclo en la espiral.
+	</p>
+
+	TODO: seguir con https://es.wikipedia.org/wiki/Desarrollo_en_espiral
+
+	<script src="../js/testMode.js"></script>
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
