@@ -52,6 +52,9 @@ document.addEventListener('keydown', function(event) {
     startButtton.innerText ="Test me!";
     statisticDiv.appendChild(startButtton);
 
+    // Statistic box start as a hidden box
+    statisticDiv.style.visibility = "hidden";
+
     let body = document.getElementsByTagName("body")[0];
     body.appendChild(statisticDiv);
 
@@ -221,7 +224,6 @@ function updateStatisticDiv(numCorrect, numIncorrect) {
 }
 
 function changeQuestionsForInputs() {
-    console.log("changeQuestionsForInputs()");
     var questions = document.getElementsByTagName("question");
     var i = 0;
     for (i = 0; i < questions.length; i++) {
