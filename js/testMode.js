@@ -67,13 +67,6 @@ function startTest(){
     let startButton = document.getElementById("start-button")
     startButton.innerText = "Stop asking me!";
     startButton.addEventListener("click", stopTest);
-
-    let statisticBox = document.getElementsByClassName("statisticsBox");
-    statisticBox.addEventListener("click", function(){
-        console.log("click on the statistic box");
-        hide();
-    });
-
 }
 
 function stopTest(){
@@ -261,23 +254,29 @@ function updateStatistics(){
  * If the user press cntrl + space the question will be answered correctly
  */
 function detectKeyCombination(event, element) {
-    // Control + Space : autocomplete with correct answer
-    if (isControlSpace(event))
-        fillWithCorrectAnswer(element);
-    // Control + Shift : clear input    
-    else if(isControlBackspace(event)) {
-        clearValueOfInput(element);
+    // We are in a input
+    if(!checkIfEventIsInGeneralDocument(element)){
+        // Control + Space : autocomplete with correct answer
+        if (isControlSpace(event))
+            fillWithCorrectAnswer(element);
+        // Control + Shift : clear input    
+        else if(isControlBackspace(event)) {
+            clearValueOfInput(element);
+        }
+        // Control + Supr : Restart the test
+        else if (isControlSupr(event)){
+            restartTest();
+        }
     }
-    // Control + Supr : Restart the test
-    else if (isControlSupr(event)){
-        restartTest();
-    }
-    else if (isControlH(event)){
+
+     if (isAltH(event)){ // Alt + H to hide the statistic div
         hide();
     }
 }
 
-
+function checkIfEventIsInGeneralDocument(element){
+    return element == document;
+}
 
 function restartTest(){
     location.reload();
@@ -298,7 +297,7 @@ function isControlSupr(event){
 /**
  * Alt + h  ->  Hide/show statistic div
  */
-function isControlH(event){
+function isAltH(event){
     return event.altKey && event.keyCode == 72;
 }
 
