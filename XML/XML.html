@@ -60,10 +60,13 @@
 			&lt;!ELEMENT lista_de_personas (persona*)>: indica que &lt;lista_de_personas> es un tag válido. (*persona) indica que puede 
 			contener varios tags &lt;persona><br>
 			&lt;!ELEMENT persona (nombre, fechanacimiento?, sexo?, numeroseguridadsocial?)>: indica que &lt;persona> es un tag válido y 
-			tiene un elemento obligatorio "nombre", y que tendrá elementos opcionales (pueden o nó estar): fechanacimiento,
-			sexo, y numeroseguridadsocial.<br>
-			&lt;!ELEMENT nombre (#PCDATA)>: indica que &lt;nombre> es un tag válido y que contiene caracteres 
+			tiene un elemento obligatorio "nombre", y puede tener elementos opcionales: fechanacimiento, sexo, y numeroseguridadsocial.<br>
+			&lt;!ELEMENT nombre (#PCDATA)>: indica que &lt;nombre> es un tag válido y contiene caracteres.
+			&lt;!ELEMENT fechanacimiento (#PCDATA)>: indica que &lt;fechanacimiento> es un tag válido y contiene caracteres.
+			&lt;!ELEMENT sexo (#PCDATA)>: indica que &lt;sexo> es un tag válido y que contiene caracteres.
+			&lt;!ELEMENT numeorseguridadsocial (#PCDATA)>: indica que &lt;numeroseguridadsocial> es un tag válido y que contiene caracteres.
 		</p>
+		TODO: https://es.wikipedia.org/wiki/Definici%C3%B3n_de_tipo_de_documento
 
 
 		<h3>XSD</h3>
