@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		XML
+	</title>
+</head>
+
+<body>
+	<h1>XML</h1>
+	<h2>Aspectos básicos</h2>
+	<ul>
+		<li>XML es un lenguaje de marcado extensible (Extensible Markup Lenguage) como lo es por ejemplo HTML.</li>
+		<li>Es un meta-lenguaje que permite definir otros lenguajes de marcas.</li>
+		<li>Desarrollado por W3C (World Wide Web Consortium).</li>
+		<li>Utilizado para almacenar datos de forma legible.</li>
+		<li>Da soporte a bases de datos.</li>
+		<li>Útil para la comunicación entre varias aplicaciones.</li>
+		<li>Se propone como estándar para el intercambio de información estructurada entre varias plataformas.</li>
+		<li>Permite la compatibilidad entre sistemas para compartir información de forma fiable, fácil y segura.</li>
+		<li>Puede utilizarse en todo tipo de aplicaciones (en todo lo que nos podamos imaginar): bd, editores de texto, hojas
+			de cálculo, etc.</li>
+	</ul>
+
+	<h2>
+		Estructura de un documento: Sintaxis
+	</h2>
+	<h2>
+		Validación de documentos: DTD y XSD
+		<h3>DTD (Document Type Definition)</h3>
+		<h4>DTD: Definición</h4>
+		<p>
+			<ul>
+				<li>DTD (Definición de Tipo de Documento).</li>
+				<li>Es una descripción de la estructura y la sintaxis de un documento XML.</li>
+				<li>Mantiene la consistencia entre todos los documentos que usen el mismo DTD.</li>
+				<li>Permite validar que un documento valide un DTD, tanto la estructura como el tipo de datos.</li>
+				<li>Podemos guardar la DTD en el mismo fichero aunque normalmente se hace en un fichero aparte.</li>
+			</ul>
+		</p>
+		<h4>¿Qué describe un DTD?</h4>
+		<p>
+			<ul>
+				<li>Elementos: qué etiquetas permitimos y que valores deben tener.</li>
+				<li>Estructura: orden de las etiquetas.</li>
+				<li>Anidamiento: qué etiquetas van dentro de otras.</li>
+			</ul>
+		</p>
+		<h4>DTD: Ejemplo</h4>
+		<p>
+			&lt;!ELEMENT lista_de_personas (persona*)><br>
+			&lt;!ELEMENT persona (nombre, fechanacimiento?, sexo?, numeroseguridadsocial?)><br>
+			&lt;!ELEMENT nombre (#PCDATA) ><br>
+			&lt;!ELEMENT fechanacimiento (#PCDATA) ><br>
+			&lt;!ELEMENT sexo (#PCDATA) ><br>
+			&lt;!ELEMENT numeroseguridadsocial (#PCDATA)><br>
+		</p>
+		<p>
+			&lt;!ELEMENT lista_de_personas (persona*)>: indica que &lt;lista_de_personas> es un tag válido. (*persona) indica que puede 
+			contener varios tags &lt;persona><br>
+			&lt;!ELEMENT persona (nombre, fechanacimiento?, sexo?, numeroseguridadsocial?)>: indica que &lt;persona> es un tag válido y 
+			tiene un elemento obligatorio "nombre", y puede tener elementos opcionales: fechanacimiento, sexo, y numeroseguridadsocial.<br>
+			&lt;!ELEMENT nombre (#PCDATA)>: indica que &lt;nombre> es un tag válido y contiene caracteres.
+			&lt;!ELEMENT fechanacimiento (#PCDATA)>: indica que &lt;fechanacimiento> es un tag válido y contiene caracteres.
+			&lt;!ELEMENT sexo (#PCDATA)>: indica que &lt;sexo> es un tag válido y que contiene caracteres.
+			&lt;!ELEMENT numeorseguridadsocial (#PCDATA)>: indica que &lt;numeroseguridadsocial> es un tag válido y que contiene caracteres.
+		</p>
+		TODO: https://es.wikipedia.org/wiki/Definici%C3%B3n_de_tipo_de_documento
+
+
+		<h3>XSD</h3>
+	</h2>
+	<h2>
+		DOM y SAX
+	</h2>
+	<h2>
+		Lenguajes usando XML: XSL, Xlink, etc
+	</h2>
+
+	TODO: https://es.wikipedia.org/wiki/Extensible_Markup_Language
+
+	<script src="../js/testMode.js"></script>
+</body>
+
+
+</html>
