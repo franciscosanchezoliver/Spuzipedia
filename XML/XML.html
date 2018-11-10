@@ -49,7 +49,7 @@
 		</ul>
 	</p>
 	<h4>DTD: Ejemplo</h4>
-	<p>
+	<p style="border:solid 1px">
 		&lt;!ELEMENT lista_de_personas (persona*)><br>
 		&lt;!ELEMENT persona (nombre, fechanacimiento?, sexo?, numeroseguridadsocial?)><br>
 		&lt;!ELEMENT nombre (#PCDATA) ><br>
@@ -75,14 +75,13 @@
 		</li>
 
 		<li>&lt;!ELEMENT numeorseguridadsocial (#PCDATA)>: indica que &lt;numeroseguridadsocial> es un tag válido y que
-			contiene
-			caracteres.</li>
+			contiene caracteres.</li>
 	</ul>
 
 	<p>
 		Un ejemplo de XML que utiliza esta DTD es:
 	</p>
-	<p>
+	<p style="border:solid 1px">
 		&lt;?xml version="1.0" encoding="ISO-8859-1"?> <br>
 		&lt;!DOCTYPE lista_de_personas SYSTEM "ejemplo.dtd"><br>
 		&lt;lista_de_personas> <br>
@@ -95,6 +94,56 @@
 		&lt;/lista_de_personas>
 	</p>
 
+	<h4>DTD: Ejemplo 2</h4>
+
+	<p>El XML:</p>
+	<pre style="border: solid 1px">
+&lt;?xml version="1.0" encoding="UTF-8" ?>
+&lt;!DOCTYPE Edit_Mensaje SYSTEM "Edit_Mensaje.dtd">
+
+&lt;Edit_Mensaje>
+		&lt;Mensaje>
+		&lt;Remitente>
+				&lt;Nombre>Nombre del remitente&lt;/Nombre>
+				&lt;Mail> Correo del remitente &lt;/Mail>
+			&lt;/Remitente>
+			&lt;Destinatario>
+				&lt;Nombre>Nombre del destinatario&lt;/Nombre>
+				&lt;Mail>Correo del destinatario&lt;/Mail>
+			&lt;/Destinatario>
+			&lt;Texto>
+				&lt;Asunto>
+					Este es mi documento con una estructura muy sencilla 
+					no contiene atributos ni entidades...
+				&lt;/Asunto>
+				&lt;Parrafo>
+					Este es mi documento con una estructura muy sencilla 
+					no contiene atributos ni entidades...
+				&lt;/Parrafo>
+			&lt;/Texto>
+		&lt;/Mensaje>
+&lt;/Edit_Mensaje>
+	</pre>
+
+	<p>
+		El archivo DTD ("Edit_Mensaje.dtd") del XML anterior:
+	</p>
+	<pre style="border: solid 1px">
+&lt;?xml version="1.0" encoding="ISO-8859-1" ?>
+&lt;!-- Este es el DTD de Edit_Mensaje -->
+
+&lt;!ELEMENT Mensaje (Remitente, Destinatario, Texto)*>
+&lt;!ELEMENT Remitente (Nombre, Mail)>
+&lt;!ELEMENT Nombre (#PCDATA)>
+&lt;!ELEMENT Mail (#PCDATA)>
+&lt;!ELEMENT Destinatario (Nombre, Mail)>
+&lt;!ELEMENT Nombre (#PCDATA)>
+&lt;!ELEMENT Mail (#PCDATA)>
+&lt;!ELEMENT Texto (Asunto, Parrafo)>
+&lt;!ELEMENT Asunto (#PCDATA)>
+&lt;!ELEMENT Parrafo (#PCDATA)>
+	</pre>
+
 	<h3>Ventajas del XML</h3>
 	<ul>
 		<li>Extensible: podemos crear nuestras propias etiquetas.</li>
@@ -103,7 +152,7 @@
 			analizador disponible evitando bugs y acelerando el desarrollo.
 		</li>
 		<li>
-			Fácil de entender su estructura y procesarla.
+			Su estructura es fácil de enteder y de procesarla.
 		</li>
 		<li>
 			Mejora la compatibilidad entre aplicaciones: podemos tener una aplicación en Linux que usa una bd en Postgres y
@@ -134,14 +183,63 @@
 				XML es sensible a mayúsculas y minúsculas.
 			</li>
 			<li>
-				Los caracteres: espacios, tabuladores, retornos de carro , saltos de línea se tratan
-				de forma distinta por los procesadores de XML.
+				Los caracteres: espacios, tabuladores, retornos de carro, saltos de línea se tratan de forma distinta por los
+				procesadores
+				de XML.
 			</li>
 		</ul>
 	</p>
 
 	<h3>Partes de un documento XML</h3>
-	
+	<p>
+		Un XML esta formado por el prólogo y por el cuerpo.
+	</p>
+	<h4>
+		Prólogo
+	</h4>
+	<p>
+		Un documento XML puede empezar por unas líneas que describe la versión del XML, el tipo de documento y otras cosas.
+		El prólogo no
+		es obligatorio. <br>
+		El prólogo puede incluir los siguientes apartados:
+		<ul>
+			<li>Declaración XML: declara que este documento es un XML.</li>
+			<li>Declaración de tipo de documento: enlace el documento XML con su DTD. El DTD también puede estar incluido en el
+				prólogo en
+				lugar de hacer referencia a otro archivo.
+			</li>
+			<li>Comentario e instrucciones que ayuden a procesar el XML.</li>
+		</ul>
+		Un ejemplo de prólogo es:
+		<pre style="border: solid 1px">
+&lt;?xml version="1.0" encoding="UTF-8"?>
+		</pre>
+	</p>
+
+	<h4>Cuerpo</h4>
+	<p>
+		<ul>
+			<li>
+				El cuerpo es obligatorio.
+			</li>
+			<li>
+				Debe contener un solo elemento raíz (necesario para que esté bien formado).
+			</li>
+		</ul>
+		<pre style="border:solid 1px">
+&lt;Edit_mensaje>
+    (...)
+&lt;/Edit_mensaje>
+		</pre>
+	</p>
+
+	<h3>Elementos</h3>
+	<p>
+		Los elementos XML puede tener:
+		<ul>
+			<li></li>
+		</ul>
+	</p>
 
 	<h3>XSD</h3>
 
