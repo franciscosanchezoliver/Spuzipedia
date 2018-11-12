@@ -29,15 +29,19 @@
 	<h2>
 		Validación de documentos: DTD y XSD
 	</h2>
-	<h3>DTD (Document Type Definition)</h3>
+	<h3 id="DTD">DTD (Document Type Definition)</h3>
 	<h4>DTD: Definición</h4>
 	<p>
 		<ul>
 			<li>DTD (Definición de Tipo de Documento).</li>
 			<li>Es una descripción de la estructura y la sintaxis de un documento XML.</li>
 			<li>Mantiene la consistencia entre todos los documentos que usen el mismo DTD.</li>
-			<li>Permite validar que un documento valide un DTD, tanto la estructura como el tipo de datos.</li>
+			<li>Los documentos XML que se ajustan a su DTD se denominan válidos. Para ello tiene que cumplir en su estructura
+				como
+				en el tipo de datos.
+			</li>
 			<li>Podemos guardar la DTD en el mismo fichero aunque normalmente se hace en un fichero aparte.</li>
+			<li>Define los elementos, atributos, entidades permitidos así como algunas limitaciones para combinarlos.</li>
 		</ul>
 	</p>
 	<h4>¿Qué describe un DTD?</h4>
@@ -194,17 +198,17 @@
 	<p>
 		Un XML esta formado por el prólogo y por el cuerpo.
 	</p>
-	<h4>
+	<h4 id="prologo">
 		Prólogo
 	</h4>
 	<p>
 		Un documento XML puede empezar por unas líneas que describe la versión del XML, el tipo de documento y otras cosas.
-		El prólogo no
-		es obligatorio. <br>
+		El prólogo no es obligatorio. <br>
 		El prólogo puede incluir los siguientes apartados:
 		<ul>
 			<li>Declaración XML: declara que este documento es un XML.</li>
-			<li>Declaración de tipo de documento: enlace el documento XML con su DTD. El DTD también puede estar incluido en el
+			<li>Declaración de tipo de documento: enlace del documento XML con su <a href="#DTD">DTD</a>. El DTD también puede
+				estar incluido en el
 				prólogo en
 				lugar de hacer referencia a otro archivo.
 			</li>
@@ -233,15 +237,75 @@
 		</pre>
 	</p>
 
-	<h3>Elementos</h3>
+	<h4>Elementos</h4>
 	<p>
-		Los elementos XML puede tener:
+		Los elementos XML pueden tener contenido del siguiente tipo:
 		<ul>
-			<li></li>
+			<li>Más elementos.</li>
+			<li>Caracteres.</li>
+			<li>Ambos.</li>
+			<li>Estar vacío.</li>
 		</ul>
 	</p>
 
-	<h3>XSD</h3>
+	<h4>Atributos</h4>
+	<p>
+		<ul>
+			<li>Son una forma de añadirle propiedades a los elementos.</li>
+			<li>Deben ir entre comillas.</li>
+		</ul>
+		Un ejemplo sería:
+		<pre style="border: solid 1px">
+&lt;Estudiante nombre="Francisco">Esto es un elemento estudiante que tiene un nombre&lt;/Estudiante>
+		</pre>
+	</p>
+
+	<h4>Secciones CDATA</h4>
+	<p>
+		Es una construcción XML para indicar que ciertos caracteres no se tienen que interpretar como marcado XML. Esto nos
+		permite poner
+		datos con caracteres que normalmente romperian la estructura XML.
+		<pre style="border: 1px solid">
+&lt;![CDATA[contenido especial: \n áéíóúñ&]]>
+</pre>
+	</p>
+
+	<h3>Validez</h3>
+	<p>
+		Que un documento XML esté "bien formado" se refiere a su estructura sintáctica básica, que esté formado por
+		elementos,
+		atributos y comentarios como XML indica que se haga. Pero cada aplicación de XML, es decir, cada lenguaje definido
+		con esta
+		tecnología tiene que definir cual es la relación que hay entre los elementos del documento. <br>
+		Esta relación entre elemento podemos expresarla mediante:
+		<ul>
+			<li>
+				Con un <a href="#DTD">DTD</a>, que puede estar en un archivo externo o puede estar en el
+				<a href="#prologo">prólogo</a>.
+			</li>
+			<li>
+				Con un XSchema.
+			</li>
+		</ul>
+	</p>
+
+	<h4>Declaración de entidades</h4>
+	<p>
+		En XML podemos usar entidades, que son objetos que no serán analizados sintacticamente según las reglas XML. Las entidades
+		pueden ser:
+		<ul>
+			<li>Internas o externas.</li>
+			<li>Analizadas o no analizadas.</li>
+			<li>Generales o parametrizadas.</li>
+		</ul>
+	</p>
+	<h4>Espacios de nombres</h4>
+	<p>
+		Los espacios de nombres XML nos permiten separar semánticamente los elementos que forman un XML. 
+	</p>
+
+	<h3>XSD (XML Schema)</h3>
+	TODO: https://es.wikipedia.org/wiki/XML_Schema
 
 	<h2>
 		DOM y SAX
@@ -250,7 +314,7 @@
 		Lenguajes usando XML: XSL, Xlink, etc
 	</h2>
 
-	TODO: https://es.wikipedia.org/wiki/Extensible_Markup_Language
+	TODO: https://es.wikipedia.org/wiki/Extensible_Markup_Language  (XML Schema)
 
 	<script src="../js/testMode.js"></script>
 </body>
