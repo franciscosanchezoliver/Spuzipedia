@@ -304,8 +304,59 @@
 		Los espacios de nombres XML nos permiten separar semánticamente los elementos que forman un XML. 
 	</p>
 
-	<h3>XSD (XML Schema)</h3>
-	TODO: https://es.wikipedia.org/wiki/XML_Schema
+	<h3>XSD (XML Schema Definition)</h3>
+	<p>
+		<ul>
+			<li>Es un lenguaje de esquema escrito en XML.</li>
+			<li>Pensado para proporcionar una mayor potencia y cmoplejidad que las DTD. Lsa DTD son menos formales a la hora de describir
+				el documento.
+			</li>
+			<li>
+				Los documentos esquemas tienen usualmente la extensión ".xsd" (XML Schema Definition).
+			</li>
+			<li>
+				Con XML Schema somos capaces de definir estructuras más complejas de lo que somos capaces cno DTD.
+			</li>
+			<li>
+				El principal aporte de XSD es la cantidad de tipos de datos que aporta. Aporta datos complejos como fechas, números y strings.
+			</li>
+			<li>
+				XML Schema aporta más posiblidades y por tanto aumenta la funcionalidad de las aplicaciones. 
+			</li>
+		</ul>
+	</p>
+
+	<h4>Tipos de componentes</h4>
+	<p>
+		<ul>
+			<li>Los XML Schemas fueron diseñados para superar los puntos débiles de DTD.</li>
+			<li>Fue diseñado completamente alrededor de namespaces.</li>
+			<li>Soporta tipos de datos típicos de la programación.</li>
+			<li>Soporta tipos de datos personalizados tanto simples como complejos.</li>
+			<li>Un esquema se define pensando en su uso final.</li>
+		</ul>
+	</p>
+
+	<h4>Namespaces</h4>
+	<p>
+		<ul>
+			<li>
+				La programación en XML Schema se basa en namespaces (espacios de nombres).
+			</li>
+			<li>
+				Podemos encontrar una analogía con los páquetes de Java.
+			</li>
+			<li>
+				Cada namespace contiene elementos y atributos que están estrechamente relacionados con el namespace.
+			</li>
+			<li>
+				A la hora de definir un elemento o un atributo de un namespace siempre se piensa en la relación que tiene con los demás
+				elementos de ese namespace.
+			</li>
+		</ul>
+	</p>
+
+TODO: https://es.wikipedia.org/wiki/XML_Schema
 
 	<h2>
 		DOM y SAX
