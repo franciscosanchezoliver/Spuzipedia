@@ -12,14 +12,80 @@
 	<ul>
 		<li>Is the language to query XML data.</li>
 		<li>Is built on XPath expressions.</li>
-		<li>Is built on XPath expressions.</li>		
+		<li>Is a W3C recommendation.</li>
 	</ul>
+	
+	<h3>Example 1</h3>
+	<pre style="border: solid 1px">
+&lt;bookstore&gt;
+	&lt;book category=&quot;cooking&quot;&gt;
+		&lt;title lang=&quot;en&quot;&gt;Everyday Italian&lt;/title&gt;
+		&lt;author&gt;Giada De Laurentiis&lt;/author&gt;
+		&lt;year&gt;2005&lt;/year&gt;
+		&lt;price&gt;30.00&lt;/price&gt;
+	&lt;/book&gt;
+	
+	&lt;book category=&quot;children&quot;&gt;
+		&lt;title lang=&quot;en&quot;&gt;Harry Potter&lt;/title&gt;
+		&lt;author&gt;J K. Rowling&lt;/author&gt;
+		&lt;year&gt;2005&lt;/year&gt;
+		&lt;price&gt;29.99&lt;/price&gt;
+	&lt;/book&gt;
+	
+	&lt;book category=&quot;web&quot;&gt;
+		&lt;title lang=&quot;en&quot;&gt;XQuery Kick Start&lt;/title&gt;
+		&lt;author&gt;James McGovern&lt;/author&gt;
+		&lt;author&gt;Per Bothner&lt;/author&gt;
+		&lt;author&gt;Kurt Cagle&lt;/author&gt;
+		&lt;author&gt;James Linn&lt;/author&gt;
+		&lt;author&gt;Vaidyanathan Nagarajan&lt;/author&gt;
+		&lt;year&gt;2003&lt;/year&gt;
+		&lt;price&gt;49.99&lt;/price&gt;
+	&lt;/book&gt;
+	
+	&lt;book category=&quot;web&quot; cover=&quot;paperback&quot;&gt;
+		&lt;title lang=&quot;en&quot;&gt;Learning XML&lt;/title&gt;
+		&lt;author&gt;Erik T. Ray&lt;/author&gt;
+		&lt;year&gt;2003&lt;/year&gt;
+		&lt;price&gt;39.95&lt;/price&gt;
+	&lt;/book&gt;
+&lt;/bookstore&gt;
+	</pre>
 
+	<p>To open the XML we have to use the doc() function </p>
+	<pre style="border: solid 1px">
+doc("books.xml")
+	</pre>
 
+	<h3>Path Expressions</h3>
+	<p>
+	XQuery uses XPath expressions to navigate through elements in a XML document. Ex: select all the titles element in the "book.xml" file:
+	</p>
+	
+	<pre style = "border: solid 1px">
+doc("book.xml")/bookstore/book/title
+	</pre>
 
+TODO: https://www.w3schools.com/xml/xquery_example.asp
 
 	<script src="../js/testMode.js"></script>
 </body>
 
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
