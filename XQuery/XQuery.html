@@ -49,13 +49,11 @@
 		&lt;year&gt;2003&lt;/year&gt;
 		&lt;price&gt;39.95&lt;/price&gt;
 	&lt;/book&gt;
-&lt;/bookstore&gt;
-	</pre>
+&lt;/bookstore&gt;</pre>
 
 	<p>To open the XML we have to use the doc() function </p>
 	<pre style="border: solid 1px">
-doc("books.xml")
-	</pre>
+doc("books.xml")</pre>
 
 	<h3>Path Expressions</h3>
 	<p>
@@ -63,8 +61,43 @@ doc("books.xml")
 	</p>
 	
 	<pre style = "border: solid 1px">
-doc("book.xml")/bookstore/book/title
-	</pre>
+doc("book.xml")/bookstore/book/title</pre>
+
+	<p>
+	The result of the XQuery above is:
+	</p>
+
+	<pre style="border: solid 1px">
+&lt;title lang=&quot;en&quot;&gt;Everyday Italian&lt;/title&gt;
+&lt;title lang=&quot;en&quot;&gt;Harry Potter&lt;/title&gt;
+&lt;title lang=&quot;en&quot;&gt;XQuery Kick Start&lt;/title&gt;
+&lt;title lang=&quot;en&quot;&gt;Learning XML&lt;/title&gt; </pre>
+
+	<h3>Predicates</h3>
+	<p>Predicates are used to filter the extracted data. Ex: filter the books with a price less than 30.</p>
+
+	<pre style="border: solid 1px">
+doc("book.xml")/bookstore/book[price<30]</pre>
+
+	<p>The result of the XQuery above is:</p>
+	<pre style="border:solid 1px">
+&lt;book category=&quot;cooking&quot;&gt;
+	&lt;title lang=&quot;en&quot;&gt;Everyday Italian&lt;/title&gt;
+	&lt;author&gt;Giada De Laurentiis&lt;/author&gt;
+	&lt;year&gt;2005&lt;/year&gt;
+	&lt;price&gt;30.00&lt;/price&gt;
+&lt;/book&gt;</pre>
+
+	<h3>FLOWR</h3>
+	<p>Is the acronym for "For, Let, Order by, Where, Return"</p>
+	<ul>
+		<li>For: select a sequence of nodes.</li>
+		<li>Let: binds a sequence to a variable.</li>
+		<li>Where: filter the nodes.</li>
+		<li>Order by: sort the nodes.</li>
+		<li>Return: what to return (gets evaluated once for every node).</li>
+	</ul>
+
 
 TODO: https://www.w3schools.com/xml/xquery_example.asp
 
