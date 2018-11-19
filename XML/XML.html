@@ -397,7 +397,7 @@
 	<h4>XSD Ejemplo 2</h4>
 	<pre style ="border:solid 1px">
 &lt;?xml version="1.0" encoding="UTF-8"?>
-&lt;xsd:schema>
+&lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	&lt;xsd:element name=&quot;Libro&quot;&gt;
 		&lt;xsd:complexType&gt;
 			&lt;xsd:sequence&gt;
@@ -408,8 +408,21 @@
 			&lt;xsd:attribute name=&quot;precio&quot; type=&quot;xsd:double&quot;/&gt;
 		&lt;/xsd:complexType&gt;
 	&lt;/xsd:element&gt;
-&lt;/xsd:schema>
+&lt;/xsd:schema></pre>
 
+	<p>
+		Se inicia con la declaración que indica la versión del XML y la codificación.
+		<pre style = "border: solid 1px">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;</pre> 
+	</p>
+	<p>
+		Luego se declara el elemento esquema, que es la raíz del documento. Además se declara el espacio de nombres (xmlns xml NameSpace) en 
+		el que viven los nombres de los elementos del documento.
+	</p>
+	<pre style="border:solid 1px">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	(...)
+</xsd:schema>
 	</pre>
 
 	TODO: https://es.wikipedia.org/wiki/XML_Schema
