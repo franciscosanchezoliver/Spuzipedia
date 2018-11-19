@@ -291,7 +291,8 @@
 
 	<h4>Declaración de entidades</h4>
 	<p>
-		En XML podemos usar entidades, que son objetos que no serán analizados sintacticamente según las reglas XML. Las entidades
+		En XML podemos usar entidades, que son objetos que no serán analizados sintacticamente según las reglas XML. Las
+		entidades
 		pueden ser:
 		<ul>
 			<li>Internas o externas.</li>
@@ -301,7 +302,7 @@
 	</p>
 	<h4>Espacios de nombres</h4>
 	<p>
-		Los espacios de nombres XML nos permiten separar semánticamente los elementos que forman un XML. 
+		Los espacios de nombres XML nos permiten separar semánticamente los elementos que forman un XML.
 	</p>
 
 	<h3>XSD (XML Schema Definition)</h3>
@@ -309,20 +310,22 @@
 		<ul>
 			<li>Es un <question>lenguaje de esquema escrito en XML</question>.
 			</li>
-			<li>Pensado para <question>proporcionar mayor potencia y complejidad que las <a href="#DTD">DTD</a></question>. Las DTD son menos formales 
+			<li>Pensado para <question>proporcionar mayor potencia y complejidad que las <a href="#DTD">DTD</a></question>. Las
+				DTD son menos formales
 				a la hora de describir un documento.
 			</li>
 			<li>
 				Los esquemas tienen la <question>extensión ".xsd" </question>(XML Schema Definition).
 			</li>
 			<li>
-				Con XML Schema somos capaces de definir <question>estructuras más complejas</question> de lo que somos capaces con DTD.
+				Con XML Schema somos capaces de definir <question>estructuras más complejas</question> de lo que somos capaces con
+				DTD.
 			</li>
 			<li>
 				XSD <question>aporta datos complejos</question> como fechas, números y strings.
 			</li>
 			<li>
-				XML Schema aporta más posiblidades y por tanto aumenta la funcionalidad de las aplicaciones. 
+				XML Schema aporta más posiblidades y por tanto aumenta la funcionalidad de las aplicaciones.
 			</li>
 		</ul>
 	</p>
@@ -330,11 +333,19 @@
 	<h4>Tipos de componentes</h4>
 	<p>
 		<ul>
-			<li>Los XML Schemas fueron diseñados para superar los puntos débiles de DTD.</li>
-			<li>Fue diseñado completamente alrededor de namespaces.</li>
-			<li>Soporta tipos de datos típicos de la programación.</li>
-			<li>Soporta tipos de datos personalizados tanto simples como complejos.</li>
-			<li>Un esquema se define pensando en su uso final.</li>
+			<li>Los XML Schemas fueron <question>diseñados para superar los puntos débiles de DTD.</question>
+			</li>
+			<li>Fue <question>diseñado para usarlo con namespaces</question>.</li>
+			<li>
+				<question>Soporta tipos de datos típicos de la programación.</question>
+			</li>
+			<li>
+				<question>Soporta tipos de datos personalizados simples y complejos.</question>
+			</li>
+			<li>Un esquema <question>
+					se define pensando en su uso final.
+				</question>
+			</li>
 		</ul>
 	</p>
 
@@ -342,23 +353,35 @@
 	<p>
 		<ul>
 			<li>
-				La programación en XML Schema se basa en namespaces (espacios de nombres).
+				La <question>
+					programación en XSD se basa en namespaces
+				</question> (espacios de nombres).
 			</li>
 			<li>
-				Podemos encontrar una analogía con los páquetes de Java.
+				Podemos encontrar una <question>
+					analogía con los páquetes de Java
+				</question>.
 			</li>
 			<li>
-				Cada namespace contiene elementos y atributos que están estrechamente relacionados con el namespace.
+				<question>
+					Cada namespace contiene elementos y atributos
+				</question> que están estrechamente <question>
+					relacionados con el namespace
+				</question>.
 			</li>
 			<li>
-				A la hora de definir un elemento o un atributo de un namespace siempre se piensa en la relación que tiene con los demás
-				elementos de ese namespace.
+				A la hora de definir un elemento o un atributo de un namespace siempre se piensa en la relación que tiene con los
+				demás elementos de ese namespace.
 			</li>
 			<li>
-				Esta forma de trabajar nos permite relacionar elementos de diferentes namespaces.
+				Esta forma de trabajar nos <question>
+					permite relacionar elementos de diferentes namespaces
+				</question>.
 			</li>
 			<li>
-				Despues de escribir un Schema XML podemos validarlo usando la validación de XML.
+				Despues de escribir <question>
+					un Schema XML podemos validarlo usando la validación de XML
+				</question>.
 			</li>
 		</ul>
 	</p>
@@ -372,15 +395,24 @@
 	</pre>
 
 	<h4>XSD Ejemplo 2</h4>
-	<pre>
+	<pre style ="border:solid 1px">
 &lt;?xml version="1.0" encoding="UTF-8"?>
 &lt;xsd:schema>
-TODO:
+	&lt;xsd:element name=&quot;Libro&quot;&gt;
+		&lt;xsd:complexType&gt;
+			&lt;xsd:sequence&gt;
+					&lt;xsd:element name=&quot;Título&quot; type=&quot;xsd:string&quot;/&gt;
+					&lt;xsd:element name=&quot;Autores&quot; type=&quot;xsd:string&quot; maxOccurs=&quot;10&quot;/&gt;
+					&lt;xsd:element name=&quot;Editorial&quot; type=&quot;xsd:string&quot;/&gt;
+			&lt;/xsd:sequence&gt;
+			&lt;xsd:attribute name=&quot;precio&quot; type=&quot;xsd:double&quot;/&gt;
+		&lt;/xsd:complexType&gt;
+	&lt;/xsd:element&gt;
 &lt;/xsd:schema>
 
 	</pre>
 
-TODO: https://es.wikipedia.org/wiki/XML_Schema
+	TODO: https://es.wikipedia.org/wiki/XML_Schema
 
 	<h2>
 		DOM y SAX
@@ -389,7 +421,7 @@ TODO: https://es.wikipedia.org/wiki/XML_Schema
 		Lenguajes usando XML: XSL, Xlink, etc
 	</h2>
 
-	TODO: https://es.wikipedia.org/wiki/Extensible_Markup_Language  (XML Schema)
+	TODO: https://es.wikipedia.org/wiki/Extensible_Markup_Language (XML Schema)
 
 	<script src="../js/testMode.js"></script>
 </body>
