@@ -395,7 +395,7 @@
 	</pre>
 
 	<h4>XSD Ejemplo 2</h4>
-	<pre style ="border:solid 1px">
+	<pre style="border:solid 1px">
 &lt;?xml version="1.0" encoding="UTF-8"?>
 &lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	&lt;xsd:element name=&quot;Libro&quot;&gt;
@@ -412,29 +412,80 @@
 
 	<p>
 		Se inicia con la declaración que indica la versión del XML y la codificación.
-		<pre style = "border: solid 1px">
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;</pre> 
+		<pre style="border: solid 1px">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;</pre>
 	</p>
 	<p>
-		Luego se declara el elemento esquema, que es la raíz del documento. Además se declara el espacio de nombres (xmlns xml NameSpace) en 
-		el que viven los nombres de los elementos del documento.
+		Luego se declara el elemento esquema, que es la raíz del documento. También se declara en el elmeento raiz
+		el espacio de nombres (xmlns xml NameSpace) en el que viven los nombres de los elementos del documento.
 	</p>
 	<pre style="border:solid 1px">
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+&lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	(...)
-</xsd:schema>
+&lt;/xsd:schema>
 	</pre>
+	<p>
+		Y por último el contenido del esquema indica que cualquier documento que esté de conformidad con dicho esquema deberá
+		tener:
+		<ul>
+			<li>Un elemento raíz que se llame libro.</li>
+			<li>El elemento libro tendrá 1 atributo y 3 hijos:
+				<ul>
+					<li>3 Hijos agrupados en un secuencia, esto indica que deben aparecer en orden. Primero el Título, luego los
+						Autores y por
+						último la Editorial:
+						<ul>
+							<li>Título que es un string</li>
+							<li>Autores que puede aparecer de 1 a 10 veces.</li>
+							<li>Editorial que es un string.</li>
+						</ul>
+					</li>
+					<li>Atributo: se llama precio y es de tipo double.</li>
+				</ul>
+			</li>
+		</ul>
+	</p>
 
-	TODO: https://es.wikipedia.org/wiki/XML_Schema
 
 	<h2>
 		DOM y SAX
-	</h2>
-	<h2>
-		Lenguajes usando XML: XSL, Xlink, etc
+
+		TODO
 	</h2>
 
-	TODO: https://es.wikipedia.org/wiki/Extensible_Markup_Language (XML Schema)
+	<h2>
+		Lenguajes creados usando XML: XSL, XLINK
+	</h2>
+	<h3>XSL</h3>
+	<p>
+		<ul>
+			<li>eXtensible Stylesheet Language (XSL).</li>
+			<li>Es una familia de lenguajes que permite describir como van a ser formateados los archivos XML para mostrarse, o como van a 
+				ser transformados.</li>
+			<li>Hay 3 lenguajes de esta familia:
+				<ul>
+					<li>XSL Transformations (XSLT).</li>
+					<li>XSL Formatting Objects (XSL-FO).</li>
+					<li>XML Path Language.</li>
+				</ul>
+			</li>
+		</ul>
+	</p>
+
+	<h4>XSLT</h4>
+	<ul>
+		<li>eXtensible Stylesheet Language Transformations</li>
+		TODO: https://es.wikipedia.org/wiki/Extensible_Stylesheet_Language_Transformations
+
+	</ul>
+	
+	<h3>Lenguaje de enlace XML (XLINK)</h3>
+	<p>
+		<ul>
+			<li>XLink es una aplicación de XML que intenta superar los límites de los enlaces de hipertexto en HTML.</li>
+		</ul>
+	</p>
+
 
 	<script src="../js/testMode.js"></script>
 </body>
