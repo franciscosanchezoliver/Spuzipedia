@@ -23,8 +23,16 @@
 				<li><a href="#elementos">Elementos.</a></li>
 				<li><a href="#atributos">Atributos.</a></li>
 				<li><a href="#secciones_cdata">Secciones CDATA.</a></li>
+				<li><a href="#declaracion_entidades">Declaración de entidades.</a></li>
+				<li><a href="#espacios_nombres">Espacios de nombres.</a></li>
 			</ol>
 		</li>
+		<li><a href="#validacion_dtd_xsd">Validación de documentos: DTD y XSD</a>
+			<ol>
+				<li><a href="#validez">Validez.</a></li>
+			</ol>
+		</li>
+
 	</ol>
 
 	<h1>XML</h1>
@@ -114,21 +122,43 @@
 	<h4 id="secciones_cdata">Secciones CDATA</h4>
 	<p>
 		Es una construcción XML para indicar que ciertos caracteres no se tienen que interpretar como marcado XML. Esto nos
-		permite poner
-		datos con caracteres que normalmente romperian la estructura XML.
+		permite poner datos con caracteres que normalmente romperían la estructura XML.
 		<pre style="border: 1px solid">
 &lt;![CDATA[contenido especial: \n áéíóúñ&]]>
 </pre>
 	</p>
 
-	<h3>Validez</h3>
+	<h4 id="declaracion_entidades">Declaración de entidades</h4>
+	<p>
+		En XML podemos usar <question>
+			entidades
+		</question>, que <question>
+			son objetos que no serán analizados sintacticamente según las reglas XML
+		</question>. Las
+		entidades
+		pueden ser:
+		<ul>
+			<li>Internas o externas.</li>
+			<li>Analizadas o no analizadas.</li>
+			<li>Generales o parametrizadas.</li>
+		</ul>
+	</p>
+	<h4 id="espacios_nombres">Espacios de nombres</h4>
+	<p>
+		Los espacios de nombres XML nos permiten separar semánticamente los elementos que forman un XML.
+	</p>
+
+	<h2 id="validacion_dtd_xsd">
+		Validación de documentos: DTD y XSD
+	</h2>
+	<h3 id="validez">Validez</h3>
 	<p>
 		Que un documento XML esté "bien formado" se refiere a su estructura sintáctica básica, que esté formado por
-		elementos,
-		atributos y comentarios como XML indica que se haga. Pero cada aplicación de XML, es decir, cada lenguaje definido
-		con esta
-		tecnología tiene que definir cual es la relación que hay entre los elementos del documento. <br>
-		Esta relación entre elemento podemos expresarla mediante:
+		elementos, atributos y
+		comentarios como XML indica que se haga. Pero cada aplicación de XML, es decir, cada lenguaje definido con esta
+		tecnología tiene
+		que definir cual es la relación que hay entre los elementos del documento. <br>
+		Esta relación entre elementos podemos expresarla mediante:
 		<ul>
 			<li>
 				Con un <a href="#DTD">DTD</a>, que puede estar en un archivo externo o puede estar en el
@@ -140,40 +170,18 @@
 		</ul>
 	</p>
 
-	<h4>Declaración de entidades</h4>
-	<p>
-		En XML podemos usar entidades, que son objetos que no serán analizados sintacticamente según las reglas XML. Las
-		entidades
-		pueden ser:
-		<ul>
-			<li>Internas o externas.</li>
-			<li>Analizadas o no analizadas.</li>
-			<li>Generales o parametrizadas.</li>
-		</ul>
-	</p>
-	<h4>Espacios de nombres</h4>
-	<p>
-		Los espacios de nombres XML nos permiten separar semánticamente los elementos que forman un XML.
-	</p>
-
-	<h2>
-		Validación de documentos: DTD y XSD
-	</h2>
 	<h3 id="DTD">DTD (Document Type Definition)</h3>
-	<h4>DTD: Definición</h4>
-	<p>
-		<ul>
-			<li>DTD (Definición de Tipo de Documento).</li>
-			<li>Es una descripción de la estructura y la sintaxis de un documento XML.</li>
-			<li>Mantiene la consistencia entre todos los documentos que usen el mismo DTD.</li>
-			<li>Los documentos XML que se ajustan a su DTD se denominan válidos. Para ello tiene que cumplir en su estructura
-				como
-				en el tipo de datos.
-			</li>
-			<li>Podemos guardar la DTD en el mismo fichero aunque normalmente se hace en un fichero aparte.</li>
-			<li>Define los elementos, atributos, entidades permitidos así como algunas limitaciones para combinarlos.</li>
-		</ul>
-	</p>
+	<ul>
+		<li>DTD (Definición de Tipo de Documento).</li>
+		<li>Es una descripción de la estructura y la sintaxis de un documento XML.</li>
+		<li>Mantiene la consistencia entre todos los documentos que usen el mismo DTD.</li>
+		<li>Los documentos XML que se ajustan a su DTD se denominan válidos. Para ello tiene que cumplir en su estructura
+			como
+			en el tipo de datos.
+		</li>
+		<li>Podemos guardar la DTD en el mismo fichero aunque normalmente se hace en un fichero aparte.</li>
+		<li>Define los elementos, atributos, entidades permitidos así como algunas limitaciones para combinarlos.</li>
+	</ul>
 	<h4>¿Qué describe un DTD?</h4>
 	<p>
 		<ul>
