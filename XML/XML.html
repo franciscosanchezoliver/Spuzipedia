@@ -8,8 +8,27 @@
 </head>
 
 <body>
+
+	<h1>Índice</h1>
+	<ol>
+		<li>
+			<a href="#aspectos_basicos">XML: Aspectos básicos.</a>
+		</li>
+		<li>
+			<a href="#estructura_documento">Estructura de un documento</a>.
+			<ol>
+				<li><a href="#partes_documento">Partes de un documento XML.</a></li>
+				<li><a href="#prologo">Prólogo</a>.</li>
+				<li><a href="#cuerpo">Cuerpo</a>.</li>
+				<li><a href="#elementos">Elementos.</a></li>
+				<li><a href="#atributos">Atributos.</a></li>
+				<li><a href="#secciones_cdata">Secciones CDATA.</a></li>
+			</ol>
+		</li>
+	</ol>
+
 	<h1>XML</h1>
-	<h2>Aspectos básicos</h2>
+	<h2 id="aspectos_basicos">Aspectos básicos</h2>
 	<ul>
 		<li>XML es un lenguaje de marcado extensible (Extensible Markup Lenguage) como lo es por ejemplo HTML.</li>
 		<li>Es un meta-lenguaje que permite definir otros lenguajes de marcas.</li>
@@ -23,9 +42,120 @@
 			de cálculo, etc.</li>
 	</ul>
 
-	<h2>
-		Estructura de un documento: Sintaxis
+	<h2 id="estructura_documento">
+		Estructura de un documento
 	</h2>
+	<h3 id="partes_documento">Partes de un documento XML</h3>
+	<p>
+		Un XML esta formado por el prólogo y por el cuerpo.
+	</p>
+	<h4 id="prologo">
+		Prólogo
+	</h4>
+	<p>
+		Un documento XML puede empezar por unas líneas que describe la versión del XML, el tipo de documento y otras cosas.
+		El prólogo no es obligatorio. <br>
+		El prólogo puede incluir los siguientes apartados:
+		<ul>
+			<li>Declaración XML: declara que este documento es un XML.</li>
+			<li>Declaración de tipo de documento: enlace del documento XML con su <a href="#DTD">DTD</a>. El DTD también puede
+				estar incluido en el
+				prólogo en
+				lugar de hacer referencia a otro archivo.
+			</li>
+			<li>Comentario e instrucciones que ayuden a procesar el XML.</li>
+		</ul>
+		Un ejemplo de prólogo es:
+		<pre style="border: solid 1px">
+&lt;?xml version="1.0" encoding="UTF-8"?>
+		</pre>
+	</p>
+
+	<h4 id="cuerpo">Cuerpo</h4>
+	<p>
+		<ul>
+			<li>
+				El cuerpo es obligatorio.
+			</li>
+			<li>
+				Debe contener un solo elemento raíz (necesario para que esté bien formado).
+			</li>
+		</ul>
+		<pre style="border:solid 1px">
+&lt;Edit_mensaje>
+    (...)
+&lt;/Edit_mensaje>
+		</pre>
+	</p>
+
+	<h4 id="elementos">Elementos</h4>
+	<p>
+		Los elementos XML pueden tener contenido del siguiente tipo:
+		<ul>
+			<li>Más elementos.</li>
+			<li>Caracteres.</li>
+			<li>Ambos.</li>
+			<li>Estar vacío.</li>
+		</ul>
+	</p>
+
+	<h4 id="atributos">Atributos</h4>
+	<p>
+		<ul>
+			<li>Son una forma de añadirle propiedades a los elementos.</li>
+			<li>Deben ir entre comillas.</li>
+		</ul>
+		Un ejemplo sería:
+		<pre style="border: solid 1px">
+&lt;Estudiante nombre="Francisco">Esto es un elemento estudiante que tiene un nombre&lt;/Estudiante>
+		</pre>
+	</p>
+
+	<h4 id="secciones_cdata">Secciones CDATA</h4>
+	<p>
+		Es una construcción XML para indicar que ciertos caracteres no se tienen que interpretar como marcado XML. Esto nos
+		permite poner
+		datos con caracteres que normalmente romperian la estructura XML.
+		<pre style="border: 1px solid">
+&lt;![CDATA[contenido especial: \n áéíóúñ&]]>
+</pre>
+	</p>
+
+	<h3>Validez</h3>
+	<p>
+		Que un documento XML esté "bien formado" se refiere a su estructura sintáctica básica, que esté formado por
+		elementos,
+		atributos y comentarios como XML indica que se haga. Pero cada aplicación de XML, es decir, cada lenguaje definido
+		con esta
+		tecnología tiene que definir cual es la relación que hay entre los elementos del documento. <br>
+		Esta relación entre elemento podemos expresarla mediante:
+		<ul>
+			<li>
+				Con un <a href="#DTD">DTD</a>, que puede estar en un archivo externo o puede estar en el
+				<a href="#prologo">prólogo</a>.
+			</li>
+			<li>
+				Con un XSchema.
+			</li>
+		</ul>
+	</p>
+
+	<h4>Declaración de entidades</h4>
+	<p>
+		En XML podemos usar entidades, que son objetos que no serán analizados sintacticamente según las reglas XML. Las
+		entidades
+		pueden ser:
+		<ul>
+			<li>Internas o externas.</li>
+			<li>Analizadas o no analizadas.</li>
+			<li>Generales o parametrizadas.</li>
+		</ul>
+	</p>
+	<h4>Espacios de nombres</h4>
+	<p>
+		Los espacios de nombres XML nos permiten separar semánticamente los elementos que forman un XML.
+	</p>
+
 	<h2>
 		Validación de documentos: DTD y XSD
 	</h2>
@@ -194,117 +324,6 @@
 		</ul>
 	</p>
 
-	<h3>Partes de un documento XML</h3>
-	<p>
-		Un XML esta formado por el prólogo y por el cuerpo.
-	</p>
-	<h4 id="prologo">
-		Prólogo
-	</h4>
-	<p>
-		Un documento XML puede empezar por unas líneas que describe la versión del XML, el tipo de documento y otras cosas.
-		El prólogo no es obligatorio. <br>
-		El prólogo puede incluir los siguientes apartados:
-		<ul>
-			<li>Declaración XML: declara que este documento es un XML.</li>
-			<li>Declaración de tipo de documento: enlace del documento XML con su <a href="#DTD">DTD</a>. El DTD también puede
-				estar incluido en el
-				prólogo en
-				lugar de hacer referencia a otro archivo.
-			</li>
-			<li>Comentario e instrucciones que ayuden a procesar el XML.</li>
-		</ul>
-		Un ejemplo de prólogo es:
-		<pre style="border: solid 1px">
-&lt;?xml version="1.0" encoding="UTF-8"?>
-		</pre>
-	</p>
-
-	<h4>Cuerpo</h4>
-	<p>
-		<ul>
-			<li>
-				El cuerpo es obligatorio.
-			</li>
-			<li>
-				Debe contener un solo elemento raíz (necesario para que esté bien formado).
-			</li>
-		</ul>
-		<pre style="border:solid 1px">
-&lt;Edit_mensaje>
-    (...)
-&lt;/Edit_mensaje>
-		</pre>
-	</p>
-
-	<h4>Elementos</h4>
-	<p>
-		Los elementos XML pueden tener contenido del siguiente tipo:
-		<ul>
-			<li>Más elementos.</li>
-			<li>Caracteres.</li>
-			<li>Ambos.</li>
-			<li>Estar vacío.</li>
-		</ul>
-	</p>
-
-	<h4>Atributos</h4>
-	<p>
-		<ul>
-			<li>Son una forma de añadirle propiedades a los elementos.</li>
-			<li>Deben ir entre comillas.</li>
-		</ul>
-		Un ejemplo sería:
-		<pre style="border: solid 1px">
-&lt;Estudiante nombre="Francisco">Esto es un elemento estudiante que tiene un nombre&lt;/Estudiante>
-		</pre>
-	</p>
-
-	<h4>Secciones CDATA</h4>
-	<p>
-		Es una construcción XML para indicar que ciertos caracteres no se tienen que interpretar como marcado XML. Esto nos
-		permite poner
-		datos con caracteres que normalmente romperian la estructura XML.
-		<pre style="border: 1px solid">
-&lt;![CDATA[contenido especial: \n áéíóúñ&]]>
-</pre>
-	</p>
-
-	<h3>Validez</h3>
-	<p>
-		Que un documento XML esté "bien formado" se refiere a su estructura sintáctica básica, que esté formado por
-		elementos,
-		atributos y comentarios como XML indica que se haga. Pero cada aplicación de XML, es decir, cada lenguaje definido
-		con esta
-		tecnología tiene que definir cual es la relación que hay entre los elementos del documento. <br>
-		Esta relación entre elemento podemos expresarla mediante:
-		<ul>
-			<li>
-				Con un <a href="#DTD">DTD</a>, que puede estar en un archivo externo o puede estar en el
-				<a href="#prologo">prólogo</a>.
-			</li>
-			<li>
-				Con un XSchema.
-			</li>
-		</ul>
-	</p>
-
-	<h4>Declaración de entidades</h4>
-	<p>
-		En XML podemos usar entidades, que son objetos que no serán analizados sintacticamente según las reglas XML. Las
-		entidades
-		pueden ser:
-		<ul>
-			<li>Internas o externas.</li>
-			<li>Analizadas o no analizadas.</li>
-			<li>Generales o parametrizadas.</li>
-		</ul>
-	</p>
-	<h4>Espacios de nombres</h4>
-	<p>
-		Los espacios de nombres XML nos permiten separar semánticamente los elementos que forman un XML.
-	</p>
-
 	<h3>XSD (XML Schema Definition)</h3>
 	<p>
 		<ul>
@@ -457,18 +476,20 @@
 				Proporciona un conjunto de objetos para representar documentos HTML, XHTML, XML
 			</li>
 			<li>
-				Un modelo estándar sobre cómo podemos combinar estos elementos. 
+				Un modelo estándar sobre cómo podemos combinar estos elementos.
 			</li>
 			<li>
 				Una interfaz estándar sobre cómo podemos acceder a los elementos y manipularlos.
 			</li>
 			<li>
-				Gracias al DOM los programas pueden acceder a los elementos y modificar su contenido, estructura, y estilo de los documentos
+				Gracias al DOM los programas pueden acceder a los elementos y modificar su contenido, estructura, y estilo de los
+				documentos
 				HTML y XML. Este es el objeto principal.
 			</li>
 			<li>
-				Gracias al DOM se puede acceder de forma dinámica a los elementos. Añadiendo, modificando o eliminando de forma dinámica la 
-				estructura y el contenido del documento. 
+				Gracias al DOM se puede acceder de forma dinámica a los elementos. Añadiendo, modificando o eliminando de forma
+				dinámica la
+				estructura y el contenido del documento.
 			</li>
 			<li>
 				El responsable del DOM es W3C.
@@ -487,10 +508,26 @@
 			Actualmente existen versiones no solo para Java, si no también para otros lenguajes como Python.
 		</li>
 	</ul>
-	<h3>Parser SAX</h3>
-	
+	<h3>Parser o Analizador SAX</h3>
+	<ul>
+		<li>Detecta cuando empieza/termina el documento, los elementos, un conjunto de caracteres, etc. (Genera eventos)</li>
+		<li>Gestiona los espacios de nombes.</li>
+		<li>Comprueba que el documneto esté bien formado.</li>
+		<li>SAX lee secuencialmente de principio a fin, sin cargar todo el documento en memoria.</li>
+		<li>Las aplicaciones tienen que implementar manejadores para los eventos notificados por SAX.</li>
+	</ul>
 
-	TODO: https://es.wikipedia.org/wiki/Simple_API_for_XML
+	<h3>Ventajas y Desventajas</h3>
+	<ul>
+		<li>Es muy eficiente en cuanto al tiempo y a la memoria utilizada en el análisis.</li>
+		<li>No dispone de la estructura en árbol.</li>
+		<li>Es más dificil de manipular.</li>
+		<li>Hace una lectura secuencial del documento por lo que una vez leído no se puede volver atrás, algo que el DOM sí
+			puede hacer.</li>
+	</ul>
+	<p>
+		Página oficial: <a href="http://www.saxproject.org/">SAX Project</a>
+	</p>
 
 	<h2>
 		Lenguajes creados usando XML: XSL, XLINK
