@@ -52,6 +52,38 @@
 				<li>
 					<a href="#xsd_tipos_componentes">Tipos de componentes</a>
 				</li>
+				<li>
+					<a href="#xsd_namespaces">Namespaces</a>
+				</li>
+				<li>
+					<a href="#xsd_ejemplo_1">XSD Ejemplo 1</a>
+				</li>
+				<li>
+					<a href="#xsd_ejemplo_2">XSD Ejemplo 2</a>
+				</li>
+			</ol>
+		</li>
+		<li>
+			<a href="#dom">DOM</a>
+		</li>
+		<li>
+			<a href="#sax">SAX</a>
+			<ol>
+				<li>
+					<a href="#parser_sax">Parser o Analizador SAX</a>
+				</li>
+				<li>
+					<a href="#ventajas_desventajas_sax">Ventajas y Desventajas</a>
+				</li>
+			</ol>
+		</li>
+
+		<li>
+			<a href="#lenguajes_creados_usando_xml">Lenguajes creados usando XML: XSL, XLINK</a>
+			<ol>
+				<li><a href="#xsl">XSL</a></li>
+				<li><a href="#xslt">XSLT</a></li>
+				<li><a href="#xlink">XLINK</a></li>
 			</ol>
 		</li>
 
@@ -399,7 +431,7 @@
 		</ul>
 	</p>
 
-	<h4>Namespaces</h4>
+	<h4 id="xsd_namespaces">Namespaces</h4>
 	<p>
 		<ul>
 			<li>
@@ -436,7 +468,7 @@
 		</ul>
 	</p>
 
-	<h4>XSD Ejemplo 1</h4>
+	<h4 id="xsd_ejemplo_1">XSD Ejemplo 1</h4>
 	<p>El ejemplo más simlpe sería el de un esquema vacio:</p>
 	<pre style="border: solid 1px">
 &lt;?xml version="1.0" enconding="UTF-8"?>
@@ -444,7 +476,7 @@
 &lt;/xsd:schema>
 	</pre>
 
-	<h4>XSD Ejemplo 2</h4>
+	<h4 id="xsd_ejemplo_2">XSD Ejemplo 2</h4>
 	<pre style="border:solid 1px">
 &lt;?xml version="1.0" encoding="UTF-8"?>
 &lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -497,7 +529,7 @@
 	</p>
 
 
-	<h2>
+	<h2 id="dom">
 		DOM
 	</h2>
 	<p>
@@ -529,7 +561,7 @@
 	</p>
 
 
-	<h2>SAX</h2>
+	<h2 id="sax">SAX</h2>
 	<ul>
 		<li>Simple API for XML (SAX).</li>
 		<li>
@@ -539,7 +571,7 @@
 			Actualmente existen versiones no solo para Java, si no también para otros lenguajes como Python.
 		</li>
 	</ul>
-	<h3>Parser o Analizador SAX</h3>
+	<h3 id="parser_sax">Parser o Analizador SAX</h3>
 	<ul>
 		<li>Detecta cuando empieza/termina el documento, los elementos, un conjunto de caracteres, etc. (Genera eventos)</li>
 		<li>Gestiona los espacios de nombes.</li>
@@ -548,7 +580,7 @@
 		<li>Las aplicaciones tienen que implementar manejadores para los eventos notificados por SAX.</li>
 	</ul>
 
-	<h3>Ventajas y Desventajas</h3>
+	<h3 id="ventajas_desventajas_sax">Ventajas y Desventajas</h3>
 	<ul>
 		<li>Es muy eficiente en cuanto al tiempo y a la memoria utilizada en el análisis.</li>
 		<li>No dispone de la estructura en árbol.</li>
@@ -560,10 +592,10 @@
 		Página oficial: <a href="http://www.saxproject.org/">SAX Project</a>
 	</p>
 
-	<h2>
+	<h2 id="lenguajes_creados_usando_xml">
 		Lenguajes creados usando XML: XSL, XLINK
 	</h2>
-	<h3>XSL</h3>
+	<h3 id="xsl">XSL</h3>
 	<p>
 		<ul>
 			<li>
@@ -602,7 +634,7 @@
 		</ul>
 	</p>
 
-	<h4>XSLT</h4>
+	<h4 id="xslt">XSLT</h4>
 	<ul>
 		<li>
 			<question>
@@ -636,7 +668,7 @@
 
 	</ul>
 
-	<h3>Lenguaje de enlace XML (XLINK)</h3>
+	<h3 id="xlink">Lenguaje de enlace XML (XLINK)</h3>
 	<p>
 		<ul>
 			<li>Lenguaje de vínculos XML.</li>
