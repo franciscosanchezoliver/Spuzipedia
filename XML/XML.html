@@ -12,27 +12,49 @@
 	<h1>Índice</h1>
 	<ol>
 		<li>
-			<a href="#aspectos_basicos">XML: Aspectos básicos.</a>
+			<a href="#aspectos_basicos">XML: Aspectos básicos</a>
 		</li>
 		<li>
-			<a href="#estructura_documento">Estructura de un documento</a>.
+			<a href="#estructura_documento">Estructura de un documento</a>
 			<ol>
-				<li><a href="#partes_documento">Partes de un documento XML.</a></li>
-				<li><a href="#prologo">Prólogo.</a></li>
-				<li><a href="#cuerpo">Cuerpo.</a></li>
-				<li><a href="#elementos">Elementos.</a></li>
-				<li><a href="#atributos">Atributos.</a></li>
-				<li><a href="#secciones_cdata">Secciones CDATA.</a></li>
-				<li><a href="#declaracion_entidades">Declaración de entidades.</a></li>
-				<li><a href="#espacios_nombres">Espacios de nombres.</a></li>
+				<li><a href="#partes_documento">Partes de un documento XML</a></li>
+				<li><a href="#prologo">Prólogo</a></li>
+				<li><a href="#cuerpo">Cuerpo</a></li>
+				<li><a href="#elementos">Elementos</a></li>
+				<li><a href="#atributos">Atributos</a></li>
+				<li><a href="#secciones_cdata">Secciones CDATA</a></li>
+				<li><a href="#declaracion_entidades">Declaración de entidades</a></li>
+				<li><a href="#espacios_nombres">Espacios de nombres</a></li>
 			</ol>
 		</li>
 		<li><a href="#validacion_dtd_xsd">Validación de documentos: DTD y XSD</a>
 			<ol>
-				<li><a href="#validez">Validez.</a></li>
-				<li><a href="#DTD">DTD.</a></li>
+				<li><a href="#validez">Validez</a></li>
+				<li>
+					<a href="#DTD">DTD</a>
+						<ol>
+							<li><a href="#que_describe_un_dtd">Qué describe un DTD</a></li>
+							<li><a href="#dtd_ejemplo_1">Ejemplo 1</a></li>
+							<li><a href="#dtd_ejemplo_2">Ejemplo 2</a></li>
+						</ol>
+				</li>
 			</ol>
 		</li>
+		<li>
+			<a href="#ventajas_del_xml">Ventajas del XML</a>
+		</li>
+		<li>
+			<a href="#documentos_bien_formados_control_errores">Documentos bien formados y control de errores</a>
+		</li>
+		<li>
+			<a href="#xsd_xml_schema_definition">XSD</a>
+			<ol>
+				<li>
+					<a href="#xsd_tipos_componentes">Tipos de componentes</a>
+				</li>
+			</ol>
+		</li>
+
 
 	</ol>
 
@@ -183,7 +205,7 @@
 		<li>Podemos guardar la DTD en el mismo fichero aunque normalmente se hace en un fichero aparte.</li>
 		<li>Define los elementos, atributos, entidades permitidos así como algunas limitaciones para combinarlos.</li>
 	</ul>
-	<h4>¿Qué describe un DTD?</h4>
+	<h4 id="que_describe_un_dtd">¿Qué describe un DTD?</h4>
 	<p>
 		<ul>
 			<li>Elementos: qué etiquetas permitimos y que valores deben tener.</li>
@@ -191,7 +213,7 @@
 			<li>Anidamiento: qué etiquetas van dentro de otras.</li>
 		</ul>
 	</p>
-	<h4>DTD: Ejemplo</h4>
+	<h4 id="dtd_ejemplo_1">DTD: Ejemplo</h4>
 	<p style="border:solid 1px">
 		&lt;!ELEMENT lista_de_personas (persona*)><br>
 		&lt;!ELEMENT persona (nombre, fechanacimiento?, sexo?, numeroseguridadsocial?)><br>
@@ -237,7 +259,7 @@
 		&lt;/lista_de_personas>
 	</p>
 
-	<h4>DTD: Ejemplo 2</h4>
+	<h4 id ="dtd_ejemplo_2">DTD: Ejemplo 2</h4>
 
 	<p>El XML:</p>
 	<pre style="border: solid 1px">
@@ -287,7 +309,7 @@
 &lt;!ELEMENT Parrafo (#PCDATA)>
 	</pre>
 
-	<h3>Ventajas del XML</h3>
+	<h3 id="ventajas_del_xml">Ventajas del XML</h3>
 	<ul>
 		<li>Extensible: podemos crear nuestras propias etiquetas.</li>
 		<li>Analizador estándar: no tenemos que crear un análizador distinto cada vez que se cambia de versión de xml.
@@ -304,7 +326,7 @@
 		</li>
 	</ul>
 
-	<h3>Documentos bien formados y control de errores</h3>
+	<h3 id = "documentos_bien_formados_control_errores">Documentos bien formados y control de errores</h3>
 	<p>
 		Un documento bien formado ("well formed") cumple con las definiciones básicas del formato y por tanto pueden
 		analizarse con cualquier analizador sintáctico ("parser"). No hay que confundir que esté bien formado con que valide.
@@ -333,7 +355,7 @@
 		</ul>
 	</p>
 
-	<h3>XSD (XML Schema Definition)</h3>
+	<h3 id = "xsd_xml_schema_definition">XSD (XML Schema Definition)</h3>
 	<p>
 		<ul>
 			<li>Es un <question>lenguaje de esquema escrito en XML</question>.
@@ -358,7 +380,7 @@
 		</ul>
 	</p>
 
-	<h4>Tipos de componentes</h4>
+	<h4 id ="xsd_tipos_componentes">Tipos de componentes</h4>
 	<p>
 		<ul>
 			<li>Los XML Schemas fueron <question>diseñados para superar los puntos débiles de DTD.</question>
