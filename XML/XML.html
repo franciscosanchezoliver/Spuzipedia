@@ -136,18 +136,36 @@
 	</h2>
 	<h3 id="partes_documento">Partes de un documento XML</h3>
 	<p>
-		Un XML esta formado por el prólogo y por el cuerpo.
+		Un XML esta formado por el <question>
+			prólogo
+		</question> y por el <question>
+			cuerpo
+		</question>.
 	</p>
 	<h4 id="prologo">
 		Prólogo
 	</h4>
 	<p>
-		Un documento XML puede empezar por unas líneas que describe la versión del XML, el tipo de documento y otras cosas.
-		El prólogo no es obligatorio. <br>
-		El prólogo puede incluir los siguientes apartados:
+		Un documento XML puede empezar por unas líneas que describe la <question>
+			versión del XML
+		</question>, el <question>
+			tipo de documento
+		</question> y otras cosas.
+		El prólogo <question>
+			no es obligatorio
+		</question>. <br>
+		El prólogo <question>
+			puede incluir
+		</question> los siguientes apartados:
 		<ul>
-			<li>Declaración XML: declara que este documento es un XML.</li>
-			<li>Declaración de tipo de documento: enlace del documento XML con su <a href="#DTD">DTD</a>. El DTD también puede
+			<li><question>
+				Declaración XML
+			</question>: declara que este documento es un XML.</li>
+			<li><question>
+				Declaración de tipo de documento
+			</question>: enlace del documento XML con su <a href="#DTD">DTD</a>. El <question>
+				DTD
+			</question> también puede
 				estar incluido en el
 				prólogo en
 				lugar de hacer referencia a otro archivo.
@@ -156,25 +174,27 @@
 		</ul>
 		Un ejemplo de prólogo es:
 		<pre style="border: solid 1px">
-&lt;?xml version="1.0" encoding="UTF-8"?>
-		</pre>
+&lt;?xml version="1.0" encoding="UTF-8"?></pre>
 	</p>
 
 	<h4 id="cuerpo">Cuerpo</h4>
 	<p>
 		<ul>
 			<li>
-				El cuerpo es obligatorio.
+				El cuerpo es <question>
+					obligatorio
+				</question>.
 			</li>
 			<li>
-				Debe contener un solo elemento raíz (necesario para que esté bien formado).
+				Debe contener <question>
+					un solo elemento raíz
+				</question> (necesario para que esté bien formado).
 			</li>
 		</ul>
 		<pre style="border:solid 1px">
 &lt;Edit_mensaje>
     (...)
-&lt;/Edit_mensaje>
-		</pre>
+&lt;/Edit_mensaje></pre>
 	</p>
 
 	<h4 id="elementos">Elementos</h4>
