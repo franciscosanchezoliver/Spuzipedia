@@ -80,10 +80,19 @@
 			lectura de estas definiciones y la creación de un objeto a partir de ellas. 
 		</li>
 		<li>Herencia: por ejemplo la herencia de la clase C a la clase D significa que la clase D hereda todos los atributos y todos 
-			los métodos de la clase C como si estos atributos y métodos hubiesen sido definidos por la misma clase C.
+			los métodos de la clase C como si estos atributos y métodos hubiesen sido definidos por la misma clase C.<br>
+			La clase D puede usar los atributos y los métodos definidos como públicos en la clase C, los componentes marcados como privados
+			también se heredan pero están escondidos al programador y sólo podrán ser accedidos a través de métodos públicos. Si queremos 
+			tener atributos o métodos que solo puedan ser accedidos por subclases y no por las demás clases entonces tenemos que marcar los
+			componentes como protegidos (protected), de esta forma los componentes marcados como protected serán accesibles por C y por D pero 
+			no por las demás clases.  
 		</li>
-		<li>Objeto:</li>
-		<li>Método:</li>
+		<li>Objeto: se una instancia de una clase, tiene propiedades (atributos) y comportamiento (métodos). Los métodos reaccionan a eventos.
+			Los objetos se pueden corresponder con objetos reales del mundo que nos rodea, o con objetos internos del sistema (programa).</li>
+		<li>Método: es un algoritmo asociado a un objeto. La ejecución de dicho algoritmo se dispararia tras recibir un mensaje. Desde el punto
+			de vista del comportamiento, los métodos son lo que el objeto puede hacer. Un método puede producir un cambio en las propiedades de 
+			dicho objeto (cambio de estado) o también puede producir la generación de un evento con un nuevo mensaje que active otro método 
+			de otro objeto.</li>
 		<li>Evento:</li>
 		<li>Atributo:</li>
 		<li>Mensaje:</li>
