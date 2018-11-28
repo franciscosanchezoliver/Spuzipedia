@@ -133,14 +133,53 @@
 		</li>
 		<li>Abstracción (arriba).</li>
 		<li>Polimorfismo: el polimorfismo está muy relacionado con la herencia y los lenguajes fuertemente tipados. Cuando nosotros definimos
-			una variable en un lenguaje de tipado fuerte siempre tenemos que indicar el tipo de datos que va a contener esa variable. P.e: 
+			una variable en un lenguaje de tipado fuerte siempre tenemos que indicar el tipo de datos que va a contener esa variable. Por 
+			ejemplo en el siguiente caso la variable "miNumero" siempre va a contener un número. Podemos asignarle diferentes valores, pero 
+			todos ellos tienen que ser números enteros, si intentamos asignarle un dato diferente a un entero el compilador nos lanzará un 
+			error y no nos permitirá compilar el programa. 
 			<pre style= "border:solid 1px">
 int miNumero;</pre>
 			
+			Esto también ocurre con los objetos. Si tenemos por ejemplo una clase "Vehículo" que es la clase padre de la cual heredan las 
+			clases: "Moto", "Coche" y "Autobús". Si por ejemplo definimos una variable que apunta a un objeto de la clase "Coche", durante toda
+			la vida de esa variable deberá apuntar a un objeto de de la clase "Coche", no podemos luego con la misma variable a puntar a un 
+			ojeto de la clase "Moto" o a un objeto de la clase "Autobús", esto se debe a la rigidez que dan los lenguajes fuertemente tipados
+			(como java).
+			Esto sí que se podría hacer en lenguajes débilmente tipados como Javascript o PHP.<br>
+			En el siguiente ejemplo se crea una variable del tipo Coche, y está variable a lo largo de su vida puede apuntar a diferentes 
+			objetos de la clase "Coche" pero nunca podrá apuntar a objetos de otras clases.
+			<pre style="border:solid 1px">
+Coche miCoche = new Coche("BMW antiguo");
+//la variable miCoche apunta a un objeto de la clase coche
+//pero si nos compramos un coche nuevo entonces esta variable podrá apuntar a otro objeto de la clase "Coche"
+miCoche = new Coche("BMW nuevo");</pre> 
+
+			Si nosotros intentamos guardar en la variable un objeto de la clase "Moto" entonces nos saltará un error de compilación.
+			<pre style ="border: solid 1px">
+Coche miCoche = new Moto("Yamaha");</pre>
+
+			Hasta aquí no hemos hablado de polimorfismo si no del sistema de tipos de los lenguajes fuertemente tipados. Por tanto <question>una variable
+			siempre apuntará a un objeto del a clase que se indicó en el momento de su declaración</question>. El <question>polimorfismo es la forma
+			que hay para "relajar el sistema de tipos" de forma que también nos acepte objetos de las clases hijas o derivadas</question>.
+			En el siguiente ejemplo tenemos una variable de la clase "Vehiculo" y esta variable podrá apuntar a un objeto de la clase "Moto", o 
+			de la clase "Coche" o de la clase "Autobús" ya que son sus clases hijas. 
+			<pre style="border: solid 1px">
+//Nuestra variable de tipo Vehiculo primero podrá apuntar a un objeto de la clase Coche
+Vehiculo miVehiculo = new Coche();
+//Luego la misma variable podrá apuntar a un objeto de la clase Moto
+miVehiculo = new Moto();
+//Luego la misma variable podrá apuntar a un objeto de la clase Autobus
+miVehiculo = new Autobus();</pre>
 		</li>
-		<li>Acoplamiento:</li>
-		<li>Cohesión:</li>
-		<li>Herencia:</li>
+		<li>Acoplamiento: TODO</li>
+		<li>Cohesión: TODO</li>
+		<li>Herencia: la herencia de la clase C a la clase D es el mecanismo por el cual la clase D hereda todas las propiedades y operaciones
+			de la clase C. La clase D podrá utilizar todos los atributos y métodos heredados que estén marcados como públicos en C. Los 
+			componentes registrados como privados en la clase C también se heredan pero permanecerán ocultos al programador y solo podrán ser
+			accedidos a través de métodos públicos. Si queremos que ciertos componentes seán accesibles por las clases hijas pero no por las 
+			demás clases entoncse tenemos que definir las propiedades como protegidas, de está forma serán accesible solamente por las clases 
+			hijas de C pero no por las demás clases.
+		</li>
 		<li>Encapsulación:</li>
 	</ul>
 
