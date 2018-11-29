@@ -180,10 +180,37 @@ miVehiculo = new Autobus();</pre>
 			demás clases entoncse tenemos que definir las propiedades como protegidas, de está forma serán accesible solamente por las clases 
 			hijas de C pero no por las demás clases.
 		</li>
-		<li>Encapsulación:</li>
+		<li>Encapsulación: significa juntar todos los elementos que consideremos que pertenezcan a la misma entidad en el mismo nivel de 
+			abstracción, esto permite aumentar la cohesión de los componentes del sistema. Mucha gente confunde la encapsulación con el 
+			principio de ocultación porque ambos se utilizan conjuntamente.<br>
+			En la programación orientada a objetos llamamos encapsulamiento al ocultamiento del estado, solo podemos acceder a su estado a
+			través de métodos. Cada objeto está aislado del exterior (cada objeto será un modulo natural), y una aplicación se reduce a un 
+			conjunto de objetos. La encapsulación protege al objeto de que su estado pueda ser modificado por quien no tenga derecho, así 
+			eliminamos efectos secundarios e interacciones inesperadas. <br>
+			Así el usuario puede obviar como está implementado el objeto y solo se centra en usarlo. También así controlamos que el usuario 
+			pueda cambiar el estado del objeto de formas imprevistas e incontroladas.<br>
+			Las variables de un objeto forman su núcleo mas interno, los métodos se encontrarían alrededor de este núcleo. Estos métodos 
+			esconden al núcleo de los demás objetos. Al empaquetamiento de las variables de un objeto con la protección de sus métodos se le 
+			llama encapsulamiento.<br>
+			Hay varios niveles de encapsulamiento:
+			<ul>
+				<li>
+					Abierto: el miembro de la clase puede ser accedido desde el exterior de la clase, desde cualquier parte del programa.
+				</li>
+				<li>
+					Protegido: el miembro de la clase puede ser accedido desde la misma clase y sus subclases hijas.
+				</li>
+				<li>
+					Semi cerrado: solo se accesible desde la clase heredada.
+				</li>
+				<li>
+					Cerrado: Solo es accesible desde la clase.
+				</li>
+
+			</ul>
+		</li>
 	</ul>
 
-	TODO: https://desarrolloweb.com/articulos/polimorfismo-programacion-orientada-objetos-concepto.html
 	TODO: https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos
 	
 	<h3>Abstracción</h3>
