@@ -275,7 +275,6 @@ miVehiculo = new Autobus();</pre>
 			</ul>
 		</li>
 
-
 		<li>
 			Comportamiento
 			<ul>
@@ -284,14 +283,89 @@ miVehiculo = new Autobus();</pre>
 				<li>Diagrama de Máquina de Estado</li>
 				<li>Diagrama de Interacción
 					<ul>
-						<li> </li>
+						<li>Diagrama de Secuencia</li>
+						<li>Diagrama de Comunicación</li>
+						<li>Diagrama Global de interacción</li>
+						<li>Diagrama de Tiempos</li>
 					</ul>
 				</li>
 			</ul>
 		</li>
-
 	</ul>
 	
+	<h3>Estructurales</h3>
+	<p>
+		Muestran la estructura estática de los objetos de un sistema.
+	</p>
+	<ul>
+		<li>Diagrama de clases: son el diagrama UML más utilizado. Este es el bloque principal de cualquier solución orientada a objetos.
+			Muestran las clases del sistema, y de cada clase sus atributos y métodos. También muestra la relación entre clases del sistema.
+			Si el sistema es muy grande con muchas clases relacionadas, las clases se agrupan para formar diagramas de clases. Las diferentes 
+			relaciones entre clases se establece con diferentes tipos de flechas. 
+		</li>
+		<li>Diagrama de componentes: muestra la relación estructural entre los componentes de un sistema. Estos diagramas se utilizan para 
+			sistemas complejos dónde hay muchos componentes. Los componentes se comunican entre sí mediante interfaces, y las interfaces se 
+			enlazan mediante conectores.
+		</li>
+		<li>Diagrama de despliegue: muestra el hardware del sistema y el software de ese hardware. Estos diagramas son útiles cuando la  
+			solución se despliega en varios equipos, cada equipo con una configuración única.
+		</li>
+		<li>Diagrama de objetos: son muy parecidos a los diagramas de clases. Al igual que los diagramas de clases también muestran la 
+			relación que hay entre los objetos, pero el diagrama de objetos muestran ejemplos del mundo real. Se usa para ver como se verá un 
+			sistema en un momento dado, debido a que habrá datos en los objetos cuando el sistema se supone que esté funcionando. Normalmente 
+			estos diagramas se utilizan para explicar relaciones complejas entre objetos.
+		</li>
+		<li>Diagrama de paquetes: como su nombre indica, este diagrama musetra las dependencias entre los diferentes paquetes de un 
+			sistema.</li>
+		<li>Diagrama de estructura compuesta: se utilizan para mostrar la estructura interna de una clase.</li>
+	</ul>
+
+	<h3>Comportamiento</h3>
+	<p>
+		Muestran el comportamiento dinámico de los objetos de un sistema.
+	</p>
+	<ul>
+		<li>Diagrama de actividades: representan los flujos de trabajo de forma gráfica. Se utilizan para describir el flujo de trabajo 
+			empresarial o el flujo de trabajo operativo de un componente de un sistema.  
+		</li>
+		<li>
+			Diagrama de casos de uso: es el tipo de diagrama UML más conocido. Ofrecen una visión general de los actores implicados en el 
+			sistema, las diferentes funciones que necesitan esos actores, y cómo interactúan con las funciones del sistema. Es un buen punto 
+			de partida de cualquier discusión del proyecto, ya que podemos identificar los principales actores del involucrados y los 
+			principales procesos del sistema. 
+		</li>
+		<li>
+			Diagrama de máquina de estados: son muy parecidos a los diagramas de actividades pero las notaciones y el uso de estos diagramas 
+			cambian un poco. También se conocen como diagramas de estado. Se utilizan para describir como se comportan los objetos según el 
+			estado que tengan en cada momento, ya que según tenga un estado u otro los mismos objetos pueden comportarse de forma distinta.
+		</li>
+		<li>
+			Diagramas de interacción:
+			<ul>
+				<li>Diagrama de secuencia: muestra como interactuan los objetos entre sí y el orden en el que se producen estas interacciones.
+					Es importante indicar que muestran las interacciones entre objetos pero en un determinado escenario. Los procesos se 
+					representan verticalmente y las interacciones se muestran como flechas.
+				</li>
+				<li>
+					Diagramas de comunicación: son parecidos a los diagramas de secuencias pero el foco se hace en los mensajes pasados entre 
+					los objetos.
+				</li>
+				<li>
+					Diagrama de tiempos: también llamados diagramas de sincronización. Son muy parecidos a los de secuencia, representan el 
+					comportamiento de los objetos en un marco de tiempo determinado. Si en el diagrama hay mas de un objeto podemos usar 
+					también este diagrama para mostrar la interacción entre los objetos entre un tiempo determinado.  
+				</li>
+				<li>
+					Diagrama global de interacciones: son muy similares a los diagramas de actividad. Mientras los diagramas de actividad 
+					muestran una secuencia de procesos, los diagramas de interacción global muestran una secuencia de diagramas de interacción.
+					Por tanto podemos decir que el diagrama global de interacción es un conjunto de diagramas de interacción y el orden en el 
+					que suceden. Como hemos visto anteriormente hay 7 tipos de diagramas de interacción y por tanto cualquier de ellos puede 
+					ser un nodo en un diagrama global de interacción.
+				</li>
+			</ul>
+		</li>
+	</ul>
+
 	TODO: https://es.wikipedia.org/wiki/Lenguaje_unificado_de_modelado
 	
 	<script src="../js/testMode.js"></script>
@@ -299,3 +373,4 @@ miVehiculo = new Autobus();</pre>
 
 
 </html> 
+
