@@ -10,9 +10,7 @@
 <body>
 	<h1>Índice</h1>
 	<ol>
-		<li>
-			<a href="#soap">SOAP</a>
-		</li>
+		<li><a href="#soap">SOAP</a></li>
 	</ol>
 
 	<h1 id="soap">SOAP</h1>
@@ -53,9 +51,55 @@
 
 	<h2>Estructura del mensaje</h2>
 	<p>
-
+		<question>Un mensaje SOAP es</question> simplemente <question>un documento XML con una estructura definida por la especificación 
+		del protocolo</question>. Esta estructura tiene <question>3 partes</question>:
+		<ul>
+			<li><question>Envelope (obligatorio)</question>
+				<ul>
+					<li>Es la <question>raíz de la estructura.</question></li>
+					<li><question>Indica que es un mensaje SOAP</question>.</li>
+				</ul>
+			</li>
+			<li><question>Header</question> 
+				<ul>
+					<li>Es un <question>mecanismo de extensión</question>.</li>
+					<li>Se usa para <question>indicar cómo procesar el mensaje</question>.</li>
+					<li><question>Se divide en</question> unidades llamadas "<question>Header blocks</question>" que <question>separan las 
+						unidades de información</question> que contiene el header. </li>
+					<li>Nos <question>enviar el mensaje de forma más conveniente a la aplicación</question> en particular.</li>
+				</ul>
+			</li>
+			<li><question>Body (obligatorio)</question>: tiene <question>información de la llamada y de la respuesta</question>.
+			</li>
+			<li><question>Fault</question>: tiene <question>información sobre errores que haya ocurrido durante el procesado del mensaje 
+				y el envío</question> desde el "SOAP Sender" hasta el "Ultimate SOAP receiver".
+			</li>
+		</ul>
 	</p>
+	<pre>
+	 -----------------
+	|     ENVELOPE    |
+	|   -----------   |
+	|  |  HEADER   |  |
+	|   -----------   |
+	|   -----------   |
+	|  |   BODY    |  |
+	|  |           |  |
+	|  |           |  |
+	|  |           |  |
+	|   -----------   |
+	 -----------------
+</pre>
 
+	<h2>Modelo de procesado</h2>
+	<p>
+		El modelo de procesado SOAP está definido por un sistema distribuido en el que intervienen diferentes nodos. En un escenario básico 
+		los nodos SOAP se comunican asumiendo los roles de sender y receiver. Aún así, la especificación define diferentes tipos de nodos 
+		según el rol que asumen en el envío del mensaje:
+		<ul>
+			<li></li>
+		</ul>
+	</p>
 
 	TODO: https://es.wikipedia.org/wiki/Simple_Object_Access_Protocol
 
