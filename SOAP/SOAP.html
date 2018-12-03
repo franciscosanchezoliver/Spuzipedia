@@ -8,24 +8,56 @@
 </head>
 
 <body>
-	<h1>SOAP</h1>
-	<ul>
-		<li>De las siglas Simple Object Access Protocol.</li>
-		<li>Es un protocolo que define como pueden comunicarse dos objectos de diferentes procesos usando mensajes
-			XML.</li>
-		<li>Es un paradigma de mensajería de una dirección sin estado.</li>
-		<li>Puede ser utilizado para crear protocolos más complejos y completos según las necesidades de la aplicación
-			que lo implementan.</li>
-		<li>Puede formar y construir la capa base de una "pila de protocolos de Web Service"</li>
-		<li>Este protocolo está basado en XML y está formado por 3 partes:
-			<ul>
-				<li>Envelope (sobre de una carta): aquí se define que hay en el mensaje y cómo procesarlo.</li>
-				<li>"Conjunto de reglas de codificación" para expresar instancias de tipos de datos.</li>
-				<li>"La Convención" para representar llamadas a procedimientos y respuestas.</li>
-			</ul>
+	<h1>Índice</h1>
+	<ol>
+		<li>
+			<a href="#soap">SOAP</a>
 		</li>
-		
+	</ol>
+
+	<h1 id="soap">SOAP</h1>
+	<ul>
+		<li><question>Simple Object Access Protocol</question>.</li>
+		<li>Es un <question>protocolo</question> que define <question>cómo pueden comunicarse dos objectos de diferentes procesos usando
+			mensajes XML</question>.</li>
+		<li>Es un <question>paradigma de mensajería de una dirección sin estado</question>.</li>
+		<li><question>Puede ser utilizado para crear protocolos más complejos </question> y completos según las necesidades de la aplicación
+			que lo implementan.</li>
+			<li><question>Puede formar</question> y construir <question>la capa base de una "pila de protocolos de Web Service"</question></li>
+			<li>Este protocolo está <question>basado en XML y formado por 3 partes</question>:
+				<ul>
+					<li><question>Envelope</question> (sobre de una carta): aquí se define <question>qué hay en el mensaje y cómo 
+						procesarlo</question>.</li>
+					<li><question>Conjunto de reglas de codificación</question> para expresar instancias de tipos de datos.</li>
+					<li><question>La Convención</question> para representar llamadas a procedimientos y respuestas.</li>
+				</ul>
+			</li>
 	</ul>
+	
+	<h2 id="#caracteristicas">Características</h2>
+	<ul>
+		<li><question>Extensibilidad</question>: <question>seguridad y WS routing</question> son extensiones</li>
+		<li><question>Neutralidad</question>: bajo el protocolo de transporte TCP <question>puede ser utilizado sobre cualquier protocolo de aplicación como
+		HTTP, SMTP</question> o JMS.
+		</li>
+		<li><question>Independencia</question>: <question>permite cualquier modelo de programación</question>.</li>
+	</ul>
+
+	<h2>Ejemplo applicación</h2>
+	<p>
+		Consideremos un mensaje SOAP que se envia un web service para hacer la búsqueda de productos filtrado por precio en una base de datos. 
+		Para ello habría que indicar los parámetros de la consulta. El servicio web podría devolver un XML con el resultado de dicha búsqueda 
+		en la bd. Como los datos nos lo ha devuelvo en un formato estándar (XML) podriamos integrar estos datos de respuesta en un sitio web 
+		o en una aplicación externa. 
+	</p>
+
+	<h2>Estructura del mensaje</h2>
+	<p>
+
+	</p>
+
+
+	TODO: https://es.wikipedia.org/wiki/Simple_Object_Access_Protocol
 
 	<script src="../js/testMode.js"></script>
 </body>
