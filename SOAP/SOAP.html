@@ -93,12 +93,96 @@
 
 	<h2>Modelo de procesado</h2>
 	<p>
-		El modelo de procesado SOAP está definido por un sistema distribuido en el que intervienen diferentes nodos. En un escenario básico 
-		los nodos SOAP se comunican asumiendo los roles de sender y receiver. Aún así, la especificación define diferentes tipos de nodos 
-		según el rol que asumen en el envío del mensaje:
+		El modelo de procesado SOAP está definido por un <question>sistema distribuido en el que intervienen diferentes nodos</question>. En 
+		un <question>escenario básico los nodos SOAP se comunican asumiendo los roles de sender y receiver</question>. Aún así, la 
+		especificación define <question>diferentes tipos de nodos según el rol</question> que asumen <question>en el envío del 
+		mensaje</question>:
 		<ul>
-			<li></li>
+			<li>SOAP Sender: nodo que emite un mensaje SOAP.</li>
+			<li>SOAP Receiver: nodo que acepta un mensaje.</li>
+			<li>SOAP message path: conjunto de nodos por los que tiene que pasar le mensaje SOAP. El nodo inicial, los nodos 
+				intermedios (puede o no haber nodos intermedios), y el SOAP receiver. 
+			</li>
+			<li>Initial SOAP sender: el nodo que origina el mensaje, este es el punto de inicio del camino que seguirá el mensaje.</li>
+			<li>SOAP intermediary: un nodo intermediario actua a la vez como SOAP receiver y como SOAP sender, ya que primero recibe el 
+				mensaje para luego reenviarlo al siguiente nodo en el camino.
+			</li>
+			<li>Ultimate SOAP receiver: es el destino final del mensaje SOAP, este nodo es el responsable de procesarlo. Hay que tener en 
+				cuenta que es posible que el mensaje no llege al nodo final y se quede en el camino por algún problema en uno de los nodos
+				intermedios.
+			</li>
 		</ul>
+	</p>
+	<p>
+		Un nodo SOAP puede actuar con uno o varios roles, cada uno de estos roles se encuentra definido con una URI conocida con el nombre del
+		rol. Los roles que toman los nodos durante el envio de un mensaje no puede cambiar. Como hemos dicho anteriormente podemos crear 
+		nuevos protocolos de comunicación como capas superiores de SOAP creando nuevos roles para cumplir con las necesidades de una aplicación
+		en concreto. La siguiente especificación de SOAP (<a href="https://www.w3.org/TR/2007/REC-soap12-part1-20070427/#procsoapmsgs">especificación de W3C</a>) 
+		define las normas de cómo tienen que ser procesados los mensajes, definiendo una serie de pasos que deben cumplir las implementaciones del 
+		protocolo.	  
+	</p>
+
+	<h2 id="soap_sobre_correo">SOAP sobre correo electrónico</h2>
+	<p>
+		Los desarrolladores de aplicaciones pueden usar la infraestructura que ya existe de correo electrónico de internet para enviar mensajes
+		SOAP ya sea en forma de texto en un correo electrónico o como un archivo adjunto en el correo. En el siguente ejemplo se muestra el 
+		mensaje de petición de reserva de viaje (está implícito que el nodo destinatario tienen la capacidad de entender SOAP) 
+	</p>
+	Email:
+	<pre style="border:solid 1px">
+De: a.oyvind@miempresa.example.com
+A: reservas@empresaviajes.example.org
+Asunto: Viaje a LA
+Fecha: Thu, 29 Nov 2001 13:20:00 EST
+Message-Id: &lt;EE492E16A090090276D208424960C0C@miempresa.example.com>
+Content-Type: <question>application/soap+xml</question>
+	</pre>
+
+	<pre>
+&lt;?xml version='1.0' ?>
+&lt;<question>env:Envelope</question> xmlns:env="http://www.w3.org/2003/05/soap-envelope"> 
+	&lt;<question>env:Header</question>>
+		&lt;m:reserva xmlns:m="[[http://www.example.org]]" 
+					env:role="http://www.w3.org/2003/05/soap-envelope/role/next"
+					env:mustUnderstand="true">
+			&lt;m:referencia>uuid:093a2da1-q345-739r-ba5d-pqff98fe8j7d&lt;/m:referencia>
+			&lt;m:fechaYHora>2001-11-29T13:20:00.000-05:00&lt;/m:fechaYHora>
+		&lt;/m:reserva>
+		&lt;n:pasajero xmlns:n="http://miempresa.example.com/empleados"
+					env:role="http://www.w3.org/2003/05/soap-envelope/role/next"
+					env:mustUnderstand="true">
+			&lt;n:nombre>Åke Jógvan Øyvind&lt;/n:nombre>
+		&lt;/n:pasajero >
+	&lt;/env:Header>
+
+	&lt;<question>env:Body</question>>
+		&lt;p:itinerario xmlns:p="http://empresaviajes.example.org/reserva/viaje">
+			&lt;p:ida>
+			&lt;p:salida>Nueva York&lt;/p:salida>
+			&lt;p:llegada>Los Angeles&lt;/p:llegada>
+			&lt;p:fechaSalida>2001-12-14&lt;/p:fechaSalida>
+			&lt;p:horaSalida>última hora de la tarde&lt;/p:horaSalida>
+			&lt;p:preferenciaAsiento>pasillo&lt;/p:preferenciaAsiento>
+			&lt;/p:ida>
+			&lt;p:vuelta>
+			&lt;p:salida>Los Angeles&lt;/p:salida>
+			&lt;p:llegada>Nueva York&lt;/p:llegada>
+			&lt;p:fechaSalida>2001-12-20&lt;/p:fechaSalida>
+			&lt;p:horaSalida>media-mañana&lt;/p:horaSalida>
+			&lt;p:preferenciaAsiento />
+			&lt;/p:vuelta>
+		&lt;/p:itinerario>
+		&lt;q:alojamiento xmlns:q="http://empresaviajes.example.org/reserva/hoteles">
+			&lt;q:preferencia>ninguna&lt;/q:preferencia>
+		&lt;/q:alojamiento>
+	&lt;/env:Body>
+&lt;/env:Envelope>Mensaje SOAP del Ejemplo 1 transportado como un mensaje SMTP
+	</pre>
+
+	<p>
+		Aunque el correo electrónico es un intercambio de mensajes en un solo sentido, no se da ninguna garatía de entrega. Sin embargo hay 
+		protocolos como el SMTP (Simple Mail Transport Protocol) que sí da una notificación de entrega (en el caso de SMTP tiene lo que 
+		denomina cómo DSN (Notificación de estado de entrega) y también tiene MDN (Message Disposition Notification)).
 	</p>
 
 	TODO: https://es.wikipedia.org/wiki/Simple_Object_Access_Protocol
