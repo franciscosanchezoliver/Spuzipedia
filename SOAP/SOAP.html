@@ -32,7 +32,7 @@
 			</li>
 	</ul>
 	
-	<h2 id="#caracteristicas">Características</h2>
+	<h3 id="#caracteristicas">Características</h3>
 	<ul>
 		<li><question>Extensibilidad</question>: <question>seguridad y WS routing</question> son extensiones</li>
 		<li><question>Neutralidad</question>: bajo el protocolo de transporte TCP <question>puede ser utilizado sobre cualquier protocolo de aplicación como
@@ -41,7 +41,7 @@
 		<li><question>Independencia</question>: <question>permite cualquier modelo de programación</question>.</li>
 	</ul>
 
-	<h2>Ejemplo applicación</h2>
+	<h3>Ejemplo applicación</h3>
 	<p>
 		Consideremos un mensaje SOAP que se envia un web service para hacer la búsqueda de productos filtrado por precio en una base de datos. 
 		Para ello habría que indicar los parámetros de la consulta. El servicio web podría devolver un XML con el resultado de dicha búsqueda 
@@ -49,7 +49,7 @@
 		o en una aplicación externa. 
 	</p>
 
-	<h2>Estructura del mensaje</h2>
+	<h3>Estructura del mensaje</h3>
 	<p>
 		<question>Un mensaje SOAP es</question> simplemente <question>un documento XML con una estructura definida por la especificación 
 		del protocolo</question>. Esta estructura tiene <question>3 partes</question>:
@@ -91,7 +91,7 @@
 	 -----------------
 </pre>
 
-	<h2>Modelo de procesado</h2>
+	<h3>Modelo de procesado</h3>
 	<p>
 		El modelo de procesado SOAP está definido por un <question>sistema distribuido en el que intervienen diferentes nodos</question>. En 
 		un <question>escenario básico los nodos SOAP se comunican asumiendo los roles de sender y receiver</question>. Aún así, la 
@@ -122,7 +122,7 @@
 		protocolo.	  
 	</p>
 
-	<h2 id="soap_sobre_correo">SOAP sobre correo electrónico</h2>
+	<h3 id="soap_sobre_correo">SOAP sobre correo electrónico</h3>
 	<p>
 		Los desarrolladores de aplicaciones pueden usar la infraestructura que ya existe de correo electrónico de internet para enviar mensajes
 		SOAP ya sea en forma de texto en un correo electrónico o como un archivo adjunto en el correo. En el siguente ejemplo se muestra el 
@@ -195,7 +195,7 @@ Content-Type: <question>application/soap+xml</question>
 		 correlación al nivel SMTP, pero no implica necesariamente una correlación al nivel SOAP.
 	</p>
 
-	<h2>Ejemplo de mensaje SOAP</h2>
+	<h3>Ejemplo de mensaje SOAP</h3>
 	<p>
 		En el siguiente mensaje podemos ver la forma en la que un cliente solicitaría información de un producto a un proveedor de servicios 
 		web.
@@ -233,7 +233,7 @@ Content-Type: <question>application/soap+xml</question>
 		ventaja que ofrece usar HTTP como protocolo de transporte es que puede lidiar con los cortafuegos.
 	</p>
 
-	<h2>Ventajas y desventajas</h2>
+	<h3>Ventajas y desventajas</h3>
 	<p>
 		Ventajas:
 		<ul>
@@ -263,7 +263,7 @@ Content-Type: <question>application/soap+xml</question>
 		</ul>
 	</p>
 
-	<h2>Casos de uso</h2>
+	<h3>Casos de uso</h3>
 	<p>
 		Normalmente se usa SOAP con el patrón "petición-respuesta", con remitente SOAP y con destinatario final SOAP. Los mensajes SOAP están 
 		predefinidos y solo se quiere enviar una petición y recibir un valor de retorno. Lo que ocurre que muchsa vecse este patrón no es 
@@ -288,7 +288,7 @@ Content-Type: <question>application/soap+xml</question>
 		</ul>
 	</p>
 
-	<h2>Implementación web de un servicio SOAP</h2>
+	<h3>Implementación web de un servicio SOAP</h3>
 	<p>
 		Los lenguajes importantes de desarrollo de sistemas web soportan tanto la implementación de Web Services SOAP como de los clientes que
 		consumen el servicio web. Además hay muchas librerias que implementan el protocolo básico, incluso otras librerias que implementan 
@@ -302,6 +302,74 @@ Content-Type: <question>application/soap+xml</question>
 			</li>
 		</ul>
 	</p>
+
+	<h2 id="wsdl">WSDL</h2>
+	<ul>
+		<li>Web Services Description Language.</li>
+		<li>Es un formato de XML que se usa para describir servicios web.</li>
+		<li>Describe la interfaz pública de los servicios web.</li>
+		<li>Describe cómo comunicarse con el servicio web, por tanto describe: 
+			<ul>
+				<li>Los requisitos del protocolo.</li>
+				<li>Los formatos de los mensajes.</li>
+				<li>Las operaciones y mensajes se describen de forma abstracta y luego se unen al protocolo concreto de red y al formato 
+					del mensaje.
+				</li>
+				<li>WSDL nos da una descripción del servicio web. Indica la interfaz abstracta a través de la cual el cliente puede acceder
+					al servicio y los detalles de cómo utilizarlo.
+				</li>
+				<li>WSDL es normalmente una combinación de SOAP con XML Schema.</li>
+			</ul>
+		</li>
+	</ul>
+		<p>
+		Un cliente se conecta al servicio web y puede leer el WSDL para poder saber que funciones están disponibles en el servidor. Si hay 
+		tipos de datos especiales, estos también se incluyen en el WSDL en forma de XML schema. El cliente puede usar SOAP para poder hacer una 
+		llamada a una de las funciones listadas en el WSDL.
+	</p>
+
+	<h3>Estructura del WSDL</h3>
+	El WSDL tiene los siguientes elementos:
+	<ul>
+		<li>Tipos de datos:
+			<ul>
+				<li>&lt;types&gt;</li>
+				<li>Define los tipos de datos que se utilizan en los mensajes.</li>
+				<li>Se utilizan los tipos de datos definidos en la especificación de esquema XML.</li>
+			</ul>
+		</li>
+		<li>Mensajes: 
+			<ul>
+				<li>&lt;message&gt;</li>
+				<li>Se definen los elementos del mensaje.</li>
+				<li>Cada mensaje se compone una de una serie de partes lógicas. Estas partes pueden ser de cualquier tipo siempre que estén 
+					definidos en el apartado de los tipos de datos.
+				</li>
+
+			</ul>
+		</li>
+		<li>Tipos de puerto: 
+			<ul>
+				<li>&lt;portType&gt;</li>
+				<li>Se definen las operaciones permitidas y los mensajes que se intercambian con el servicio.</li>
+			</ul>
+		</li>
+		<li>Binding:
+			<ul>
+				<li>Se especifican los protocolos de comunicación usados.</li>
+			</ul>
+		</li>
+		<li>Servicios:
+			<ul>
+				<li>&lt;service&gt;</li>
+				<li>Conjunto de puertos con su dirección.</li>
+			</ul>
+		</li>
+
+	</ul>
+
+	<h3>Ejemplo</h3>
+	<p></p>
 
 	TODO: https://es.wikipedia.org/wiki/Simple_Object_Access_Protocol <br>
 	TODO: https://es.wikipedia.org/wiki/WSDL
