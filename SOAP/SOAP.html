@@ -138,7 +138,7 @@ Message-Id: &lt;EE492E16A090090276D208424960C0C@miempresa.example.com>
 Content-Type: <question>application/soap+xml</question>
 	</pre>
 
-	<pre>
+	<pre style= "border:solid 1px">
 &lt;?xml version='1.0' ?>
 &lt;<question>env:Envelope</question> xmlns:env="http://www.w3.org/2003/05/soap-envelope"> 
 	&lt;<question>env:Header</question>>
@@ -183,10 +183,129 @@ Content-Type: <question>application/soap+xml</question>
 		Aunque el correo electrónico es un intercambio de mensajes en un solo sentido, no se da ninguna garatía de entrega. Sin embargo hay 
 		protocolos como el SMTP (Simple Mail Transport Protocol) que sí dan una notificación de entrega, en el caso de SMTP tiene lo que 
 		denomina cómo DSN (Notificación de estado de entrega) y también tiene MDN (Message Disposition Notification). Estas notificaciones 
-		serán también mensajes de correo que se envian al que envió inicialmente el mensaje.
+		serán también mensajes de correo que se envian al que envió inicialmente el mensaje. <br>
+		Estas notificaciones toman la forma de mensajes de correo electrónico enviados a la dirección de correo electrónico especificada 
+		en el encabezamiento del mensaje de correo. Las aplicaciones, así como los usuarios finales del correo, pueden utilizar estos mecanismos
+		para proporcionar el estado de una transmisión de correo electrónico, pero estos, si existiesen, serían notificaciones al nivel SMTP. 
+		El desarrollador de aplicaciones debe comprender completamente las capacidades y limitaciones de estas notificaciones de entrega o el 
+		riesgo de asumir que haya existido una entrega del mensaje con éxito cuando podría no haberse producido.
+		Los mensajes de estado de entrega SMTP son separados del procesamiento del mensaje en la capa SOAP. Las respuestas SOAP resultantes
+		a los datos SOAP serán devueltas a través de un mensaje de correo electrónico nuevo que podría tener o no un enlace con el mensaje
+		de la petición original al nivel SMTP. El uso del encabezado In-reply-to: [En-respuesta-a] según [RFC 2822] puede conseguir una
+		 correlación al nivel SMTP, pero no implica necesariamente una correlación al nivel SOAP.
 	</p>
 
-	TODO: https://es.wikipedia.org/wiki/Simple_Object_Access_Protocol
+	<h2>Ejemplo de mensaje SOAP</h2>
+	<p>
+		En el siguiente mensaje podemos ver la forma en la que un cliente solicitaría información de un producto a un proveedor de servicios 
+		web.
+	</p>
+	<pre style="border : solid 1px">
+&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+&lt;soap:Body>
+	&lt;<question>getProductDetails</question> xmlns="http://warehouse.example.com/ws">
+	&lt;productId>827635&lt;/productId>
+	&lt;/getProductDetails>
+&lt;/soap:Body>
+&lt;/soap:Envelope>
+	</pre>
+
+	<p>
+		Y la respuesta del proveedor podría ser algo como lo siguiente:
+	</p>
+<pre style="border:solid 1px">
+&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+&lt;soap:Body>
+	&lt;getProductDetailsResponse xmlns="http://warehouse.example.com/ws">
+	&lt;getProductDetailsResult>
+		&lt;productName>Toptimate 3-Piece Set&lt;/productName>
+		&lt;productId>827635&lt;/productId>
+		&lt;description>3-Piece luggage set.  Black Polyester.&lt;/description>
+		&lt;price>96.50&lt;/price>
+		&lt;inStock>true&lt;/inStock>
+	&lt;/getProductDetailsResult>
+	&lt;/getProductDetailsResponse>
+&lt;/soap:Body>
+&lt;/soap:Envelope></pre>
+
+	<p>
+		Normalmente se utiliza HTTP como protocolo de transporte por las ventajas que te ofrece, aunque no tiene porque ser así. La mayor 
+		ventaja que ofrece usar HTTP como protocolo de transporte es que puede lidiar con los cortafuegos.
+	</p>
+
+	<h2>Ventajas y desventajas</h2>
+	<p>
+		Ventajas:
+		<ul>
+			<li>Con XML podemos invocar a procedimientos remotos de muchos lenguajes diferentes, lo que nos permite una gran interoperabilidad.
+			</li>
+			<li>Al usar como protocolo de transporte HTTP nos permite una gran escalabilidad, además de estar casi siempre permitido por los 
+			cortafuegos.</li>
+			<li>
+				Además de poder ser usado en cualquier lenguaje, también puede ser ejecutado en cualquier plataforma.
+			</li>
+			<li>
+				Es posible usarlo tanto con usuario anónimo como con autentificado.
+			</li>
+			<li>
+				Es posible usarlo mediante cualquier protocolo de transporte que soporte la transmisión de texto, normalmente se usa HTTP o SMTP.
+			</li>
+		</ul>
+		Desventajas:
+		<ul>
+			<li>Debido a que se usa XML para el paso de mensajes, SOAP es lento cuando tenemos que transmitir datos binarios, ya que los pasa 
+				a texto para transmitirlos. Esto no ocurre con otros middleware como CORBA. De todas formas para poder transmitir datos binarios 
+				incrustados en XML se desarrolló un método optimizado de transmisión de mensajes.
+			</li>
+			<li>
+				Depende del WSDL(Web Service Description Language).
+			</li>
+		</ul>
+	</p>
+
+	<h2>Casos de uso</h2>
+	<p>
+		Normalmente se usa SOAP con el patrón "petición-respuesta", con remitente SOAP y con destinatario final SOAP. Los mensajes SOAP están 
+		predefinidos y solo se quiere enviar una petición y recibir un valor de retorno. Lo que ocurre que muchsa vecse este patrón no es 
+		suficiente, para ello W3C define 2 tipos de intercambio de mensajes SOAP para realizar una conversación:
+		<ul>
+			<li>Intercambio de mensajes conversacionales: permite redefinir la información de la petición. Esto acaba con un a serie de 
+				mensajes de ida y vuelta.
+			</li>
+			<li>Llamadas a procedimmientos remotos: representación uniforme para hacer invocaciones y respuestas RPC usando mensajes SOAP.</li>
+		</ul>
+	</p>
+	<p>
+		A veces es necesario el uso de intermediarios en las comunicaciones SOAP, hay dos tipos:
+		<ul>
+			<li>Intermediario redirector: es un nodo SOAP que redirige el mensaje a otro nodo SOAP, esto lo hace según lo establecido en el 
+				encabezado del mensaje o según del patrón del mensaje en uso.
+			</li>
+			<li>
+				Intermediario activo: hace un procesamiento del mensaje SOAP antes de reenviarlo, en este caso no utiliza el encabezado ni 
+				ningún patrón de mensaje en uso.
+			</li>
+		</ul>
+	</p>
+
+	<h2>Implementación web de un servicio SOAP</h2>
+	<p>
+		Los lenguajes importantes de desarrollo de sistemas web soportan tanto la implementación de Web Services SOAP como de los clientes que
+		consumen el servicio web. Además hay muchas librerias que implementan el protocolo básico, incluso otras librerias que implementan 
+		diferentes escenarios de uso y ponen interfaces sencillas para facilitar la programación. Gracias a estas librerías se puede facilitar 
+		el proceso de desarrollo tanto de los web services como de los clientes que lo consumen. Normalmente se genera un fichero WSDL que 
+		comunique a los clientes las características del servicio.
+		<ul>
+			Java:
+			<li>
+				Podemos crear servicios web SOAP y generar automáticamente el fichero WSDL 
+			</li>
+		</ul>
+	</p>
+
+	TODO: https://es.wikipedia.org/wiki/Simple_Object_Access_Protocol <br>
+	TODO: https://es.wikipedia.org/wiki/WSDL
+
 
 	<script src="../js/testMode.js"></script>
 </body>
