@@ -331,45 +331,116 @@ Content-Type: <question>application/soap+xml</question>
 	<h3>Estructura del WSDL</h3>
 	El WSDL tiene los siguientes elementos:
 	<ul>
-		<li>Tipos de datos:
+		<li><question>Tipos de datos</question>:
 			<ul>
-				<li>&lt;types&gt;</li>
-				<li>Define los tipos de datos que se utilizan en los mensajes.</li>
-				<li>Se utilizan los tipos de datos definidos en la especificación de esquema XML.</li>
+				<li><question>&lt;types&gt;</question></li>
+				<li>Define los <question>tipos de datos que pueden utilizar en los mensajes</question>.</li>
+				<li>Se utilizan <question>los tipos de datos definidos en</question> la especificación de <question>esquema XML</question>.</li>
 			</ul>
 		</li>
-		<li>Mensajes: 
+		<li><question>Mensajes</question>: 
 			<ul>
-				<li>&lt;message&gt;</li>
-				<li>Se definen los elementos del mensaje.</li>
-				<li>Cada mensaje se compone una de una serie de partes lógicas. Estas partes pueden ser de cualquier tipo siempre que estén 
-					definidos en el apartado de los tipos de datos.
+				<li><question>&lt;message&gt;</question></li>
+				<li>Se definen <question>los elementos que forman el mensaje</question>.</li>
+				<li><question>Cada mensaje se compone una de una serie de partes lógicas</question>. Estas partes <question>pueden ser de cualquier tipo
+				siempre que estén definidos en el apartado de los tipos de datos</question>.
 				</li>
-
 			</ul>
 		</li>
-		<li>Tipos de puerto: 
+		<li><question>Tipos de puerto</question>: 
 			<ul>
-				<li>&lt;portType&gt;</li>
-				<li>Se definen las operaciones permitidas y los mensajes que se intercambian con el servicio.</li>
+				<li><question>&lt;portType&gt;</question></li>
+				<li>Se definen <question>las operaciones permitidas y los mensajes que se intercambian con el servicio</question>.</li>
 			</ul>
 		</li>
-		<li>Binding:
+		<li><question>Binding</question>:
 			<ul>
-				<li>Se especifican los protocolos de comunicación usados.</li>
+				<li>Se especifican <question>los protocolos de comunicación usados</question>.</li>
 			</ul>
 		</li>
-		<li>Servicios:
+		<li><question>Servicios</question>:
 			<ul>
-				<li>&lt;service&gt;</li>
-				<li>Conjunto de puertos con su dirección.</li>
+				<li><question>&lt;service&gt;</question></li>
+				<li><question>Conjunto de puertos con su dirección</question>.</li>
 			</ul>
 		</li>
 
 	</ul>
 
 	<h3>Ejemplo</h3>
-	<p></p>
+	<p>
+		A continuación se muestra el ejemplo de un WSDL con sus diferentes secciones. En este servicio se muestra a partir del nombre de un 
+		valor bursátil su valor actual en el mercado.
+	</p>
+
+	<pre style="border: solid 1px">
+&lt;<question>definitions</question> name="StockQuote" 
+targetNamespace="http://example.com/stockquote.<question>wsdl</question>"
+xmlns:tns="http://example.com/stockquote.<question>wsdl</question>"
+xmlns:xsd1="http://example.com/stockquote.xsd"
+xmlns:soap="http://schemas.xmlsoap.org/<question>wsdl</question>/soap/"
+xmlns="http://schemas.xmlsoap.org/<question>wsdl</question>/">
+	<div style="background-color:aqua; border: dotted 1px">
+	&lt;<question>types</question>
+		&lt;schema targetNamespace="http://example.com/<question>stockquote.xsd</question>"
+			xmlns="http://www.w3.org/2000/10/XMLSchema">
+			&lt;element name="<question>TradePriceRequest</question>">
+				&lt;complexType>
+					&lt;all>
+						&lt;element name="tickerSymbol" type="string"/>
+					&lt;/all>
+				&lt;/complexType>
+			&lt;/element>
+			&lt;element name="<question>TradePrice</question>">
+				&lt;complexType>
+					&lt;all>
+						&lt;element name="price" type="float"/>
+					&lt;/all>
+				&lt;/complexType>
+			&lt;/element>
+		&lt;/schema>
+	&lt;/types>
+	</div>
+	<div style="background-color:darkgray; border:dotted 1px">
+	&lt;<question>message</question> name="<question>GetLastTradePriceInput</question>">
+		&lt;part name="body" element="xsd1:<question>TradePriceRequest</question>"/>
+	&lt;/message>
+	
+	&lt;message name="<question>GetLastTradePriceOutput</question>">
+		&lt;part name="body" element="xsd1:<question>TradePrice</question>"/>
+	&lt;/message>
+	</div>
+	<div style="background-color:lawngreen; border:dotted 1px">
+	&lt;<question>portType</question> name="StockQuotePortType">
+		&lt;operation name="<question>GetLastTradePrice</question>">
+			&lt;input message="tns:GetLastTradePriceInput"/>
+			&lt;output message="tns:GetLastTradePriceOutput"/>
+		&lt;/operation>
+	&lt;/portType>
+	</div>
+	<div style="background-color:khaki; border: dotted 1px">
+	&lt;<question>binding</question> name="StockQuoteSoapBinding" type="tns:StockQuotePortType">
+		&lt;soap:binding style="document" <question>transport</question>="http://schemas.xmlsoap.org/soap/<question>http</question>"/>
+		&lt;operation name="GetLastTradePrice">
+			&lt;soap:operation soapAction="http://example.com/GetLastTradePrice"/>
+			&lt;input>
+				&lt;soap:body use="literal"/>
+			&lt;/input>
+			&lt;output>
+				&lt;soap:body use="literal"/>
+			&lt;/output>
+		&lt;/operation>
+	&lt;/binding>
+	</div>
+	&lt;<question>service</question> name="StockQuoteService">
+		&lt;documentation>My first service&lt;/documentation>
+		&lt;port name="StockQuotePort" binding="tns:StockQuoteSoapBinding">
+			&lt;soap:<question>address location</question>="http://example.com/stockquote"/>
+		&lt;/port>
+	&lt;/service>
+
+&lt;/definitions>
+	</pre>
 
 	TODO: https://es.wikipedia.org/wiki/Simple_Object_Access_Protocol <br>
 	TODO: https://es.wikipedia.org/wiki/WSDL
