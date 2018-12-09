@@ -11,20 +11,55 @@
 	<h1>Índice</h1>
 	<ol>
 		<li><a href="#soap">REST</a></li>
+		<ol>
+			<li><a href="#descripcion">Descripción</a></li>
+			<li><a href="#recursos">Recursos</a></li>
+		</ol>
 	</ol>
 
 	<h1 id="soap">REST</h1>
 	<ul>
-		<li>Representational State Transfer.</li>
-		<li>Estilo de arquitectura de software para sistemsa distribuidos como por ejemplo la World Wide Web.</li>
+		<li><question>Representational State Transfer.</question></li>
+		<li><question>Estilo de arquitectura de software para sistemas distribuidos</question> como por ejemplo la World Wide Web.</li>
 	</ul>
 
-	<h3>Descripción</h3>
+	<h3 id="descripcion">Descripción</h3>
 	<p>
-		Antes REST se refería a un conjunto de principios de arquitectura, pero en la actualidad se utiliza para describir   
-		
+		<question>Antes REST</question> se refería a un <question>conjunto de principios de arquitectura</question>, pero <question>en la actualidad</question> se utiliza para describir <question>cualquier interfaz entre sistemas que use HTTP para obtener datos o para indicar la ejecución de operaciones</question> sobre datos. <question>En cualquier formato (XML o JSON)</question> <question>sin las abstracciones adicionales de los protocolos basados en patrones de intercambio de mensajes, como</question> por ejemplo <question>SOAP</question>.
+	</p>
+	<p>
+		<question>Se puede diseñar arquitecturas de servicios web de acuerdo al estilo de arquitectura REST
+		</question>, <question>y</question> también se posible <question>diseñar interfaces XMLHTTP de acuerdo con el estilo de llamada a procedimiento remoto (RPC), pero sin usar SOAP</question>. Estos <question>dos usos diferentes del término REST generan cierta confusión</question> en las discusiones técnicas, <question>aunque RPC no es un ejemplo de REST</question>.
 	</p>
 
+	<p>
+		REST afirma que <question>la web ha podido escalar</question> como resultado de una <question>serie de diseños clave</question>:
+		<ul>
+			<li><question>Protocolo cliente-servidor sin estado</question>: <question>cada mensaje HTTP tiene toda la información necesaria para comprender la petición</question>. Como resultado, <question>ni el cliente ni el servidor tienen que recordar el estado de la comunicación</question> entre mensajes. Pero en la práctica, muchas applicaciones basadas en HTTP usan cookies y otras formas de mantener el estado de la sesión.
+			</li>
+			<li>
+				<question>Conjunto de operaciones bien definidas</question>: el protocolo <question>HTTP en sí define un conjunto de operaciones</question>. Las <question>más importantes</question> son <question>POST, GET, PUT, DELETE</question>. Normalmente estas operaciones se equiparan a las operaciones CRUD en base de datos (aunque POST no encaja con este esquema).
+			</li>
+			<li>
+				<question>Sintaxis universal para identificar los recursos</question>. En un sistema REST, <question>cada recurso</question> es direccionable a través de una <question>URI única</question>.
+			</li>
+			<li>
+				<question>Uso de hipermedios</question>: Tanto <question>los datos de la aplicación como el estado de la aplicación es un HTML o un XML</question>. Gracias a esto <question>es posible navegar de un recurso REST a otros, siguiendo los enlaces</question>.
+			</li>
+		</ul>
+	</p>
+
+	<h3 id="recursos">Recursos</h3>
+	<p>
+		En REST cada recurso (elemento de información) puede ser accedido a través de un id global, URI (Identificador Uniforme de Recurso). Para manipular estos recursos los clientes y los servidores se comunican a través de una interfaz estándar (HTTP) e intercambian representaciones(recursos, los ficheros que se descargan y se envían). 
+	</p>
+	<p>
+		La petición puede ser transmitida por cualquier número de conectores (clientes, servidores, cachés, túneles, etc.) pero esto es transparente a la petición, el que hace la petición no se entera de que hay detrás de esta petición por esto se le conoce como stateless, cada uno hace la petición sin "ver más allá". Así una aplicación puede interactuar con un recurso siempre que conozca su URI y la acción requerida, no necesitamos saber si hay cachés, proxys, cortafuegos, túneles o cualquier otra cosa entre ella y el servidor que se guarda la información. Sin embargo la aplicación si debe de comprender el formato de la información devuelta (su representación) que por lo general será un documento HTML o un XML, aunque en realidad también puede ser una imagen o cualquier otro contenido.
+	</p>
+
+
+
+	TODO:https://es.wikipedia.org/wiki/Transferencia_de_Estado_Representacional
 
 	<script src="../js/testMode.js"></script>
 </body>
