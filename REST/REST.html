@@ -14,6 +14,8 @@
 		<ol>
 			<li><a href="#descripcion">Descripción</a></li>
 			<li><a href="#recursos">Recursos</a></li>
+			<li><a href="#rest_vs_rpc">REST frente RPC</a></li>
+			<li><a href="#ejemplo">Ejemplo REST</a></li>
 		</ol>
 	</ol>
 
@@ -51,10 +53,59 @@
 
 	<h3 id="recursos">Recursos</h3>
 	<p>
-		En REST cada recurso (elemento de información) puede ser accedido a través de un id global, URI (Identificador Uniforme de Recurso). Para manipular estos recursos los clientes y los servidores se comunican a través de una interfaz estándar (HTTP) e intercambian representaciones(recursos, los ficheros que se descargan y se envían). 
+		<question>En REST cada recurso</question> (elemento de información) <question>puede ser accedido a través de un id global, URI</question> (Identificador Uniforme de Recurso). Para manipular estos recursos los clientes y los servidores se comunican a través de una interfaz estándar (HTTP) e intercambian representaciones(recursos, los ficheros que se descargan y se envían). 
 	</p>
 	<p>
-		La petición puede ser transmitida por cualquier número de conectores (clientes, servidores, cachés, túneles, etc.) pero esto es transparente a la petición, el que hace la petición no se entera de que hay detrás de esta petición por esto se le conoce como stateless, cada uno hace la petición sin "ver más allá". Así una aplicación puede interactuar con un recurso siempre que conozca su URI y la acción requerida, no necesitamos saber si hay cachés, proxys, cortafuegos, túneles o cualquier otra cosa entre ella y el servidor que se guarda la información. Sin embargo la aplicación si debe de comprender el formato de la información devuelta (su representación) que por lo general será un documento HTML o un XML, aunque en realidad también puede ser una imagen o cualquier otro contenido.
+		<question>La petición puede ser transmitida por cualquier número de conectores</question> (clientes, servidores, cachés, túneles, etc.) pero <question>esto es transparente a la petición, el que hace la petición no se entera de que hay detrás de esta petición</question> por esto se le conoce como <question>"stateless"</question>, cada uno hace la petición sin "ver más allá". Así <question>una aplicación puede interactuar con un recurso siempre que conozca su URI y la acción requerida</question>, no necesitamos saber si hay cachés, proxys, cortafuegos, túneles o cualquier otra cosa entre ella y el servidor que se guarda la información. Sin embargo <question>la aplicación debe de comprender el formato de la información devuelta</question> (su representación) que <question>por lo general será un documento HTML o un XML</question>nque en realidad también puede ser una imagen o cualquier otro contenido.
+	</p>
+
+	<h3 id="rest_vs_rpc">REST frente RPC</h3>
+	<p>
+		El diseño REST requiere un diseño diferente a una aplicación con un diseño RPC. En RPC nos concentraríamos en la diversidad de operaciones del protocolo (o "verbos"), por ejemplo en RPC podríamos definir las siguientes operaciones:
+		<ul>
+			<li>getUser()</li>
+			<li>addUser()</li>
+			<li>removeUser()</li>
+			<li>updateUser()</li>
+			<li>getLocation()</li>
+			<li>addLocation()</li>
+			<li>removeLocation()</li>
+			<li>updateLocation()</li>
+			<li>listUsers()</li>
+			<li>listLocations()</li>
+			<li>findLocation()</li>
+			<li>findUser()</li>
+		</ul>
+	</p>
+	<p>
+		En un diseño REST tendríamos que poner el enfoque en los recursos (los "sustantivos" del los métodos anteriores). Por ejemplo, una aplicación REST podría definir los recursos asignandoles estos nombres:
+		<ul>
+			<li>Usuario{}</li>
+			<li>Localización{}</li>
+		</ul>
+		Cada recurso tendría su poprío identificador como http://www.example.org/locations/us/ny/new_york_city. Los clientes podrían trabajar con estos recursos a través de las operaciones estándar de HTTP (GET, POST, PUT,DELETE). Normalmente se utilizaría GET para descargar una copia de un recurso (podemos acceder a un recurso gracias a su id único, y este objeto puede ser fácilmente cacheado y copiado), y POST para acciones con efectos como enviar una orden de compra o añadir un objeto a una colección. 
+	</p>
+
+	<h3 id="ejemplo">Ejemplo REST</h3>
+	<p>
+		El registro para un usuario podría ser algo como:
+		<pre style ="border:solid 1px">
+&lt;usuario>
+	&lt;nombre>Francisco Sánchez&lt;/nombre>
+	&lt;sexo>hombre&lt;/sexo>
+	&lt;localización href="http://www.example.org/locations/us/ny/new_york_city">Nueva York, NY, US&lt;/localización>
+&lt;/usuario></pre>
+
+		Si quisiésemos por ejemplo actualizar dónde vive dicho usuario, podríamos hacer lo siguiente:
+		<ol>
+			<li>Descargarnos el recurso XML usando la operación GET.</li>
+			<li>Modificaríamos la localización modificando el fichero.</li>
+			<li>Subiríamos al servidor el fichero modificado usando por ejemplo la operación PUT.</li>
+		</ol>
+	</p>
+	<p>
+		Pero que ocurríria si quisiésemos listar recursos. HTTP no tiene ninguna operación (o "verbo") que permita listar recursos, recordemos que tiene las siguiente operaciones: GET, POST, PUT, DELETE. A parte de listar tampoco tenemos ningun operación para encontrar recursos, no tenemos una operación "FIND", en RPC sí que teníamos definidas las operaciones list*() y find*(). En su lugar, REST resuelve este problema tratando a las colecciones de recursos como si fuese otro tipo de recurso.<br>
+		Por ejemplo una petición GET HTTP sobre la URL http://www.example.org/location/us/ny/ podría devolver un enlace a una lista de ficheros XML con todas las localizaciones posibles en New York, mientras que una peticón GET a la URL http://www.example.org/users?surname=Sanchez podría devolver una lista de enlaces con todos los usuarios cuyos apellidos sean "Sánchez".
 	</p>
 
 
