@@ -10,10 +10,14 @@
 <body>
 	<h1>Índice</h1>
 	<ol>
-		<li><a href="#"></a></li>
+		<li><a href="#arquitectura_j2ee">Arquitectura J2EE</a></li>
+		<li><a href="#capa_cliente">Capa cliente</a></li>
+		<li><a href="#capa_web">Capa Web</a></li>
+		<li><a href="#capa_negocio">Capa de Negocio</a></li>
+		<li><a href="#capa_datos">Capa de Datos</a></li>
 	</ol>
 
-	<h1>Arquitectura J2EE</h1>
+	<h1 id="arquitectura_j2ee">Arquitectura J2EE</h1>
 	<p>
 		J2EE es una especificación que define su arquitectura basandose en los conceptos de capas: 
 		<ul>
@@ -23,7 +27,45 @@
 			<li>Servicios</li>
 		</ul> 
 	</p>
+	<p>
+		Las aplicaciones J2EE se dividen en 4 capas:
+		<ul>
+			<li>Capa cliente</li>
+			<li>Capa web</li>
+			<li>Capa de negocio</li>
+			<li>Capa de datos</li>
+		</ul>
+	</p>
 
+	<img src="../imagenes/arq.gif" alt="arquitectura_j2ee">
+	
+	<h3 id="capa_cliente">Capa cliente</h3>
+	<p>
+		Esta capa es lo que hay en el ordenador del cliente, es la interfaz gráfica con la que interactúa el usuario. J2EE tiene soporte para varios tipos de clientes, como por ejemplo HTML, aplicaciones Java y applets. 
+	</p>
+
+	<h3 id="capa_web">Capa Web</h3>
+	<ul>
+		<li>Se encuentra en el servidor web.</li>
+		<li>Contiene la lógica de presentación que se utiliza para generar una respuesta para el cliente.</li>
+		<li>Recibe los datos del usuario desde la "capa de cliente" y según los datos que haya recibido desde la capa de cliente genera una respuesta. Java tiene para la capa web "Java Servlets" y "Java Server Pages (JSP)" para crear los datos que se enviarán al cliente.</li>
+	</ul>
+
+	<h3 id="capa_negocio">Capa de Negocio</h3>
+	<ul>
+		<li>Se encuentra en el servidor de aplicaciones.</li>
+		<li>Contiene la lógica de negocio.</li>
+		<li>Los componentes de negocio interactúan con la capa de datos y la capa de negocio se implemente normalmente como EJB.</li>
+	</ul>
+
+	<h3 id="capa_datos">Capa de datos</h3>
+	<p>
+		En esta capa está el sistema de información de la empresa (EIS, Enterprise Information System), que incluyen las bases de datos, el sistema de procesamiento de datos, sistemas legados, y sistemas de planificación de recursos.
+	</p>
+
+	TODO: https://users.dcc.uchile.cl/~jbarrios/J2EE/node14.html
+	<br>
+	TODO: https://es.wikipedia.org/wiki/Java_EE
 
 	<script src="../js/testMode.js"></script>
 </body>
