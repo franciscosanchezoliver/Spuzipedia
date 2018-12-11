@@ -18,6 +18,85 @@
 	</ol>
 
 	<h1 id="arquitectura_j2ee">Arquitectura J2EE</h1>
+	<ul>
+		<li>Java Platform, Enterpise Edition (JEE).</li>
+		<li>Es una plataforma de programación, parte de la plataforma Java.</li>
+		<li>Permite desarrollar y ejecutar aplicaciones en Java.</li>
+		<li>Permite utilizar una arquitectura de N capas distribuidas.</li>
+		<li>Se apoya en componentes de software modulares ejecutándose en un servidor de aplicaciones.</li>
+		<li>Java EE tiene varias especificaciones de API como:
+			<ul>
+				<li>JDBC.</li>
+				<li>RMI.</li>
+				<li>email.</li>
+				<li>JMS.</li>
+				<li>Servicios Web.</li>
+				<li>XML.</li>
+			</ul>
+		</li>
+		<li>Java EE tiene especificaciones únicas para componentes Java EE como:
+			<ul>
+				<li>Enterprise JavaBeans.</li>
+				<li>Servlets.</li>
+				<li>Portlets.</li>
+				<li>JavaServer Pages (JSP)</li>
+			</ul>
+		</li>
+	</ul>
+	<p>Todo lo anterior nos permite desarrollar aplicaciones Empresariales portables entre plataformas y escalable. Otros beneficios es que el servidor de aplicaciones puede manejar:
+		<ul>
+			<li>Transacciones.</li>
+			<li>Seguridad.</li>
+			<li>Escalabilidad.</li>
+			<li>Concurrencia.</li>
+			<li>Gestión de los componentes desplegados.</li>
+		</ul>
+	</p>
+
+	<h3>APIs generales estructura de control y manejo</h3>
+	<p>
+		Las APIs de Java EE incluyen varias tecnologías que extienden la funcionalidad de las APIs de base Java SE.
+		<ul>
+			<li>
+				javax/ejb.* : es la API Enterprise JavaBeans que es un contenedor de objetos distribuidos para dar persistencia, RPCs, control de concurrencia, transacciones y contol de acceso para objetos distribuidos.
+			</li>
+			<li>
+				javax/naming : definen la API de Java Naming and Directory Interface (JNDI).
+			</li>
+			<li>
+				javax/sql : definen la API de JDBC.
+			</li>
+			<li>
+				javax/transaction : definen la API JTA (Java Transaction API)
+			</li>
+			<li>
+				javax/xml : definen la API JAXP.
+			</li>
+			<li>
+				javax/jms : definen la API JMS.
+			</li>
+			<li>
+				javax/persistence : provee las clases e interfaces necesrias para la interacción con los proveedores de persistencia, las clases administradas y los clientes de Java Persistence API (JPA).
+			</li>
+		</ul>
+	</p>
+
+	<h3>Beneficios</h3>
+	<p>Es posible empezar con cero coste. Nos podemos descargar la implementación de JavaEE de forma gratuita, y hay muchas herramientas de código abierto para extender la plataforma o simplificar el desarrollo. Algunos ejemplos de herramientas serían:
+		<ul>
+			<li>NetBeans IDE: un IDE basado en Java.</li>
+			<li>Eclipse: IDE basado en Java.</li>
+			<li>Expand: plugin de Eclipse para el desarrollo rápido</li>
+			<li>Apache Software Foundation Apache Maven: herramienta de construcción automática y gestión de dependencias.</li>
+			<li>JUnit: framework de pruebas automatizadas.</li>
+			<li>Apache Software Foundation Apache Tomcat: contenedor web de Servlets/JSP.</li>
+			<li>Spring: framework para el desarrollo de aplicaciones Java EE.</li>
+			<li>Struts: framework para el desarrollo de aplicaciones web EE confomre al patrón Modelo, Vista, Controlador.</li>
+			<li>JavaServer Faces: framework para desarrollar aplicaciones web EE conforme al patrón Modelo Vista Controlador.</li>
+		</ul>
+	</p>
+	
+
 	<p>
 		J2EE es una especificación que define su arquitectura basandose en los conceptos de capas: 
 		<ul>
@@ -66,6 +145,8 @@
 	TODO: https://users.dcc.uchile.cl/~jbarrios/J2EE/node14.html
 	<br>
 	TODO: https://es.wikipedia.org/wiki/Java_EE
+	<br>
+	TODO: https://es.slideshare.net/yennylou/03-empaquetado-de-aplicaciones-jee
 
 	<script src="../js/testMode.js"></script>
 </body>
