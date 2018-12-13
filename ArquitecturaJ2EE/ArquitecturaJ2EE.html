@@ -18,65 +18,118 @@
 	</ol>
 
 	<h1 id="arquitectura_j2ee">Arquitectura J2EE</h1>
+	<p>
+		J2EE es una <question>especificación que define su arquitectura basandose en</question> los conceptos de <question>capas</question>: 
+		<ul>
+			<li>Capas</li>
+			<li>Containers</li>
+			<li>Componentes</li>
+			<li>Servicios</li>
+		</ul> 
+	</p>
+	<p>
+		Las <question>aplicaciones J2EE se dividen en 4 capas</question>:
+		<ul>
+			<li>Capa <question>cliente</question></li>
+			<li>Capa <question>web</question></li>
+			<li>Capa de <question>negocio</question></li>
+			<li>Capa de <question>datos</question></li>
+		</ul>
+	</p>
+
+	<img src="../imagenes/arq.gif" alt="arquitectura_j2ee">
+	
+	<h3 id="capa_cliente">Capa cliente</h3>
+	<p>
+		Esta capa es <question>lo que hay en el ordenador del cliente</question>, es la <question>interfaz gráfica con la que interactúa el usuario</question>. <question>J2EE</question> tiene <question>soporte para varios tipos de clientes</question>, <question>como</question> por ejemplo <question>HTML</question>, <question>aplicaciones Java</question> y <question>applets</question>. 
+	</p>
+
+	<h3 id="capa_web">Capa Web</h3>
 	<ul>
-		<li>Java Platform, Enterpise Edition (JEE).</li>
-		<li>Es una plataforma de programación, parte de la plataforma Java.</li>
-		<li>Permite desarrollar y ejecutar aplicaciones en Java.</li>
-		<li>Permite utilizar una arquitectura de N capas distribuidas.</li>
-		<li>Se apoya en componentes de software modulares ejecutándose en un servidor de aplicaciones.</li>
-		<li>Java EE tiene varias especificaciones de API como:
+		<li>Se encuentra <question>en el servidor web</question>.</li>
+		<li>Contiene <question>la lógica de presentación</question> que se utiliza <question>para generar una respuesta para el cliente</question>.</li>
+		<li><question>Recibe los datos </question>del usuario <question>desde la "capa de cliente" y </question>según los datos que haya recibido desde la capa de cliente <question>genera una respuesta</question>. Java tiene para la capa web <question>Java Servlets y Java Server Pages (JSP)</question> para crear los datos que se enviarán al cliente.</li>
+	</ul>
+
+	<h3 id="capa_negocio">Capa de Negocio</h3>
+	<ul>
+		<li>Se encuentra <question>en el servidor de aplicaciones</question>.</li>
+		<li>Contiene la <question>lógica de negocio</question>.</li>
+		<li>Los <question>componentes de negocio interactúan con la capa de datos</question> y la capa de negocio <question>se implementa</question> normalmente <question>como EJB</question>.</li>
+	</ul>
+
+	<h3 id="capa_datos">Capa de datos</h3>
+	<p>
+		En esta capa está el sistema de información de la empresa (EIS, Enterprise Information System), que incluyen las bases de datos, el sistema de procesamiento de datos, sistemas legados, y sistemas de planificación de recursos.
+	</p>
+	
+	<ul>
+		<li>Java Platform, <question>Enterpise Edition (JEE)</question>.</li>
+		<li>Es una <question>plataforma de programación</question>, parte de la plataforma Java.</li>
+		<li>Permite <question>desarrollar y ejecutar aplicaciones en Java</question>.</li>
+		<li>Permite utilizar una <question>arquitectura de N capas distribuidas</question>.</li>
+		<li>Se apoya en <question>componentes de software modulares ejecutándose en un servidor de aplicaciones</question>.</li>
+		<li><question>Java EE</question> tiene <question>varias especificaciones de API</question> como:
 			<ul>
-				<li>JDBC.</li>
-				<li>RMI.</li>
-				<li>email.</li>
-				<li>JMS.</li>
-				<li>Servicios Web.</li>
-				<li>XML.</li>
+				<li><question>JDBC</question>(Java Database Connectivity).</li>
+				<li><question>RMI</question>(Java Remote Method Invocation).</li>
+				<li><question>email</question>(JavaMail).</li>
+				<li><question>JMS</question> (Java Message Service).</li>
+				<li><question>Servicios Web</question>.</li>
+				<li><question>XML</question>.</li>
 			</ul>
 		</li>
-		<li>Java EE tiene especificaciones únicas para componentes Java EE como:
+		<li>Java EE tiene <question>especificaciones únicas para componentes Java EE</question> como:
 			<ul>
-				<li>Enterprise JavaBeans.</li>
-				<li>Servlets.</li>
-				<li>Portlets.</li>
-				<li>JavaServer Pages (JSP)</li>
+				<li><question>Enterprise JavaBeans</question>.</li>
+				<li><question>Servlets</question>.</li>
+				<li><question>Portlets</question>.</li>
+				<li><question>JavaServer Pages (JSP)</question></li>
 			</ul>
 		</li>
 	</ul>
-	<p>Todo lo anterior nos permite desarrollar aplicaciones Empresariales portables entre plataformas y escalable. Otros beneficios es que el servidor de aplicaciones puede manejar:
+	<p>Todo lo anterior <question>nos permite desarrollar aplicaciones Empresariales portables entre plataformas y escalable</question>. Otros beneficios es que <question>el servidor de aplicaciones puede manejar</question>:
 		<ul>
-			<li>Transacciones.</li>
-			<li>Seguridad.</li>
-			<li>Escalabilidad.</li>
-			<li>Concurrencia.</li>
-			<li>Gestión de los componentes desplegados.</li>
+			<li><question>Transacciones</question>.</li>
+			<li><question>Seguridad</question>.</li>
+			<li><question>Escalabilidad</question>.</li>
+			<li><question>Concurrencia</question>.</li>
+			<li><question>Gestión de los componentes desplegados</question>.</li>
 		</ul>
 	</p>
 
 	<h3>APIs generales estructura de control y manejo</h3>
 	<p>
-		Las APIs de Java EE incluyen varias tecnologías que extienden la funcionalidad de las APIs de base Java SE.
+		<question>Las APIs de Java EE</question> incluyen varias tecnologías que <question>extienden la funcionalidad de las APIs de base Java SE</question>.
 		<ul>
 			<li>
-				javax/ejb.* : es la API Enterprise JavaBeans que es un contenedor de objetos distribuidos para dar persistencia, RPCs, control de concurrencia, transacciones y contol de acceso para objetos distribuidos.
+				javax/<question>ejb</question>.* : es la <question>API Enterprise JavaBeans</question> que es un <question>contenedor de objetos distribuidos</question> para:
+				<ul>
+					<li><question>Persistencia</question>.</li>
+					<li><question>RPCs</question>.</li>
+					<li><question>Control de concurrencia</question>.</li>
+					<li><question>Transacciones</question>.</li>
+					<li><question>Control de acceso apra objetos distribuidos</question>.</li>
+				</ul>
+				
 			</li>
 			<li>
-				javax/naming : definen la API de Java Naming and Directory Interface (JNDI).
+				javax/<question>naming</question> : definen la <question>API de Java Naming and Directory Interface (JNDI)</question>.
 			</li>
 			<li>
-				javax/sql : definen la API de JDBC.
+				javax/<question>sql</question> : definen la <question>API de JDBC</question>.
 			</li>
 			<li>
-				javax/transaction : definen la API JTA (Java Transaction API)
+				javax/<question>transaction</question> : definen la <question>API JTA (Java Transaction API)</question>
 			</li>
 			<li>
-				javax/xml : definen la API JAXP.
+				javax/<question>xml</question> : definen la <question>API JAXP (Java API for XML Processing)</question>.
 			</li>
 			<li>
-				javax/jms : definen la API JMS.
+				javax/<question>jms</question> : definen la <question>API JMS (Java Message Service)</question>.
 			</li>
 			<li>
-				javax/persistence : provee las clases e interfaces necesrias para la interacción con los proveedores de persistencia, las clases administradas y los clientes de Java Persistence API (JPA).
+				javax/<question>persistence</question> : provee las <question>clases e interfaces</question> necesarias <question>para la interacción con los proveedores de persistencia</question>, las clases administradas y los clientes de <question>Java Persistence API (JPA)</question>.
 			</li>
 		</ul>
 	</p>
@@ -96,51 +149,6 @@
 		</ul>
 	</p>
 	
-
-	<p>
-		J2EE es una especificación que define su arquitectura basandose en los conceptos de capas: 
-		<ul>
-			<li>Capas</li>
-			<li>Containers</li>
-			<li>Componentes</li>
-			<li>Servicios</li>
-		</ul> 
-	</p>
-	<p>
-		Las aplicaciones J2EE se dividen en 4 capas:
-		<ul>
-			<li>Capa cliente</li>
-			<li>Capa web</li>
-			<li>Capa de negocio</li>
-			<li>Capa de datos</li>
-		</ul>
-	</p>
-
-	<img src="../imagenes/arq.gif" alt="arquitectura_j2ee">
-	
-	<h3 id="capa_cliente">Capa cliente</h3>
-	<p>
-		Esta capa es lo que hay en el ordenador del cliente, es la interfaz gráfica con la que interactúa el usuario. J2EE tiene soporte para varios tipos de clientes, como por ejemplo HTML, aplicaciones Java y applets. 
-	</p>
-
-	<h3 id="capa_web">Capa Web</h3>
-	<ul>
-		<li>Se encuentra en el servidor web.</li>
-		<li>Contiene la lógica de presentación que se utiliza para generar una respuesta para el cliente.</li>
-		<li>Recibe los datos del usuario desde la "capa de cliente" y según los datos que haya recibido desde la capa de cliente genera una respuesta. Java tiene para la capa web "Java Servlets" y "Java Server Pages (JSP)" para crear los datos que se enviarán al cliente.</li>
-	</ul>
-
-	<h3 id="capa_negocio">Capa de Negocio</h3>
-	<ul>
-		<li>Se encuentra en el servidor de aplicaciones.</li>
-		<li>Contiene la lógica de negocio.</li>
-		<li>Los componentes de negocio interactúan con la capa de datos y la capa de negocio se implemente normalmente como EJB.</li>
-	</ul>
-
-	<h3 id="capa_datos">Capa de datos</h3>
-	<p>
-		En esta capa está el sistema de información de la empresa (EIS, Enterprise Information System), que incluyen las bases de datos, el sistema de procesamiento de datos, sistemas legados, y sistemas de planificación de recursos.
-	</p>
 
 	TODO: https://users.dcc.uchile.cl/~jbarrios/J2EE/node14.html
 	<br>
