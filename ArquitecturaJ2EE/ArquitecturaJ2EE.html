@@ -150,6 +150,83 @@
 	</p>
 	
 
+	<h3 id="recursos_aplicacion_web_java">Recursos de una plicación Web Java</h3>
+	<ul>
+		<li>
+			Podemos considerar una aplicación web java como un conjunto de recursos:
+			<ul>
+				<li>JSPs</li>
+				<li>Servlets</li>
+				<li>HTMLs, imagenes, etc.</li>
+			</ul>
+		</li>
+		<li>
+			Cada recurso resuelve una funcionalidad en concreto.
+		</li>
+		<li>
+			Si estamos hablando de la capa de cliente, los recursos serían las interfaces de usuario.
+		</li>
+	</ul>
+	
+	<h3 id="organizacion_proyecto_jee">Organización un proyecto Web JEE</h3>
+	<p>
+		La estructura de carpetas en un proyecto Web JEE se compone de 2 directorios:
+		<ul>
+			<li>Árbol de directorios público: los recursos que se puede descargar el cliente.</li>
+			<li>Árbol de directorios privado (WEB-INF): recursos que no son descargables por el cliente.</li>
+		</ul>
+	</p>
+	<h4>Ejemplo de organización de la jerarquía de carpetas</h4>
+	<pre style="border: solid 1px" >
+nuestra-aplicacion
+		|-- JSPs, HTMLs, imagenes, ...
+		|-- META-INF\MANIFEST.MF 
+		|-- <question>WEB-INF</question> 
+			|-- <question>web.xml (Deployment descriptor)</question>
+			|-- classes\*.class
+			|-- lib\*.jar
+			|-- tlds\*.tld (archivos para definir nuestras propias etiquetas)
+</pre>
+
+	<h3>Archivos WAR</h3>
+	<ul>
+		<li>Web Application aRchive.</li>
+		<li>Empaqueta una aplicación Java Web en una sola unidad.</li>
+		<li>Este WAR se despliega en un servidor de aplicaciones (contenedor web). A esto le llamamos "hacer un deploy". El servidor desmonta el war y pone cada cosa en su sitio.</li>
+		<li>Son una extensión de los archivos JAR.</li>
+		<li>Multiplataforma.</li>
+		<li>Multivendor.</li>
+		<li>La estructura de un JAR en general la podemos ver en el MANIFEST.MF</li>
+	</ul>
+
+	<h4 id="vetajas_archivos_war">Ventajas de los archivos WAR</h4>
+	<ul>
+		<li>Facilitan el proceso de despliegue de la web en un servidor. Simplemente hay que copiar el archivo .war en el servidor, si es un cluster de servidor tendremos que copiar el .war por cada servidor.</li>
+		<li>Seguridad: no permite que otras aplicaciones accedan a nuestra aplicación, aunque las otras aplicaciones se encuentren en el mismo servidor.</li>
+	</ul>
+
+	<h4>Ejemplo práctico de organización de la jerarquía de carpetas</h4>
+	<pre style="border: solid 1px" >
+nuestra-aplicacion.war
+	|-- index.html
+	|-- list.jsp
+	|-- show.jsp
+	|-- admin (esto sería una carpeta de ejemplo donde hay pantallas)
+		|-- add.jsp 
+		|-- delete.jsp 
+	|-- <question>WEB-INF</question> 
+		|-- <question>web.xml (Deployment descriptor)</question>
+		|-- classes
+			|-- Persona.class 
+			|-- Animal.class 
+		|-- lib
+			|-- psql.jar (un conector que nos hemos bajado para conectar con la BD) 
+		|-- tld
+			|-- misetiquetaspersonalizadas.tld
+</pre>
+
+
+
 	TODO: https://users.dcc.uchile.cl/~jbarrios/J2EE/node14.html
 	<br>
 	TODO: https://es.wikipedia.org/wiki/Java_EE
