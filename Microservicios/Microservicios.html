@@ -11,10 +11,6 @@
 	<h1>Índice</h1>
 	<ol>
 		<li>
-			<a href="../SOAP/SOAP.html">SOAP</a>
-		</li>
-		<li>
-			<a href="../REST/REST.html">REST</a>
 		</li>
 	</ol>
 
@@ -49,7 +45,7 @@
 	<div style="width: 50%; float:left;">
 
 		<pre>
-		    NÓMINAS	
+			NÓMINAS<hr>	
 ------------        |--------> DAO 1   
 | Servicio A | ------                   
 ------------        |--------> DAO 2   
@@ -63,7 +59,7 @@
 
 	<div style="width:50%; float: right;">
 		<pre>
-			PROVEEDORES
+			PROVEEDORES<hr>
  ------------        |--------> DAO 5   
 | Servicio C | ------                   
  ------------        |--------> DAO 6   
@@ -74,6 +70,118 @@
 		</pre>
 	</div>
 
+	<p>
+		Una vez que hemos <question>agrupado los servicios según el contexto</question>, podemos <question>aislar los grupos de servicios</question>, y <question>publicar la funcionalidad de cada grupo</question> de servicios <question>mediante una API REST.</question>
+	</p>
+
+	<div style="width: 50%; float:left;">
+		<pre>
+			NÓMINAS<hr>
+             -------------------------------------------------------
+            |                                                      |
+            |              ------------        |--------> DAO 1    |
+ --------------      -----| Servicio A | ------                    |
+|  API para   |-----/      ------------        |--------> DAO 2    |
+|  servicios  |                                                    |
+|  A y B      |-----\       ------------       |--------> DAO 3    |
+ -------------        -----| Servicio B | -----                    |
+            |               ------------       |--------> DAO 4	   |
+            |                                                      |
+             ------------------------------------------------------
+
+</pre>
+	</div>
+	<div style="width: 50%; float:right;">
+		<pre>
+			PROVEEDORES<hr>
+             -------------------------------------------------------
+            |                                                      |
+            |              ------------        |--------> DAO 5    |
+ --------------      -----| Servicio C | ------                    |
+|  API para   |-----/      ------------        |--------> DAO 6    |
+|  servicios  |                                                    |
+|  C y D      |-----\       ------------       |--------> DAO 7    |
+ -------------        -----| Servicio D | -----                    |
+            |               ------------       |--------> DAO 8	   |
+            |                                                      |
+             ------------------------------------------------------
+
+</pre>
+	</div>
+
+	<p>
+		Una vez que ya tenemos los servicios agrupados por contexto, y con una API común para cada grupo entonces podemos <question>convertir cada grupo en aplicaciones independientes</question>.
+	</p>
+
+	<div style="width: 50%; float:left;">
+		<pre>
+			
+     --------------------APLICACIÓN DE NÓMINAS------------------------
+    |             -------------------------------------------------   |
+    |            |                                                 |  |
+    |            |         ------------        |--------> DAO 1    |  |
+ --------------      -----| Servicio A | ------                    |  |  
+|  API para   |-----/      ------------        |--------> DAO 2    |  |
+|  servicios  |                                                    |  |
+|  A y B      |-----\       ------------       |--------> DAO 3    |  |
+| -------------       -----| Servicio B | -----                    |  |
+    |            |          ------------       |--------> DAO 4    |  |
+    |            |                                                 |  |
+    |             -------------------------------------------------   |
+     -----------------------------------------------------------------
+</pre>
+	</div>
+	<div style="width: 50%; float:right;">
+		<pre>
+			
+     --------------------APLICACIÓN DE PROVEEDORES--------------------
+    |             -------------------------------------------------   |
+    |            |                                                 |  |
+    |            |         ------------        |--------> DAO 5    |  |
+ --------------      -----| Servicio C | ------                    |  |  
+|  API para   |-----/      ------------        |--------> DAO 6    |  |
+|  servicios  |                                                    |  |
+|  C y D      |-----\       ------------       |--------> DAO 7    |  |
+| -------------       -----| Servicio D | -----                    |  |
+    |            |          ------------       |--------> DAO 8    |  |
+    |            |                                                 |  |
+    |             -------------------------------------------------   |
+     -----------------------------------------------------------------
+</pre>
+	</div>
+
+	<p>
+		La idea sería desplegar cada una de estas aplicaciones independientes en contenedores independientes:
+	</p>
+
+<div style="width:25%;float:left">
+	<pre>
+     ---CONTENEDOR 1 ---
+	|   APLICACIÓN 1    |
+     ------------------- 
+	</pre>
+</div>
+<div style="width:25%;float:left">
+	<pre>
+		---CONTENEDOR 1 ---
+	|   APLICACIÓN 1    |
+		------------------- 
+	</pre>
+</div>
+<div style="width:25%;float:left">
+	<pre>
+		---CONTENEDOR 1 ---
+	|   APLICACIÓN 1    |
+		------------------- 
+	</pre>
+</div>
+<div style="width:25%;float:left">
+	<pre>
+		---CONTENEDOR 1 ---
+	|   APLICACIÓN 1    |
+		------------------- 
+	</pre>
+</div>
 	
 
 	TODO: https://www.arquitecturajava.com/que-es-un-microservicio/
