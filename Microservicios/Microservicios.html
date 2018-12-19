@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Arquitecturas de Servicios Web
+	</title>
+</head>
+
+<body>
+	<h1>Índice</h1>
+	<ol>
+		<li>
+			<a href="../SOAP/SOAP.html">SOAP</a>
+		</li>
+		<li>
+			<a href="../REST/REST.html">REST</a>
+		</li>
+	</ol>
+
+	<h3>¿Qué es un microservicio?</h3>
+	<p>
+		<question>Hoy en día hacemos aplicaciones</question> que pueden tener una <question>capa de servicios</question>. <question>Normalmente tendremos</question> también <question>una capa DAO detrás de la capa de servicios</question>.
+	</p>
+	<pre>
+ ------------        |--------> DAO 1
+| Servicio A | ------
+ ------------        |--------> DAO 2
+
+ ------------        |--------> DAO 3
+| Servicio B | ------
+ ------------        |--------> DAO 4
+
+ ------------        |--------> DAO 5
+| Servicio C | ------
+ ------------        |--------> DAO 6
+
+ ------------        |--------> DAO 7
+| Servicio D | ------
+ ------------        |--------> DAO 8
+</pre>
+
+	<h3>Relación entre un Servicio y un Microservicio</h3>
+	<p>
+		Cuando trabajamos con servicios, tenemos <question>varios servicios para un mismo contexto</question>. P.e. podemos tener <question>varios servicios para gestionar las nóminas</question> y <question>otro conjunto de servicios para gestionar los proveedores</question>.
+	</p>
+
+
+	<div style="width: 50%; float:left;">
+
+		<pre>
+		    NÓMINAS	
+------------        |--------> DAO 1   
+| Servicio A | ------                   
+------------        |--------> DAO 2   
+										
+------------        |--------> DAO 3   
+| Servicio B | ------                   
+------------        |--------> DAO 4   
+		</pre>
+
+	</div>
+
+	<div style="width:50%; float: right;">
+		<pre>
+			PROVEEDORES
+ ------------        |--------> DAO 5   
+| Servicio C | ------                   
+ ------------        |--------> DAO 6   
+										
+ ------------        |--------> DAO 7   
+| Servicio D | ------                   
+ ------------        |--------> DAO 8   
+		</pre>
+	</div>
+
+	
+
+	TODO: https://www.arquitecturajava.com/que-es-un-microservicio/
+
+	<script src="../js/testMode.js"></script>
+</body>
+
+
+</html>

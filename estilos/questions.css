@@ -36,3 +36,7 @@
 question{
     background-color:yellow;
 }
+
+pre {
+    border: solid 1px;
+}
