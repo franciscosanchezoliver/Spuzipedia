@@ -10,12 +10,37 @@
 <body>
 	<h1>Índice</h1>
 	<ol>
+		<li><a</li>
 	</ol>
 
-	<h3>EJB</h3>
+	<h3 id="intro_ejb">EJB (Enterprise JavaBean)</h3>
 	<ul>
-		<li></li>
-	</ul>
+		<li><question>Es una</question> de las <question>API de</question> que forman el estándar de hacer aplicaciones <question>J2EE</question> (actualmente JEE).</li>
+		<li>
+			La especificación describe como los servidores proveen objetos desde el lado del servidor, estos objetos son los EJB. Por tanto <question>son objetos que da el servidor</question>.
+		</li>
+		<li>
+			<question>Los EJB </question>pueden ser objetos que pueden hacer las siguientes <question>funciones</question>:
+			<ul>
+				<li><question>Comunicación remota usando CORBA.</question></li>
+				<li><question>Transacciones.</question></li>
+				<li><question>Control de concurrencia.</question></li>
+				<li><question>Eventos usando JMS (Java Messaging Service).</question></li>
+				<li><question>Servicios de nombres y directorio.</question></li>
+				<li><question>Seguridad.</question></li>
+			</ul>
+		</li>
+	</ul>	
+
+	<h3 id="que_nos_proporcionan_los_ejb">¿Qué nos proporcionan los EJB?</h3>
+	<p>
+		<question>Los EJB</question> dan <question>proporcionan un modelo de componentes distribuido en el lado del servidor</question>. El objetivo de los EJB es <question>ofrecer al programador un modelo para que el programador pueda abstraerse de problemas</question> (problemas además muy comunes) <question>como la concurrencia, transacciones, persistencia, seguridad</question>, etc. <question>y centrarse en el desarrollo de la lógica de negocio</question>. Gracia a que <question>está basando en componentes</question> permite que <question>los componentes seán flexibles y reutilizables</question> (muy importante). 
+	</p>
+
+	<h3 id="diferencia_ejb_jb">Diferencia de EJB (Enterprise Java Bean) con JB (JavaBean)</h3>
+	<p>
+		No hay que confundir los EJB (Enterprise JavaBeans) con los JavaBeans. <question>JavaBeans también es un modelo de componentes</question> creado por Oracle <question>para la construcción de aplicaciones</question>, <question>pero no pueden utilizarse en entornos de objetos distribuidos ya que no soportan la invicación remota (RMI).</question>
+	</p>
 
 	TODO: https://es.wikipedia.org/wiki/Enterprise_JavaBeans
 
