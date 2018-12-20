@@ -1,0 +1,15 @@
+.contenedores-independientes{
+    width: 23%;
+    outline: solid 1px;
+    text-align: center;
+    float: left;
+    margin: 5px;
+}
+
+/*Limpia el float despues de las columnas*/
+.conjunto-contenedores:after{
+    content:"";
+    display:table;
+    clear:both;
+}
+

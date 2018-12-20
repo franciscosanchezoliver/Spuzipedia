@@ -2,6 +2,7 @@
 <html>
 
 <head>
+	<link rel="stylesheet" type="text/css" href="microservicios-estilo.css">
 	<title>
 		Arquitecturas de Servicios Web
 	</title>
@@ -11,7 +12,10 @@
 	<h1>Índice</h1>
 	<ol>
 		<li>
+			<h3>¿Qué es un microservicio?</h3>
 		</li>
+		<h3>Relación entre un Servicio y un Microservicio</h3>
+		<h3>Ventajas de los Microservicios</h3>
 	</ol>
 
 	<h3>¿Qué es un microservicio?</h3>
@@ -151,40 +155,41 @@
 	</div>
 
 	<p>
-		La idea sería desplegar cada una de estas aplicaciones independientes en contenedores independientes:
+		La idea sería <question>desplegar cada</question> una de estas <question>aplicaciones independientes en contenedores independientes</question>:
 	</p>
 
-<div style="width:25%;float:left">
-	<pre>
-     ---CONTENEDOR 1 ---
-	|   APLICACIÓN 1    |
-     ------------------- 
-	</pre>
-</div>
-<div style="width:25%;float:left">
-	<pre>
-		---CONTENEDOR 1 ---
-	|   APLICACIÓN 1    |
-		------------------- 
-	</pre>
-</div>
-<div style="width:25%;float:left">
-	<pre>
-		---CONTENEDOR 1 ---
-	|   APLICACIÓN 1    |
-		------------------- 
-	</pre>
-</div>
-<div style="width:25%;float:left">
-	<pre>
-		---CONTENEDOR 1 ---
-	|   APLICACIÓN 1    |
-		------------------- 
-	</pre>
-</div>
-	
+	<div class="conjunto-contenedores">
+		<div class="contenedores-independientes">
+			Contenedor 1<hr>
+			Aplicación 1
+		</div>
+		<div class="contenedores-independientes">
+			Contenedor 2<hr>
+			Aplicación 2
+		</div>
+		<div class="contenedores-independientes">
+			Contenedor 3<hr>
+			Aplicación 3
+		</div>
+		<div class="contenedores-independientes">
+			Contenedor 4<hr>
+			Aplicación 4
+		</div>
+	</div>
 
-	TODO: https://www.arquitecturajava.com/que-es-un-microservicio/
+	<h3>Ventajas de los Microservicios</h3>
+	<ul>
+		<li>Al ser los microservicios como aplicaciones pequeñitas, un desarrollador que no haya trabajado con un microservicio no necesita mucho tiempo en aprender como funciona este. Por tanto se necesita un <question>menos tiempo para comprender un microservicio que una aplicación gigante.</question></li>
+		<li>
+			<question>Si un microservicio falla no afecta a los demás</question>, ya que son <question>aplicaciones totalmente independientes</question>.
+		</li>
+		<li>
+			El <question>tiempo de despliegue es menor</question> ya que <question>no necesitamos desplegar una aplicación gigante si no servicios pequeños</question>. Y solo desplegamos los servicios que nos interese. <question>Si hemos actualizado un microservicio entonces solo necesitamos desplegar un microservicio y no toda la aplicación</question>.
+		</li>
+		<li>
+			De lo más importante es que <question>podemos acceder a estos servicios desde todo tipo de dispositivos ya que los tenemos publicados mediante REST o algún tipo de RPC</question>.
+		</li>
+	</ul>
 
 	<script src="../js/testMode.js"></script>
 </body>
