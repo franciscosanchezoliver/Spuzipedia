@@ -10,7 +10,11 @@
 <body>
 	<h1>Índice</h1>
 	<ol>
-		<li><a</li>
+		<li><a href="#intro_ejb">EJB (Enterprise JavaBean)</a></li>
+		<li><a href="#que_nos_proporcionan_los_ejb">¿Qué nos proporcionan los EJB?</a></li>
+		<li><a href="#diferencia_ejb_jb">Diferencia de EJB (Enterprise Java Bean) con JB (JavaBean)</a></li>
+		<li><a href="#tipos_de_ejb">Tipos de EJB</a></li>
+		<li><a href="funcionamiento_ejb">Funcionamiento de un EJB</a></li>
 	</ol>
 
 	<h3 id="intro_ejb">EJB (Enterprise JavaBean)</h3>
@@ -39,8 +43,31 @@
 
 	<h3 id="diferencia_ejb_jb">Diferencia de EJB (Enterprise Java Bean) con JB (JavaBean)</h3>
 	<p>
-		No hay que confundir los EJB (Enterprise JavaBeans) con los JavaBeans. <question>JavaBeans también es un modelo de componentes</question> creado por Oracle <question>para la construcción de aplicaciones</question>, <question>pero no pueden utilizarse en entornos de objetos distribuidos ya que no soportan la invicación remota (RMI).</question>
+		No hay que confundir los EJB (Enterprise JavaBeans) con los JavaBeans. <question>JavaBeans también es un modelo de componentes</question> creado por Oracle <question>para la construcción de aplicaciones</question>, <question>pero no pueden utilizarse en entornos de objetos distribuidos ya que no soportan la invocación remota (RMI).</question>
 	</p>
+
+	<h3 id="tipos_de_ejb">Tipos de EJB</h3>
+	<ul>
+		Hay 3 tipos de EJB:
+		<li>EJB <question>de entidad</question> (Entity EJB): <question>su objetivo es encapsular los objetos del lado del servidor que almacena los datos</question>. Estos EJB son los que <question>se encargan de la persistencia</question>. En la documentación <question>a partir de la versión JEE 5.0, los EJB de entidad se reemplazan por JPA</question> (Java Persistence API). <br>
+			Podemos diferenciar <question>dos tipos de persistencia</question>:
+			<ul>
+				<li>Persistencia <question>gestionada por el contenedor</question> (CMP): <question>el contenedor se encarga de guardar y recuperar los datos del objeto de entidad</question> (EJB de entidad) <question>mapeando las columnas de una tabla de una bd con los atributos de un objeto</question>.</li>
+				<li>Persistencia <question>gestionada por el bean</question> (BMP): <question>el</question> propio <question>objeto EJB de entidad</question> es el que <question>se encarga de implementar la persistencia con la BD</question>, por lo tanto aquí <question>el programador es el responsable de implementar los métodos en el objeto EJB</question> de entidad para poder almacenar y recuperar los datos de la bd .</li>
+			</ul>
+		</li>
+		<li>EJB <question>de sesión</question> (Session EJB): <question>gestionan el flujo de la información con el servidor</question>. Normalmente <question>sirven a los cliente como fachada de los servicios proporcionados por otros componentes alojados en el servidor</question>. <br>
+		Hay <question>2 tipos</question> de EJB de sesión:
+			<ul>
+				<li><question>Con estado</question> (stateful): bean de sesión con estado. <question>Las variables del bean guardan</question> los datos obtenidos duarnte la conexión con el cliente. Cada bean de sesión con estado guarda <question>los datos de la conversación entre un cliente y el bean de sesión</question>. Las variables que guardan este "estado conversacional" irán cambiando conforme el cliente vaya haciendo llamadas a los métodos de negocio del bean. El estado conversacional no se guarda cuando el cliente termina la sesión.</li>
+				<li><question>Sin estado</question> (stateless): <question>objetos distribuidos que no tienen estado</question> lo que <question>permite</question> que puedan <question>ser accedidos de forma concurrente</question>. No se garantiza que el contenido de las variables se conserven entre llamadas a los métodos.</li>
+			</ul>
+		</li>
+		<li>EJB <question>dirigidos por mensajes</question> (Message driven EJB): son los únicos beans que <question>funcionan de forma asíncrona</question>. <question>Usan el api JMS</question> (Java Messaging System). <question>Se suscriben a un tema</question> (topic) <question>o a una cola</question> (queue) y <questionn>se activan cuando se recibe un mensaje dirigido a dicho tema o cola</questionn>. No requiere de su instanciación por parte del cliente.
+		</li>
+	</ul>
+
+	<h3 id="funcionamiento_ejb">Funcionamiento de un EJB</h3>
 
 	TODO: https://es.wikipedia.org/wiki/Enterprise_JavaBeans
 
