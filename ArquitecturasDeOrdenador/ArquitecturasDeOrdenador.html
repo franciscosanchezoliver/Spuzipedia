@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Arquitecturas de ordenador
+	</title>
+</head>
+
+<body>
+	<h1>Índice</h1>
+	<ol>
+	</ol>
+
+	<h1>Arquitecturas de ordenador</h1>
+
+	<h2>Según la estructura</h2>
+	<p>
+		<ul>
+			<li><question>Arquitectura de Von Neumann</question>: 
+				<ul>
+					<li><question>CPU</question> (<question>Unidad Central de Proceso</question>)</li>
+					<ul>
+						<li><question>ALU</question> (<question>Unidad Aritmético Lógica</question>). Con registros del procesador.</li>
+						<li><question>UC</question>(<question>Unidad de Control</question>). Con <question>registro de instrucciones y contador de programa</question>.</li>
+						<li><question>Memoria</question> para <question>guardar datos e instrucciones</question>.</li>
+						<li><question>Mecanismos de entrada y salida</question>.</li>
+						<li>
+							<ul>
+								Características
+								<ul>
+									<li><question>No puede hacerse a la vez la búsqueda de instrucciones y una operación de datos ya que comparten el mismo bus</question>.</li>
+									<li><question>La unidad de control indica que operación realizar en cada momento (contador de programa)</question>.</li>
+								</ul>
+							</ul>
+						</li>
+					</ul>
+				</ul>
+				<img src="../imagenes/Arquitecturaneumann.jpg" alt="arquitectura_von_neumann">
+			</li>
+			<li>
+				<question>Arquitectura Hardvard</question>: tiene un <question>conjunto de direcciones y buses separados para instrucciones y datos</question>.
+			</li>
+		</ul>
+		<p>
+			La arquitectura de Von Neumann es más sencilla la de Hardvard, pero la de Hardvard es más moderna. <question>Ambas son sistemas de programas almacenados</question>, es decir, <question>guardan las instrucciones de programa y los datos en una memoria de lectura y escritura.</question> 
+		</p>
+	</p>
+
+	<h2>Según el conjunto de instrucciones</h2> 
+	<p>
+		<ul>
+			<li><question>Arquitectura CISC (Complex Instruction Set Computer)</question>.
+				<ul>
+					<li>
+						<question>Microprocesadores con un conjunto de instrucciones amplio</question>.
+					</li>
+					<li>
+						Son <question>capaces de realizar operaciones complejas</question>.
+					</li>
+					<li>
+						<question>Los operandos de estas operaciones pueden estar en memoria o en registros internos</question>. 
+					</li>
+					<li>
+						Son <question>anteriores a los RISC</question>.
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				Arquitectura RISC (Reduced Instruction Set Computer)
+				<ul>
+					<li>Microprocesadores con <question>instrucciones de tamaño fijo</question>.</li>
+					<li><question>Conjunto de instrucciones reducido</question> que <question>realizan operaciones simples</question>.</li>
+					
+				</ul>
+			</li>
+		</ul>
+	</p>
+
+
+
+	<script src="../js/testMode.js"></script>
+</body>
+
+
+</html>
