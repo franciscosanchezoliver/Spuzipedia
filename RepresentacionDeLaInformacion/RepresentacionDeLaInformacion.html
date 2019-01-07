@@ -1,0 +1,349 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Representacion de la Información
+	</title>
+	<style>
+		table, th, td{
+			border: solid 1px;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<h1>Índice</h1>
+	<ol>
+		<li><a href="#representacion_informacion">Representación de la información.</a></li>
+		<li><a href="#sistemas_numericos">Sistemas numéricos.</a></li>
+	</ol>
+
+	<h3 id="representacion_informacion">Representación y comunicación de la información: elementos constitutivos de un sistema de información</h3>
+	<ul>
+		<li>El bit es la unidad básica de información. Puede tener 2 valores (0 o 1). </li>
+		<li>1 byte = 8 bits (octeto)</li>
+		<li>El bit se representa con una b minúscula y el byte con una mayúscula. 8b = 1B. Por tanto un B es un octeto (8 bits), y por tanto 8Gbits/s equivale a 1GByte/s</li>
+		<li>1 nibble = 4 bits (cuarteto). Se utiliza para el sistema hexadecimal (de 0 a F => 16 valores = 2^4).</li>
+		<li> 
+		<div>
+			Bit (b) &lt; Byte (B) &lt; Kilobyte (kB) &lt; Megabyte (MB) &lt; Gigabyte (GB) &lt; Terabyte (TB)  &lt; Petabyte (PB) &lt; Exabyte (EX) &lt; Zettabyte (ZB) &lt; Yottabyte (YB) 
+		</div>
+		<div>
+			<table>
+				<thead>
+					<tr>
+						<th colspan="3">Sistema Internacional (<question>decimal</question>)</th>
+						<th colspan="3">ISO/IEC 80000-13 (<question>binario</question>)</th>
+					</tr>
+					<tr>
+						<th>Nombre</th>
+						<th>Símbolo</th>
+						<th>Valor (+3)</th>
+						<th>Nombre</th>
+						<th>Símbolo</th>
+						<th>Valor (+10)</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td>bite</td>
+						<td>b</td>
+						<td>0 o 1</td>
+					</tr>
+					<tr>
+						<td>Byte</td>
+						<td>B</td>
+						<td>8 bits</td>
+					</tr>
+					<tr>
+						<td>kilobyte</td>
+						<td>kB (k minúscula)</td>
+						<td>10<sup>3</sup>B = 1.000 bytes</td>
+						
+						<td>kibibyte</td>
+						<td>KiB</td>
+						<td>2<sup>10</sup>B</td>
+					</tr>
+					<tr>
+						<td>Megabyte</td>
+						<td>MB</td>
+						<td>10<sup>6</sup>B = 1.000.000 bytes</td>
+						
+						<td>Mebibyte</td>
+						<td>MiB</td>
+						<td>2<sup>20</sup>B</td>
+					</tr>
+					<tr>
+						<td>Gigabyte</td>
+						<td>GB</td>
+						<td>10<sup>9</sup>B = 1.000.000.000 bytes</td>
+
+						<td>Gibibyte</td>
+						<td>GiB</td>
+						<td>2<sup>30</sup>B</td>
+					</tr>
+
+					<tr>
+						<td>Terabyte</td>
+						<td>TB</td>
+						<td>10<sup>12</sup>B = 1.000.000.000.000 bytes</td>
+
+						<td>Tebibyte</td>
+						<td>TiB</td>
+						<td>2<sup>40</sup>B</td>
+					</tr>
+
+					<tr>
+						<td>Petabyte</td>
+						<td>PB</td>
+						<td>10<sup>15</sup>B</td>
+
+						<td>Pebibyte</td>
+						<td>PiB</td>
+						<td>2<sup>50</sup>B</td>
+					</tr>
+
+					<tr>
+						<td>Exabyte</td>
+						<td>EB</td>
+						<td>10<sup>18</sup>B</td>
+
+						<td>Exbibyte</td>
+						<td>EiB</td>
+						<td>2<sup>60</sup>B</td>
+					</tr>
+
+					<tr>
+						<td>Zettabyte</td>
+						<td>ZB</td>
+						<td>10<sup>21</sup>B</td>
+
+						<td>Zebibyte</td>
+						<td>ZiB</td>
+						<td>2<sup>70</sup>B</td>
+					</tr>
+
+					<tr>
+						<td>Yottabyte</td>
+						<td>YB</td>
+						<td>10<sup>24</sup>B</td>
+
+						<td>Yobibyte</td>
+						<td>YiB</td>
+						<td>2<sup>80</sup>B</td>
+					</tr>
+
+					
+				</tbody>
+
+			</table>
+		</div>
+	</li>
+</ul>
+
+<h3 id="sistemas_numericos">Sistemas numéricos</h3>
+<ul>
+	<li><question>Binario</question>: base 2. Utiliza el 0 y el 1. </li>
+	<li><question>Octal</question>: base 8. Del 0 al 7.</li>
+	<li><question>Decimal</question>: base 10. Del 0 al 9.</li>
+	<li><question>Hexadecimal</question>: base 16. Del 0 al 9 y de la A a la F.</li>
+</ul>
+
+<h3>Conversión de decimal a otros sistemas</h3>
+<h4 id="decimal_a_binario">Decimal a binario</h4>
+<p><question>Dividimos el número entre 2 sucesivamente. Los restos ordenados a la inversa forman el resultado.</question></p>
+<p>Ej: 8<sub>10</sub> => X<sub>2</sub></p>
+<ul>
+	<li>8/2 = 4 ; resto=<question>0</question></li>
+	<li>4/2 = 2 ; resto=<question>0</question></li>
+	<li>2/2 = 1 ; resto=<question>0</question></li>
+	<li>1/2 = 0 ; resto=<question>1</question></li>
+</ul>
+<p>
+	8<sub>10</sub> => 1000<sub>2</sub>
+</p>
+
+<h4 id="decimal_a_octal">Decimal a octal</h4>
+<p><question>Dividimos el número entre 8 sucesivamente. Los restos ordenados a la inversa forman el resultado.</question></p>
+<p>Ej: 34<sub>10</sub> => X<sub>8</sub></p>
+<ul>
+	<li>34/8 = 4 ; resto = <question>2</question></li>
+	<li>4/8 = 0 ; resto = <question>4</question></li>
+</ul>
+<p>
+	34<sub>10</sub> => 42<sub>8</sub>
+</p>
+
+<h4 id="decimal_a_hexadecimal">Decimal a hexadecimal</h4>
+<p>Primero <question>convertimos el número a binario, y de binario a hexadecimal</question>.</p>
+<p>
+	Ej: 183<sub>10</sub> => X<sub>16</sub>
+	<ul>
+		<li>183<sub>10</sub> => X <sub>2</sub></li>
+		<li>X<sub>2</sub> => Y<sub>16</sub></li>
+	</ul>
+	Por tanto
+	<ul>
+		<li>183/2 = 91 ; resto = 1</li>
+		<li>91/2 = 45 ; resto = 1</li>
+		<li>45/2 = 22 ; resto = 1</li>
+		<li>22/2 = 11 ; resto = 0</li>
+		<li>11/2 = 5 ; resto = 1</li>
+		<li>5/2 = 2 ; resto = 1</li>
+		<li>2/2 = 1 ; resto = 0</li>
+		<li>1/2 = 0 ; resto = 1</li>
+	</ul>
+	183<sub>10</sub> => 10110111<sub>2</sub>
+	<p>Para pasar de binario a hexadecimal tenemos que agrupar los número en grupos de 4 y tener en cuenta la tabla de conversión de binario a hexadecimal.</p>
+	<table>
+		<thead>
+			<tr>
+				<th>Binario</th>		
+				<th>Hexadecimal</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>0000</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>0001</td>
+				<td>1</td>
+			</tr>
+
+			<tr>
+				<td>0010</td>
+				<td>2</td>
+			</tr>
+
+			<tr>
+				<td>0011</td>
+				<td>3</td>
+			</tr>
+
+			<tr>
+				<td>0100</td>
+				<td>4</td>
+			</tr>
+
+			<tr>
+				<td>0101</td>
+				<td>5</td>
+			</tr>
+
+			<tr>
+				<td>0110</td>
+				<td>6</td>
+			</tr>
+
+			<tr>
+				<td>0111</td>
+				<td>7</td>
+			</tr>
+
+			<tr>
+				<td>1000</td>
+				<td>8</td>
+			</tr>
+
+			<tr>
+				<td>1001</td>
+				<td>9</td>
+			</tr>
+
+			<tr>
+				<td>1010</td>
+				<td>A</td>
+			</tr>
+
+			<tr>
+				<td>1011</td>
+				<td>B</td>
+			</tr>
+
+			<tr>
+				<td>1100</td>
+				<td>C</td>
+			</tr>
+
+			<tr>
+				<td>1101</td>
+				<td>D</td> 
+			</tr>
+
+			<tr>
+				<td>1110</td>
+				<td>E</td> 
+			</tr>
+
+			<tr>
+				<td>1111</td>
+				<td>F</td> 
+			</tr>
+
+		</tbody>
+	</table>
+
+	10110111<sub>2</sub> => X<sub>16</sub>
+	<ul>
+		<li>1011 => B</li>
+		<li>0111 => 7</li>
+	</ul>
+	10110111<sub>2</sub> => B7<sub>16</sub>
+</p>
+
+<h3 id="conversion_de_otros_sistemas_a_decimal">Conversión de otros sistemas numéricos a decimal</h3>
+<h4 id="conversion_de_binario_a_decimal">Conversión de binario a decimal</h4>
+<p>
+	Para convertir de binario a decimal <question>cada dígito es multiplicado por la base 2 elevada a la posición</question> que ocupa.
+</p>
+<p>
+	Ej: 101<sub>2</sub> => X<sub>10</sub>
+	<ul>
+		<li>
+			1 · 2<sup>2</sup> + 0 · 2<sup>1</sup> + 1 · 2<sup>0</sup> = 4 + 0 + 1 = 5
+		</li>
+	</ul>
+</p>
+<p>
+	Ej 2: 11011<sub>2</sub> => X<sub>10</sub>
+	<ul>
+		<li>1·2<sup>4</sup> + 1·2<sup>3</sup> + 0·2<sup>2</sup> + 1·2<sup>1</sup> + 1·2<sup>0</sup> = 16 + 8 + 0 + 2 + 1 = 27 </li>
+	</ul>
+</p>
+
+<h4 id="conversion_de_octal_a_decimal">Conversión de octal a decimal</h4>
+<p>Para convertir de octal a decimal <question>cada dígito es multiplicado por la base 8 elevada a la posición</question> que ocupa.</p>
+<p>
+	Ej: 356<sub>8</sub> => X<sub>10</sub>
+	<ul>
+		<li>3·8<sup>2</sup> + 5·8<sup>1</sup> + 6·8<sup>0</sup> = 192 + 40 + 6 = 238</li>
+	</ul>
+</p>
+
+<h4 id="conversion_de_hexadecimal_a_decimal">Conversión de hexadecimal a decimal</h4>
+<question>Cada digito es multiplicado por la base 16 elevada a la posición</question>.
+<p>
+	Ej: A0D<sub>16</sub> => X<sub>10</sub>
+	<ul>
+		<li>A(10)·16<sup>2</sup> + 0·16<sup>1</sup> + D(13)·16<sup>0</sup> = A·256 + 0 + 13·1 = 2560 + 0 + 13 = 2573</li>
+	</ul>
+</p> 
+
+
+<h3>Características y funciones.</h3>
+
+<h3>Arquitectura de ordenadores</h3>
+
+<h3>Componentes internos de los equipos microinformáticos</h3>
+
+
+
+	<script src="../js/testMode.js"></script>
+	</body>
+
+</html>
