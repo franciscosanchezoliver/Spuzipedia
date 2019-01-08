@@ -14,24 +14,24 @@
 
 	<h1>Arquitecturas de ordenador</h1>
 
-	<h2>Según la estructura</h2>
+	<h2>Según la <question>estructura</question></h2>
 	<p>
 		<ul>
-			<li><question>Arquitectura de Von Neumann</question>: 
+			<li>Arquitectura de <question>Von Neumann</question>: 
 				<ul>
-					<li><question>CPU</question> (<question>Unidad Central de Proceso</question>)</li>
+					<li><question>CPU</question> (Unidad Central de Proceso)</li>
 					<ul>
-						<li><question>ALU</question> (<question>Unidad Aritmético Lógica</question>). Con registros del procesador.</li>
-						<li><question>UC</question>(<question>Unidad de Control</question>). Con <question>registro de instrucciones y contador de programa</question>.</li>
+						<li><question>ALU</question> (Unidad Aritmético Lógica). Con registros del procesador.</li>
+						<li><question>UC</question>(Unidad de Control). Con <question>registro de instrucciones y contador de programa</question>.</li>
 						<li><question>Memoria</question> para <question>guardar datos e instrucciones</question>.</li>
-						<li><question>Mecanismos de entrada y salida</question>.</li>
+						<li>Mecanismos de <question>entrada y salida</question>.</li>
 						<li>
+							Características
 							<ul>
-								Características
-								<ul>
-									<li><question>No puede hacerse a la vez la búsqueda de instrucciones y una operación de datos ya que comparten el mismo bus</question>.</li>
-									<li><question>La unidad de control indica que operación realizar en cada momento (contador de programa)</question>.</li>
-								</ul>
+								<li>
+									La <question>búsqueda de instrucciones</question> y una <question>operación de datos</question> comparten el <question>mismo bus</question> por lo que <question>no pueden hacerse a la vez</question>.
+								</li>
+								<li><question>La unidad de control indica que operación realizar</question> en cada momento (contador de programa).</li>
 							</ul>
 						</li>
 					</ul>
@@ -39,21 +39,21 @@
 				<img src="../imagenes/Arquitecturaneumann.jpg" alt="arquitectura_von_neumann">
 			</li>
 			<li>
-				<question>Arquitectura Hardvard</question>: tiene un <question>conjunto de direcciones y buses separados para instrucciones y datos</question>.
+				Arquitectura <question>Hardvard</question>: tiene un <question>conjunto de direcciones y buses separados para instrucciones y datos</question>.
 			</li>
 		</ul>
 		<p>
-			La arquitectura de Von Neumann es más sencilla la de Hardvard, pero la de Hardvard es más moderna. <question>Ambas son sistemas de programas almacenados</question>, es decir, <question>guardan las instrucciones de programa y los datos en una memoria de lectura y escritura.</question> 
+			La arquitectura de <question>Von Neumann</question> es <question>más sencilla</question> la de <question>Hardvard</question>, pero la de <question>Hardvard</question> es <question>más moderna</question>. Ambas son <question>sistemas de programas almacenados</question>, es decir, <question>guardan las instrucciones de programa y</question> los <question>datos en una memoria de lectura y escritura.</question> 
 		</p>
 	</p>
 
-	<h2>Según el conjunto de instrucciones</h2> 
+	<h2>Según el <question>conjunto de instrucciones</question></h2> 
 	<p>
 		<ul>
 			<li><question>Arquitectura CISC (Complex Instruction Set Computer)</question>.
 				<ul>
 					<li>
-						<question>Microprocesadores con un conjunto de instrucciones amplio</question>.
+						Microprocesadores con un <question>conjunto de instrucciones amplio</question>.
 					</li>
 					<li>
 						Son <question>capaces de realizar operaciones complejas</question>.
@@ -71,8 +71,19 @@
 				Arquitectura RISC (Reduced Instruction Set Computer)
 				<ul>
 					<li>Microprocesadores con <question>instrucciones de tamaño fijo</question>.</li>
-					<li><question>Conjunto de instrucciones reducido</question> que <question>realizan operaciones simples</question>.</li>
-					
+					<li><question>Conjunto de instrucciones reducido</question>.</li>
+					<li>Realizan <question>operaciones simples</question>.</li>
+					<li>A diferencia de CISC solamente las instrucciones de carga y almacenamiento acceden a memoria.</li>
+					<li>Facilitan la segmentación y el paralelismo.</li>
+				</ul>
+			</li>
+
+			<li>
+				Arquitectura SISC (Simple Instruction Set Computer)
+				<ul>
+					<li>Subtipo de RISC.</li>
+					<li>Orientada al procesamiento paralelo.</li>
+					<li>Usa tecnología <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_a_muy_gran_escala" target="_blank">VLSI (Very Large Scale Integration)</a>.</li>
 				</ul>
 			</li>
 		</ul>

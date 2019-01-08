@@ -3,7 +3,7 @@
 
 <head>
 	<title>
-		Representacion de la Información
+		Representacion de la Información y Sistemas Numéricos
 	</title>
 	<style>
 		table, th, td{
@@ -17,15 +17,28 @@
 	<h1>Índice</h1>
 	<ol>
 		<li><a href="#representacion_informacion">Representación de la información.</a></li>
-		<li><a href="#sistemas_numericos">Sistemas numéricos.</a></li>
+		<li>
+			<a href="#sistemas_numericos">Sistemas numéricos.</a>
+			<ol>
+				<li>
+					<a href="#conversion_decimal_a_otros_sistemas">Conversión de decimal a otros sistemas</a> .
+					<ol>
+							<a href="#decimal_a_binario">Decimal a binario.</a>
+							<a href="#decimal_a_octal">Decimal a octal</a>
+							<a href="decimal_a_hexadecimal">Decimal a hexadecimal</a>
+					</ol>
+				</li>
+				<li><a href="#conversion_de_otros_sistemas_a_decimal">Conversión de otros sistemas a decimal</a>.</li>
+			</ol>
+		</li>
 	</ol>
 
-	<h3 id="representacion_informacion">Representación y comunicación de la información: elementos constitutivos de un sistema de información</h3>
+	<h2 id="representacion_informacion"><question>Representación de la información</question></h2>
 	<ul>
-		<li>El bit es la unidad básica de información. Puede tener 2 valores (0 o 1). </li>
-		<li>1 byte = 8 bits (octeto)</li>
-		<li>El bit se representa con una b minúscula y el byte con una mayúscula. 8b = 1B. Por tanto un B es un octeto (8 bits), y por tanto 8Gbits/s equivale a 1GByte/s</li>
-		<li>1 nibble = 4 bits (cuarteto). Se utiliza para el sistema hexadecimal (de 0 a F => 16 valores = 2^4).</li>
+		<li>El <question>bit</question> es la <question>unidad básica de información</question>. Puede tener 2 valores (<question>0 o 1</question>). </li>
+		<li><question>1 byte = 8 bits</question> (<question>octeto</question>)</li>
+		<li>El <question>bit</question> se representa con una <question>b minúscula</question> y el <question>byte</question> con una <question>B mayúscula</question>. 8b = 1B. Por tanto un B es un octeto (8 bits), y por tanto 8Gbits/s equivale a 1GByte/s</li>
+		<li><question>1 nibble = 4 bits</question> (<question>cuarteto</question>). Se utiliza para el sistema hexadecimal (de 0 a F => 16 valores = 2^4).</li>
 		<li> 
 		<div>
 			Bit (b) &lt; Byte (B) &lt; Kilobyte (kB) &lt; Megabyte (MB) &lt; Gigabyte (GB) &lt; Terabyte (TB)  &lt; Petabyte (PB) &lt; Exabyte (EX) &lt; Zettabyte (ZB) &lt; Yottabyte (YB) 
@@ -49,17 +62,17 @@
 				
 				<tbody>
 					<tr>
-						<td>bite</td>
+						<td><question>bite</question></td>
 						<td>b</td>
 						<td>0 o 1</td>
 					</tr>
 					<tr>
-						<td>Byte</td>
+						<td><question>Byte</question></td>
 						<td>B</td>
 						<td>8 bits</td>
 					</tr>
 					<tr>
-						<td>kilobyte</td>
+						<td><question>kilo</question>byte</td>
 						<td>kB (k minúscula)</td>
 						<td>10<sup>3</sup>B = 1.000 bytes</td>
 						
@@ -68,7 +81,7 @@
 						<td>2<sup>10</sup>B</td>
 					</tr>
 					<tr>
-						<td>Megabyte</td>
+						<td><question>Mega</question>byte</td>
 						<td>MB</td>
 						<td>10<sup>6</sup>B = 1.000.000 bytes</td>
 						
@@ -77,7 +90,7 @@
 						<td>2<sup>20</sup>B</td>
 					</tr>
 					<tr>
-						<td>Gigabyte</td>
+						<td><question>Giga</question>byte</td>
 						<td>GB</td>
 						<td>10<sup>9</sup>B = 1.000.000.000 bytes</td>
 
@@ -85,9 +98,8 @@
 						<td>GiB</td>
 						<td>2<sup>30</sup>B</td>
 					</tr>
-
 					<tr>
-						<td>Terabyte</td>
+						<td><question>Tera</question>byte</td>
 						<td>TB</td>
 						<td>10<sup>12</sup>B = 1.000.000.000.000 bytes</td>
 
@@ -95,9 +107,8 @@
 						<td>TiB</td>
 						<td>2<sup>40</sup>B</td>
 					</tr>
-
 					<tr>
-						<td>Petabyte</td>
+						<td><question>Peta</question>byte</td>
 						<td>PB</td>
 						<td>10<sup>15</sup>B</td>
 
@@ -105,9 +116,8 @@
 						<td>PiB</td>
 						<td>2<sup>50</sup>B</td>
 					</tr>
-
 					<tr>
-						<td>Exabyte</td>
+						<td><question>Exa</question>byte</td>
 						<td>EB</td>
 						<td>10<sup>18</sup>B</td>
 
@@ -115,9 +125,8 @@
 						<td>EiB</td>
 						<td>2<sup>60</sup>B</td>
 					</tr>
-
 					<tr>
-						<td>Zettabyte</td>
+						<td><question>Zetta</question>byte</td>
 						<td>ZB</td>
 						<td>10<sup>21</sup>B</td>
 
@@ -125,9 +134,8 @@
 						<td>ZiB</td>
 						<td>2<sup>70</sup>B</td>
 					</tr>
-
 					<tr>
-						<td>Yottabyte</td>
+						<td><question>Yotta</question>byte</td>
 						<td>YB</td>
 						<td>10<sup>24</sup>B</td>
 
@@ -135,7 +143,6 @@
 						<td>YiB</td>
 						<td>2<sup>80</sup>B</td>
 					</tr>
-
 					
 				</tbody>
 
@@ -144,7 +151,7 @@
 	</li>
 </ul>
 
-<h3 id="sistemas_numericos">Sistemas numéricos</h3>
+<h2 id="sistemas_numericos"><question>Sistemas numéricos</question></h2>
 <ul>
 	<li><question>Binario</question>: base 2. Utiliza el 0 y el 1. </li>
 	<li><question>Octal</question>: base 8. Del 0 al 7.</li>
@@ -152,21 +159,21 @@
 	<li><question>Hexadecimal</question>: base 16. Del 0 al 9 y de la A a la F.</li>
 </ul>
 
-<h3>Conversión de decimal a otros sistemas</h3>
-<h4 id="decimal_a_binario">Decimal a binario</h4>
+<h3 id="conversion_decimal_a_otros_sistemas">Conversión <question>de decimal a otros</question> sistemas</h3>
+<h4 id="decimal_a_binario"><question>Decimal a binario</question></h4>
 <p><question>Dividimos el número entre 2 sucesivamente. Los restos ordenados a la inversa forman el resultado.</question></p>
 <p>Ej: 8<sub>10</sub> => X<sub>2</sub></p>
 <ul>
-	<li>8/2 = 4 ; resto=<question>0</question></li>
-	<li>4/2 = 2 ; resto=<question>0</question></li>
-	<li>2/2 = 1 ; resto=<question>0</question></li>
-	<li>1/2 = 0 ; resto=<question>1</question></li>
+	<li>8/2 = 4 ; resto=0</li>
+	<li>4/2 = 2 ; resto=0</li>
+	<li>2/2 = 1 ; resto=0</li>
+	<li>1/2 = 0 ; resto=1</li>
 </ul>
 <p>
 	8<sub>10</sub> => 1000<sub>2</sub>
 </p>
 
-<h4 id="decimal_a_octal">Decimal a octal</h4>
+<h4 id="decimal_a_octal"><question>Decimal a octal</question></h4>
 <p><question>Dividimos el número entre 8 sucesivamente. Los restos ordenados a la inversa forman el resultado.</question></p>
 <p>Ej: 34<sub>10</sub> => X<sub>8</sub></p>
 <ul>
@@ -177,7 +184,7 @@
 	34<sub>10</sub> => 42<sub>8</sub>
 </p>
 
-<h4 id="decimal_a_hexadecimal">Decimal a hexadecimal</h4>
+<h4 id="decimal_a_hexadecimal"><question>Decimal a hexadecimal</question></h4>
 <p>Primero <question>convertimos el número a binario, y de binario a hexadecimal</question>.</p>
 <p>
 	Ej: 183<sub>10</sub> => X<sub>16</sub>
@@ -203,86 +210,64 @@
 			<tr>
 				<th>Binario</th>		
 				<th>Hexadecimal</th>
+				<th>Binario</th>		
+				<th>Hexadecimal</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<td>0000</td>
 				<td>0</td>
+				<td>1000</td>
+				<td>8</td>
 			</tr>
 			<tr>
 				<td>0001</td>
 				<td>1</td>
-			</tr>
-
-			<tr>
-				<td>0010</td>
-				<td>2</td>
-			</tr>
-
-			<tr>
-				<td>0011</td>
-				<td>3</td>
-			</tr>
-
-			<tr>
-				<td>0100</td>
-				<td>4</td>
-			</tr>
-
-			<tr>
-				<td>0101</td>
-				<td>5</td>
-			</tr>
-
-			<tr>
-				<td>0110</td>
-				<td>6</td>
-			</tr>
-
-			<tr>
-				<td>0111</td>
-				<td>7</td>
-			</tr>
-
-			<tr>
-				<td>1000</td>
-				<td>8</td>
-			</tr>
-
-			<tr>
 				<td>1001</td>
 				<td>9</td>
 			</tr>
 
 			<tr>
+				<td>0010</td>
+				<td>2</td>
 				<td>1010</td>
 				<td>A</td>
 			</tr>
 
 			<tr>
+				<td>0011</td>
+				<td>3</td>
 				<td>1011</td>
-				<td>B</td>
+				<td>B</td>			
 			</tr>
 
 			<tr>
+				<td>0100</td>
+				<td>4</td>
 				<td>1100</td>
 				<td>C</td>
 			</tr>
 
 			<tr>
+				<td>0101</td>
+				<td>5</td>
 				<td>1101</td>
-				<td>D</td> 
+				<td>D</td>
 			</tr>
 
 			<tr>
+				<td>0110</td>
+				<td>6</td>
 				<td>1110</td>
-				<td>E</td> 
+				<td>E</td>
 			</tr>
 
 			<tr>
+				<td>0111</td>
+				<td>7</td>
 				<td>1111</td>
-				<td>F</td> 
+				<td>F</td>
 			</tr>
 
 		</tbody>
@@ -296,8 +281,8 @@
 	10110111<sub>2</sub> => B7<sub>16</sub>
 </p>
 
-<h3 id="conversion_de_otros_sistemas_a_decimal">Conversión de otros sistemas numéricos a decimal</h3>
-<h4 id="conversion_de_binario_a_decimal">Conversión de binario a decimal</h4>
+<h3 id="conversion_de_otros_sistemas_a_decimal">Conversión <question>de otros sistemas a decimal</question></h3>
+<h4 id="conversion_de_binario_a_decimal">Conversión <question>de binario a decimal</question></h4>
 <p>
 	Para convertir de binario a decimal <question>cada dígito es multiplicado por la base 2 elevada a la posición</question> que ocupa.
 </p>
@@ -316,7 +301,7 @@
 	</ul>
 </p>
 
-<h4 id="conversion_de_octal_a_decimal">Conversión de octal a decimal</h4>
+<h4 id="conversion_de_octal_a_decimal">Conversión de <question>octal a decimal</question></h4>
 <p>Para convertir de octal a decimal <question>cada dígito es multiplicado por la base 8 elevada a la posición</question> que ocupa.</p>
 <p>
 	Ej: 356<sub>8</sub> => X<sub>10</sub>
@@ -325,7 +310,7 @@
 	</ul>
 </p>
 
-<h4 id="conversion_de_hexadecimal_a_decimal">Conversión de hexadecimal a decimal</h4>
+<h4 id="conversion_de_hexadecimal_a_decimal">Conversión de <question>hexadecimal a decimal</question></h4>
 <question>Cada digito es multiplicado por la base 16 elevada a la posición</question>.
 <p>
 	Ej: A0D<sub>16</sub> => X<sub>10</sub>
@@ -333,15 +318,6 @@
 		<li>A(10)·16<sup>2</sup> + 0·16<sup>1</sup> + D(13)·16<sup>0</sup> = A·256 + 0 + 13·1 = 2560 + 0 + 13 = 2573</li>
 	</ul>
 </p> 
-
-
-<h3>Características y funciones.</h3>
-
-<h3>Arquitectura de ordenadores</h3>
-
-<h3>Componentes internos de los equipos microinformáticos</h3>
-
-
 
 	<script src="../js/testMode.js"></script>
 	</body>
