@@ -15,81 +15,106 @@
 	<h1>Arquitecturas de ordenador</h1>
 
 	<h2>Según la <question>estructura</question></h2>
-	<p>
-		<ul>
-			<li>Arquitectura de <question>Von Neumann</question>: 
+	<ul>
+		<li>Arquitectura de <question>Von Neumann</question>: 
+			<ul>
+				<li><question>CPU</question> (Unidad Central de Proceso)</li>
 				<ul>
-					<li><question>CPU</question> (Unidad Central de Proceso)</li>
-					<ul>
-						<li><question>ALU</question> (Unidad Aritmético Lógica). Con registros del procesador.</li>
-						<li><question>UC</question>(Unidad de Control). Con <question>registro de instrucciones y contador de programa</question>.</li>
-						<li><question>Memoria</question> para <question>guardar datos e instrucciones</question>.</li>
-						<li>Mecanismos de <question>entrada y salida</question>.</li>
-						<li>
-							Características
-							<ul>
-								<li>
-									La <question>búsqueda de instrucciones</question> y una <question>operación de datos</question> comparten el <question>mismo bus</question> por lo que <question>no pueden hacerse a la vez</question>.
-								</li>
-								<li><question>La unidad de control indica que operación realizar</question> en cada momento (contador de programa).</li>
-							</ul>
-						</li>
-					</ul>
+					<li><question>ALU</question> (Unidad Aritmético Lógica). Con registros del procesador.</li>
+					<li><question>UC</question>(Unidad de Control). Con <question>registro de instrucciones y contador de programa</question>.</li>
+					<li><question>Memoria</question> para <question>guardar datos e instrucciones</question>.</li>
+					<li>Mecanismos de <question>entrada y salida</question>.</li>
+					<li>
+						Características
+						<ul>
+							<li>
+								La <question>búsqueda de instrucciones</question> y una <question>operación de datos</question> comparten el <question>mismo bus</question> por lo que <question>no pueden hacerse a la vez</question>.
+							</li>
+							<li><question>La unidad de control indica que operación realizar</question> en cada momento (contador de programa).</li>
+						</ul>
+					</li>
 				</ul>
-				<img src="../imagenes/Arquitecturaneumann.jpg" alt="arquitectura_von_neumann">
-			</li>
-			<li>
-				Arquitectura <question>Hardvard</question>: tiene un <question>conjunto de direcciones y buses separados para instrucciones y datos</question>.
-			</li>
-		</ul>
-		<p>
-			La arquitectura de <question>Von Neumann</question> es <question>más sencilla</question> la de <question>Hardvard</question>, pero la de <question>Hardvard</question> es <question>más moderna</question>. Ambas son <question>sistemas de programas almacenados</question>, es decir, <question>guardan las instrucciones de programa y</question> los <question>datos en una memoria de lectura y escritura.</question> 
-		</p>
+			</ul>
+			<img src="../imagenes/Arquitecturaneumann.jpg" alt="arquitectura_von_neumann">
+		</li>
+		<li>
+			Arquitectura <question>Hardvard</question>: tiene un <question>conjunto de direcciones y buses separados para instrucciones y datos</question>.
+		</li>
+	</ul>
+	<p>
+		La arquitectura de <question>Von Neumann</question> es <question>más sencilla</question> la de <question>Hardvard</question>, pero la de <question>Hardvard</question> es <question>más moderna</question>. Ambas son <question>sistemas de programas almacenados</question>, es decir, <question>guardan las instrucciones de programa y</question> los <question>datos en una memoria de lectura y escritura.</question> 
 	</p>
 
 	<h2>Según el <question>conjunto de instrucciones</question></h2> 
+	<ul>
+		<li>Arquitectura <question>CISC</question> (<question>Complex Instruction Set Computer</question>).
+			<ul>
+				<li>
+					Microprocesadores con un <question>conjunto de instrucciones amplio</question>.
+				</li>
+				<li>
+					Son <question>capaces de realizar operaciones complejas</question>.
+				</li>
+				<li>
+					<question>Los operandos de estas operaciones pueden estar en memoria o en registros internos</question>. 
+				</li>
+				<li>
+					Son <question>anteriores a los RISC</question>.
+				</li>
+			</ul>
+		</li>
+
+		<li>
+			Arquitectura <question>RISC</question> (<question>Reduced Instruction Set Computer</question>)
+			<ul>
+				<li>Microprocesadores con <question>instrucciones de tamaño fijo</question>.</li>
+				<li><question>Conjunto de instrucciones reducido</question>.</li>
+				<li>Realizan <question>operaciones simples</question>.</li>
+				<li>A diferencia de CISC <question>solo las instrucciones de carga y almacenamiento acceden a memoria</question>.</li>
+				<li><question>Facilitan</question> la <question>segmentación</question> <question>y</question> el <question>paralelismo</question>.</li>
+			</ul>
+		</li>
+
+		<li>
+			Arquitectura <question>SISC</question> (<question>Simple Instruction Set Computer</question>)
+			<ul>
+				<li><question>Subtipo de RISC</question>.</li>
+				<li><question>Orientada al procesamiento paralelo</question>.</li>
+				<li>Usa tecnología <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_a_muy_gran_escala" target="_blank">VLSI (Very Large Scale Integration)</a>.</li>
+			</ul>
+		</li>
+	</ul>
+
+	<h2>Según el <question>número de núcleos</question></h2>
+	<ul>
+		<li><question>Un núcleo</question>: el microprocesador tiene <question>1 CPU</question></li>
+		<li><question>Varios núcleos</question>: hay <question>varias CPU que leen y ejecutan instrucciones a la vez</question>. Esto aumenta la velocidad de las aplicaciones que estén adaptadas al procesamiento paralelo.</li>
+	</ul>
+
+	<h3 id="algoritmos_de_planificacion"><question>Algoritmos de Planificación</question></h3>
 	<p>
-		<ul>
-			<li><question>Arquitectura CISC (Complex Instruction Set Computer)</question>.
-				<ul>
-					<li>
-						Microprocesadores con un <question>conjunto de instrucciones amplio</question>.
-					</li>
-					<li>
-						Son <question>capaces de realizar operaciones complejas</question>.
-					</li>
-					<li>
-						<question>Los operandos de estas operaciones pueden estar en memoria o en registros internos</question>. 
-					</li>
-					<li>
-						Son <question>anteriores a los RISC</question>.
-					</li>
-				</ul>
-			</li>
-
-			<li>
-				Arquitectura RISC (Reduced Instruction Set Computer)
-				<ul>
-					<li>Microprocesadores con <question>instrucciones de tamaño fijo</question>.</li>
-					<li><question>Conjunto de instrucciones reducido</question>.</li>
-					<li>Realizan <question>operaciones simples</question>.</li>
-					<li>A diferencia de CISC solamente las instrucciones de carga y almacenamiento acceden a memoria.</li>
-					<li>Facilitan la segmentación y el paralelismo.</li>
-				</ul>
-			</li>
-
-			<li>
-				Arquitectura SISC (Simple Instruction Set Computer)
-				<ul>
-					<li>Subtipo de RISC.</li>
-					<li>Orientada al procesamiento paralelo.</li>
-					<li>Usa tecnología <a href="https://es.wikipedia.org/wiki/Integraci%C3%B3n_a_muy_gran_escala" target="_blank">VLSI (Very Large Scale Integration)</a>.</li>
-				</ul>
-			</li>
-		</ul>
+		Contolan <question>qué procesos se tienen que ejecutar en el procesador</question> en cada momento <question>y el orden</question>. Evitan que un proceso acapare todo el tiempo del procesador.
 	</p>
+	<ul>
+		Los <question>3 estados</question> que puede tener un <question>proceso</question> son:
+		<li><question>Listo</question>.</li>
+		<li><question>Bloqueado</question>.</li>
+		<li><question>En ejecución</question>.</li>
+	</ul>
 
+	<ul>
+		<li>
+			FIFO o (First In First Out): se encolan los procesos por orden de llegada. El primero en llegar es ejecutado, cuando este termina pasa el siguiente en la lista.
+		</li>
+		<li>
+			Round Robin:
+			<ul>
+				<li>
 
+				</li>
+			</ul>
+		</li>
+	</ul>
 
 	<script src="../js/testMode.js"></script>
 </body>
