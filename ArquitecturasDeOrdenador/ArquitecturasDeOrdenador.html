@@ -10,10 +10,25 @@
 <body>
 	<h1>Índice</h1>
 	<ol>
+		<li>
+			<a href="#arquitecturas_de_ordenador">Arquitecturas de ordenador</a>
+			<ul>
+				<li>
+					<a href="#clasificacion">Clasificación</a>
+					<ul>
+						<li><a href="#clasificacion_segun_estructura">Estructura.</a></li>
+						<li><a href="#clasificacion_segun_conjunto_de_instrucciones">Conjunto de instrucciones.</a></li>
+						<li><a href="#clasificacion_segun_numero_nucleos">Número de núcleos.</a></li>
+					</ul>
+				</li>
+				<li><a href="#algoritmos_de_planificacion">Algoritmos de planificación.</a></li>
+			</ul>
+		</li>
+
 	</ol>
 
-	<h1>Arquitecturas de ordenador</h1>
-	<h2>Clasificación</h2>
+	<h1 id="arquitecturas_de_ordenador">Arquitecturas de ordenador</h1>
+	<h2 id="clasificacion">Clasificación</h2>
 	<pre style="border: none;">
                    -- Von Neumann
  --  estructura --|
@@ -25,7 +40,7 @@
  -- número de núcleos --|
                          -- +1</pre>
 
-	<h2>Según la <question>estructura</question></h2>
+	<h2 id="clasificacion_segun_estructura">Según la <question>estructura</question></h2>
 	<ul>
 		<li>Arquitectura de <question>Von Neumann</question>: 
 			<ul>
@@ -56,7 +71,7 @@
 		La arquitectura de <question>Von Neumann</question> es <question>más sencilla</question> la de <question>Hardvard</question>, pero la de <question>Hardvard</question> es <question>más moderna</question>. Ambas son <question>sistemas de programas almacenados</question>, es decir, <question>guardan las instrucciones de programa y</question> los <question>datos en una memoria de lectura y escritura.</question> 
 	</p>
 
-	<h2>Según el <question>conjunto de instrucciones</question></h2> 
+	<h2 id="clasificacion_segun_conjunto_de_instrucciones">Según el <question>conjunto de instrucciones</question></h2> 
 	<ul>
 		<li>Arquitectura <question>CISC</question> (<question>Complex Instruction Set Computer</question>).
 			<ul>
@@ -96,13 +111,18 @@
 		</li>
 	</ul>
 
-	<h2>Según el <question>número de núcleos</question></h2>
+	<h2 id="clasificacion_segun_numero_nucleos">Según el <question>número de núcleos</question></h2>
 	<ul>
 		<li><question>Un núcleo</question>: el microprocesador tiene <question>1 CPU</question></li>
 		<li><question>Varios núcleos</question>: hay <question>varias CPU que leen y ejecutan instrucciones a la vez</question>. Esto aumenta la velocidad de las aplicaciones que estén adaptadas al procesamiento paralelo.</li>
 	</ul>
 
 	<h3 id="algoritmos_de_planificacion"><question>Algoritmos de Planificación</question></h3>
+	<pre style="border:none">
+  -- FIFO
+ |-- Roun Robin
+ |-- SJF
+  -- SRTF</pre>
 	<p>
 		Contolan <question>qué procesos se tienen que ejecutar en el procesador</question> en cada momento <question>y el orden</question>. Evitan que un proceso acapare todo el tiempo del procesador.
 	</p>
