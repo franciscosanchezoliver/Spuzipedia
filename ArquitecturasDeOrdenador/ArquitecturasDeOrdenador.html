@@ -13,6 +13,17 @@
 	</ol>
 
 	<h1>Arquitecturas de ordenador</h1>
+	<h2>Clasificación</h2>
+	<pre style="border: none;">
+                   -- Von Neumann
+ --  estructura --|
+|                  -- Hardvard  
+|                             -- CISC
+|-- conjunto instrucciones --|-- RISC
+|                             -- SISC
+|                        -- 1
+ -- número de núcleos --|
+                         -- +1</pre>
 
 	<h2>Según la <question>estructura</question></h2>
 	<ul>
@@ -95,26 +106,39 @@
 	<p>
 		Contolan <question>qué procesos se tienen que ejecutar en el procesador</question> en cada momento <question>y el orden</question>. Evitan que un proceso acapare todo el tiempo del procesador.
 	</p>
-	<ul>
+
+	<p>
 		Los <question>3 estados</question> que puede tener un <question>proceso</question> son:
-		<li><question>Listo</question>.</li>
-		<li><question>Bloqueado</question>.</li>
-		<li><question>En ejecución</question>.</li>
-	</ul>
+		<ul>
+			<li><question>Listo</question>.</li>
+			<li><question>Bloqueado</question>.</li>
+			<li><question>En ejecución</question>.</li>
+		</ul>
+	</p>
 
-	<ul>
-		<li>
-			FIFO o (First In First Out): se encolan los procesos por orden de llegada. El primero en llegar es ejecutado, cuando este termina pasa el siguiente en la lista.
-		</li>
-		<li>
-			Round Robin:
-			<ul>
-				<li>
+	<p>
+		Algoritmos de planificación:
+		<ul>
+			<li>
+				<question>FIFO</question> o (First In First Out): se <question>encolan los procesos por orden de llegada</question>. El primero en llegar es ejecutado, cuando este termina pasa el siguiente en la lista.
+			</li>
+			<li>
+				<question>Round Robin</question>:
+				<ul>
+					<li><question>Usa "time-slices"</question> o "quantums". <question>Intervalos de tiempo asignados a cada proceso</question>.</li>
+					<li>Cuando un proceso termina con su tiempo, le toca al siguiente proceso en la lista, y este volvería la cola a esperar a que le toque otra vez el "quantum".</li>
+					<li><question>Selfish Round Robin</question>: se usan <question>2 colas</question>, una para los <question>procesos nuevos</question> y otra para los <question>procesos antiguos</question>. Se da prioridad a los antiguos.</li>
+				</ul>
+			</li>
+			<li>
+				<question>SJF</question> (<question>Shortest Job First</question>): el <question>proceso más corto se ejecuta primero</question>. La desventaja es que los procesos largos pueden quedarse en la cola para siempre si siguen llegando procesos cortos.
+			</li>
+			<li>
+				<question>SRTF</question> (<question>Short Remaining Time First</question>): tiene prioridad al <question>proceso que le quede menos tiempo de ejecución</question>, este será el que coja el procesador. Es decir, si mientras se ejecuta un proceso había otro proceso que estaba en estado bloqueado (por ejemplo esperando que se liberase un recurso) y ahora está en estado "listo" y le queda menos tiempo de ejecución entonces este cogerá el procesador.
+			</li>
+		</ul>
+	</p>
 
-				</li>
-			</ul>
-		</li>
-	</ul>
 
 	<script src="../js/testMode.js"></script>
 </body>
