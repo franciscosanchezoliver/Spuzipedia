@@ -161,29 +161,58 @@
 	</p>
 
 	<h2 id="componentes_internos">Componentes internos</h2>
-	<p>
-		Los componentes internos básicos de un ordenador son:
-		<ul>
-			<li>
-				Disco duro
-				<ul>
-					<li>Alacena datos.</li>
-					<li>Usa un sistema de grabación magnética.</li>
-					<li>Es memoria no volátil.</li>
-					<li>Hay varios discos que rotan alrededor de un eje, encima de estos platos hay un cabezal que no toca los discos y que se encarga de la lectura y escritura en ellos.
-						<ul>
-							<li><question>Pista</question> (A): cada <question>círculo concéntrico</question>.</li>
-							<li><question>Sector</question> (B): es una <question>porción de cada pista</question>.</li>
-							<li>Sector de una pista (C).</li>
-							<li><question>Cluster</question> (D): <question>conjunto de sectores</question>.</li>
-						</ul>
-					</li>
-					<img src="../imagenes/estructura-disco-duro.svg" width ="300px" height="300px" alt="estructura-disco-duro">
-					<li>Tiempo medio: lo que tarda la abuja en ponerse en la pista y en el sector deseado. Este tiempo se calcula como la suma de</li>
-				</ul>
-			</li>
-		</ul>
-	</p>
+	<ul>
+		<li>
+			<question>Disco duro</question>
+			<ul>
+				<li><question>Almacena datos.</question></li>
+				<li>Usa un sistema de <question>grabación magnética</question>.</li>
+				<li>Es <question>memoria no volátil</question>.</li>
+				<li>Hay varios <question>discos que rotan alrededor de un eje</question>, encima de estos platos hay un <question>cabezal que</question> no toca los discos y que se encarga de la <question>lectura y escritura</question> en ellos.
+					<ul>
+						<li><question>Pista</question> (A): cada <question>círculo concéntrico</question>.</li>
+						<li><question>Sector</question> (B): es una <question>porción de cada pista</question>.</li>
+						<li>Sector de una pista (C).</li>
+						<li><question>Cluster</question> (D): <question>conjunto de sectores</question>.</li>
+					</ul>
+				</li>
+				<img src="../imagenes/estructura-disco-duro.svg" width ="300px" height="300px" alt="estructura-disco-duro">
+
+				<li><question>Tiempo medio de acceso</question>: se calcula como <question>la suma de tiempo medio</question> de <question>búsqueda (situarse en la pista correcta) + latencia media (situarse en el sector correcto) + tiempo lectura/escritura</question>.</li>
+				
+				<li>Discos <question>SSD</question> (<question>Solid State Drive</question>): son <question>más rápido y caros que los mecánicos</question> clásicos.</li>
+			</ul>
+		</li>
+
+		<li>
+			Memoria <question>RAM</question>
+			<ul>
+				<li>Guarda las <question>instrucciones y datos en ejecución</question>.</li>
+				<li><question>Más rápidos</question> pero con <question>menos capacidad</question> <question>que los discos duros</question>.</li>
+				<li><question>Menos velocidad que</question> los <question>registros del procesador</question> y las <question>cachés por niveles</question>.</li>
+				<li>Tipos: SDR SDRAM, RDRAM, DDR SDRAM, DDR2, SDRAM, DDR3 SDRAM, DDR4 SDRAM</li>
+			</ul>
+		</li>
+
+		<li>
+			Microprocesador
+			<ul>
+				<li>Circuito integrado que ejecuta el progarma usando instrucciones de bajo nivel (instrucciones aritméticas y lógicas).</li>
+				<li>Puede tener 1 o varios núcleos.</li>
+				<li>Se conecta con la placa base mediante un "zócalo", y sobre este se pone un disipador de calor, pasta térmica y un ventilador.</li>
+			</ul>
+		</li>
+
+		<li>
+			Placa base
+			<ul>
+				<li>Todos los componentes del ordenador se conectan a este circuito gracias a los zócalos disponibles.</li>
+				<li>Tendría zócalos para poder conectar: tarjetas PCI, memoria RAM, CPU, discos duros (SATA o IDE), dispone de varios puertos (serie, paralelo, PS/2, USB, RJ-45, VGA, jacks)</li>
+				<li>Tiene una memoria CMOS para guardar la fecha, hora, configuración básica y la BIOS.</li>
+			</ul>
+		</li>
+
+	</ul>
 
 	<script src="../js/testMode.js"></script>
 </body>
