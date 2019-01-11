@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Componentes internos
+	</title>
+</head>
+
+<body>
+	<h1>Índice</h1>
+	<ol>
+		<li>
+			<a href="#componentes_internos">Componentes internos.</a>
+			<ul>
+				<li><a href="#disco_duro">Disco duro.</a></li>
+				<li><a href="#ram">RAM.</a></li>
+				<li><a href="#microprocesador">Microprocesador.</a></li>
+				<li><a href="#placa_base">Placa base.</a></li>
+				<li><a href="#tarjeta_expansion">Tarjeta expansión.</a></li>
+				<li>
+					<a href="#memorias">Memorias.</a>
+					<ul>
+						<li><a href="#memorias_no_volatiles">No volátiles</a></li>
+						<li><a href="#memorias_volatiles">Volátiles</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ol>
+
+	<h1 id="componentes_internos">Componentes internos</h1>
+	<pre style ="border:none">
+ |-- Disco duro 
+ |-- RAM                 
+ |-- Microprocesador
+ |-- Placa base
+ |                         -- Gráfica
+ |-- Tarjeta de expansión |-- Sonido
+ |                         -- Red
+ |             -- Volátiles
+ |-- Memorias |
+               -- No volátiles</pre>
+
+	<ul>
+		<li id="disco_duro">
+			<question>Disco duro</question>
+			<ul>
+				<li><question>Almacena datos.</question></li>
+				<li>Usa un sistema de <question>grabación magnética</question>.</li>
+				<li>Es <question>memoria no volátil</question>.</li>
+				<li>Hay varios <question>discos que rotan alrededor de un eje</question>, encima de estos platos hay un <question>cabezal que</question> no toca los discos y que se encarga de la <question>lectura y escritura</question> en ellos.
+					<ul>
+						<li><question>Pista</question> (A): cada <question>círculo concéntrico</question>.</li>
+						<li><question>Sector</question> (B): es una <question>porción de cada pista</question>.</li>
+						<li>Sector de una pista (C).</li>
+						<li><question>Cluster</question> (D): <question>conjunto de sectores</question>.</li>
+					</ul>
+				</li>
+				<img src="../imagenes/estructura-disco-duro.svg" width ="300px" height="300px" alt="estructura-disco-duro">
+
+				<li><question>Tiempo medio de acceso</question>: se calcula como la <question>suma de tiempo</question> medio de <question>búsqueda</question> (situarse en la <question>pista correcta</question>) + <question>latencia</question> media (situarse en el <question>sector correcto</question>) + tiempo <question>lectura/escritura</question>.</li>
+				
+				<li>Discos <question>SSD</question> (<question>Solid State Drive</question>): son <question>más rápido</question> y <question>caros</question> que los <question>mecánicos</question> clásicos.</li>
+			</ul>
+		</li>
+
+		<li id="ram">
+			Memoria <question>RAM</question>
+			<ul>
+				<li>Guarda las <question>instrucciones y datos en ejecución</question>.</li>
+				<li><question>Más rápidos</question> pero con <question>menos capacidad</question> que los <question>discos duros</question>.</li>
+				<li><question>Menos velocidad que</question> los <question>registros del procesador</question> y las <question>cachés por niveles</question>.</li>
+				<li>Tipos: SDR SDRAM, RDRAM, DDR SDRAM, DDR2, SDRAM, DDR3 SDRAM, DDR4 SDRAM</li>
+			</ul>
+		</li>
+
+		<li id="microprocesador">
+			<question>Microprocesador</question>
+			<ul>
+				<li><question>Circuito integrado</question> que <question>ejecuta el progarma</question> usando <question>instrucciones de bajo nivel</question> (instrucciones <question>aritméticas y lógicas</question>).</li>
+				<li>Puede tener <question>1 o + núcleos</question>.</li>
+				<li>Se conecta con la placa base mediante un "zócalo", y sobre este se pone un disipador de calor, pasta térmica y un ventilador.</li>
+			</ul>
+		</li>
+
+		<li id="placa_base">
+			<question>Placa base</question>
+			<ul>
+				<li>Todos los <question>componentes del ordenador se conectan a este circuito</question> gracias a los <question>zócalos disponibles</question>.</li>
+				<li>Tiene una <question>memoria CMOS</question> para <question>guardar</question> la <question>fecha</question>, <question>hora</question>, <question>configuración básica</question> y la <question>BIOS</question>.</li>
+				<li>Tendría zócalos para poder conectar: tarjetas PCI, memoria RAM, CPU, discos duros (SATA o IDE), dispone de varios puertos (serie, paralelo, PS/2, USB, RJ-45, VGA, jacks)</li>
+			</ul>
+		</li>
+
+		<li id="tarjeta_expansion">
+			<question>Tarjetas de expansión</question>
+			<ul>
+				<li>Es cualquier tarjeta que realice una <question>tarea específica</question>.</li>
+				<li>La placa base tendrá alguna ranura para poder conectar la tarjeta de expansión. Normalmente será una <question>ranura PCI</question> (<question>Peripheral Component Interconnect</question>), antiguamente erán ranuras ISA. También existen unas ranuras PCI más rápidas que son las PCI-Express. </li>
+				<li>Las tarjetas de expansión nos permiten <question>aumentar</question> la <question>funcionalidad inicial</question>. Por ejemplo podemos tener una tarjeta gráfica integrada en la placa base pero nosotros podemos ponerle una tarjeta de expansión gráfica para mejorar las capacidades iniciales del ordenador.</li>
+				<ul>
+					<li><question>Tarjeta gráfica</question>
+						<ul>
+							<li>Procesa datos gráficos.</li>
+							<li>A la unidad de procesamiento de la tarjeta gráfica se llama GPU (Graphics Processing Unit).</li>
+							<li>Algunas soportan varios monitores usando varios puertos.</li>
+							<li>
+								Puede ser de dos tipos
+								<ul>
+									<li>Discreta: se inserat en la placa base.</li>
+									<li>Integrada: soldada a la placa base</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>Tarjeta de sonido: tiene puertos de entrada y salida para audio. Normalmente tiene jacks para altavoces/auriculares, micrófono y otros.</li>
+					<li>Tarjeta de red: permite conectar el ordenador a una red Ethernet, o por WIFI</li>
+				</ul>
+			</ul>
+		</li>
+
+		<li>
+			<ul id="memorias">
+				Memorias
+				<li id="memorias_no_volatiles">
+					Memorias no volátiles
+					<ul>
+						<li>No necesitan energía para mantener los datos guardados.</li>
+						<li>Ej: CD, DVD, ROM, NVRAM (non-volatile RAM)</li>
+					</ul>
+				</li>
+		
+				<li>
+					Memorias volátiles
+					<ul id="memorias_volatiles">
+						<li>Pierden la información si se pierde la corriente eléctrica.</li>
+						<li>Capacidad = multiplicar el número de palabras de la memoria por le ancho de cada palabra (cada palabra pueda estar descrita en bits o en bytes)</li>
+						<li>Ej: todos los tipos de memorias RAM (SRAM, DRAM, RDRAM, SDRAM, todas las DDR)</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+
+	<script src="../js/testMode.js"></script>
+</body>
+
+
+</html>
