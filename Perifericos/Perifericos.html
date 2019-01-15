@@ -6,8 +6,13 @@
 		Perifericos
 	</title>
 	<style>
-		table, th, tr {
+		table, th, tr,td {
 			border:solid 1px;
+		}
+
+		.cable-usb{
+			width:80px;
+			height:80px;
 		}
 	</style>
 </head>
@@ -37,17 +42,17 @@
 				<thead>
 					<tr>
 						<th>Versión</th>
-						<th style="font-weight: normal">1.0</th>
-						<th style="font-weight: normal">2.0</th>
-						<th style="font-weight: normal">3.0 (SS, Super Speed)</th>
-						<th style="font-weight: normal">3.1</th>
+						<th style="font-weight: normal"><question>1.0</question></th>
+						<th style="font-weight: normal"><question>2.0</question></th>
+						<th style="font-weight: normal"><question>3.0</question> (<question>SS</question>, Super Speed)</th>
+						<th style="font-weight: normal"><question>3.1</question></th>
 					</tr>
 					<tr>
 						<th>Velocidad</th>
-						<th style="font-weight:normal">1.5-12Mbits&#47s</th>
-						<th style="font-weight:normal">480Mbits&#47s</th>
-						<th style="font-weight:normal">5Gbits&#47s</th>
-						<th style="font-weight:normal">10Gbits&#47s</th>
+						<th style="font-weight:normal"><question>1.5-12</question>Mbits&#47s</th>
+						<th style="font-weight:normal"><question>480</question>Mbits&#47s</th>
+						<th style="font-weight:normal"><question>5Gb</question>its&#47s</th>
+						<th style="font-weight:normal"><question>10G</question>bits&#47s</th>
 					</tr>
 					<tr>
 						<th>Características</th>
@@ -59,11 +64,54 @@
 			</table>
 		</li>
 		<li>
-			Tipos de USB por forma:
+			Tipos de <question>USB por forma</question>:
 			<ul>
-				<li>A: es el USB estándar plano.</li>
-				<li>B: es el USB cuadrado.</li>
-				<li>A y B: tienen 4 pines de voltaje (Voltaje, Data-, Data+ y tierra).</li>
+				<li><question>A</question>: es el <question>USB estándar</question>.
+				</li>
+				<img src="../imagenes/usb-tipo-a.PNG" alt="usb tipo A"  class="cable-usb">
+				<li><question>B</question>: es el USB <question>cuadrado</question>.</li>
+				<img src="../imagenes/usb-tipo-b.PNG" alt="usb tipo B" class="cable-usb">
+				<li>A y B: tienen <question>4 pines de voltaje</question> (Voltaje, Data-, Data+ y tierra).
+					<table>
+						<thead>
+							<tr>
+								<th>Pin</th>
+								<th>Señal</th>
+								<th>Color</th>
+								<th>Descripción</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Vcc</td>
+								<td style ="background-color: red"></td>
+								<td>+5V</td>
+								<td rowspan="4">
+									<img src="../imagenes/pines-usb.png" alt="pines de un usb" style="width: 200px;height: 200px;">
+								</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>D-</td>
+								<td></td>
+								<td>Data-</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>D+</td>
+								<td style="background-color:green"></td>
+								<td>Data+</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>GND</td>
+								<td style="background-color:black"></td>
+								<td>Masa</td>
+							</tr>
+						</tbody>
+					</table>
+				</li>
 			</ul>
 		</li>
 		<li>
@@ -76,8 +124,25 @@
 				<li>Jack</li>
 				<li>SCSI: para discos duros y cintas. (Small Computer System Interface).</li>
 				<li>PS/2: Conector de 6 pines para teclado y ratón. Aunque electrónicamente son similares, pueden no ser intercambiables (verde para el ratón y violeta para teclado).</li>
-				<li>Puerto paralelo: envia varios bits a la vez.</li>
+				<li>Puerto paralelo
+					<ul>
+						<li>Envia varios bits al a vez -> necesita varias líneas de datos.</li>
+						<li>Utlizado para las impresoras hasta que llego el USB.</li>
+					</ul>
+				</li>
+				<li><question>Puerto serie</question>: transmite <question>un bit a la vez</question>.</li>
+				<li>Thunderbolt
+					<ul>
+						<li>Creado por Apple.</li>
+						<li>Thunderbolt1 : 10 Gbit&#47s </li>
+						<li>Thunderbolt2 : 20 Gbit&#47s </li>
+						<li>Thunderbolt2 : 40 Gbit&#47s </li>
+					</ul>
+				</li>
 			</ul>
+		</li>
+		<li>
+			Tipos de teclado
 		</li>
 	</ul>
 
