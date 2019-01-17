@@ -27,124 +27,147 @@
 	</ol>
 
 	<h1 id="perifericos">Perifericos</h1>
-	<ul>
-		<li><question>Puertos</question>: <question>interfaz</question> entre un <question>ordenador</question> y otros <question>ordenadores</question> <question>o</question> <question>periféricos</question>.</li>
-		<li><question>Periférico</question>: <question>dispositivo</question> que se <question>conecta al ordenador a través de un puerto</question> y <question>hace algo</question>. </li>
+	<ul>	
+		<li>
+			<question>Puertos</question>: <question>interfaz</question> entre un <question>ordenador</question> y otros <question>ordenadores</question> <question>o</question> <question>periféricos</question>.
+		</li>
+		<li>
+			<question>Periférico</question>: <question>dispositivo</question> que se <question>conecta al ordenador a través de un puerto</question> y <question>hace algo</question>. 
+		</li>
 		<li><question>2 tipos</question>
 			<ul>
 				<li><question>Entrada</question>: teclado, ratón, escáner, lector de huellas, etc.</li>
 				<li><question>Salida</question>: pantalla, altavoz, impresora.</li>
 			</ul>
 		</li>
-		<li>
-			Tipos de <question>USB</question>
-			<table style>
+	</ul>
+
+	<h2>USB (Universal Serial Bus)</h2>
+	<h3><question>Tipos</question> de <question>USB</question></h3>
+	<table style>
+		<thead>
+			<tr>
+				<th>Versión</th>
+				<th style="font-weight: normal"><question>1.0</question></th>
+				<th style="font-weight: normal"><question>2.0</question></th>
+				<th style="font-weight: normal"><question>3.0</question> (<question>SS</question>, Super Speed)</th>
+				<th style="font-weight: normal"><question>3.1</question></th>
+			</tr>
+			<tr>
+				<th>Velocidad</th>
+				<th style="font-weight:normal"><question>1.5-12</question>Mbits&#47s</th>
+				<th style="font-weight:normal"><question>480</question>Mbits&#47s</th>
+				<th style="font-weight:normal"><question>5Gb</question>its&#47s</th>
+				<th style="font-weight:normal"><question>10Gb</question>its&#47s</th>
+			</tr>
+			<tr>
+				<th>Características</th>
+				<th></th>
+				<th></th>
+				<th style="font-weight:normal">Conector azul</th>
+			</tr>
+		</thead>
+	</table>
+
+	<h3>USB <question>por forma</question></h3>
+	<ul>
+		<li><question>A</question>: es el <question>USB estándar</question>.
+		</li>
+		<img src="../imagenes/usb-tipo-a.PNG" alt="usb tipo A"  class="cable-usb">
+		<li><question>B</question>: es el USB <question>cuadrado</question>.</li>
+		<img src="../imagenes/usb-tipo-b.PNG" alt="usb tipo B" class="cable-usb">
+		<li>A y B: tienen <question>4 pines de voltaje</question> (Voltaje, Data-, Data+ y tierra).
+			<table>
 				<thead>
 					<tr>
-						<th>Versión</th>
-						<th style="font-weight: normal"><question>1.0</question></th>
-						<th style="font-weight: normal"><question>2.0</question></th>
-						<th style="font-weight: normal"><question>3.0</question> (<question>SS</question>, Super Speed)</th>
-						<th style="font-weight: normal"><question>3.1</question></th>
-					</tr>
-					<tr>
-						<th>Velocidad</th>
-						<th style="font-weight:normal"><question>1.5-12</question>Mbits&#47s</th>
-						<th style="font-weight:normal"><question>480</question>Mbits&#47s</th>
-						<th style="font-weight:normal"><question>5Gb</question>its&#47s</th>
-						<th style="font-weight:normal"><question>10G</question>bits&#47s</th>
-					</tr>
-					<tr>
-						<th>Características</th>
-						<th></th>
-						<th></th>
-						<th style="font-weight:normal">Conector azul</th>
+						<th>Pin</th>
+						<th>Señal</th>
+						<th>Color</th>
+						<th>Descripción</th>
 					</tr>
 				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Vcc</td>
+						<td style ="background-color: red"></td>
+						<td>+5V</td>
+						<td rowspan="4">
+							<img src="../imagenes/pines-usb.png" alt="pines de un usb" style="width: 200px;height: 200px;">
+						</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>D-</td>
+						<td></td>
+						<td>Data-</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>D+</td>
+						<td style="background-color:green"></td>
+						<td>Data+</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>GND</td>
+						<td style="background-color:black"></td>
+						<td>Masa</td>
+					</tr>
+				</tbody>
 			</table>
 		</li>
+	</ul>
+
+	<h3>Otros puertos</h3>
+	<ul>
 		<li>
-			Tipos de <question>USB por forma</question>:
+			<question>eSata</question>: External Satades de <question>discos duros externos</question>.
+		</li>
+		<img width="150px" src="../imagenes/esata.png" alt="External Sata">
+		<li><question>Ethernet</question>.</li>
+		<img src="../imagenes/ethernet.png" width="150px" alt="ethernet">
+		<li><question>Firewire</question>: diseñado <question>por apple</question>.</li>
+		<li>
+			Para <question>pantallas</question>:
 			<ul>
-				<li><question>A</question>: es el <question>USB estándar</question>.
-				</li>
-				<img src="../imagenes/usb-tipo-a.PNG" alt="usb tipo A"  class="cable-usb">
-				<li><question>B</question>: es el USB <question>cuadrado</question>.</li>
-				<img src="../imagenes/usb-tipo-b.PNG" alt="usb tipo B" class="cable-usb">
-				<li>A y B: tienen <question>4 pines de voltaje</question> (Voltaje, Data-, Data+ y tierra).
-					<table>
-						<thead>
-							<tr>
-								<th>Pin</th>
-								<th>Señal</th>
-								<th>Color</th>
-								<th>Descripción</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>1</td>
-								<td>Vcc</td>
-								<td style ="background-color: red"></td>
-								<td>+5V</td>
-								<td rowspan="4">
-									<img src="../imagenes/pines-usb.png" alt="pines de un usb" style="width: 200px;height: 200px;">
-								</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>D-</td>
-								<td></td>
-								<td>Data-</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>D+</td>
-								<td style="background-color:green"></td>
-								<td>Data+</td>
-							</tr>
-							<tr>
-								<td>4</td>
-								<td>GND</td>
-								<td style="background-color:black"></td>
-								<td>Masa</td>
-							</tr>
-						</tbody>
-					</table>
-				</li>
+				<li><question>HDMI</question>. </li>
+				<img src="../imagenes/hdmi.png" alt="hdmi" width="150px">
+				<li><question>DVI</question>: para pantallas LCD.</li>
+				<img src="../imagenes/dvi.png" alt="dvi" width="150px">
+				<li><question>VGA</question>:</li>
+				<img src="../imagenes/vga.png" alt="vga" width="150px">
 			</ul>
 		</li>
-		<li>
-			Otros puertos:
+
+		<li>Jack (conector Audio Analógico): para conectar micrófonos, auriculares, y otros sistemas de señal analógica.</li>
+		<img src="../imagenes/jack.png" alt="jack" width="150px">
+		<li>SCSI: para discos duros y cintas. (Small Computer System Interface).</li>
+		<li>PS/2: Conector de 6 pines para teclado y ratón. Aunque electrónicamente son similares, pueden no ser intercambiables (verde para el ratón y violeta para teclado).</li>
+		<li>Puerto paralelo
 			<ul>
-				<li>eSata: External Sata.</li>
-				<li>Ethernet.</li>
-				<li>Firewire: diseño por apple.</li>
-				<li>HDMI/DVI/VGA.</li>
-				<li>Jack</li>
-				<li>SCSI: para discos duros y cintas. (Small Computer System Interface).</li>
-				<li>PS/2: Conector de 6 pines para teclado y ratón. Aunque electrónicamente son similares, pueden no ser intercambiables (verde para el ratón y violeta para teclado).</li>
-				<li>Puerto paralelo
-					<ul>
-						<li>Envia varios bits al a vez -> necesita varias líneas de datos.</li>
-						<li>Utlizado para las impresoras hasta que llego el USB.</li>
-					</ul>
-				</li>
-				<li><question>Puerto serie</question>: transmite <question>un bit a la vez</question>.</li>
-				<li>Thunderbolt
-					<ul>
-						<li>Creado por Apple.</li>
-						<li>Thunderbolt1 : 10 Gbit&#47s </li>
-						<li>Thunderbolt2 : 20 Gbit&#47s </li>
-						<li>Thunderbolt2 : 40 Gbit&#47s </li>
-					</ul>
-				</li>
+				<li>Envia varios bits al a vez -> necesita varias líneas de datos.</li>
+				<li>Utlizado para las impresoras hasta que llego el USB.</li>
 			</ul>
 		</li>
-		<li>
-			Tipos de teclado
+		<li><question>Puerto serie</question>: transmite <question>un bit a la vez</question>.</li>
+		<li>Thunderbolt
+			<ul>
+				<li>Creado por Apple.</li>
+				<li>Thunderbolt1 : 10 Gbit&#47s </li>
+				<li>Thunderbolt2 : 20 Gbit&#47s </li>
+				<li>Thunderbolt2 : 40 Gbit&#47s </li>
+			</ul>
 		</li>
 	</ul>
+
+
+		<li>
+			Tipos de teclado
+			<ul>
+
+			</ul>
+		</li>
 
 	<script src="../js/testMode.js"></script>
 </body>
