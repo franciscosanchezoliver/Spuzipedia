@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		CSS Grid
+	</title>
+
+	<style>
+		.columnaEjemplo1{
+			float:left;
+			width: 50%
+		}
+		/* Clear floats after the columns */
+		.rowEjemplo1:after{
+			content: "";
+			display: table;
+			clear: both;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>CSS Grid</h1>
+	<ul>
+		<li>Grid layout system with row and columns.</li>
+		<li>No need to use floats and positioning.</li>
+	</ul>
+
+	<p>
+		Un <question>layout Grid</question> tiene que tener un padre con el atributo <question>"display" a "grid"</question> o "inline-grid"
+	</p>
+
+
+<div class="rowEjemplo1" style="border: solid 1px;">
+	<div class="columnaEjemplo1" >
+		<!-- Aqui el ejemplo 1-->
+		<pre style="border:none;">
+&lt;div class = &quot;<question>grid-container</question>&quot;&gt;
+	&lt;div class= &quot;<question>grid-item</question>&quot;&gt;1&lt;/div&gt; 
+	&lt;div class= &quot;grid-item&quot;&gt;2&lt;/div&gt; 
+	&lt;div class= &quot;grid-item&quot;&gt;3&lt;/div&gt; 
+	&lt;div class= &quot;grid-item&quot;&gt;4&lt;/div&gt; 
+	&lt;div class= &quot;grid-item&quot;&gt;5&lt;/div&gt; 
+&lt;/div&gt;			
+		</pre>	
+	</div>
+
+	<!-- Aqui el estilo que tiene que tener-->
+	<div class="columnaEjemplo1">
+		<pre style="border:none;">
+.grid-container {
+	<question>display: grid</question>;
+	<question>grid-template-columns</question>: auto auto auto;
+	background-color: #2196F3;
+	padding: 10px;
+	}			
+		</pre>
+	</div>
+</div>
+
+<br>
+Resultado:
+<br>
+<div class ="grid-container" style="display:grid; grid-template-columns: auto auto auto">
+	<div class="grid-item" style="background-color:green">1</div>
+	<div class="grid-item" style="background-color:blue">2</div>
+	<div class="grid-item" style="background-color:black; color:white">3</div>
+	<div class="grid-item" style="background-color:red">4</div>
+	<div class="grid-item" style="background-color:yellow">5</div>
+</div>
+
+
+<script src="../js/testMode.js"></script>
+</body>
+</html>
