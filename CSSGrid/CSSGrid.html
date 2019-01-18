@@ -31,6 +31,7 @@
 		Un <question>layout Grid</question> tiene que tener un padre con el atributo <question>"display" a "grid"</question> o "inline-grid"
 	</p>
 
+	<h2>Display "grid"</h2>
 
 <div class="rowEjemplo1" style="border: solid 1px;">
 	<div class="columnaEjemplo1" >
@@ -42,8 +43,7 @@
 	&lt;div class= &quot;grid-item&quot;&gt;3&lt;/div&gt; 
 	&lt;div class= &quot;grid-item&quot;&gt;4&lt;/div&gt; 
 	&lt;div class= &quot;grid-item&quot;&gt;5&lt;/div&gt; 
-&lt;/div&gt;			
-		</pre>	
+&lt;/div&gt;			</pre>	
 	</div>
 
 	<!-- Aqui el estilo que tiene que tener-->
@@ -52,9 +52,7 @@
 .grid-container {
 	<question>display: grid</question>;
 	<question>grid-template-columns</question>: auto auto auto;
-	background-color: #2196F3;
-	padding: 10px;
-	}			
+}			
 		</pre>
 	</div>
 </div>
@@ -63,12 +61,77 @@
 Resultado:
 <br>
 <div class ="grid-container" style="display:grid; grid-template-columns: auto auto auto">
-	<div class="grid-item" style="background-color:green">1</div>
-	<div class="grid-item" style="background-color:blue">2</div>
-	<div class="grid-item" style="background-color:black; color:white">3</div>
-	<div class="grid-item" style="background-color:red">4</div>
-	<div class="grid-item" style="background-color:yellow">5</div>
+	<div class="grid-item" style="background-color:green; font-size:2em; text-align: center">1</div>
+	<div class="grid-item" style="background-color:blue; font-size:2em; text-align: center">2</div>
+	<div class="grid-item" style="background-color:black; font-size:2em; color:white; text-align: center">3</div>
+	<div class="grid-item" style="background-color:red; font-size:2em; text-align: center">4</div>
+	<div class="grid-item" style="background-color:yellow; font-size:2em; text-align: center">5</div>
 </div>
+
+	<h2>Display "inline-grid"</h2>
+	<p>
+		Para ver la diferencia que hay entre usar "grid" o "display grid". Imaginémos que tenemos cajas de 100px de ancho y de alto, y queremos meter estas cajas en un grid. Si nosotros usamos un "grid" con un template de  columnas ocurrirá los siguiente:
+	</p>
+	<h3>Si usamos display="grid"</h3>
+	<div class="contenedor" style="display:grid; grid-template-columns: auto auto; text-align: center">
+		<div style="font-size: 1em; background-color: blue; width: 100px ; height: 100px;">1</div>
+		<div style="font-size: 1em; background-color: red; width: 100px ; height: 100px;">2</div>
+		<div style="font-size: 1em; background-color: yellow; width: 100px ; height: 100px;">3</div>
+		<div style="font-size: 1em; background-color: green; width: 100px ; height: 100px;">4</div>
+		<div style="font-size: 1em; background-color: brown; width: 100px ; height: 100px;">5</div>
+		<div style="font-size: 1em; background-color: chocolate; width: 100px ; height: 100px;">6</div>
+	</div>
+
+	<p>
+		Como vemos el espacio que no se rellena simplemente sale en blanco. Si nosotros usamos ahora un display "inline-grid"
+	</p>
+
+	<h3>Si usamos display="inline-grid"</h3>
+	<div class="contenedor" style="display:inline-grid; grid-template-columns: auto auto; text-align: center">
+		<div style="font-size: 1em; background-color: blue; width: 100px ; height: 100px;">1</div>
+		<div style="font-size: 1em; background-color: red; width: 100px ; height: 100px;">2</div>
+		<div style="font-size: 1em; background-color: yellow; width: 100px ; height: 100px;">3</div>
+		<div style="font-size: 1em; background-color: green; width: 100px ; height: 100px;">4</div>
+		<div style="font-size: 1em; background-color: brown; width: 100px ; height: 100px;">5</div>
+		<div style="font-size: 1em; background-color: chocolate; width: 100px ; height: 100px;">6</div>
+	</div>
+
+	<p>Entonces el "inline-grid" usa solamente el espacio que necesita para envolver y si hay espacio sobrante lo quita.</p>
+
+	<h2><question>Gap</question> en un Grid</h2>
+	<p>
+		Los gaps son <question>espacios en blanco</question> en el grid, hay 3 tipos:
+		<ul>
+			<li><question>grid-gap</question>: espacio <question>entre columnas y filas</question>.</li>
+			<li>grid-<question>row-gap</question>: espacio <question>entre filas</question>.</li>
+			<li>grid-<question>column-gap</question>: espacio <question>entre columnas</question>.</li>
+		</ul>
+	</p>
+	<p>
+		El "gap" es un espacio que podemos poner para separar entre cajas del grid. En el siguiente ejemplo podemos ver un ejemplo sencillo.
+	</p>
+
+	<pre>
+.contenedor-con-gap{
+	display:grid;
+	<question>grid-gap</question>: 50px;
+}		
+	</pre>
+
+
+	<div style="display:grid; grid-template-columns:auto auto auto;   ; text-align: center; font-size: 2em">
+		<div style="background-color:red">1</div>
+		<div style="background-color:green">2</div>
+		<div style="background-color:blue">3</div>
+		<div style="background-color:pink">4</div>
+		<div style="background-color:salmon">5</div>
+		<div style="background-color:aquamarine">6</div>
+		<div style="background-color:teal">7</div>
+	</div>
+
+
+
+	
 
 
 <script src="../js/testMode.js"></script>
