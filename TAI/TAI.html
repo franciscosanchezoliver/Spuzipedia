@@ -3,206 +3,42 @@
 
 <head>
 	<title>
-		Perifericos
+		TAI
 	</title>
-	<style>
-		table, th, tr,td {
-			border:solid 1px;
-		}
-
-		.cable-usb{
-			width:80px;
-			height:80px;
-		}
-	</style>
 </head>
 
 <body>
 	<h1>Índice</h1>
-	<ol>
-		<li><a href="#perifericos">Perifericos</a></li>
-		<li>
-			<a href="#usb">USB</a>
-			<ul>
-				<li><a href="#tipos_de_usb">Tipos de USB</a></li>
-				<li><a href="#usb_por_forma">USB por forma</a></li>
-			</ul>
-		</li>
-		<li><a href="#otros_puertos">Otros puertos</a> </li>
-		<li><a href="#tipos_de_teclado">Tipos de teclado.</a></li>
 
-		<li>Elementos de impresión.</li>
-		<li>Elementos de almacenamiento.</li>
-		<li>Elementos de visualización.</li>
-		<li>Elementos de digitalización.</li>
-	</ol>
-
-	<h1 id="perifericos">Perifericos</h1>
-	<ul>	
-		<li>
-			<question>Puertos</question>: <question>interfaz</question> entre un <question>ordenador</question> y otros <question>ordenadores</question> <question>o</question> <question>periféricos</question>.
-		</li>
-		<li>
-			<question>Periférico</question>: <question>dispositivo</question> que se <question>conecta al ordenador a través de un puerto</question> y <question>hace algo</question>. 
-		</li>
-		<li><question>2 tipos</question>
-			<ul>
-				<li><question>Entrada</question>: teclado, ratón, escáner, lector de huellas, etc.</li>
-				<li><question>Salida</question>: pantalla, altavoz, impresora.</li>
-			</ul>
-		</li>
-	</ul>
-
-	<h2 id="usb">USB (Universal Serial Bus)</h2>
-	<h3 id="tipos_de_usb"><question>Tipos</question> de <question>USB</question></h3>
-	<table style>
-		<thead>
-			<tr>
-				<th>Versión</th>
-				<th style="font-weight: normal"><question>1.0</question></th>
-				<th style="font-weight: normal"><question>2.0</question></th>
-				<th style="font-weight: normal"><question>3.0</question> (<question>SS</question>, Super Speed)</th>
-				<th style="font-weight: normal"><question>3.1</question></th>
-			</tr>
-			<tr>
-				<th>Velocidad</th>
-				<th style="font-weight:normal"><question>1.5-12</question>Mbits&#47s</th>
-				<th style="font-weight:normal"><question>480</question>Mbits&#47s</th>
-				<th style="font-weight:normal"><question>5Gb</question>its&#47s</th>
-				<th style="font-weight:normal"><question>10Gb</question>its&#47s</th>
-			</tr>
-			<tr>
-				<th>Características</th>
-				<th></th>
-				<th></th>
-				<th style="font-weight:normal">Conector azul</th>
-			</tr>
-		</thead>
-	</table>
-
-	<h3 id="usb_por_forma">USB <question>por forma</question></h3>
+	<h2>Estructura del examen</h2>
 	<ul>
-		<li><question>A</question>: es el <question>USB estándar</question>.
-		</li>
-		<img src="../imagenes/usb-tipo-a.PNG" alt="usb tipo A"  class="cable-usb">
-		<li><question>B</question>: es el USB <question>cuadrado</question>.</li>
-		<img src="../imagenes/usb-tipo-b.PNG" alt="usb tipo B" class="cable-usb">
-		<li>A y B: tienen <question>4 pines de voltaje</question> (Voltaje, Data-, Data+ y tierra).
-			<table>
-				<thead>
-					<tr>
-						<th>Pin</th>
-						<th>Señal</th>
-						<th>Color</th>
-						<th>Descripción</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>Vcc</td>
-						<td style ="background-color: red"></td>
-						<td>+5V</td>
-						<td rowspan="4">
-							<img src="../imagenes/pines-usb.png" alt="pines de un usb" style="width: 200px;height: 200px;">
-						</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>D-</td>
-						<td></td>
-						<td>Data-</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>D+</td>
-						<td style="background-color:green"></td>
-						<td>Data+</td>
-					</tr>
-					<tr>
-						<td>4</td>
-						<td>GND</td>
-						<td style="background-color:black"></td>
-						<td>Masa</td>
-					</tr>
-				</tbody>
-			</table>
-		</li>
+		<li>2 partes, si no se supera la primera no se pasa a la segunda.
+			<li>
+				Primera parte:
+				<ul>
+					<li>100 preguntas tipo test.</li>
+					<li>90 min.</li>
+					<li>4 bloques de temas:
+						<ul>
+							<li>20 preguntas Bloque 1. (20%). 11 temas.</li>
+							<li>30 preguntas Bloque 2. (30%). 5 temas.</li>
+							<li>50 al bloque 3. (25%). 10 temas.</li>
+							<li>50 al bloque 4. (25%). 10 temas.</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				Segunda parte:
+				<ul>
+					<li>Supuesto práctico a elegir entre 2 opciones.</li>
+					<li>Sobre los bloques 3 y 4.</li>
+					<li>70 min.</li>
+					<li>30 preguntas tipo test.</li>
+				</ul>
+			</li>
 	</ul>
 
-	<h3 id="otros_puertos">Otros puertos</h3>
-	<ul>
-		<li>
-			<question>eSata</question>: External Satades de <question>discos duros externos</question>.
-		</li>
-		<img width="150px" src="../imagenes/esata.png" alt="External Sata">
-		<li><question>Ethernet</question>.</li>
-		<img src="../imagenes/ethernet.png" width="150px" alt="ethernet">
-		
-		<li><question>Firewire</question>: diseñado <question>por apple</question>.</li>
-		<img src="../imagenes/firewire.png" alt="firewire" width="150px">
-
-		<li>
-			Para <question>pantallas</question>:
-			<ul>
-				<li><question>HDMI</question>. </li>
-				<img src="../imagenes/hdmi.png" alt="hdmi" width="150px">
-				<li><question>DVI</question>: para pantallas LCD.</li>
-				<img src="../imagenes/dvi.png" alt="dvi" width="150px">
-				<li><question>VGA</question>:</li>
-				<img src="../imagenes/vga.png" alt="vga" width="150px">
-			</ul>
-		</li>
-
-		<li><question>Jack</question> (conector <question>Audio Analógico</question>): para conectar <question>micrófonos</question>, <question>auriculares</question>, y otros sistemas de señal analógica.</li>
-		<img src="../imagenes/jack.png" alt="jack" width="150px">
-
-		<li><question>SCSI</question>: para <question>discos duros y cintas</question>. (Small Computer System Interface).</li>
-		<img src="../imagenes/scsi.png" alt="scsi" width="150px">
-
-		<li><question>PS/2</question>: Conector para <question>teclado y ratón</question> con 6 pines . Aunque electrónicamente son similares, pueden no ser intercambiables (verde para el ratón y violeta para teclado).</li>
-		<img src="../imagenes/ps2.png" alt="ps2" width="150px"> 
-
-		<li><question>Puerto paralelo</question>
-			<ul>
-				<li>Envia <question>varios bits a la vez</question> -> necesita <question>varias líneas de datos</question>.</li>
-				<li>Utlizado para las <question>impresoras</question> hasta que llego el USB.</li>
-			</ul>
-		</li>
-		<img src="../imagenes/puerto-paralelo.png" alt="puerto-paralelo" width="150px">
-
-		<li><question>Puerto serie</question>: transmite <question>un bit a la vez</question>.</li>
-		<img src="../imagenes/puerto-serie.png" alt="puerto-serie" width="150px">
-
-		<li><question>Thunderbolt</question>
-			<ul>
-				<li>Creado por Apple.</li>
-				<li>Thunderbolt <question>1</question> : 10 Gbit&#47s </li>
-				<li>Thunderbolt <question>2</question> : 20 Gbit&#47s </li>
-				<li>Thunderbolt <question>3</question> : 40 Gbit&#47s </li>
-			</ul>
-		</li>
-	</ul>
-
-	<h3 id="tipos_de_teclado">Tipos de teclado</h3>
-	<ul>
-		<li><question>QWERTY</question>: distribución <question>más común</question>.</li>
-		<li><question>QWERTZ/QWERTU</question>: regiones <question>germanohablantes</question>.</li>
-		<li><question>AZERTY</question>: para <question>francófonos</question>
-		<li><question>HCESAR</question>: usando antes en <question>portugal</question> (ahora se usa el QWERTY).</li>
-		<li><question>Dvorak</question>: es <question>más ergonómico</question> para <question>reducir</question> los <question>errores ortográficos</question>.</li>
-	</ul>
-
-	<h3 id="elementos_impresión">Elementos de impresión</h3>
-	<ul>
-		<li>
-			2 tipos de impresoras
-			<ul>
-				<li>Impacto: </li>
-				<li>Sin impacto: </li>
-			</ul>
-		</li>
-	</ul>
 
 
 	<script src="../js/testMode.js"></script>
