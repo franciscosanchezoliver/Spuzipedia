@@ -31,8 +31,21 @@
 		<li><a href="#otros_puertos">Otros puertos</a> </li>
 		<li><a href="#tipos_de_teclado">Tipos de teclado.</a></li>
 
-		<li>Elementos de impresión.</li>
-		<li>Elementos de almacenamiento.</li>
+		<li> 
+			<a href="#elementos_impresión">Elementos de impresión</a>.
+			<ul>
+				<li><a href="#clasificacion_segun_como_escriben">Según cómo escriban.</a></li>
+				<li><a href="#clasificacion_segun_el_metodo_de_impresion">Según el método de impresión.</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#elementos_de_almacenamiento">Elementos de almacenamiento</a>
+			<ul>
+				<li><a href="#interfaces_almacenamiento">Interfaces</a></li>
+				<li><a href="#RAID">RAID</a></li>
+			</ul>
+
+		</li>
 		<li>Elementos de visualización.</li>
 		<li>Elementos de digitalización.</li>
 	</ol>
@@ -195,9 +208,9 @@
 
 	<h3 id="elementos_impresión">Elementos de impresión</h3>
 	<p>
-		La impresoras se suelen conectar con un puerto paralelo, o un USB. Si es una impresora en red entonces está conectada por un RJ-45.
+		La impresoras se suelen conectar con un <question>puerto paralelo</question>, <question>o</question> un <question>USB</question>. Si es una impresora <question>en red</question> entonces está conectada por un <question>RJ-45</question>.
 	</p>
-	<h4>Según como escriban la tinta</h4>
+	<h4 id="clasificacion_segun_como_escriben">Según cómo escriban</h4>
 	<ul>
 		<li>
 			<question>2 tipos</question> de impresoras
@@ -245,7 +258,7 @@
 	</ul>
 
 
-	<h4>Según el <question>método de impresión</question></h4>
+	<h4 id="clasificacion_segun_el_metodo_de_impresion">Según el <question>método de impresión</question></h4>
 	<ul>
 		Hay <question>3 tipos</question>:
 		<li><question>Carácter a carácter</question> 
@@ -264,25 +277,31 @@
 		<li><question>Página a página</question>: <question>laser</question></li>
 	</ul>
 
-	<h4><question>Lenguajes</question> de <question>descripción de página</question> (LDP)</h4>
-	TODO: https://es.wikipedia.org/wiki/Lenguaje_de_descripci%C3%B3n_de_p%C3%A1ginas
+	<h4 id="lenguajes_descripcion_paginas"><question>Lenguajes</question> de <question>descripción de página</question> (LDP)</h4>
 	<ul>
-		Hay <question>3</question>:
-		<li><question>PostScript</question>: 1982 por Adobe Systems.</li>
 		<li>
-			<question>PCL (Printer Command Language)</question>
+			<question>Describen</question> el <question>formato de la página</question> (colación del texto, gráficos, etc.).
+		</li>
+		<li>
+			Hay <question>3 tipos</question>
 			<ul>
-				<li>Desarrollado por HP.</li>
-				<li>Para impresoras de chorro de tinta.</li>
-				<li>Actualmente está la versión PCL6</li>
+				<li><question>PostScript</question>: 1982 por Adobe Systems.</li>
+				<li>
+					<question>PCL</question> (Printer Command Language)
+					<ul>
+						<li>Desarrollado por HP.</li>
+						<li>Para impresoras de chorro de tinta.</li>
+						<li>Actualmente está la versión PCL6</li>
+					</ul>
+				</li>
+				<li><question>HPGL</question>: para <question>plóter</question> (impresora lineal para ambitos científicos.)</li>
 			</ul>
 		</li>
-		<li>HPGL: para plotter</li>
 	</ul>
 
 
-	<h3 id="elementos_de_almacenamineto">Elementos de almacenamiento</h3>
-	<h4>Interfaces</h4>
+	<h3 id="elementos_de_almacenamiento">Elementos de almacenamiento</h3>
+	<h4 id="interfaces_almacenamiento">Interfaces</h4>
 	<ul>
 		<li>Parallel ATA (<question>PATA</question>)
 			<ul>
@@ -332,8 +351,29 @@
 
 
 		</li>
+	</ul>
 
+	<h3 id="RAID"><question>RAID</question></h3>
+	<ul>
+		<li><question>Redudant Array of Independent Disks</question>.</li>
+		<li>Un RAID es un <question>grupo de discos duros</question> permiten <question>redundancia</question> en los <question>datos</question>.</li>
+	
+		<li>6 Niveles
+			<ul>
+				<li>Raid 0
+					<ul>
+						<li>Distribuye los datos equitativamente entre 2 o más discos.</li>
+					</ul>
+				</li>
 
+				<li>Raid 1</li>
+				<li>Raid 2</li>
+				<li>Raid 3</li>
+				<li>Raid 4</li>
+				<li>Raid 5</li>
+				<li>Raid 6</li>
+			</ul>
+		</li>
 	</ul>
 
 
