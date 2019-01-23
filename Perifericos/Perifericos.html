@@ -356,14 +356,39 @@
 	<h3 id="RAID"><question>RAID</question></h3>
 	<ul>
 		<li><question>Redudant Array of Independent Disks</question>.</li>
-		<li>Un RAID es un <question>grupo de discos duros</question> permiten <question>redundancia</question> en los <question>datos</question>.</li>
-	
+		<li>Sistema de <question>almacenamiento de datos</question>.</li>
+		<li><question>Varios discos duros</question> o SSD.</li>
+		<li>Para <question>distribuir</question> o <question>replicar</question> los <question>datos</question>.</li>
+		<li>Beneficios
+			<ul>
+				<li>Mayor capacidad de la BD.</li>
+				<li>Mayor tolerancia a fallos.</li>
+				<li>Mayor integridad.</li>
+				<li>Mayor tasa de transferencia.</li>
+			</ul>
+		</li>
+
 		<li>6 Niveles
 			<ul>
-				<li>Raid 0
-					<ul>
-						<li>Distribuye los datos equitativamente entre 2 o más discos.</li>
-					</ul>
+				<li>
+					Raid 0					
+					<div style="display:grid; grid-template-columns: auto auto;">
+						<div>
+							<ul>
+								<li><question>Distribuye</question> los datos <question>equitativamente entre 2 o más</question> discos.</li>
+								<li>Sin información de paridad, por tanto no hay redundancia.</li>
+								<li>No hay tolerancia a fallos.</li>
+								<li>Para que el conjunto falle es suficiente con que falle cualquiera de sus discos. Por esta razón cuantos más disco tenga el conjunto mayor será la posibilidad de fallo (la fiabilidad del sistema baja cuantos más discos haya).</li>
+								<li>Alto rendimiento en la escritura ya que se puede escribir en varios discos a la vez de forma paralela.</li>
+								<li>El espacio de almacenamiento que se añada está limitado por el disco más pequeño. Por ejemplo si tenemos un disco de 400 GB y otro disco de 150 GB entonces el tamaño total del RAID 0 será de 300 GB.</li>
+							</ul>
+						</div>
+						<div>
+							<img src="../imagenes/RAID0.PNG" alt="RAID 0" widht="150px" height="150px">
+						</div>
+					</div>
+
+
 				</li>
 
 				<li>Raid 1</li>
