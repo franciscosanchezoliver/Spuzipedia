@@ -361,26 +361,29 @@
 		<li>Para <question>distribuir</question> o <question>replicar</question> los <question>datos</question>.</li>
 		<li>Beneficios
 			<ul>
-				<li>Mayor capacidad de la BD.</li>
-				<li>Mayor tolerancia a fallos.</li>
-				<li>Mayor integridad.</li>
-				<li>Mayor tasa de transferencia.</li>
+				<li>Mayor <question>capacidad</question> de la BD.</li>
+				<li>Mayor <question>tolerancia a fallos</question></li>
+				<li>Mayor <question>integridad</question>.</li>
+				<li>Mayor <question>tasa de transferencia</question>.</li>
 			</ul>
 		</li>
 
 		<li>6 Niveles
 			<ul>
 				<li>
-					Raid 0					
+					Raid <question>0</question>					
 					<div style="display:grid; grid-template-columns: auto auto;">
 						<div>
 							<ul>
 								<li><question>Distribuye</question> los datos <question>equitativamente entre 2 o más</question> discos.</li>
-								<li>Sin información de paridad, por tanto no hay redundancia.</li>
-								<li>No hay tolerancia a fallos.</li>
-								<li>Para que el conjunto falle es suficiente con que falle cualquiera de sus discos. Por esta razón cuantos más disco tenga el conjunto mayor será la posibilidad de fallo (la fiabilidad del sistema baja cuantos más discos haya).</li>
-								<li>Alto rendimiento en la escritura ya que se puede escribir en varios discos a la vez de forma paralela.</li>
-								<li>El espacio de almacenamiento que se añada está limitado por el disco más pequeño. Por ejemplo si tenemos un disco de 400 GB y otro disco de 150 GB entonces el tamaño total del RAID 0 será de 300 GB.</li>
+								<li><question>Sin información de paridad</question>, por tanto <question>no hay redundancia</question>.</li>
+								<li><question>No hay tolerancia a fallos</question>.</li>
+								<li>El <question>conjunto</question> entero <question>falla si falla uno</question> de los discos. Por esta razón cuantos más disco tenga el conjunto mayor será la posibilidad de fallo (la fiabilidad del sistema baja cuantos más discos haya).</li>
+								<li><question>Alto rendimiento</question> en la <question>escritura</question> ya que se puede <question>escribir en varios discos a la vez</question> de forma paralela.</li>
+								<li>
+									<question>Bajo rendimiento lectura</question>, ya que los sectores que se buscan pueden encontrarse en diferentes discos.
+								</li>
+								<li>El <question>espacio</question> de almacenamiento que se añada está <question>limitado por el disco más pequeño</question>. Por ejemplo si tenemos un disco de 400 GB y otro disco de 150 GB entonces el tamaño total del RAID 0 será de 300 GB.</li>
 							</ul>
 						</div>
 						<div>
@@ -391,8 +394,33 @@
 
 				</li>
 
-				<li>Raid 1</li>
-				<li>Raid 2</li>
+				<li>
+					Raid <question>1</question>
+					<div style="display:grid; grid-template-columns:auto auto">
+						<ul>
+							<li>Copia exacta (espejo) en uno o más discos.</li>
+							<li>Aumenta la seguridad si no nos preocupa el almacenamiento. si por ejmplo se rompe un disco, tendríamos una copia del mismo.</li>
+							<li>Un conjunto RAID 1 puede ser tan grande como el más pequeño de sus discos.</li>
+							<li>Aumenta mucho la fiabilidad ya que para que falle el conjunto tendrían que fallan todos los discos.</li>
+							<li>Aumenta la velocidad de lectura ya que si es necesario leer un dato se tienen disponibles varios discos duros de dnode se puede sacar dicho dato.</li>
+							<li>
+								El <question>rendimiento de escritura no mejora</question>, ya que cuando hay que escribir un dato, este se tiene que escribir en todos los discos. Por tanto el tiempo de escritura es el mismo para 1 disco que para varios.
+							</li>
+						</ul>
+						<img src="../imagenes/RAID1.PNG" width="150px" height="150px"/>
+					</div>
+				</li>
+
+
+				<li>Raid <question>2</question>
+					<ul>
+						<li><question>Reparto</question> de la información <question>a nivel de bits</question> (y no a nivel de bloques como los anteriores).</li>
+						<li>Hay <question>paridad</question> con el código de <question>Hamming</question>.</li>
+						<li><question>No hay redundancia</question>.</li>
+					</ul>
+					<img src="../imagenes/RAID2.PNG" width="450px">
+				</li>
+
 				<li>Raid 3</li>
 				<li>Raid 4</li>
 				<li>Raid 5</li>
