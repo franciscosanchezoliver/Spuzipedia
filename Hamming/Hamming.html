@@ -1,0 +1,452 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Perifericos
+	</title>
+	<style>
+		table, th, tr,td {
+			border:solid 1px;
+		}
+
+		.cable-usb{
+			width:80px;
+			height:80px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Índice</h1>
+	<ol>
+		<li><a href="#perifericos">Perifericos</a></li>
+		<li>
+			<a href="#usb">USB</a>
+			<ul>
+				<li><a href="#tipos_de_usb">Tipos de USB</a></li>
+				<li><a href="#usb_por_forma">USB por forma</a></li>
+			</ul>
+		</li>
+		<li><a href="#otros_puertos">Otros puertos</a> </li>
+		<li><a href="#tipos_de_teclado">Tipos de teclado.</a></li>
+
+		<li> 
+			<a href="#elementos_impresión">Elementos de impresión</a>.
+			<ul>
+				<li><a href="#clasificacion_segun_como_escriben">Según cómo escriban.</a></li>
+				<li><a href="#clasificacion_segun_el_metodo_de_impresion">Según el método de impresión.</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#elementos_de_almacenamiento">Elementos de almacenamiento</a>
+			<ul>
+				<li><a href="#interfaces_almacenamiento">Interfaces</a></li>
+				<li><a href="#RAID">RAID</a></li>
+			</ul>
+
+		</li>
+		<li>Elementos de visualización.</li>
+		<li>Elementos de digitalización.</li>
+	</ol>
+
+	<h1 id="perifericos">Perifericos</h1>
+	<ul>	
+		<li>
+			<question>Puertos</question>: <question>interfaz</question> entre un <question>ordenador</question> y otros <question>ordenadores</question> <question>o</question> <question>periféricos</question>.
+		</li>
+		<li>
+			<question>Periférico</question>: <question>dispositivo</question> que se <question>conecta al ordenador a través de un puerto</question> y <question>hace algo</question>. 
+		</li>
+		<li><question>2 tipos</question>
+			<ul>
+				<li><question>Entrada</question>: teclado, ratón, escáner, lector de huellas, etc.</li>
+				<li><question>Salida</question>: pantalla, altavoz, impresora.</li>
+			</ul>
+		</li>
+	</ul>
+
+	<h2 id="usb">USB (Universal Serial Bus)</h2>
+	<h3 id="tipos_de_usb"><question>Tipos</question> de <question>USB</question></h3>
+	<table style>
+		<thead>
+			<tr>
+				<th>Versión</th>
+				<th style="font-weight: normal"><question>1.0</question></th>
+				<th style="font-weight: normal"><question>2.0</question></th>
+				<th style="font-weight: normal"><question>3.0</question> (<question>SS</question>, Super Speed)</th>
+				<th style="font-weight: normal"><question>3.1</question></th>
+			</tr>
+			<tr>
+				<th>Velocidad</th>
+				<th style="font-weight:normal"><question>1.5-12</question>Mbits&#47s</th>
+				<th style="font-weight:normal"><question>480</question>Mbits&#47s</th>
+				<th style="font-weight:normal"><question>5Gb</question>its&#47s</th>
+				<th style="font-weight:normal"><question>10Gb</question>its&#47s</th>
+			</tr>
+			<tr>
+				<th>Características</th>
+				<th></th>
+				<th></th>
+				<th style="font-weight:normal">Conector azul</th>
+			</tr>
+		</thead>
+	</table>
+
+	<h3 id="usb_por_forma">USB <question>por forma</question></h3>
+	<ul>
+		<li><question>A</question>: es el <question>USB estándar</question>.
+		</li>
+		<img src="../imagenes/usb-tipo-a.PNG" alt="usb tipo A"  class="cable-usb">
+		<li><question>B</question>: es el USB <question>cuadrado</question>.</li>
+		<img src="../imagenes/usb-tipo-b.PNG" alt="usb tipo B" class="cable-usb">
+		<li>A y B: tienen <question>4 pines de voltaje</question> (Voltaje, Data-, Data+ y tierra).
+			<table>
+				<thead>
+					<tr>
+						<th>Pin</th>
+						<th>Señal</th>
+						<th>Color</th>
+						<th>Descripción</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Vcc</td>
+						<td style ="background-color: red"></td>
+						<td>+5V</td>
+						<td rowspan="4">
+							<img src="../imagenes/pines-usb.png" alt="pines de un usb" style="width: 200px;height: 200px;">
+						</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>D-</td>
+						<td></td>
+						<td>Data-</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>D+</td>
+						<td style="background-color:green"></td>
+						<td>Data+</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>GND</td>
+						<td style="background-color:black"></td>
+						<td>Masa</td>
+					</tr>
+				</tbody>
+			</table>
+		</li>
+	</ul>
+
+	<h3 id="otros_puertos">Otros puertos</h3>
+	<ul>
+		<li>
+			<question>eSata</question>: External Satades de <question>discos duros externos</question>.
+		</li>
+		<img width="150px" src="../imagenes/esata.png" alt="External Sata">
+		<li><question>Ethernet</question>.</li>
+		<img src="../imagenes/ethernet.png" width="150px" alt="ethernet">
+		
+		<li><question>Firewire</question>: diseñado <question>por apple</question>.</li>
+		<img src="../imagenes/firewire.png" alt="firewire" width="150px">
+
+		<li>
+			Para <question>pantallas</question>:
+			<ul>
+				<li><question>HDMI</question>. </li>
+				<img src="../imagenes/hdmi.png" alt="hdmi" width="150px">
+				<li><question>DVI</question>: para pantallas LCD.</li>
+				<img src="../imagenes/dvi.png" alt="dvi" width="150px">
+				<li><question>VGA</question>:</li>
+				<img src="../imagenes/vga.png" alt="vga" width="150px">
+			</ul>
+		</li>
+
+		<li><question>Jack</question> (conector <question>Audio Analógico</question>): para conectar <question>micrófonos</question>, <question>auriculares</question>, y otros sistemas de señal analógica.</li>
+		<img src="../imagenes/jack.png" alt="jack" width="150px">
+
+		<li><question>SCSI</question>: para <question>discos duros y cintas</question>. (Small Computer System Interface).</li>
+		<img src="../imagenes/scsi.png" alt="scsi" width="150px">
+
+		<li><question>PS/2</question>: Conector para <question>teclado y ratón</question> con 6 pines . Aunque electrónicamente son similares, pueden no ser intercambiables (verde para el ratón y violeta para teclado).</li>
+		<img src="../imagenes/ps2.png" alt="ps2" width="150px"> 
+
+		<li><question>Puerto paralelo</question>
+			<ul>
+				<li>Envia <question>varios bits a la vez</question> -> necesita <question>varias líneas de datos</question>.</li>
+				<li>Utlizado para las <question>impresoras</question> hasta que llego el USB.</li>
+			</ul>
+		</li>
+		<img src="../imagenes/puerto-paralelo.png" alt="puerto-paralelo" width="150px">
+
+		<li><question>Puerto serie</question>: transmite <question>un bit a la vez</question>.</li>
+		<img src="../imagenes/puerto-serie.png" alt="puerto-serie" width="150px">
+
+		<li><question>Thunderbolt</question>
+			<ul>
+				<li>Creado por Apple.</li>
+				<li>Thunderbolt <question>1</question> : 10 Gbit&#47s </li>
+				<li>Thunderbolt <question>2</question> : 20 Gbit&#47s </li>
+				<li>Thunderbolt <question>3</question> : 40 Gbit&#47s </li>
+			</ul>
+		</li>
+	</ul>
+
+	<h3 id="tipos_de_teclado">Tipos de teclado</h3>
+	<ul>
+		<li><question>QWERTY</question>: distribución <question>más común</question>.</li>
+		<li><question>QWERTZ/QWERTU</question>: regiones <question>germanohablantes</question>.</li>
+		<li><question>AZERTY</question>: para <question>francófonos</question>
+		<li><question>HCESAR</question>: usando antes en <question>portugal</question> (ahora se usa el QWERTY).</li>
+		<li><question>Dvorak</question>: es <question>más ergonómico</question> para <question>reducir</question> los <question>errores ortográficos</question>.</li>
+	</ul>
+
+	<h3 id="elementos_impresión">Elementos de impresión</h3>
+	<p>
+		La impresoras se suelen conectar con un <question>puerto paralelo</question>, <question>o</question> un <question>USB</question>. Si es una impresora <question>en red</question> entonces está conectada por un <question>RJ-45</question>.
+	</p>
+	<h4 id="clasificacion_segun_como_escriben">Según cómo escriban</h4>
+	<ul>
+		<li>
+			<question>2 tipos</question> de impresoras
+			<ul>
+				<li><question>Impacto</question>
+					<ul>
+						<li><question>Golpean el papel</question> y el impacto transfiere la tinta.</li>
+						<li><question>Para texto</question> o gráficos muy sencillos.</li>
+						<li><question>Monocromáticas</question></li>
+						<li>
+							Según el <question>cabezal de impresión</question>, hay <question>2 tipos</question>
+							<ul>
+								<li>
+									<question>Margarita</question>
+									<ul>
+										<li>Tiene una <question>bola metálica</question> con relieves de letras y símbolos.</li>
+									</ul>
+									<img src="../imagenes/cabezal-impresora-margarita.png" alt="cabezal de una impresora margarita" width="150px" height="150px"/>
+
+								</li>
+								<li>
+									De <question>agujas</question> (<question>Matriciales</question>)
+									<ul>
+										<li>Tiene una <question>matriz de agujas</question> que impactan sobre el papel.</li>
+										<li>Cuantas <question>más agujas</question> tenga <question>mayor</question> será la <question>resolución</question>.</li>
+									</ul>
+								</li>
+								<img src="../imagenes/impresion-matricial.png" alt="impresion-matricial" width="300px" height="150px">
+							</ul>
+						</li>
+
+					</ul>
+				</li>
+
+				<li><question>Sin impacto</question>
+					<ul>
+						<li><question>Térmicas</question>: <question>agujas calientes</question> tocan <question>papel termo sensible</question> (cajeros).</li>
+						<li><question>Inyección</question> o chorro de tinta: <question>tira gotas de tinta</question>.</li>
+						<li><question>Sublimación</question> de tinta: se usa <question>calor para transferir la tinta</question>.</li>
+						<li>Laser.</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+
+
+	<h4 id="clasificacion_segun_el_metodo_de_impresion">Según el <question>método de impresión</question></h4>
+	<ul>
+		Hay <question>3 tipos</question>:
+		<li><question>Carácter a carácter</question> 
+			<ul>
+				<li>Matriciales.</li>
+				<li>Margarita.</li>
+				<li>Térmica.</li>
+				<li>Inyección.</li>
+			</ul>
+		</li>
+		<li><question>Línea a línea</question>
+			<li>Cinta.</li>
+			<li>Cadena.</li>
+			<li>Tambor.</li>
+		</li>
+		<li><question>Página a página</question>: <question>laser</question></li>
+	</ul>
+
+	<h4 id="lenguajes_descripcion_paginas"><question>Lenguajes</question> de <question>descripción de página</question> (LDP)</h4>
+	<ul>
+		<li>
+			<question>Describen</question> el <question>formato de la página</question> (colación del texto, gráficos, etc.).
+		</li>
+		<li>
+			Hay <question>3 tipos</question>
+			<ul>
+				<li><question>PostScript</question>: 1982 por Adobe Systems.</li>
+				<li>
+					<question>PCL</question> (Printer Command Language)
+					<ul>
+						<li>Desarrollado por HP.</li>
+						<li>Para impresoras de chorro de tinta.</li>
+						<li>Actualmente está la versión PCL6</li>
+					</ul>
+				</li>
+				<li><question>HPGL</question>: para <question>plóter</question> (impresora lineal para ambitos científicos.)</li>
+			</ul>
+		</li>
+	</ul>
+
+
+	<h3 id="elementos_de_almacenamiento">Elementos de almacenamiento</h3>
+	<h4 id="interfaces_almacenamiento">Interfaces</h4>
+	<ul>
+		<li>Parallel ATA (<question>PATA</question>)
+			<ul>
+				<li>Interfaz para conectar dispositivos de almacenamiento como discos duros, floppy disk y lectoras de CD. </li>
+				<li>La extensión ATAPI permite conectar con lectoras de CD.</li>
+			</ul>
+		</li>
+
+		<li>
+			Serial ATA (<question>SATA</question>)
+			<ul>
+				<li>Reemplata a PATA.</li>
+				<li>Sirve para discos duros, lectoras de CD, y discos de estado solido SSD.</li>
+				<li>
+					<table>
+						<thead>
+							<tr>
+								<th>Version</th>
+								<th>Velocidad (el doble)</th>
+								<th>Nombre</th>
+							</tr>
+						</thead>
+			
+						<tbody>
+							<tr>
+								<td>SATA 1.0</td>
+								<td>1.5 Gbit/s = 150 MB/s</td>
+								<td>SATA-150</td>
+							</tr>
+			
+							<tr>
+								<td>SATA 2.0</td>
+								<td>3 Gbit/s = 300 MB/s</td>
+								<td>SATA-300</td>
+							</tr>
+			
+							<tr>
+								<td>SATA 3.0</td>
+								<td>6 Gbit/s = 600 MB/s</td>
+								<td>SATA-600</td>
+							</tr>
+			
+						</tbody>
+					</table>
+				</li>
+			</ul>
+
+
+		</li>
+	</ul>
+
+	<h3 id="RAID"><question>RAID</question></h3>
+	<ul>
+		<li><question>Redudant Array of Independent Disks</question>.</li>
+		<li>Sistema de <question>almacenamiento de datos</question>.</li>
+		<li><question>Varios discos duros</question> o SSD.</li>
+		<li>Para <question>distribuir</question> o <question>replicar</question> los <question>datos</question>.</li>
+		<li>Beneficios
+			<ul>
+				<li>+ <question>capacidad</question> de la BD.</li>
+				<li>+ <question>tolerancia a fallos</question></li>
+				<li>+ <question>integridad</question>.</li>
+				<li>+ <question>tasa de transferencia</question>.</li>
+			</ul>
+		</li>
+
+		<li>6 <question>Niveles</question>
+			<ul>
+				<li>
+					Raid <question>0</question>					
+					<div style="display:grid; grid-template-columns: auto auto;">
+						<div>
+							<ul>
+								<li><question>Distribuye</question> los datos <question>equitativamente entre 2 o más</question> discos.</li>
+								<li><question>Sin información de paridad</question>, por tanto <question>no hay redundancia</question>.</li>
+								<li><question>No hay tolerancia a fallos</question>.</li>
+								<li>El <question>conjunto</question> entero <question>falla si falla uno</question> de los discos. Por esta razón cuantos más disco tenga el conjunto mayor será la posibilidad de fallo (la fiabilidad del sistema baja cuantos más discos haya).</li>
+								<li><question>Alto rendimiento</question> en la <question>escritura</question> ya que se puede <question>escribir en varios discos a la vez</question> de forma <question>paralela</question>.</li>
+								<li>
+									<question>Bajo rendimiento lectura</question>, ya que los sectores que se buscan pueden encontrarse en diferentes discos.
+								</li>
+								<li>El <question>espacio</question> de almacenamiento que se añada está <question>limitado por el disco más pequeño</question>. Por ejemplo si tenemos un disco de 400 GB y otro disco de 150 GB entonces el tamaño total del RAID 0 será de 300 GB.</li>
+							</ul>
+						</div>
+						<div>
+							<img src="../imagenes/RAID0.PNG" alt="RAID 0" widht="150px" height="150px">
+						</div>
+					</div>
+
+
+				</li>
+
+				<li>
+					Raid <question>1</question>
+					<div style="display:grid; grid-template-columns:auto auto">
+						<ul>
+							<li><question>Copia exacta</question> (<question>espejo</question>) en uno o más discos.</li>
+							<li><question>Aumenta la seguridad</question> pero usamos <question>más almacenamiento</question>. Si por ejemplo se rompe un disco, tendríamos una copia del mismo.</li>
+							<li>Un <question>conjunto</question> RAID 1 está <question>limitado por el</question> más pequeño de sus discos.</li>
+							<li><question>Aumenta</question> mucho la <question>fiabilidad</question> ya que para que <question>falle el conjunto</question> tendrían que <question>fallan todos los discos</question>.</li>
+							<li><question>Aumenta</question> la <question>velocidad de lectura</question> ya que si es necesario leer <question>un dato</question> estará <question>disponible en varios discos duros</question> de donde se puede sacar dicho dato.</li>
+							<li>
+								El <question>rendimiento de escritura no mejora</question>, ya que cuando hay que escribir un dato, este se tiene que escribir en todos los discos. Por tanto el tiempo de escritura es el mismo para 1 disco que para varios.
+							</li>
+						</ul>
+						<img src="../imagenes/RAID1.PNG" width="150px" height="150px"/>
+					</div>
+				</li>
+
+
+				<li>Raid <question>2</question>
+					<ul>
+						<li><question>Reparto</question> de la información <question>a nivel de bits</question> (y no a nivel de bloques como los anteriores).</li>
+						<li>Hay <question>paridad</question> con el código de <question>Hamming</question>.</li>
+						<li><question>No hay redundancia</question>.</li>
+					</ul>
+					<img src="../imagenes/RAID2.PNG" width="450px">
+				</li>
+
+				<li>
+					Raid <question>3</question>
+					<div style="display:inline-grid; grid-template-columns:auto auto">
+						<ul>
+							<li><question>Reparte</question> los <question>datos</question> a <question>nivel de bytes</question> (en lugar de a nivel de bloques).</li>
+							<li>Se utiliza <question>un disco de paridad</question>.</li>
+							<li><question>Tasa de transferencia</question> muy <question>altas</question>.</li>
+						</ul>
+						<img src="../imagenes/RAID3.PNG" alt="RAID 3">
+					</div>
+				</li>
+
+				<li>Raid 4
+
+				</li>
+
+				<li>Raid 5</li>
+				
+				<li>Raid 6</li>
+			</ul>
+		</li>
+	</ul>
+
+
+	<script src="../js/testMode.js"></script>
+</body>
+
+
+</html>
