@@ -8,9 +8,6 @@
 </head>
 
 <body>
-	<h1>Índice</h1>
-	<ol>
-	</ol>
 
 	<h1>Código Hamming</h1>
 	<ul>
@@ -20,7 +17,26 @@
 	</ul>
 	
 	<h2>Paridad</h2>
-	
+	<ul>
+		<li><question>Añadir un bit</question> (<question>bit de paridad</question>).</li>
+		<li><question>Comprueba</question> que los demás bits forman <question>un número par o</question> un número <question>impar</question>. Si cambia un bit por error entonces el bit de paridad indicará que tenía que ser par y es impar.</li>
+		<li>Por convención: 
+			<ul>
+				<li><question>0</question>: número <question>par</question>.</li>
+				<li><question>1</question>: número <question>impar</question>.</li>
+			</ul>
+		</li>
+		<li>
+			Problema: <question>si cambian 2 bits</question> entonces <question>no se detectará el error</question>, y así si cambia 4 bits por error etc.
+		</li>
+		<li>
+			<question>Usado cuando la probabilidad</question> de que falle 1 bit <question>es muy pequeña</question>, y por tanto es casi imposible que falle en 2 bits (y por tanto indetectable por el bit de paridad).
+		</li>
+		<li>
+			Aunque la paridad detecta que ha habido un error <question>no detecta que bit ha sido el que ha cambiado</question>.
+		</li>
+	</ul>
+
 
 	<script src="../js/testMode.js"></script>
 </body>
