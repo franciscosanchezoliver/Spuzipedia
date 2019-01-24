@@ -395,7 +395,7 @@
 				</li>
 
 				<li>
-					Raid <question>1</question>
+					Raid <question>1</question> (espejo)
 					<div style="display:grid; grid-template-columns:auto auto">
 						<ul>
 							<li><question>Copia exacta</question> (<question>espejo</question>) en uno o más discos.</li>
@@ -426,20 +426,36 @@
 					<div style="display:inline-grid; grid-template-columns:auto auto">
 						<ul>
 							<li><question>Reparte</question> los <question>datos</question> a <question>nivel de bytes</question> (en lugar de a nivel de bloques).</li>
-							<li>Se utiliza <question>un disco de paridad</question>.</li>
+							<li>Se utiliza <question>un disco de paridad</question>. Por tanto necesita un mínimo de 3 discos.</li>
 							<li><question>Tasa de transferencia</question> muy <question>altas</question>.</li>
 						</ul>
 						<img src="../imagenes/RAID3.PNG" alt="RAID 3">
 					</div>
 				</li>
 
-				<li>Raid 4
-
+				<li>Raid <question>4</question> (IDA)
+					<div style="display:inline-grid ; grid-template-columns: auto auto">
+						<ul>
+							<li><question>Divide</question> a <question>nivel de bloque</question>.</li>
+							<li>Usa un <question>disco de paridad</question>. Por tanto necesita un mínimo de 3 discos.</li>
+							<li>Rendimiento de <question>lectura alto</question> ya que se pueden hacer varias peticiones de lectura a la vez.</li>
+							<li>Rendimiento de <question>escritura lento</question> ya que cada vez que hay que escribir hay que mantener el disco de paridad.</li>
+						</ul>
+						<img src="../imagenes/RAID4.png" alt="RAID4" >
+					</div>
 				</li>
 
-				<li>Raid 5</li>
+				<li>Raid <question>5</question>
+					<ul>
+						<li>Se <question>dividen</question> los datos <question>por bloques</question>.</li>
+						<li>La <question>información de paridad</question> se <question>divide entre todos los discos duros</question>.</li>
+						<li>Tiene <question>mucha popularidad</question> por que no tiene mucha redundancia de datos.</li>
+						<li><question>Si falla un disco se puede reconstruir</question> la información gracias a la <question>información de paridad</question>.</li>
+					</ul>
+				</li>
 				
-				<li>Raid 6</li>
+				<li>Raid <question>6</question>: como el RAID 5 pero con <question>2 bloques de paridad</question>
+				</li>
 			</ul>
 		</li>
 	</ul>
