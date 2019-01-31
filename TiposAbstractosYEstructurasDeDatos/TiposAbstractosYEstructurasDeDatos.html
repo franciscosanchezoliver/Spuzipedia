@@ -13,7 +13,11 @@
 		<li><a href="#pila">Pila.</a></li>
 		<li><a href="#cola">Cola</a></li>
 		<li><a href="#lista">Lista</a></li>
-		<li><a href="#arbol">Árbol</a></li>
+		<li><a href="#arbol">Árbol</a>
+			<ul>
+				<li> <a href="#terminologia_arbol">Terminología</a></li>
+			</ul>
+		</li>
 	</ol>
 
 	<h1 id="tipos_abstractos_y_estructuras_de_datos">Tipos abstractos y estructuras de datos</h1>
@@ -58,8 +62,34 @@
 			</div>
 		</div>
 	</div>
+	
+	<h3 id="terminologia_arbol">Terminología</h3>
+	<ul>
+		<li><question>Nodos</question>: <question>cada elemento</question> que forma el árbol.</li>
+		<li><question>Nodo raíz</question>: el <question>primer nodo</question> de un árbol. Solo puede haber uno.</li>
+		<li><question>Nodo padre</question>: cualquier <question>nodo con hijos</question>.</li>
+		<li><question>Nodo hijo</question>: cualquier <question>nodo con padre</question>.</li>
+		<li><question>Nodo hermano</question>: dos nodos son hermanos <question>si tienen el mismo padre</question>.</li>
+		<li><question>Nodos hojas</question>: <question>nodos sin hijos</question>, y por esto siempre estarán en el extremo de la estructura.</li>
+		<li>
+			<div style="display:inline-grid; grid-template-columns: auto auto">
+				<div style="align-self: center">
+					<question>Nivel</question>: <question>(número de conexiones entre la raíz y un nodo) + 1</question>.
+					<br>
+					<question>Altura</question>: Al número máximo de niveles de un árbol. El <question>camino más largo</question> entre el <question>nodo raíz y el nodo hoja más lejano</question>.
+				</div>
+				<img src="../imagenes/nivel-arbol.PNG" width="400px" style="padding:15px; border:solid 1px">
+			</div>
+		</li>
+		<li>
+			Grado: número de hijos que puede tener 
+		</li>
+
+	</ul>
 
 
+
+	TODO: https://www.oscarblancarteblog.com/2014/08/22/estructura-de-datos-arboles/
 	<script src="../js/testMode.js"></script>
 </body>
 
