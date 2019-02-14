@@ -93,6 +93,13 @@
 	</ul>
 
 	<h3 id="recorrido_arbol">Recorrido</h3>
+<pre>
+                 -- Inorden &larr; &uarr; &rarr;  
+ -- Profundidad |-- Preorden &uarr; &larr; &rarr;
+|                -- Postorden &larr; &rarr; &uarr;
+ -- Anchura
+</pre>
+
 	<p>
 		Podemos recorrer un árbol en <question>anchura</question> o en <question>profundidad</question>.
 	</p>
@@ -107,13 +114,13 @@
 	<ul>
 		<li>
 			<div>
-				<p><question>Preorden</question>: Raíz, izquierda, derecha. F B A D C E G I H <question>&uarr;</question> <question>&larr;</question> <question>&rarr;</question>  
+				<p><question>Preorden</question>: <question>&uarr; &larr; &rarr;</question>. Raíz, izquierda, derecha. F B A D C E G I H   
 				</p>
 				<div style="display:grid; grid-template-columns: auto auto auto; border: solid 1px;">
-					<img src="../imagenes/preorden/preorden-03.png" width="300px">
-					<img src="../imagenes/preorden/preorden-02.png" width="300px">
-					<img src="../imagenes/preorden/preorden-04.png" width="300px">
 					<img src="../imagenes/preorden/preorden-01.png" width="300px">
+					<img src="../imagenes/preorden/preorden-02.png" width="300px">
+					<img src="../imagenes/preorden/preorden-03.png" width="300px">
+					<img src="../imagenes/preorden/preorden-04.png" width="300px">
 					<img src="../imagenes/preorden/preorden-05.png" width="300px">
 					<img src="../imagenes/preorden/preorden-06.png" width="300px">
 					<img src="../imagenes/preorden/preorden-07.png" width="300px">
@@ -128,6 +135,7 @@
 					<img src="../imagenes/preorden/preorden-16.png" width="300px">
 					<img src="../imagenes/preorden/preorden-17.png" width="300px">
 					<img src="../imagenes/preorden/preorden-18.png" width="300px">
+					<img src="../imagenes/preorden/preorden-19.png" width="300px">
 				</div>
 
 				<p><question>Inorden</question>: Izquierda, Raíz, Derecha.  A B C D E F G H I  <question>&larr; &uarr; &rarr;</question> </p>
@@ -146,21 +154,53 @@
 					<img src="../imagenes/inorden/inorden-12.png" width="300px">
 					<img src="../imagenes/inorden/inorden-13.png" width="300px">
 					<img src="../imagenes/inorden/inorden-14.png" width="300px">
-					<img src="../imagenes/inorden/inorden-15.png" width="300px">
-
 				</div>
 
+				<p><question>Postorden</question>: Izquierda, Derecha, Raíz.  A C E D B H I G F <question>&larr; &rarr; &uarr;</question> </p>
+				<div style="display:grid; grid-template-columns: auto auto auto; border: solid 1px;">
+					<img src="../imagenes/postorden/postorden-01.png" width="300px">
+					<img src="../imagenes/postorden/postorden-02.png" width="300px">
+					<img src="../imagenes/postorden/postorden-03.png" width="300px">
+					<img src="../imagenes/postorden/postorden-04.png" width="300px">
+					<img src="../imagenes/postorden/postorden-05.png" width="300px">
+					<img src="../imagenes/postorden/postorden-06.png" width="300px">
+					<img src="../imagenes/postorden/postorden-07.png" width="300px">
+					<img src="../imagenes/postorden/postorden-08.png" width="300px">
+					<img src="../imagenes/postorden/postorden-09.png" width="300px">
+					<img src="../imagenes/postorden/postorden-10.png" width="300px">
+					<img src="../imagenes/postorden/postorden-11.png" width="300px">
+					<img src="../imagenes/postorden/postorden-12.png" width="300px">
+					<img src="../imagenes/postorden/postorden-13.png" width="300px">
+					<img src="../imagenes/postorden/postorden-14.png" width="300px">
+					<img src="../imagenes/postorden/postorden-15.png" width="300px">
+					<img src="../imagenes/postorden/postorden-16.png" width="300px">
+					<img src="../imagenes/postorden/postorden-17.png" width="300px">
+					<img src="../imagenes/postorden/postorden-18.png" width="300px">
+					<img src="../imagenes/postorden/postorden-19.png" width="300px">
+					<img src="../imagenes/postorden/postorden-20.png" width="300px">
+					<img src="../imagenes/postorden/postorden-21.png" width="300px">
+					<img src="../imagenes/postorden/postorden-22.png" width="300px">
+					<img src="../imagenes/postorden/postorden-23.png" width="300px">
+					<img src="../imagenes/postorden/postorden-24.png" width="300px">
+					<img src="../imagenes/postorden/postorden-25.png" width="300px">
+					<img src="../imagenes/postorden/postorden-26.png" width="300px">
+					<img src="../imagenes/postorden/postorden-27.png" width="300px">
+					<img src="../imagenes/postorden/postorden-28.png" width="300px">
+					<img src="../imagenes/postorden/postorden-29.png" width="300px">
+				</div>				
 
+				<p>Recorrido en <question>Anchura</question>: Se va <question>recorriendo</question> el árbol <question>por niveles</question>. F, B, G, A, D, I, C, E, H</p>
 
 			</div>
 		</li>
-		<li>Inorden: </li>
-		<li>Postorden: </li>
 	</ul>
 
+	<h2 id="grafo"><question>Grafo</question></h2>
+	<ul>
+		<li>Un grafo es una serie de nodos conectados.</li>
+		<li>Puede ser dirigido o no dirigido.</li>
+	</ul>
 
-
-	TODO: https://www.oscarblancarteblog.com/2014/08/22/estructura-de-datos-arboles/
 	<script src="../js/testMode.js"></script>
 </body>
 
