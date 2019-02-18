@@ -8,33 +8,232 @@
 </head>
 
 <body>
-	<h1>Scrum</h1>
-	<h2>Intro</h2>
-	<p>
-		In this document I will talk about the basics of scrum framework. I'll cover how scrum organizes work and teams
-		to deliver usable product and get feedback quickly. Finally I'll talk about how to measure and manage your work
-		continuosly while helping the team improving their processes along the way.
-	</p>
-	<p>
-		If you are starting up, just focus on getting a daily stand up going (because it's only a 15 minutes commitment
-		each day and you'll see immediate results with your team).
-	</p>
-	<h2>The scrum approach to project success</h2>
-	<p>
-		On a project team the goal is to get the project done. Historically, using traditional methods this meant planning
-		and designing the whole project at the beginning and sticking to that with no variations. But in a real life
-		project, work is completely unpredictable. It's imposible to know at the beginning exactly how a project will 
-		unfold.
-	</p>
-	<p>
-		The <question>Agile project management</question> movement comes out of a desire to <question>adapt in real time</question> to 
-		the <question>changing circumstances</question> that teams face.
-	</p>
-	<p>
-		We have to change the focus from winning the whole game to win each and every milestone and deliverable.
-	</p>
+	<h1>Índice</h1>
 
-	TODO: continuar viendo el curso de scrum  1.Problem to solve - The scrum approach to project success
+	<ol>
+		<li> <a href="#scrum">Scrum</a></li>
+		<li> <a href="#roles">Roles</a></li>
+		<li> <a href="#artefactos">Artefactos</a></li>
+
+	</ol>
+
+	<h1 id="scrum">Scrum</h1>
+
+	<ul>
+		<li><question>Framework</question> de desarrollo</li>
+		<li>Principios de Agile (4):
+			<ul>
+				<li><question>Individuos</question> y las interacciones están por encima de los <question>procesos y herramientas</question>.</li>
+				<li><question>Software funcional</question> esta por encima de la <question>documentación exaustiva</question>.</li>
+				<li><question>Colaboración con el cliente</question> por encima de los <question>contratos</question>.</li>
+				<li><question>Responder al cambio</question>.</li>
+				<li><question>Manifiesto ágil</question>: <a href="http://agilemanifesto.org/principles.html" target="_blank">manifiesto</a>.</li>
+			</ul>
+		</li>
+	</ul>
+
+	<h2 id="roles">Roles</h2>
+	<ul>
+		<li>Product owner.</li>
+		<li>ScrumMaster.</li>
+		<li>Development team.</li>
+	</ul>
+
+	<h2 id="artefactos">Artefactos</h2>
+	<ul>
+		<li>Product backlong</li>
+		<li>sprint backlog</li>
+		<li>product increment</li>
+	</ul>
+
+	<h2 id="eventos">Eventos</h2>
+	<ul>
+		<li>sprint</li> 
+		<li>sprintplanning</li> 
+		<li>daily</li> 
+		<li>review</li> 
+		<li>retrospective</li>
+	</ul>
+
+	<h2>Product Owner</h2>
+	<ul>
+		<li>Miembro más del equipo</li>
+		<li>Mantiene la visión del producto</li>
+		<li>Cultivar y nutrir y sentimiento de comunidad a tarvés del producto.</li>
+		<li>Trabaja con el equipo y con las otras partes participantes.</li>
+		<li>Mantiene el product backlog y lo ordena para tener el max valor.</li>
+		<li>Describe lo que debe sre construido pero no el cómo.</li>
+		<li>Máximiza el valor del trabajo en equipo.</li>
+		<li>Es la persona responsable total del producto (para bien y para mal).</li>
+	</ul>
+
+	<h2>StakeHolder</h2>
+	TODO: .... creo que son todos los clientes que hay...
+	
+	<h3>Product Backlog</h3>
+	<ul>
+		<li>Viene del product owner o del cliente, aunque el equipo también puede incluir cosas.</li>
+		<li>Comienza con muy poco pero va aumentando.</li>
+		<li>A medida que se va refinando se puede ir partiendo y filtrando.</li>
+		<li>Tiene que estar ordenado para maximizar el valor entregado por el equipo de Scrum.</li>
+	</ul>
+
+	<h3>User Story</h3>
+	<ul>
+		<li>Una forma de describir una user story: como ( ) quiero ( ) para cumplir ( ). Ej: Como usuairo quiero un login para poder logearme</li>
+		<li>
+			INVEST
+			<ul>
+				<li>Independiente.</li>
+				<li>Negociable.</li>
+				<li>Tener valor.</li>
+				<li>Capaz de ser estimada.</li>
+				<li>Que se pueda completar en un tiempo.</li>
+				<li>Que pueda ser testeale.</li>
+			</ul>
+		</li>
+	</ul>
+
+	<h3>Estimación del Product Backlog</h3>
+	<ul>
+		<li>El equipo de desarrollo estima el esfuerzo, ni el scrum master ni el product owner.</li>
+		<li>El tamaño tiene que ser relativo. Se usa la secuencia de fibonnaci. Es un esfuerzo relativo, una cosa cuesat tal 
+		esfuerzo en realación con aquella otra.</li>
+		<li>Una tarea tiene que tener una terminación temporal.</li>
+		<li>Par medir hay que tener en cuenta:
+			<ul>
+					<li>La complejidad.</li>
+					<li>La incertidumbre.</li>
+					<li>El riesgo de romper otra cosa.</li>
+			</ul>
+		</li>
+	</ul>
+
+	<h3>Forma de Estimar</h3>
+	<li>Metodo delphi o poker. Estimación por consenso, cada persnoa valora y se analizan los valores que salen.</li>
+	<li>Es más imporatnte la discussión que el número.</li>
+	
+
+	<h3>Equipo de Desarrollo</h3>
+	<ul>
+		<li>Hacen el trabajo para entregar el incremento del producto.</li>
+		<li>Equipo cross functional: entre todo el equipo están todos los skills necesarios para entregar el producto.</li> 
+		<li>Conocimiento en fomra de T.</li>
+		<li>Los miembros deberían estar disponibles y full time al producto (pero el producto sí puede estar divido en varios proyectos).</li>
+		 <li>Pronostica lo que se puede hacer en un sprint.</li>
+		 <li>Es autoorganizado.</li>
+
+	</ul>
+
+	<h3><question>Buenas prácticas</question> del equipo de desarrollo</h3>
+	<ul>
+		<li>Limpiar código que aparece en los reports de sonar</li>
+		<li>PeerPrograming: programar en parejas, para aprender va bien.</li>
+		<li>Automated testing</li>
+		<li>Continous Integration (Jenkins)</li>
+		<li>Gestionar la deuda técnica. Todas las cosas que vas retrasando que tiene que ver con mejoras. Cosas que no aportan un valor aparente al cliente pero que sí aportan un valor al producto.</li>
+	</ul>
+	
+	<h3>El Sprint</h3>
+	<ul>
+		<li>Puede ir de 1 a 2 semanas.</li>
+		<li>En cada sprint te crea un incremento de producto.</li>
+		<li>Lo que se entrega tiene que ser de suficiente calidad para el usuario.</li>
+		<li>Un sprint de corregir defectos es un sprint de valor 0.</li>
+		<li></li>
+	</ul>
+	
+	<h3>Definición de Done (DOD)</h3>
+	<ul>
+		<li>Lo que el equipo entiendo para que una tarea está hecha.</li>
+		<li>La definición de done dirige la calidad de trabajo, y se usa para validar una user story cuando es completada.</li>
+		<li>La definición puede ser distinta por cada equipo de scrum. Y cuando madura la definición puede ser más estricta.</li>
+		<li>Para nosotros debe cumple con el criterio de aceptación.</li>
+		<li>Todo el código debe ser testeado.</li>
+		<li>Checklist de Module test.</li>
+		<li>El código ha sido subido.</li>
+	</ul>
+
+	<h3>Sprint backlog</h3>
+	<ul>
+		<li>Lista refinida del product backlog.</li>
+		<li>Refleja la previsión del equipo, lo que se puede completar en ese tiempo.</li>
+		<li>El equipo trabaja en ese incremento.</li>
+		<li>Si te queda sin trabajo el equipo de desarrollo puede añadir cosas al sprint backlog, pero si se queda sin tarbajo el siguiente item que esté arriba (por priodidad) se lo siguiente a coger.</li>
+		<li>Si hay elementos que no son necesarios pueden ser quitados del sprint backlog.</li>
+		<li>Solo el equipo de desarrollo puede cambiar el sprint backlog durante el sprint.</li>
+	</ul>
+	
+	<h3>Sprint Planning</h3>
+	<li>Máximo 2 horas por semana. como el Sprint Planing dura 4 horas para nosotros será para las 2 semanas.</li>
+	<li>El éxito del sprint planning depende de la calidad del product backlog.</li>
+	<li>El resultado de está ceremonia es doble. el product owner presenta la lsita de items al equipo, y el equipo revisa la lista de cosas, considerando la velocidad del equipo, la capacidad actual...</li>
+	<li>El product owner está disponible en la plannig para resolver preguntas o cosas uqe no se hayan entendido.</li>
+	<li>No se cuenta que una persnoa</li>
+
+	<h3>Daily Scrum</h3>
+	<ul>
+		<li>Maximo 15 minutos.</li>
+		<li>Reunión más de comunicar más que de reportar, y no entrando al detalle.</li>
+		<li>Comentar si hay algún impedimiento para proseguir.</li>
+		<li>Preguntas breves.</li>
+		<li>Reunión interna para el equipo de desarrollo.</li>
+		<li>El scrum master tiene que asegurarse que se hace la Reunión, aunque el scurm master podría no estar. ya que el equipo de desarrollo podría hacerla.</li>
+	</ul>
+
+	<h3>Grooming</h3>
+	<ul>
+		<li>Refinamiento del product backlog.</li>
+		<li>No debería ocupar más del 10% del sprint length (máximo 2 horas por semana).</li>
+		<li>Es para eliminar cosas menos importantes.</li>
+		<li>Partir cosas.</li>
+		<li>Estimarlar.</li>
+		<li>Identificar cualques setán listas para entrar en un sprint.</li>
+		<li>Cada item dle sprint debe representar un incremento dle bussine value.</li>
+	</ul>
+
+	<h3>Sprint Review</h3>
+	<ul>
+		<li>1 por semana del sprint.</li>
+		<li>El product owner los product backlogs que setán hechos y lo que no están hecho.</li>
+		<li>el equipo de desarrollo discute los problemas uqe han habido, y como se han resuelto</li>
+		<li>Se hace una demostración de lo que se ha hecho.</li>
+	</ul>
+
+	<h3>Retrospectiva</h3>
+	<ul>
+		<li>1 hora por semana. </li>
+		<li>Se hace una revisión de como ha ido el proceso.</li>
+	</ul>
+
+
+	<h3>Agile Planing</h3>
+	<li>Se está mas centrado en planificar que en el plan.</li>
+	<li>Anima al cambio. Los planes pueden ser facilmente cambiados.</li>
+
+	<h3>Figura del Scrum Master</h3>
+	......TODO
+	Evitar los impedimientos que permiten avanzar. Los impedimientos pueden ser externos o internos. 
+	Facilitar las reuniones de equipo.
+
+	
+
+	Sumario
+	Transparenciainspeccion y adaptación
+	valores: corage, respeto , foco 
+
+	Project Plan
+	Responsabildiad cmopartida entre el product owner y el equipo de desarollo
+
+	Project Stakeholder
+	los maneja el product owner
+
+	Comunciacion
+	ScumMaster/product owner
+
+	Equipo autoorganizado
+	
+	Riegos dle proyecto
 
 
 	<script src="../js/testMode.js"></script>
