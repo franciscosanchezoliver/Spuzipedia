@@ -179,8 +179,59 @@ Resultado:
 }		
 	</pre>
 
+	<h3><question>Centrar en un grid</question></h3>
+	<h4>Centrar verticalmente</h4>
+	<p>En un grid tenemos un <question>eje vertical</question> que se controlaría con la propiedad <question>align-self</question> o align-items (podemos usar cualquiera de las dos). Podemos ponerle uno de los siguientes valores: auto, normal, start, end, <question>center</question>, stretch, baseline, first baseline, y last baseline.
+	</p>
+	<ul>
+		<li><question>align-self</question>: tendremosque ponerle la propiedad <question>a cada div interior del grid</question>.</li>
+		<li><question>align-items</question>: basta con ponerlo <question>al padre para que todos se centren</question>.</li>
+	</ul>
+
+	<pre>
+.contenedor{
+	display:grid;
+	grid-template-columns: 300px 300px 300px
+	display-template-rows: 200px 200px 200px;
+	<question>align-items:center</question>;
+}
+	</pre>
+
+	<div style="display:grid; grid-template-columns: 300px 300px 300px; grid-template-rows: 200px 200px 200px; align-items: center;font-size:2em; border: solid 1px;">
+		<div style="width:100px; height:100px; background-color:red">1</div>
+		<div style="width:100px; height:100px; background-color:green">2</div>
+		<div style="width:100px; height:100px; background-color:blue">3</div>
+		<div style="width:100px; height:100px; background-color:pink">4</div>
+		<div style="width:100px; height:100px; background-color:salmon">5</div>
+		<div style="width:100px; height:100px; background-color:aquamarine">6</div>
+		<div style="width:100px; height:100px; background-color:teal">7</div>
+	</div>
+
+	<h4>Centrar horizontalmente</h4>
+	<p>
+		Igual que tenemos las propiedades de centrar verticalmente, para centrar horizontalmente usaremos: <question>justify-items</question> y <question>justify-self</question>.		
+	</p>
+	<pre>
+.contenedor{
+	display:grid;
+	grid-template-columns: 300px 300px 300px
+	display-template-rows: 200px 200px 200px;
+	<question>justify-items:center</question>;
+}
+	</pre>
+		
+	<div style="display:grid; grid-template-columns: 300px 300px 300px; grid-template-rows: 200px 200px 200px; justify-items: center;font-size:2em; border: solid 1px;">
+		<div style="width:100px; height:100px; background-color:red">1</div>
+		<div style="width:100px; height:100px; background-color:green">2</div>
+		<div style="width:100px; height:100px; background-color:blue">3</div>
+		<div style="width:100px; height:100px; background-color:pink">4</div>
+		<div style="width:100px; height:100px; background-color:salmon">5</div>
+		<div style="width:100px; height:100px; background-color:aquamarine">6</div>
+		<div style="width:100px; height:100px; background-color:teal">7</div>
+	</div>
 
 
+	
 <script src="../js/testMode.js"></script>
 </body>
 </html>
