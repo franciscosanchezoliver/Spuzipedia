@@ -19,9 +19,27 @@
 				<li> <a href="#recorrido_arbol">Recorrido</a> </li>
 			</ul>
 		</li>
+		<li><a href="#grafo">Grafo</a></li>
+		<li><a href="#diccionario">Diccionario</a></li>
+		<li><a href="#tablas_dispersion">Tablas de Dispersión (Tabla Hash)</a></li>
 	</ol>
 
 	<h1 id="tipos_abstractos_y_estructuras_de_datos">Tipos abstractos y estructuras de datos</h1>
+
+	<pre>
+  -- Pila (FIFO)
+ |-- Cola (LIFO)
+ |-- Lista
+ |          -- Anchura
+ |-- Arbol |                -- Inorden &larr; &uarr; &rarr;
+ |          -- Profundidad |-- Preorden &uarr; &larr; &rarr;
+ |                          -- Postorden &larr; &rarr; &uarr;
+ |          -- Dirigido
+ |-- Grafo |
+ |  		-- No dirigido
+ |-- Diccionario
+  -- Tabla de Dipsersion (Tabla Hash) 
+</pre>
 
 	<h2 id="pila"><question>Pila</question></h2>
 	<div style="display:inline-grid; grid-template-columns: auto auto;">
@@ -211,8 +229,20 @@
 				<img src="../imagenes/grafo-no-dirigido.png" alt="grafo no dirigido">
 			</div>
 		</div>
-
 	</ul>
+
+	<h2 id="diccionario"><question>Diccionario</question>
+	<p>
+		Es una <question>colección de [clave, valor]</question>. La <question>clave no puede repetirse</question>.
+	</p>
+
+	<h2 id="tablas_dispersion"><question>Tablas de Dispersión</question> (Tabla <question>Hash</question>)</h2>
+	<p>
+		También es una <question>colección de [clave, valor]</question> aunque la búsqueda se hace muy rápido.
+	</p>
+
+
+
 
 	<script src="../js/testMode.js"></script>
 </body>
