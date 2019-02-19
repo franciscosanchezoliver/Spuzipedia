@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../estilos/estilos.css">
+    <title>Git con Github</title>
+</head>
+
+<body>
+    <h1>Git</h1>
+</body>
+<h2>Introducción</h2>
+<p>
+    <a href="https://git-scm.com/" target="_blank">Git</a> es un software de control de versiones. Veremos un pequeño ejemplo de como subir un proyecto a
+    <a href="https://github.com/" target="_blank">GitHub</a> usando Git.
+    <br> Para poder seguir este tutorial hay que tener instalado la consola de Git (en la página de Git hay información de como
+    instalarlo), y tener una cuenta en GitHub. Nos vamos al proyecto que queremos subir al repositorio:
+</p>
+<img src="../imagenes/git001.png" alt="carpeta del proyecto">
+<p>
+    Una vez aquí abrimos la consola de Git usando el botón secundario y eligiendo la opción "Git Bash Here".
+</p>
+<img src="../imagenes/git002.png" alt="opcion git bash here">
+<p>
+    Nos debe de aparecer la siguiente consola de Git:
+</p>
+<img src="../imagenes/git003.png" alt="consola de git">
+<p>Ahora podemos "inicializar" el repositorio utilizando el comando "git init".</p>
+<img src="../imagenes/git004.png" alt="inicializar el proyecto">
+<p>Lo siguiente será configurar Git para que use nuestro nombre y nuestro email para este proyecto. Para ello usaremos los comandos
+    "git config user.name" y "git config user.email".</p>
+<img src="../imagenes/git005.png" alt="configuracion de nombre e email">
+<p>Ahora podemos añadir archivos al "staging area", para ello usamos el comando "git add nombrearchivo", pero si queremos añadir
+    todos los archivos entonces usaremos "git add ." </p>
+<img src="../imagenes/git006.png" alt="añadidos todos los archivos al staging area">
+<p>Podemos ver el estado de Git usando el comando "git status":</p>
+<img src="../imagenes/git007.png" alt="estado de git">
+
+<h2>Comunicación segura con SSH</h2>
+<p>Para comunicarnos con seguridad con GitHub podemos utilizar el protocolo
+    <a href="https://es.wikipedia.org/wiki/Secure_Shell"
+        target="_blank">SSH(Secure SHell)</a>. Para esto vamos a hacerlo en 3 pasos:
+    <ol>
+        <li>Crear una clave SSH.</li>
+        <li>Permitir que nuestra cuenta de GitHub autorice a la persona con la clave SSH generada anteriormente a realizar operaciones.</li>
+        <li>Por último subir nuestro proyecto al repositorio en GitHub.</li>
+    </ol>
+</p>
+
+<h3>Crear una clave SSH</h3>
+<p>Para ello abrimos la consola de Git (para esto no importa en que directorio abramos la consola) y usaremos el comando "ssh-keygen".</p>
+<img src="../imagenes/git008.png" alt="generar una clave ssh">
+<p>Una vez hecho esto se nos habrán generado dos archivos en el directorio que le hayamos indicado, la clave pública y la privada
+    (para más información
+    <a href="https://www.genbetadev.com/seguridad-informatica/tipos-de-criptografia-simetrica-asimetrica-e-hibrida"
+        target="_blank">click aquí</a>).</p>
+<img src="../imagenes/git009.png" alt="claves generadas">
+
+<h2>Dar acceso en GitHub</h2>
+<p>Una vez que ya tenemos nuestra clave ssh generada podemos ir a nuestra cuenta de GitHub.
+En la parte de arriba a la derecha nos vamos a "Settings".
+</p>
+<img src="../imagenes/git010.png" alt="settings github">
+<p>Nos vamos al apartado "SSH and GPG keys".</p>
+<img src="../imagenes/git011.png" alt="SSH and GPG keys">
+<p>Le damos a "New SSH key.</p>
+<img src="../imagenes/git012.png" alt="btoton para añadir la clave ssh">
+<p>Se nos abrirá una pantalla como la siguiente:</p>
+<img src="../imagenes/git013.png" alt="pantalla donde copiar la clave ssh">
+<p>Nos vamos a nuestro directorio donde esta nuestra clave pública, y copiamos el contenido en GitHub. Quedandonos algo parecido a esto:</p>
+<img src="../imagenes/git014.png" alt="clave ssh copiada y pegada">
+<p>Y ya podremos ver nuestra clave añadida.</p>
+<img src="../imagenes/git015.png" alt="clave añadida en GitHub">
+<p>Con esto ya podremos subir nuestro proyecto a GitHub. Para poder subir necesitamos la siguiente dirección que la podemos ver en GitHub dentro de nuestro proyecto.</p>
+<img src="../imagenes/git016.png" alt="direccion del repositorio github">
+<p>Abrimos la consola de Git en la dirección de nuestro proyecto y usamos el siguiente comando "git remote add miproyecto direcciondegit".</p>
+<img src="../imagenes/git017.png" alt="direccion del repositorio github">
+<p>Ahora hacemos commit utilizando el comando "git commit -m 'un ejemplo de mensaje de commit'"</p>
+<img src="../imagenes/git018.png" alt="direccion del repositorio github">
+<p>Decir que "ftpclient" es el nombre que le he puesto al repositorio remoto en local, es decir, le podría haber puesto cualquier otro nombre. Ya estamos listos para hacer "push" a GitHub, para ello usamos el comando "git push -u miproyecto master".</p>
+<img src="../imagenes/git019.png" alt="direccion del repositorio github">
+<p>Y ya podremos ver como nuestro proyecto esta en GitHub.</p>
+<img src="../imagenes/git020.png" alt="proyecto subido a GitHub">
+</html>
