@@ -3,7 +3,7 @@
 
 <head>
 	<title>
-		Tomcat
+		Servlet
 	</title>
 </head>
 
@@ -11,12 +11,42 @@
 	<h1>Índice</h1>
 
 	<ol>
-		<li> <a href=""></a></li>
+		<li> <a href="#servlet">Servlet</a></li>
+		<li> 
+			<ul>
+				<a href="#ciclo-de-vida">Ciclo de vida</a>
+				<li>Inicialización</li>
+				<li>Interactuar con el cliente</li>
+				<li>Destrucción</li>
+			</ul>
+		</li>
+
 	</ol>
 
-	<h1 id="scrum">Tomcat</h1>
-	Contenedor de Servlets de Java.
+	<h1 id="servlet">Servlet</h1>
+	<ul>
+		<li>Es una <question>clase en Java</question>.</li>
+		<li>Se usa para <question>aumentar las capacidades</question> iniciales de un <question>servidor</question>.</li>
+		<li>El <question>uso más común</question> es el de <question>generar páginas web</question> de forma <question>dinámica</question>.</li>
+	</ul>
 
+	<h2 id="ciclo-de-vida">Ciclo de vida</h2>
+	<ul>
+		Hay <question>3 puntos</question> en el ciclo de vida de un servlet:
+		<li><question>Inicialización</question>.</li>
+		<li><question>Interactuar</question> con los <question>clientes</question>.</li>
+		<li><question>Destrucción</question>.</li>
+	</ul> 
+
+	<h3>Inicialización del Servlet</h3>
+	<p>
+		Imaginemos que un servidor carga varios servlets para aumentar su funcionalidad inicial. <question>Cada Servlet</question> que cargue lo hará a través de un <question>método "init"</question> de dicho servlet. La inicialización debe completarse antes de poder interactuar con los clientes y logicamente también se ha tenido que inicializaciar antes de poder ser destruido.
+	</p>
+	<p>
+
+	</p>
+
+	TODO: https://es.wikipedia.org/wiki/Java_Servlet
 
 	<script src="../js/testMode.js"></script>
 </body>
