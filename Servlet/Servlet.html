@@ -13,12 +13,12 @@
 	<ol>
 		<li> <a href="#servlet">Servlet</a></li>
 		<li> 
-			<ul>
-				<a href="#ciclo-de-vida">Ciclo de vida</a>
-				<li>Inicialización</li>
-				<li>Interactuar con el cliente</li>
-				<li>Destrucción</li>
-			</ul>
+			<a href="#ciclo-de-vida">Ciclo de vida</a>
+			<ol>
+				<li><a href="#inicializacion-servlet">Inicialización</a></li>
+				<li><a href="#interactuar-con-clientes">Interactuar con el cliente</a></li>
+				<li> <a href="#destruccion-servlet">Destrucción</a></li>
+			</ol>
 		</li>
 
 	</ol>
@@ -27,10 +27,10 @@
 	<ul>
 		<li>Es una <question>clase en Java</question>.</li>
 		<li>Se usa para <question>aumentar las capacidades</question> iniciales de un <question>servidor</question>.</li>
-		<li>El <question>uso más común</question> es el de <question>generar páginas web</question> de forma <question>dinámica</question>.</li>
+		<li>El uso más común es el de <question>generar páginas web dinámica</question>.</li>
 	</ul>
 
-	<h2 id="ciclo-de-vida">Ciclo de vida</h2>
+	<h2 id="ciclo-de-vida"><question>Ciclo de vida</question></h2>
 	<ul>
 		Hay <question>3 puntos</question> en el ciclo de vida de un servlet:
 		<li><question>Inicialización</question>.</li>
@@ -38,15 +38,70 @@
 		<li><question>Destrucción</question>.</li>
 	</ul> 
 
-	<h3>Inicialización del Servlet</h3>
+	<h3 id="inicializacion-servlet"><question>Inicialización</question> del Servlet</h3>
 	<p>
-		Imaginemos que un servidor carga varios servlets para aumentar su funcionalidad inicial. <question>Cada Servlet</question> que cargue lo hará a través de un <question>método "init"</question> de dicho servlet. La inicialización debe completarse antes de poder interactuar con los clientes y logicamente también se ha tenido que inicializaciar antes de poder ser destruido.
-	</p>
-	<p>
-
+		Imaginemos que un <question>servidor carga varios servlets</question> para aumentar su funcionalidad inicial. <question>Cada Servlet</question> que cargue lo hará a través de un <question>método "init"</question> de dicho servlet. La inicialización debe completarse antes de poder interactuar con los clientes y logicamente también se ha tenido que inicializaciar antes de poder ser destruido.
 	</p>
 
-	TODO: https://es.wikipedia.org/wiki/Java_Servlet
+	<h3 id="interactuar-con-clientes"><question>Interactuar con clientes</question></h3>
+	<p>
+		Una vez que ya estan inicializados, el <question>servlet puede atender peticiones de los clientes</question>. Debido a que <question>estas peticiones serán atendidas directamente por la misma instancia del servlet</question> tendremos que tener <question>cuidado al acceder a variables compartidas</question> ya que pueden darse <question>problemas de sincronización</question>.
+	</p>
+
+	<h3 id="destruccion-servlet"></h3>
+	<ul>
+		<li>
+			Un <question>servlet se está ejecutando hasta</question> que:
+			<ul>
+				<li><question>El servidor lo destruya</question>.</li>
+				<li>Porque <question>el servidor se cierre</question>.</li>
+				<li>Por <question>petición del administrador del sistema</question>.</li>
+			</ul>
+		</li>
+		<li>
+			Para destruir un server se llama al <question>método "destroy"</question>.
+		</li>
+		<li>
+			Podemos llamar a este método incluso aunque queden peticiones por atender, por esta razón sería mejor esperar a que el servlet atendiera todas las peticiones antes de destruir el servlet.
+		</li>
+	</ul>
+
+	<h3>Ejemplo de Servlet</h3>
+	<p>
+		A continuación se muestra el <question>ejemplo de un servlet que atiende una petición GET y devuelve una página web HTML sencilla</question>.
+	</p>
+
+	<pre>
+	import java.io.IOException;
+	import java.io.PrintWriter;
+	import javax.servlet.ServletException;
+	import javax.servlet.http.HttpServlet;
+	import javax.servlet.http.HttpServletRequest;
+	import javax.servlet.http.HttpServletResponse;
+	
+	public class ServletBienvenida extends <question>HttpServlet</question> {
+	
+		/**
+		 * Servlet de ejemplo que recibe una petición GET y devuelve una página HTTP
+		 *
+		 * @param request
+		 * @param response
+		 * @throws ServletException
+		 * @thorws IOException
+		 */
+		@Override
+		public void <question>doGet</question>(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			response.setContentType("text/html");
+			PrintWriter out = response.getWriter();
+			out.println("&lt;!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\"&gt;");
+			out.println("&lt;html&gt;");
+			out.println("&lt;head&gt;&lt;title&gt;Bienvenido!&lt;/title&gt;&lt;/head&gt;");
+			out.println("&lt;body&gt;");
+			out.println("&lt;h1&gt;Welcome. This message was created by a Servlet!&lt;/h1&gt;");
+			out.println("&lt;/body&gt;&lt;/html&gt;");
+		}
+	}		
+	</pre>
 
 	<script src="../js/testMode.js"></script>
 </body>
