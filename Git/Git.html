@@ -18,10 +18,38 @@
 	<h1 id="git">Git</h1>
 
 	<h2>Squash</h2>
-	<p>Se utiliza para comprimir varios commits en uno solo. A veces tenemos una rama y estamos haciendo varios commits a esa rama, pero cuando nosotros queramos fusionarla con develop por ejemplo solo queremos hacer un solo commit con todos estos cambios. Esto es lo que se conoce como "squash" y tendremos que realizar los siguiente pasos para conseguirlo:
+	<p>Se utiliza para <question>comprimir varios commits en uno solo</question>. A veces tenemos una rama y estamos haciendo varios commits a esa rama, pero cuando nosotros queramos fusionarla con develop por ejemplo solo queremos hacer un solo commit con todos estos cambios. Esto es lo que se conoce como "squash". A continuación se muestra un ejemplo y como ser haría:
 	</p>
 
+	<p>
+		Imaginemos que partimos de la siguiente situación:
+	</p>
+	<img src="../imagenes/gitsquash/estado-inicial.png" alt="estado inicial">
 	
+	<p>
+		Nos ponemos en la rama y ponemos el siguiente comando: <question>git rebase -i HEAD~3</question>. Con este comando indicamos que queremos hacer un "rebase interactivo" desde HEAD (que se encuentar en el commit 5) hasta 3 commits para atrás.
+	</p>
+	<img src="../imagenes/gitsquash/comando-git-rebase.png" alt="comando rebase">
+
+	<p>
+		Se nos abrirá el editor de texto que tengamos por defecto configurado en git (mirar la configuración de git). y nos saldrá los 3 últimos commits:
+	</p>
+	<img src="../imagenes/gitsquash/git-commit-mensaje.PNG" alt="mensaje de squash">
+
+	<p>
+		Tenemos que usar unos de los commits para hacer un commit que comprima todo, este commit lo marcaremos con "<question>r</question>" y pondremos un nuevo mensaje para este commit que tiene ya los otros commits comprimidos. Los commit que se incluyen dentro del otro lo marcaremos con la letra "<question>f</question>".
+	</p>
+	<img src="../imagenes/gitsquash/cambiar-commit.png" alt="cambiar commit">
+	
+	<p>
+		Cuando guardemos y cerremos se nos abrirá a continuación un mensaje de commit donde ponemos el mensaje que queramos para el nuevo commit:
+	</p>
+	<img src="../imagenes/gitsquash/commit-comprimido-con-squash.PNG" alt="commit comprimido con squash">
+	
+	<p>
+		Una vez que hemos hecho el squash nos saldrá el siguiente gráfico en el que podemos ver como solo tenemos 2 commits ya que hemos comprimido 3 commits en uno solo: 
+	</p>
+	<img src="../imagenes/gitsquash/git-log-despues-squash.PNG" alt="resultado del squash">
 
 
 	<script src="../js/testMode.js"></script>
