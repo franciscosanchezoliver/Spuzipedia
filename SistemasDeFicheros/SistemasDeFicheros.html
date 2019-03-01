@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Sistemas de ficheros
+	</title>
+</head>
+
+<body>
+	<h1>Índice</h1>
+
+	<ol>
+		<li> <a href="#scrum">Sistemas de ficheros</a></li>
+	</ol>
+
+	<h1 id="sistemas_de_ficheros">Sistemas de ficheros</h1>
+
+	<ul>
+		Controlan <question>cómo se almacenan/recuperan los datos en los distintos medios</question>. 
+		<li>
+			<question>FAT </question>(<question>File Allocation System</question>):  
+			<ul>
+				<li>3 variantes: <question>FAT 12, 16, 32</question></li>
+				<li>Utilizado <question>cuando NTFS no es apropiado</question>.</li>
+			</ul>
+		</li>
+		<li>
+			<question>NTFS</question> (<question>New Technology File System</question>): para <question>windows 7,8, y 10</question> 
+		</li>
+		<li>
+			<question>EXT</question>:
+			<ul>
+				<li>
+					Para el <question>Núcleo de Linux</question>.
+				</li>
+				<li>
+					Variantes: EXT, EXT2, EXT3, EXT4
+				</li>
+				<li>
+					A partir de EXT3 tiene la <question>tecnología "journaling"</question> que <question>protege los archivos</question> si hay un <question>apagado abrupto del sistema</question>.
+				</li>
+			</ul> 
+		</li>
+		<li><question>JFS</question> 
+			<ul>
+				<li>
+					Creado por <question>IBM</question>
+				</li>
+				<li>
+					Tiene journaling.
+				</li>
+			</ul>
+		</li>
+
+		<li>
+			XFS: creado por Silicon Graphics.
+		</li>
+
+		<li>
+			ZFS: creado por Oracle.
+		</li>
+
+		<li>
+			ReiserFS: creado por Namesys.
+		</li>
+
+		<li>
+			HFS Plus: creado por Apple.
+		</li>
+
+		<li>
+			ISO 9660: sistema de archivos para medios ópticos.
+		</li>
+
+	</ul>
+
+
+
+	<script src="../js/testMode.js"></script>
+</body>
+
+
+</html>
