@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../estilos/estilos.css">
+    <title>Apache en Linux</title>
+</head>
+
+<body>
+
+    <h1>Índice</h1>
+    <ol>
+        <li><a href="#instalacion">Instalación</a></li>
+    </ol>
+
+    <h1>Apache en Linux</h1>
+
+    <h2 id="instalacion">Instalación</h2>
+    <ol>
+        <li>Actualizar los repositorios: sudo apt-get update</li>
+        <li>Instalar Apache: sudo apt-get install apache2</li>
+    </ol>
+
+    <h2><question>Parar servidor</question></h2>
+    <question>sudo /etc/init.d/apache2 stop</question>
+    <img src="../imagenes/apachelinux/pararServidor.PNG" alt="parar apache">
+
+    <h2><question>Reiniciar servidor</question></h2>
+    <question>sudo /etc/init.d/apache2 restart</question>
+    <img src="../imagenes/apachelinux/reiniciarServidor.PNG" alt="reiniciar apache">
+
+    <h2>¿Dónde está la web que muestra aapache?</h2>
+    <p>
+        Vamos a <question>/var/www</question> y podremos ver una carpeta llamada "html". Dentro de esta carpeta tendremos nuestro "index.html"-
+    </p>
+
+
+
+	<script src="../js/testMode.js"></script>
+</body>
+
+
+</html>
