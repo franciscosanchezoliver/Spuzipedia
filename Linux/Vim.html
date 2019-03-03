@@ -11,12 +11,104 @@
 	<h1>Índice</h1>
 
 	<ol>
+		<li>
+			<a href="#vim">Vim</a>
+			<a href="#modos">Modos</a>
+			<a href="#insertar_reemplazar">Insertar y Reemplazar</a>
+
+		</li>
 	</ol>
 
 	<h1 id="vim">Vim</h1>
+
+	<h2>Modos</h2>
+	<ul>
+		<li>
+			<question>Normal</question>
+			<ul>
+				<li>Para <question>navegar por el texto</question>.</li>
+				<li><question>Para salir</question> pulsamos <question>"ESC"</question>. </li>
+				<li>Ayuda-> ":help Normal-mode"</li>
+			</ul>
+		</li>
+
+		<li>
+			<question>Insertar</question>
+			<ul>
+				<li>
+					Para <question>insertar nuevo texto</question>. 
+				</li>
+				<li>
+					Ayuda-> ":help Insert-mode"
+				</li>
+			</ul>
+		</li>
+
+		<li>
+			<question>Visual</question>
+			<ul>
+				<li>
+					Para <question>manipular trozos de texto seleccionado</question>. Podremos ejecutar comandos con el texto seleccionado.
+				</li>
+				<li>
+					Ayuda-> ":help Visual-mode"
+				</li>
+			</ul>
+		</li>
+
+		<li>
+			<question>Select</question>
+			<ul>
+				<li>Muy <question>parecido</question> al modo <question>"Visual"</question> pero con funciones parecidas a Microsoft.</li>
+			</ul>
+		</li>
+
+		<li>
+			<question>Command Line</question>
+			<li>
+				Para meter comandos.
+			</li>
+			<li>
+				Ayuda-> ":help Command-line-mode".
+			</li>
+		</li>
+
+		<li>
+			Ex-Mode
+			<ul>
+				<li>
+					Como el modo de comando pero optimizado para el procesador batch.
+				</li>
+				<li>
+					Ayuda-> ":help Ex-mode"
+				</li>
+			</ul>
+		</li>
+
+	</ul>
+
+	<p>
+		Para <question>salir de un modo</question> tenemos que presionar <question>"ESC"</question>.
+	</p>
+
+	<h2 id="insertar_reemplazar"><question>Insertar</question> y <question>Reemplazar</question></h2>
+	<p>
+		Insertar lo utilizamos para <question>escribir texto</question>. Podemos a entrar a este modo de las siguientes maneras:
+	</p>
+	<ul>
+		<li><question>a</question>: <question>append after cursor</question>.</li>
+		<li><question>A</question>: <question>append</question> at <question>end of line</question>.
+		<li><question>i</question>: <question>insert before cursor</question>.</li>
+		<li><question>I</question>: <question>insert</question> at <question>beginning of line</question>.</li>
+	</ul>
+
+
 	<ul>
 		<li>insertar texto: le damos a la <question>"i"</question> para meternos en el modo insertar.</li>
+		<li>borrar línea: para borar una linea pulsamos "<question>dd</question>"</li>
 	</ul>
+
+	TODO: https://en.wikibooks.org/wiki/Learning_the_vi_Editor/Vim/Modes
 
 
 	<script src="../js/testMode.js"></script>
