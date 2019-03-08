@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Java 8. Lambda Expressions
+	</title>
+</head>
+
+<body>
+	<h1>Índice</h1>
+	<ol>
+		<li><a href="#lambda_expressions">Lambda Expressions</a> </li>
+		<li><a href="#sintaxis">Sintaxis</a> </li>
+		<li><a href="#ejemplo_parametros_opcionales">Ejemplo de parámetros opcionales.</a> </li>
+	</ol>
+
+	<h1 id="lambda_expressions">Java 8. Lambda Expressions</h1>
+	<ul>
+		<li>El <question>mayor cambio</question> introducido en <question>Java 8</question>.</li>
+		<li>Facilitan la <question>programación funcional</question>.</li>
+		<li><question>Simplifican el desarrollo</question>.</li>
+	</ul>
+
+	<h2 id="sintaxis">Sintaxis</h2>
+	<p>Una expresión lambda se caracteriza por tener el siguiente <question>formato</question>:</p>
+	<pre style="width: min-content"> <question>parametros -> cuerpo de la expresión</question> </pre>
+
+	<ul>
+		Las <question>características</question> de las expresiones lambdas son:
+		<li><question>Declaración opcional</question> de los <question>parámetros</question>. Si los parámetros no son declarados entonces el <question>compilador los inferirá</question> según el valor que contenga la variable.</li>
+	</ul>
+
+	<h2 id="ejemplo_parametros_opcionales">Ejemplo de Parámetros opcionales</h2>
+	<pre style="width:min-content;">
+		
+ public class LambdaExample {
+ 
+ 	interface OperacionMatematica {
+ 		int calcular(int a, int b);
+ 	}
+ 
+ 	public static int operar(int a, int b, OperacionMatematica operacionMatematica) { 
+ 		return operacionMatematica.calcular(a, b);
+ 	}
+ 
+ 	public static void main(String args[]) {
+ 		// Tipo de <question>parámetros sin declarar</question>, inferidos por el compilador
+		OperacionMatematica resta = <question>(a, b)</question> -> a - b;
+		 
+ 		// Tipo de <question>parámetros declarados</question>
+		OperacionMatematica suma = (<question>int a, int b</question>) -> a + b;
+		 
+ 		System.out.println(operar(1, 2, suma));
+ 		System.out.println(operar(1, 2, resta));
+ 	}
+ 
+ }
+ </pre>
+
+
+
+	<script src="../js/testMode.js"></script>
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
