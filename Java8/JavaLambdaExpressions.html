@@ -12,7 +12,8 @@
 	<ol>
 		<li><a href="#lambda_expressions">Lambda Expressions</a> </li>
 		<li><a href="#sintaxis">Sintaxis</a> </li>
-		<li><a href="#ejemplo_parametros_opcionales">Ejemplo de parámetros opcionales.</a> </li>
+		<li><a href="#parametros_opcionales">Parámetros opcionales</a> </li>
+		<li><a href="#parentesis_opcionales">Paréntesis opcionales</a> </li>
 	</ol>
 
 	<h1 id="lambda_expressions">Java 8. Lambda Expressions</h1>
@@ -24,14 +25,26 @@
 
 	<h2 id="sintaxis">Sintaxis</h2>
 	<p>Una expresión lambda se caracteriza por tener el siguiente <question>formato</question>:</p>
-	<pre style="width: min-content"> <question>parametros -> cuerpo de la expresión</question> </pre>
+	<pre style="width: min-content">
+		
+ <question>parámetros -> cuerpo de la expresión</question>  
+ 
+</pre>
 
 	<ul>
 		Las <question>características</question> de las expresiones lambdas son:
-		<li><question>Declaración opcional</question> de los <question>parámetros</question>. Si los parámetros no son declarados entonces el <question>compilador los inferirá</question> según el valor que contenga la variable.</li>
+		<li>
+			<question>Declaración opcional</question> de los <question>parámetros</question>. Si los parámetros no son declarados entonces el <question>compilador los inferirá</question> según el valor que contenga la variable.
+		</li>
+
+		<li>
+			<question>Paréntesis opcionales</question> si hay <question>1 solo parámetro</question>.
+		</li>
+
 	</ul>
 
-	<h2 id="ejemplo_parametros_opcionales">Ejemplo de Parámetros opcionales</h2>
+	
+	<h2 id="parametros_opcionales">Parámetros opcionales</h2>
 	<pre style="width:min-content;">
 		
  public class LambdaExample {
@@ -58,6 +71,23 @@
  }
  </pre>
 
+ 	<h2 id="parentesis_opcionales">Paréntesis opcionales</h2>
+ 	<pre style="width:min-content;">
+
+ public class LambdaExample {
+ 
+ 	interface Imprimir {
+ 		void print(String cadena);
+ 	}
+ 
+ 	public static void main(String args[]) {
+		// <question>Parametro sin paréntesis</question>
+ 		Imprimir imprimirPorPantalla = <question>cadena</question> -> System.out.println(cadena); 
+ 		imprimirPorPantalla.print("hola");
+ 	}
+ 
+ }		 
+	 </pre>
 
 
 	<script src="../js/testMode.js"></script>
