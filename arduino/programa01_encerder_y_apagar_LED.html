@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Arduino: Pulsador + LED
+	</title>
+</head>
+
+<body>
+
+	<h1>Ejercicio: Encender un LED con un pulsador</h1>
+	<p>
+		Para conectar el led lo hacemos como la siguiente imagen:
+	</p>
+
+	<img src="../imagenes/arduino/circuito01/conexion_led.jpg" alt="como conectar un led con arduino">
+
+	<p>
+		Usaremos el siguiente código para encender y apagar el LED:
+	</p>
+
+	<pre style="width: min-content">
+// Esta función se ejecutará una sola vez al inicio del programa.
+void setup() {
+	// 1º Parámetro: Número de pin que vamos a usar.
+	//               El 13 es el led que se encuentra en el Arduino.
+	// 2º Parámetro: Indicar si queremos que sea de entrada o de salida el pin. 
+	<question>pinMode(3, OUTPUT)</question>;
+}
+
+// Función que está apagando y encendiendo el pin integrado todo el tiempo.
+void loop(){
+
+	int tiempoDeEsperaCuandoEstaApagado = 50;
+	int tiempoDePunto = 200;
+	int tiempoDeRaya = 500;
+
+	for (int i = 0; i &lt; 3; i++) {
+		<question>digitalWrite</question>(3,HIGH);
+		delay(tiempoDePunto);
+		digitalWrite(3,LOW);
+		delay(tiempoDeEsperaCuandoEstaApagado);
+	}
+
+	for (int i = 0; i &lt; 3; i++) {
+		digitalWrite(3,HIGH);
+		delay(tiempoDeRaya);
+		digitalWrite(3,LOW);
+		delay(tiempoDeEsperaCuandoEstaApagado);
+	}
+
+}
+	</pre>
+
+
+	<script src="../js/testMode.js"></script>
+</body>
+
+
+</html>

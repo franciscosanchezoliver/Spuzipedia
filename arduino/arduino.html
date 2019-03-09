@@ -8,15 +8,46 @@
 </head>
 
 <body>
+	<h1>Indice</h1>
+	<ol>
+		<li> <a href="#esquema_general">Esquema General</a> </li>
+		<li> <a href="">Instalación</a></li>
+		<li><a href="#funcion_set_up">Función Set Up</a></li>
+		<li><a href="#funcion_loop">Función Loop</a></li>
+		<li><a href="#compilar_y_ejecutar">Compilar y Ejecutar</a></li>
+		<li><a href="programa01_encerder_y_apagar_LED.html">Ejercicio: encender y apagar un LED</a></li>
+		<li><a href="#ley_ohm">Ley de Ohm</a></li>
+	</ol>
+
+
 	<h1>Arduino</h1>
-	<h2>Esquema</h2>
-	<img src="imagenes/arduino_scheme.jpg" alt="arduino scheme" />
+	<h2 id="esquema_general"><question>Esquema</question></h2>
+	<img src="imagenes/arduino_scheme.jpg" width="75%" alt="arduino scheme" />
+	
+	<h2 id="funcion_set_up">Función <question>Set Up</question></h2>
+	<p>
+		Todos los programas de Arduino empiezan con la <question>función set up</question> que <question>se realiza una sola vez al inicio</question>.
+	</p>
+	<img src="../imagenes/arduino/funcion_set_up.PNG" alt="función set up">
+
+	<h2 id="funcion_loop">Funcion <question>Loop</question></h2>
+	<p>
+		Dentro de la función "loop" se estará ejecutando el código de forma indefinida.
+	</p>
+	<img src="../imagenes/arduino/function_loop.PNG" alt="función loop">
+
+	<h2><question>Compilar y Ejecutar</question></h2>
+	<img src="../imagenes/arduino/compilar_y_ejecutar.png" alt="compilar y ejecutar">
+
+	<h2 id="led"><question>LED</question></h2>
+	<img src="../imagenes/arduino/anodo_y_catodo.PNG" alt=" anodo y cátodo de un led">
 
 	<h2>Primer programa</h2>
 	<p>Hacemos parpadear el pin 13 que es el pin digital que tiene un led:</p>
 	<img src="imagenes/arduino_program01.PNG" alt="first-program">
 
-	<h2>Ley de Ohm</h2>
+
+	<h2 id="ley_ohm">Ley de Ohm</h2>
 	<p>
 		V=R*I ; R= V/I ; I=V/R
 	</p>

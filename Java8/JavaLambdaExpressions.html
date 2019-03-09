@@ -14,6 +14,7 @@
 		<li><a href="#sintaxis">Sintaxis</a> </li>
 		<li><a href="#parametros_opcionales">Parámetros opcionales</a> </li>
 		<li><a href="#parentesis_opcionales">Paréntesis opcionales</a> </li>
+		<li><a href="#llaves_opcionales">Llaves opcionales</a> </li>
 	</ol>
 
 	<h1 id="lambda_expressions">Java 8. Lambda Expressions</h1>
@@ -26,19 +27,27 @@
 	<h2 id="sintaxis">Sintaxis</h2>
 	<p>Una expresión lambda se caracteriza por tener el siguiente <question>formato</question>:</p>
 	<pre style="width: min-content">
-		
+
  <question>parámetros -> cuerpo de la expresión</question>  
  
 </pre>
 
+	<p>Las <question>características</question> de las expresiones lambdas son:</p>
 	<ul>
-		Las <question>características</question> de las expresiones lambdas son:
 		<li>
 			<question>Declaración opcional</question> de los <question>parámetros</question>. Si los parámetros no son declarados entonces el <question>compilador los inferirá</question> según el valor que contenga la variable.
 		</li>
 
 		<li>
 			<question>Paréntesis opcionales</question> si hay <question>1 solo parámetro</question>.
+		</li>
+
+		<li>
+			<question>Llaves opcionales</question> si hay <question>una sola línea</question>.
+		</li>
+
+		<li>
+			Valor de retorno opcional si la expresión tiene un único valor para devolver la expresión. Si queremos omitir el return
 		</li>
 
 	</ul>
@@ -89,6 +98,24 @@
  }		 
 	 </pre>
 
+	 <h2 id="llaves_opcionales">Llaves opcionales</h2>
+ 	<pre style="width:min-content;">
+
+	public class LambdaExample {
+	
+		interface Imprimir {
+			void print(String cadena);
+		}
+	
+		public static void main(String args[]) {
+			// <question>Sin llaves</question>
+			Imprimir imprimirPorPantalla = cadena -> <question>System.out.println(cadena)</question>; 
+			imprimirPorPantalla.print("hola");
+		}
+	
+	}		 
+	</pre>
+		   
 
 	<script src="../js/testMode.js"></script>
 </body>
