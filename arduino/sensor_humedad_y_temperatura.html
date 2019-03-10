@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Arduino: Sensor de humedad y temperatura
+	</title>
+</head>
+
+<body>
+
+	<h1>Sensor de humedad y Temperatura: DHT11</h1>
+
+	<p>
+		Para usar el sensor DHT11 tenemos que instalar una librería que nos ayuda a leer del sensor. Le damos a Herramientas > Administrar Bibliotecas y en el filtro de búsqueda ponemos "DHT" e instalamos la versión 1.2.3 NOTA: este código funciona para esta versión en concreto.
+	</p>
+	<img src="../imagenes/arduino/sensorHumedadYTemperatura/bibliotecaDHT.PNG" alt="biblioteca DHT">
+
+	<p>
+		El circuito se conectaría así:
+	</p>
+	<img src="../imagenes/arduino/sensorHumedadYTemperatura/circuito_sensor_humedad_temperatura.png" alt="circuito de temperatura y humedad">
+
+	<p>
+		El código es el siguiente:
+	</p>
+
+	<pre style="width: min-content">
+#include &lt;DHT.h&gt; // Librería para usar el sensor
+
+	int SENSOR = 2; // Pin conectado al sensor
+	int temperatura;
+	int humedad; 
+	
+	// Variable de tipo DHT definida en la libreria
+	// 1º parametro: El pin donde está conectado el sensor
+	// 2º) la marca del dispositvo : DHT11 normalmente
+	DHT dht( SENSOR, DHT11 );
+	
+	void setup() {
+	Serial.begin(9600); // Para escribir por consola
+	dht.begin(); // Comenza a captar datos del exterior
+	}
+	
+	void loop() {
+	humedad = dht.readHumidity(); // Lee la humedad
+	temperatura = dht.readTemperature(); // Lee la temperatura
+	
+	Serial.print("Temperatura: " );
+	Serial.print(temperatura);
+	
+	Serial.print("Humedad:");
+	Serial.print(humedad);
+	
+	Serial.print("%");
+	Serial.print("\n");
+	delay(2000); // pequeña espera para que no se vuelva loco el puerto serial
+	
+	}
+</pre>
+
+	<p>
+		El resultado es el siguiente:
+	</p>
+	<img src="../imagenes/arduino/sensorHumedadYTemperatura/resultado.PNG" alt="resultado de la lectura de temperatura y humedad">
+
+
+	<script src="../js/testMode.js"></script>
+</body>
+
+
+</html>
