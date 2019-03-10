@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Arduino: Pulsador + LED
+	</title>
+</head>
+
+<body>
+
+	<h1>Ejercicio: encender un LED usando un pulsador</h1>
+	<p>
+		Para conectar el pulsador, seguimos el siguiente ejemplo: <a href="programa02_pulsador.html">tutorial pulsador</a>. Y para conectar un led seguimos el siguiente ejemplo: <a href="programa01_encerder_y_apagar_LED.html">encender/apagar un LED</a>.
+	</p>
+
+	<p>
+		En la siguiente imagen podemos ver el circuito conectado:
+	</p>
+
+	<img src="../imagenes/arduino/pulsadorMasLED/circuito_pulsador_y_LED.jpg" alt="circuito con un pulsador y un led">
+
+	<p>
+		El código es el siguiente:
+	</p>
+	<pre style="width: min-content;">
+int PULSADOR = 2;
+int LED = 6;
+
+void setup() {
+	pinMode(LED, OUTPUT);     // Poner el LED como salida
+	pinMode(PULSADOR, INPUT); // Poner el pulsador como entrada
+
+	digitalWrite(LED, LOW);   // El LED empezará apagado
+
+	digitalWrite(PULSADOR, LOW);
+
+	Serial.begin(9600);       // Para escribir en consola
+}
+
+void loop() {
+	// Botón pulsado.
+	if(digitalRead(PULSADOR) == LOW ){
+	digitalWrite(LED, LOW);       // Apagar el LED
+	}
+
+	// Botón no pulsado.
+	if(digitalRead(PULSADOR) == HIGH ){
+	digitalWrite(LED, HIGH);     // Encender el LED
+	}
+}
+	</pre>
+
+	<p>Ahora el LED se encenderá cuando mantengamos pulsados el botón.</p>
+
+	<script src="../js/testMode.js"></script>
+</body>
+
+
+</html>
