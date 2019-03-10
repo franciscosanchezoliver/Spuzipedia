@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Arduino: Pulsador
+	</title>
+</head>
+
+<body>
+
+	<h1>Ejercicio: usar un Pulsador</h1>
+	<p>
+		El pulsador tiene 4 patas pero se comporta como si tuviese 2 patas, una positiva y otra negativa. Tenemos que tener en cuenta como están conectadas estas patas.
+	</p>
+	<img src="../imagenes/arduino/circuitoPulsador/patas.png" alt="patas">
+
+	<p>
+		Hacemos el siguiente circuito:
+	</p>
+	<img src="../imagenes/arduino/circuitoPulsador/circuito_pulsador.jpg" alt="circuito con pulsador">
+
+	<p>
+		El código es el siguiente:
+	</p>
+	<pre style="width: min-content;">
+int PULSADOR = 2;
+
+void setup() {
+	pinMode(PULSADOR, INPUT); // Poner el pulsador como entrada
+	Serial.begin(9600);       // Para escribir en consola
+}
+
+void loop() {
+	if(digitalRead(PULSADOR) == LOW ){
+	Serial.write( "No pulsado");  
+	}
+
+	if(digitalRead(PULSADOR) == HIGH ){
+	Serial.write( "pulsado");  
+	}
+	Serial.print('\n');
+	delay(1000);
+}		
+	</pre>
+
+<p>
+	Obtenemos el siguiente resultado:
+</p>
+
+<img src="../imagenes/arduino/circuitoPulsador/resultado.png" alt="resultado">
+
+	<script src="../js/testMode.js"></script>
+</body>
+
+
+</html>
