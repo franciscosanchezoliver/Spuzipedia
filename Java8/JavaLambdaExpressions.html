@@ -22,6 +22,16 @@
 		<li>El <question>mayor cambio</question> introducido en <question>Java 8</question>.</li>
 		<li>Facilitan la <question>programación funcional</question>.</li>
 		<li><question>Simplifican el desarrollo</question>.</li>
+		<li>Definen la <question>implementación de una interfaz funcional</question> (una <question>interfaz con un solo método</question>).
+		<pre style="width:min-content;">
+ interface MathOperation {
+	int operation(int a, int b);
+ }
+ MathOperation addition = (a, b) -> a + b; 
+		</pre>
+
+
+		</li>
 	</ul>
 
 	<h2 id="sintaxis">Sintaxis</h2>
@@ -47,7 +57,7 @@
 		</li>
 
 		<li>
-			Valor de retorno opcional si la expresión tiene un único valor para devolver la expresión. Si queremos omitir el return
+			<question>Valor de retorno opcional</question> si la expresión tiene <question>un único valor para devolver</question> la expresión. Si queremos omitir el return.
 		</li>
 
 	</ul>
