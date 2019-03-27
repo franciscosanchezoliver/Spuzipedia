@@ -17,9 +17,24 @@
 	<h1>C</h1>
 
 	<h2>Hello World</h2>
-	<pre>
+	<p>
+		Los comandos "<question>include</question>" son <question>comandos preprocesador</question>. Cuando creamos un proyecto vacio y vemos estos includes ya estaríamos incluyendo código para que pueda funcionar minimamente. <question>stdio.h</question> esta librería se encarga de <question>poder imprimir por pantalla</question>.
+		La librería <question>stlib.h</question> permite al <question>compilador detectar la función main</question>, el main será el punto de entrada de la aplicación, por tanto <question>todo proyecto tendrá una función main</question>.
+	</p>
 
-		
+	<pre style="width: min-content;">
+ #include &lt;stdio.h>
+ #include &lt;stdlib.h>
+
+ // función que <question>no tiene parámetros de entrada</question>
+ // función <question>devuelve un int</question>
+ // el valor de <question>retorno 0 </question>indica que el programa 
+ // se ha <question>ejecutado correctamente</question>.
+ <question>int main</question>(){
+	// la función printf se encuentra en la librería stdio.h
+	printf("Hello world!\n"); 
+	<question>return 0</question>;
+ }	
 	</pre>
 
 	<h2 id="scanf">scanf</h2>
