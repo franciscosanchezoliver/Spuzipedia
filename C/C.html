@@ -37,11 +37,84 @@
  }	
 	</pre>
 
-	<h2 id="scanf">scanf</h2>
+	<h2 id="scanf"><question>scanf</question></h2>
 	<p>
+		Nos permite <question>leer</question> diferentes tipos de <question>datos</question>, como por ejemplo enteros, decimales, o cadenas de caracteres.
+	</p>
+	<p>
+		scanf se encuentra en la librería "stdio.h".
+	</p>
+	<p>
+		En la variable de tipo puntero <question>"format"</question> le pasamos el <question>tipo de datos que queremos leer</question>. Si todo es correcto <question>devuelve</question> el número de datos leidos, <question>si</question> hay algún <question>error</question> devuelve <question>EOF</question>.
+	</p>
+	<pre style="width: min-content;">
+#include &lt;stdio.h&gt;
+int scanf(const char <question>*format</question>, ...);
+	</pre>
 
+	<p>
+		Si usamos el especificador de formato <question>%s</question> es para <question>leer cadenas</question>. La función <question>scanf leerá caracteres</question> hasta <question>encontrar</question> un <question>espacio</question>, un <question>intro</question>, un <question>tabulador</question>, un <question>tabulador vertical</question> o un <question>retorno de carro</question>. <question>Al final</question> de lo que ha leído <question>añade</question> un caracter <question>nulo automáticamente</question>.
+	</p>
+	<p style="color:red; border:solid 1px;">
+		NOTA: Los caracteres leídos se guardan en un array, por lo que el <question>array debe ser lo suficientemente grande para poder guardar lo leído</question>. Por esto es peligroso usar scanf o gets para leer cadenas, ya que scanf admite que el usuario escriba más caracteres que lo que el array definido puede admitir. Como resultado scanf escribirá los caracteres que ya no quepan en el array definido en otras porciones de memoria que pueden contener otros datos que está usando nuestro programa.  
 	</p>
 
+	<p>
+		A scanf hay que <question>pasarle punteros a los argumentos</question>. En el siguiente ejemplo le pasamos un puntero a la variable:
+	</p>
+	<pre style="width:min-content">
+int entero1, entero2;
+printf("Introduce dos enteros separados por un espacio: \n");
+scanf("%d %d", <question>&</question>entero1, <question>&</question>entero2);	
+	</pre>
+	<p>
+		Sin embargo <question>cuando leemos una cadena de caracteres</question>, los caracteres leídos (más el caracter nulo de terminación) se guardan en el array apuntado. Aquí <question>no se usa</question> el <question>operación de dirección "&"</question> porque <question>el propio nombre de un array</question> (en este caso el array contiene una cadena) <question>apunta a la dirección de comienzo del propio array</question>. 
+	</p>
+	<pre style="width: min-content;">
+char cadena[8];
+scanf("%s" , cadena);
+	</pre>
+
+	<p>
+		Ejemplo de programa con scanf:
+	</p>
+	<pre style="width:min-content;">
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+#define TAMANIO_MAXIMO 80
+
+int main()
+{
+	char cadena[TAMANIO_MAXIMO];
+	int entero1, entero2;
+	float decimal;
+
+	// Lectura de Enteros
+	// A scanf hay que pasarle punteros a los argumentos. En el siguiente ejemplo
+	// le pasamos un puntero a la variable:
+	printf("Introduce dos enteros separados por un (espacio, tabulador, intro ): \n");
+	scanf("%d %d", &entero1, &entero2);
+
+	// Lectura de decimales
+	printf("Introduce un número decimal:\n");
+	scanf("%f" , &decimal);
+
+	// Lectura de cadenas
+	// Cuando leemos una cadena de caracteres, los caracteres leídos
+	// (más el caracter nulo de terminación) se guardan en el array
+	// apuntado. Aquí no se usa el operación de dirección "&" porque
+	// el propio nombre de un array (en este caso el array que contiene
+	// una cadena) apunta a la dirección de comienzo del propio
+	// array.
+	scanf("%s", cadena);
+
+	printf("Esto es todo lo que has escrito:\n");
+	printf("%d %d %f %s\n", &entero1, &entero2, decimal,cadena);
+
+	return 0;
+}
+</pre>
 
 	<script src="../js/testMode.js"></script>
 </body>
