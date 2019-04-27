@@ -10,14 +10,14 @@
 <body>
 	<h1>Índice</h1>
 	<ol>
-		<li><a href="hello_world">Hello World</a> </li>
+		<li><a href="#hello_world">Hello World</a> </li>
 		<li><a href="#scanf">scanf</a> </li>
 		<li><a href="#atoi">atoi</a></li>
 	</ol>
 
 	<h1>C</h1>
 
-	<h2>Hello World</h2>
+	<h2 id="hello_world">Hello World</h2>
 	<p>
 		Los comandos "<question>include</question>" son <question>comandos preprocesador</question>. Cuando creamos un proyecto vacio y vemos estos includes ya estaríamos incluyendo código para que pueda funcionar minimamente. <question>stdio.h</question> esta librería se encarga de <question>poder imprimir por pantalla</question>.
 		La librería <question>stlib.h</question> permite al <question>compilador detectar la función main</question>, el main será el punto de entrada de la aplicación, por tanto <question>todo proyecto tendrá una función main</question>.
@@ -164,7 +164,84 @@ scanf("%s" , cadena);
 <span style="color: #d0d0d0">}</span>
 </pre></div>
 	
+
+<h2>Paso de parámetros a funciones</h2>
+<p>
+	Podemos llamar a una funcion y pasarle los parámetros <question>por valor</question> o <question>por referencia</question>.
+</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #111111; overflow:auto;width:auto;border:solid 1px;padding-left:10px;padding-right:10px;width:min-content;"><pre style="margin: 0; line-height: 125%">
 	
+<span style="color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f">#include &lt;stdio.h&gt;</span>
+
+<span style="color: #cdcaa9; font-weight: bold">int</span> <span style="color: #ff0086; font-weight: bold">main</span><span style="color: #ffffff">()</span>
+<span style="color: #ffffff">{</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// **** P O R   V A L O R ****</span>
+
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// Paso de parametro por &quot;VALOR&quot;.</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// Estoy pasando una el valor que contiene la variable &quot;dinero&quot;</span>
+	<span style="color: #cdcaa9; font-weight: bold">void</span> <span style="color: #ffffff">ganarPorValor(</span><span style="color: #cdcaa9; font-weight: bold">int</span> <span style="color: #ffffff">dinero_ganado)</span>
+	<span style="color: #ffffff">{</span>
+		<span style="color: #ffffff">printf(</span><span style="color: #0086d2">&quot;El valor del dinero es: %d \n&quot;</span><span style="color: #ffffff">,</span> <span style="color: #ffffff">dinero_ganado);</span>
+	<span style="color: #ffffff">}</span>
+
+	<span style="color: #cdcaa9; font-weight: bold">int</span> <span style="color: #ffffff">dinero</span> <span style="color: #ffffff">=</span> <span style="color: #0086f7; font-weight: bold">500</span><span style="color: #ffffff">;</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// Pasamos el parametro por valor, es decir pasamos el valor 500</span>
+	<span style="color: #ffffff">ganarPorValor(dinero);</span>
+
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// **** P O R    R E F E R E N C I A ****</span>
+
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// Imaginemos que la siguiente tabla es la memoria RAM</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// Y cada celda es un fragmento de la memoria en la que se</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// puede guardar informacion. Cada celda ademas esta numerada</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// para poder acceder a dicha celda:</span>
+
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">//      0         100        200        300</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">//  ------------------------------------------</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// |         ||         ||         ||         |</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">//  ------------------------------------------</span>
+
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// Supongamos que la variable dinero se encuentra en la posicion 200</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// de la memoria, y que tiene el valor de 17:</span>
+
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">//      0         100        200        300</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">//  --------------------------------------------</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// |         ||         || dinero=17 ||         |</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">//  --------------------------------------------</span>
+
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// Cuando hacemos el paso por referencia, usamos el caracter &#39;&amp;&#39;</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// Y esto significa una UBICACION DE LA MEMORIA RAM.</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// Con esto estamos indicando que vamos a acceder a la posicion de</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// memoria 200 y tenemos TODO el control de todo lo que hay ahi.</span>
+
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// Para poder recibir una referencia e interpretarla necesitamos</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// usar lo que se llaman &quot;punteros&quot;. Esta tipo de variable &quot;puntero&quot;</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// apunta a una zona de memoria.</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// Para usar punteros utilizamos el caracter &#39;*&#39;</span>
+
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// Ahora las variables &quot;money&quot; y &quot;dinero_ganado&quot; son una sola variable</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// con diferentes nombres ya que apuntan a la misma zona de memoria.</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// Por lo tanto en el momento que hemos usado punteros, las variables ya</span>
+	<span style="color: #008800; font-style: italic; background-color: #0f140f">// estan unidas y si se modifica una se modificara tambien la otra.</span>
+	<span style="color: #cdcaa9; font-weight: bold">void</span> <span style="color: #ffffff">ganarPorReferencia(</span><span style="color: #cdcaa9; font-weight: bold">int</span> <span style="color: #ffffff">*</span> <span style="color: #ffffff">dinero_ganado)</span>
+	<span style="color: #ffffff">{</span>
+		<span style="color: #ffffff">printf(</span><span style="color: #0086d2">&quot;El valor del dinero es %d \n&quot;</span><span style="color: #ffffff">,</span> <span style="color: #ffffff">*dinero_ganado);</span>
+
+		<span style="color: #008800; font-style: italic; background-color: #0f140f">// Como hemos usado un puntero a la zona de memoria de &quot;money&quot;</span>
+		<span style="color: #008800; font-style: italic; background-color: #0f140f">// si modificamos el valor, estaremos modificando la zona de memoria</span>
+		<span style="color: #008800; font-style: italic; background-color: #0f140f">// y por tanto cuando salga de este método la variable &quot;money&quot; de main</span>
+		<span style="color: #008800; font-style: italic; background-color: #0f140f">// tambien se modificara</span>
+		<span style="color: #ffffff">*</span> <span style="color: #ffffff">dinero_ganado</span> <span style="color: #ffffff">=</span> <span style="color: #0086f7; font-weight: bold">23</span><span style="color: #ffffff">;</span>
+	<span style="color: #ffffff">}</span>
+	<span style="color: #cdcaa9; font-weight: bold">int</span> <span style="color: #ffffff">money</span> <span style="color: #ffffff">=</span> <span style="color: #0086f7; font-weight: bold">500</span><span style="color: #ffffff">;</span>
+	<span style="color: #ffffff">ganarPorReferencia(&amp;money);</span> <span style="color: #008800; font-style: italic; background-color: #0f140f">// Paso por referencia</span>
+
+	<span style="color: #ffffff">printf(</span><span style="color: #0086d2">&quot;El valor money en MAIN es %d \n&quot;</span><span style="color: #ffffff">,</span> <span style="color: #ffffff">money);</span>
+
+<span style="color: #ffffff">}</span>
+	</pre></div>
+	
+
 
 
 	<script src="../js/testMode.js"></script>
