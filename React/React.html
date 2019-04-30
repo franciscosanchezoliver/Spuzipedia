@@ -17,22 +17,63 @@
 	<ul>
 		<li>
 			<p>
-				Para usar react necesitamos tener instalado <question>node</question>. Podemos comprobar si lo tenemos instalado usando el comando:
-				<code>node --version</code>
+				Para usar react necesitamos <question>tener instalado node</question>. Podemos comprobar si lo tenemos instalado usando el comando:
+				<question><code>node --version</code></question>
 			</p>
 			<p>Si no lo tenemos instalados vamos a la página de node: https://nodejs.org/es/</p>
 		</li>
 
 		<li>
-			<p>Una vez instalado node. Vamos a la página de React (en la parte dónde te dice como crear una nueva app en React): https://reactjs.org/docs/create-a-new-react-app.html </p>
-			<p>Instalamos una herramienta de React que nos ayudará a crear la arquitectura de una app en React básica. Para ello ejecutamos el comando: <code>npm install -g create-react-app</code>
+			<p>Una vez instalado node. Vamos a la <question>página de React</question> (en la parte dónde te dice como crear una nueva app en React): https://reactjs.org/docs/create-a-new-react-app.html </p>
+			<p>Instalamos una <question>herramienta</question> de React que nos ayudará a <question>crear la arquitectura</question> de una app en React básica. Para ello ejecutamos el comando: <question><code>npm install -g create-react-app</code></question>
 			</p>
 		</li>
 
 		<li>
-			<p>Creamos una carpeta donde queramos alojar nuestro proyecto. Abrimos una consola de comandos, y ejecutamos el comando <code>create-react-app myfirstapp</code></p>
+			<p>Creamos una carpeta donde queramos alojar nuestro proyecto. Abrimos una consola de comandos, y ejecutamos el comando 	<question><code>create-react-app myfirstapp</code></question>
+			</p>
+		</li>
+
+		<li>
+			Arrancamos el proyecto creado con el comando: <code><question>npm start</question></code>
 		</li>
 	</ul>
+
+	<h2>Componentes</h2>
+	<p>
+		La idea en React es que todo sean componentes, que son <question>pequeños trozos de código</question>. Un ejemplo de componente sería:
+	</p>
+
+	<!-- HTML generated using hilite.me --><div style="background: #111111; overflow:auto;width:auto;border:solid 1px;padding-left:10px;padding-right:10px;width:min-content;">
+	<pre style="margin: 0; line-height: 125%"><span style="color: #fb660a; font-weight: bold">import</span> <span style="color: #ffffff">React</span> <span style="color: #ffffff">,</span> <span style="color: #ffffff">{Component}</span> <span style="color: #ffffff">from</span> <span style="color: #0086d2">&#39;react&#39;</span><span style="color: #ffffff">;</span>
+
+<span style="color: #fb660a; font-weight: bold">class</span> <span style="color: #ffffff">Navegacion</span> <span style="color: #fb660a; font-weight: bold">extends</span> <span style="color: #ffffff">Component{</span>
+	<span style="color: #ffffff">render(){</span>
+		<span style="color: #fb660a; font-weight: bold">return</span> <span style="color: #ffffff">(</span>
+			<span style="color: #ffffff">&lt;div&gt;</span>
+				<span style="color: #ffffff">Ejemplo</span> <span style="color: #ffffff">de</span> <span style="color: #ffffff">componente</span>
+			<span style="color: #ffffff">&lt;/div&gt;</span>
+		<span style="color: #ffffff">)</span>
+	<span style="color: #ffffff">}</span>
+<span style="color: #ffffff">}</span>
+
+<span style="color: #fb660a; font-weight: bold">export</span> <span style="color: #fb660a; font-weight: bold">default</span> <span style="color: #ffffff">Navegacion;</span>
+	</pre></div>
+
+	<p>Y para llamarlo desde la Aplicacion principal tendriamos que hacer <question>importar</question> este nuevo <question>componente</question> con:
+	<question><code>import Navegacion from  './components/Navegacion';</code></question>
+	</p>
+
+	<p>Y <question>pintar este componente</question> llamandolo así: <question><code>&lt;Navegacion/&gt;</code></p></question>
+
+	<h2>Parar un parametro a un componentes</h2>
+	<p>
+		Al llamar al componente podemos pasarle variables <question><code>&lt;Navegacion titulo="Mi primer componente"/&gt;</code></p></question>
+	</p>
+	<p>
+		Dentro del código del componente <question>accederiamos a dicha variable</question> asi: <question><code>{this.props.titulo}</code></question>
+	</p>
+
 
 	<script src="../js/testMode.js"></script>
 </body>
