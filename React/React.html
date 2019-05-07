@@ -39,6 +39,81 @@
 		</li>
 	</ul>
 
+	<h2>Configuración</h2>
+	<p>
+		Vamos al archivo "<question>package.json</question>" aquí podemos ver las <question>dependencias instaladas</question>:
+		<pre>
+	"<question>dependencies</question>": {
+		"react": "^16.8.6",
+		"react-dom": "^16.8.6",
+		"react-scripts": "3.0.0"
+	}			
+		</pre>
+		<ul>
+			<li><question>react</question>: allow us to <question>create components</question></li>
+			<li><question>react-dom</question>: <question>take</question> those <question>components and place</question> them <question>into the dom</question>.</li>
+			<li><question>react-scripts</question>: <question>handle</question> all the <question>transpiling</question>.</li>
+		</ul>
+	</p>
+
+	<h2>Carpeta de desarrollo</h2>
+	<p>
+		Donde vamos a programar es en la <question>carpeta src</question>. El archivo que se ejecutará es el <question>src/App.js</question> . Podemos borrarlo si quieremos empezar desde 0.
+	</p>
+
+	<h2>Imports </h2>
+	<ul>
+		<li><question>React library</question>: we need to import the react library in order to use it : <question><code>import React from 'react'</code></question> </li>
+		<li><question>React DOM</question>: we can use this library to <question>render our react components to the DOM</question>: <question><code>import ReactDOM from 'react-dom'</code></question> </li>
+	</ul>
+
+	<h2>Create a React Element</h2>
+	<p>
+		<question>To create a react element </question>we can use the method: <question><code>React.createElement</code></question>.
+	</p>
+	<p>
+		This method is going to take 3 differents arguments: 
+	</p>
+	<ul>
+		<li><question>Type of element</question></li>
+		<li><question>Attributes</question> that we want to provide</li>
+		<li>Display any <question>child element</question> of this element.</li>
+	</ul>
+
+	<p>
+		Example:
+	</p>
+<!-- HTML generated using hilite.me --><div style="background: #111111; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #fb660a; font-weight: bold">const</span> <span style="color: #ffffff">title</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">React.createElement(</span>
+  <span style="color: #0086d2">&#39;h1&#39;</span><span style="color: #ffffff">,</span>
+  <span style="color: #ffffff">{</span>
+    <span style="color: #ffffff">id:</span><span style="color: #0086d2">&#39;title&#39;</span><span style="color: #ffffff">,</span>
+    <span style="color: #ffffff">className:</span><span style="color: #0086d2">&#39;header&#39;</span>
+  <span style="color: #ffffff">},</span>
+  <span style="color: #0086d2">&#39;Hello World&#39;</span>
+<span style="color: #ffffff">)</span>
+</pre></div>
+
+	<h2>Render a React Element</h2>
+	<p>
+		To <question>render a react element</question> we can use the method: <question><code>ReactDOM.render</code></question>. This method takes <question>2 arguments</question>:
+	</p>
+	<ul>
+		<li><question>What</question> react element do you want to render.</li>
+		<li>
+			<question>Where</question> do you want to render it: if we take a look at the folder public/index.html we can see a div like this:
+			&lt; div id="root"&gt; &lt;/div&gt; . Here is where we are going to put our react components, the name of this div doesn't matter, we can change if if we want.
+		</li>
+	</ul>
+
+	<p>Example:</p>
+<!-- HTML generated using hilite.me --><div style="background: #111111; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #ffffff">ReactDOM.render(</span>
+  <span style="color: #ffffff">title,</span> 
+  <span style="color: #ffffff">document.getElementById(</span><span style="color: #0086d2">&#39;root&#39;</span><span style="color: #ffffff">)</span>
+<span style="color: #ffffff">)</span>
+</pre></div>
+
+
+
 	<h2>Componentes</h2>
 	<p>
 		La idea en React es que todo sean componentes, que son <question>pequeños trozos de código</question>. Un ejemplo de componente sería:
@@ -66,7 +141,7 @@
 
 	<p>Y <question>pintar este componente</question> llamandolo así: <question><code>&lt;Navegacion/&gt;</code></p></question>
 
-	<h2>Parar un parametro a un componentes</h2>
+	<h2>Pasar un parametro a un componentes</h2>
 	<p>
 		Al llamar al componente podemos pasarle variables <question><code>&lt;Navegacion titulo="Mi primer componente"/&gt;</code></p></question>
 	</p>
