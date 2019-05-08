@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		PicoCTF2018
+	</title>
+</head>
+
+<body>
+
+
+
+	<script src="../js/testMode.js"></script>
+</body>
+
+<h2>Website</h2>
+<p>https://2018game.picoctf.com/problems</p>
+
+<h2>Forensics Warmup 1</h2>
+<p style="font-weight: bold;">Can you unzip this file for me and retreive the flag?</p>
+<p>	We can get the <mark>url of the image</mark> and create a script.</p>
+<p>url: https://2018shell.picoctf.com/static/1c1504eeb8236a26646a02bb29620923/flag.zip</p>
+<ul>
+	<li>Download the zip: <mark>wget url</mark></li>
+	<li>Unzip the file: <mark>unzip flag.zip</mark></li>
+</ul>
+<p>Solution: PicoCTF{welcome_to_forensics}</p>
+
+<h2>Forensics Warmup 2</h2>
+<p style="font-weight: bold;">Hmm for some reason I can't open this PNG? Any ideas?</p>
+<ul>
+	<li>Get the file: wget url</li>
+	<li>If we use the <mark>file command</mark> we'll realise that the file even that the name is "flag.png" its extension is jpeg. And this happens because in linux the extension of a file doesn't have to match the name.</li>
+	<li>We have to <mark>rename the file</mark> from flag.png to flag.jpg: <mark>mv flag.png flag.jpg</mark></li>
+</ul>
+<p>Solution: picoCTF{extensions_are_a_lie}</p>
+
+<h2>General Warmup 1 </h2>
+<p style="font-weight:bold;">If I told you your grade was 0x41 in hexadecimal, what would it be in ASCII?</p>
+<p>ASCII: character encoding for electronic communication. ASCII codes represents text in computers. </p>
+<img src="../imagenes/asciitable.gif" alt="ASCII table">
+<p>
+	As we are interest in the vlaue 0x41, this is the following row in the table: 
+</p>
+<ul>
+	<li>Hx: 41</li>
+	<li>Dec: 65</li>
+	<li>Oct: 101</li>
+	<li><mark>Chr: A</mark></li>
+</ul>
+<p>
+	Python script
+</p>
+<pre>
+	#!/usr/bin/evn python
+
+	print "picoCTF{%s}" % chr(0x41)		
+</pre>
+
+<p>
+	Solution: picoCTF{A}
+</p>
+
+</html>
