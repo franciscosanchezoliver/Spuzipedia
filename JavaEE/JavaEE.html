@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		JavaEE
+	</title>
+</head>
+
+<body>
+	<h1>Índice</h1>
+
+	<ol>
+		<li><a href="#client-server-architecture">Client-Server Architecture</a></li>
+		<li><a href="#servlets">Servlets</a></li>
+		<li><a href="#setting-up-servlet-jsp-application">Setting up a Servlet/Jsp Application</a></li>
+	
+	</ol>
+
+	<h2 id="client-server-architecture">Client-Server architecture</h2>
+	<p>
+		Every website that you access is going to be accessed from the web browser (web client). And this <mark>web client</mark> is going to <mark>make a request</mark> to the <mark>web server</mark>. Then the <mark>web server</mark> is going to create a <mark>response</mark> and give it back to the <mark>web client</mark>.
+	</p>
+	<pre>
+ ------------            Request               -----------
+|            | -----------------------------> |           |
+| Web Client |                                |  Server   |
+|            | &lt;----------------------------- |           |
+ ------------            Response             |           |
+                                               -----------
+</pre>
+
+	<p>
+		This <mark>request & responses</mark> are going to be made with the <mark>http protocol</mark>.
+	</p>
+
+	<h2 id="servlets">Servlets</h2>
+	<p>
+		It is a <mark>server side programming</mark> option to <mark>generate dynamic web content</mark>. A servlet <mark>creates a new thread for every request</mark>.
+	</p>
+
+	<h2 id="setting-up-servlet-jsp-application">Setting up a Servlet/Jsp Application</h2>
+	<p>
+		Configure a dynamic web project in Eclipse IDE
+	</p>
+
+
+	<script src="../js/testMode.js"></script>
+</body>
+
+
+</html>
