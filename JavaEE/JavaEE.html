@@ -8,18 +8,20 @@
 </head>
 
 <body>
-	<h1>Índice</h1>
+	<h1>Index</h1>
 
 	<ol>
 		<li><a href="#client-server-architecture">Client-Server Architecture</a></li>
 		<li><a href="#servlets">Servlets</a></li>
 		<li><a href="#setting-up-servlet-jsp-application">Setting up a Servlet/Jsp Application</a></li>
-	
+
 	</ol>
 
 	<h2 id="client-server-architecture">Client-Server architecture</h2>
 	<p>
-		Every website that you access is going to be accessed from the web browser (web client). And this <mark>web client</mark> is going to <mark>make a request</mark> to the <mark>web server</mark>. Then the <mark>web server</mark> is going to create a <mark>response</mark> and give it back to the <mark>web client</mark>.
+		Every website that you access is going to be accessed from the web browser (web client). And this <mark>web
+			client</mark> is going to <mark>make a request</mark> to the <mark>web server</mark>. Then the <mark>web
+			server</mark> is going to create a <mark>response</mark> and give it back to the <mark>web client</mark>.
 	</p>
 	<pre>
  ------------            Request               -----------
@@ -36,13 +38,69 @@
 
 	<h2 id="servlets">Servlets</h2>
 	<p>
-		It is a <mark>server side programming</mark> option to <mark>generate dynamic web content</mark>. A servlet <mark>creates a new thread for every request</mark>.
+		It is a <mark>server side programming</mark> option to <mark>generate dynamic web content</mark>. A servlet
+		<mark>creates a new thread for every request</mark>.
 	</p>
 
 	<h2 id="setting-up-servlet-jsp-application">Setting up a Servlet/Jsp Application</h2>
 	<p>
-		Configure a dynamic web project in Eclipse IDE
+		Configure a dynamic web project in Eclipse IDE.
 	</p>
+	<p>New -> <mark>Dynamic Web Project</mark></p>
+	<p>The "<mark>target run time</mark>" is the <mark>server </mark>that the <mark>project</mark> is going to be
+		<mark>hosted on</mark>.</p>
+	<img src="../imagenes/javaee/new-project.JPG"
+		 alt="new project">
+
+	<p>The <mark>src</mark> folder <mark>contains</mark> all your <mark>.java files</mark>. And when they are
+		<mark>compiled</mark> they are going to be placed under the folder "<mark>build/classes</mark>"</p>
+	<img src="../imagenes/javaee/src-folder.JPG"
+		 alt="src and build folders">
+
+	<p>
+		The "<mark>Context root</mark>" is the <mark>name of your project</mark>. It <mark>is</mark> always the
+		<mark>root folder</mark> of your application. The "<mark>Content directory</mark>" is the <mark>web
+			content</mark>, which basically contains all the <mark>HTML, CSS, Javascript</mark> files and even the XML
+		files.
+	</p>
+	<p>
+		We can <mark>configurate the project</mark> using annotations but in this example we are going to use <mark>XML
+			configuration</mark> this is why we select the option "<mark>Generate web.xml deployment descriptor</mark>"
+	</p>
+	<img src="../imagenes/javaee/context-root.JPG"
+		 alt="context root and content directory">
+
+	<p>
+		Now we have the <mark>basic structure</mark>:
+	</p>
+	<pre>
+|-- src
+|- WebContent |-- META-INF
+              |-- WEB-INF |-- lib
+                          |-- web.xml
+			               		
+	</pre>
+	<ul>
+		<li><mark>src</mark>: the <mark>source folder</mark>.</li>
+		<li><mark>META-INF</mark>: the <mark>meta of the application</mark></li>
+		<li><mark>WEB-INF</mark>: is <mark>web information</mark>, <mark>inside</mark> this folder is the <mark>lib
+				folder</mark> and a xml file (<mark>web.xml</mark>)</li>
+		<li><mark>lib</mark> folder: contains all the <mark>jar files</mark> that are necessary.</li>
+	</ul>
+	<img src="../imagenes/javaee/project-basic-structure.JPG"
+		 alt="basic structure">
+
+	<p>
+		Let's <mark>create two folders</mark> under the "WebContent" folder. <mark>One for</mark> all the <mark>HTML files</mark> <mark>and</mark> another for the <mark>CSS</mark>'s.
+	</p>
+	<p>
+		This is overall how our <mark>web application project structure</mark> looks like.
+	</p>
+	<img src="../imagenes/javaee/html-and-css-folders.jpg" alt="html and css folder">
+	
+
+
+
 
 
 	<script src="../js/testMode.js"></script>
