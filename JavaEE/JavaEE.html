@@ -14,6 +14,7 @@
 		<li><a href="#client-server-architecture">Client-Server Architecture</a></li>
 		<li><a href="#servlets">Servlets</a></li>
 		<li><a href="#setting-up-servlet-jsp-application">Setting up a Servlet/Jsp Application</a></li>
+		<li><a href="#setting-up-apache-tomcat">Setting up a instance of Apache Tomcat</a></li>
 
 	</ol>
 
@@ -98,10 +99,44 @@
 	</p>
 	<img src="../imagenes/javaee/html-and-css-folders.jpg" alt="html and css folder">
 	
+	<h2 id="setting-up-apache-tomcat">Setting up a instance of Apache Tomcat</h2>
+	<p>
+		Now we have to set up an instance of Apache Tomcat Server, because we need to <mark>host this application in a server</mark>. For that we have to <mark>download the Tomcat Server</mark> and <mark>extract</mark> it into a folder. <mark>The path</mark> of this <mark>folder</mark> is calle <mark>Tomcat home</mark>.
+	</p>
+	<img src="../imagenes/javaee/tomcat-folder.JPG" alt="tomcat folder">
+	<p>
+		We can create a new server from the "<mark>servers view</mark>".
+	</p>
+	<img src="../imagenes/javaee/server-view.JPG" alt="server view">
 
+	<p>
+		Or we can create the server with the following steps:
+	</p>
+	<img src="../imagenes/javaee/create-new-server.png" alt="create a new server in eclipse">
 
+	<p>
+		After clicking in <mark>create server</mark> it will show you all the <mark>possible options</mark>:
+	</p>
+	<img src="../imagenes/javaee/server-options.JPG" alt="server options">
 
+	<p>
+		<mark>If</mark> the <mark>server</mark> that we choose <mark>is never being use before then eclipse doesn't know the Tomcat home</mark> for this server, so we will have to <mark>enter the Tomcat home</mark>:
+	</p>
+	<img src="../imagenes/javaee/eclipse-entering-tomcat-home.JPG" alt="entering tomcat home for new server">
 
+	<p>
+		<mark>If</mark> the <mark>server</mark> that we are going to use has <mark>being used previously for other projects</mark>, so <mark>eclipse knows the "Tomcat home"</mark> for this server then we will see the following screen: 
+	</p>
+
+	<p>
+		Now you have to <mark>choose</mark> which <mark>project</mark> will be <mark>hosted</mark> in our server.
+	</p>
+	<img src="../imagenes/javaee/select-project-hosted.JPG" alt="project hosted">
+
+	<p>
+		Now we can see how our server instance is ready:
+	</p>
+	<img src="../imagenes/javaee/server-instance-ready.JPG" alt="server instance ready">
 
 	<script src="../js/testMode.js"></script>
 </body>
