@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		GraphQL
+	</title>
+</head>
+
+<body>
+	<h1>Index</h1>
+
+	<ol>
+		<li><a href="#what-is-graphql">What is GraphQL?</a></li>
+		<li><a href="#create-a-project">Create a project</a></li>
+	</ol>
+
+	<h2 id="what-is-graphql">What is GraphQL?</h2>
+	<p>
+		A couple years ago Facebook was facing a challenge with their social network. When you're asking for information
+		about friends or their friends' friends, the current query options for the database in the market couldn't
+		support. So anytime you go further than four or five levels deep in your neetwork, Facebook couldn't support it.
+		This is why they created GraphQL.
+	</p>
+	<p>
+		GraphQL <mark>
+			is a query language</mark>
+		for any kind of API and it is <mark>
+			able
+		</mark> to fulfill any <mark>
+			queries across multiple databases
+		</mark>.
+	</p>
+
+	<p>
+		The <mark>
+			main benefits
+		</mark> of using it is that <mark>
+			you can ask for
+		</mark> exactly <mark>
+			what you want
+		</mark>, and you <mark>
+			get those results and nothing else
+		</mark>.
+	</p>
+
+	<p>
+		GraphQL <mark>
+			allows
+		</mark> to describe <mark>
+			what type of data you can expect
+		</mark>.
+	</p>
+
+	<h2 id="create-a-project">Create a project</h2>
+	<p>
+		We have to go to the folder and then execute "<mark>
+			npm init
+		</mark>" (We can let all the default options). After this the
+		file <mark>
+			package.json will be created
+		</mark>.
+	</p>
+
+	<p>
+		Now we need to <mark>
+			install the dependecies
+		</mark> of the package.json file. We will install them with the command "<mark>
+			npm install --save
+		</mark>"
+	</p>
+
+	<p>
+		We also want to <mark>
+			install
+		</mark> <mark>
+			express
+		</mark> and <mark>
+			nodemon
+		</mark>. For that we use the command "<mark>
+			npm install --save express nodemon
+		</mark>"
+	</p>
+
+	<p>
+		Now we want to <mark>
+			install
+		</mark> the dev <mark>
+			dependencies
+		</mark>: npm <mark>
+			install --save-dev babel-cli babel-preset-env babel-preset-stage-0
+		</mark>
+	</p>
+
+	<p>
+		Once we have those packages installed, let's click on the <mark>
+			package.json
+		</mark> file, and we'll <mark>
+			insert a script
+		</mark> when we
+		start our server. <mark>
+			"start" : "nodemon ./index.js --exec babel-node" -e js
+		</mark>
+	</p>
+	<img src="../imagenes/graphQL/start-script.png" alt="start script">
+
+	<ul>
+		<li><mark>
+				nodemon
+			</mark> <mark>
+				restart the server whenever we change a file
+			</mark> in the server.</li>
+		<li><mark>
+				./index.js
+			</mark> is the <mark>
+				entry point
+			</mark> of the server</li>
+		<li>The remaning code: "<mark>
+				--exec babel-node -e js
+			</mark>" is basically making sure that <mark>
+				we can run ES6
+			</mark> code inside of node.</li>
+	</ul>
+	<p>
+		Now we have to <mark>
+			create a new file
+		</mark> called "<mark>
+			.babelrc
+		</mark>" . This file will contains just <mark>
+			one javascript object
+		</mark> which have all the <mark>
+			settings for babel
+		</mark>. So basically those two presets will <mark>
+			allow us to run ES6
+		</mark> code in our server. It wil <mark>
+			precompile the code
+			into Javascript code that the browser
+		</mark> or any Javascript compiler <mark>
+			can read
+		</mark>.
+	</p>
+	<img src="../imagenes/graphQL/babel-rc-file-content.PNG" alt="babelrc file">
+
+	<p>
+		Let's <mark>
+			create
+		</mark> another <mark>
+			file
+		</mark> called "<mark>
+			index.js
+		</mark>"
+	</p>
+
+	<!-- HTML generated using hilite.me -->
+	<div
+		style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+		<pre style="margin: 0; line-height: 125%"><span style="color: #75715e">// import express</span>
+<span style="color: #66d9ef">import</span> <span style="color: #a6e22e">express</span> <span style="color: #a6e22e">from</span> <span style="color: #e6db74">&#39;express&#39;</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #75715e">// Create the app and run express</span>
+<span style="color: #66d9ef">const</span> <span style="color: #a6e22e">app</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">express</span><span style="color: #f8f8f2">();</span>
+
+<span style="color: #75715e">// *** Create the base server ***</span>
+
+<span style="color: #75715e">// When calling this url &#39;/&#39; we are going to give a particular response</span>
+<span style="color: #a6e22e">app</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">get</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;/&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">req</span><span style="color: #f8f8f2">,</span> <span style="color: #a6e22e">res</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">=&gt;</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #a6e22e">res</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">send</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;GraphQL is amazing&#39;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">});</span>
+
+<span style="color: #75715e">// Listen in the port 8080. When the server starts it shows a log message to represents</span>
+<span style="color: #75715e">// that the server is running on localhost:8080/graphql</span>
+<span style="color: #a6e22e">app</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">listen</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">8080</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">()</span> <span style="color: #f92672">=&gt;</span> <span style="color: #a6e22e">console</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">log</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;Running server on port localhost:8080/graphql&#39;</span><span style="color: #f8f8f2">));</span>
+</pre>
+	</div>
+
+	<p>
+		<mark>
+			Start the server
+		</mark> with the command: "<mark>
+			npm start
+		</mark>" . <mark>
+			This will start our script called "start" declared in the package.json
+		</mark> file.
+	</p>
+	<img src="../imagenes/graphQL/server-started-01.PNG" alt="first time server started">
+
+	<script src="../js/testMode.js"></script>
+</body>
+
+
+</html>
