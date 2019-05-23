@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Arduino: Servomotor
+	</title>
+</head>
+
+<body>
+
+	<h1>Servomotor</h1>
+	<p>
+		Un servomotor permite un <mark>
+			movimiento de alta precisión
+		</mark>. Tiene un pequeño motor de corrienta continua con circuitos de control.
+	</p>
+	<p>Expone 3 <mark>
+			cables que nos permitirán alimentarlo y controlarlo:
+		</mark>.</p>
+	<ul>
+		<li>marron:	Tierra (GND)</li>
+		<li>rojo: VCC (voltaje)</li>
+		<li>amarillo: señal</li>
+	</ul>
+	<img src="./imagenes/entradas-servo.png" alt="entradas de un servo" width="200px">
+
+	<p>
+		Segun el tipo de señal que le enviemos podemos hacer 0º o 180º. Si enviamos una señal con un periodo de 20 ms y
+		1 pulso de 1 ms de duración.
+	</p>
+	<img src="./imagenes/periodo-20-pulso-1.png" alt="periodo de 20 y pulso de 1" width="300px">
+	<img src="./imagenes/1ms-0grados-2ms-180grados.png" alt="1ms to move 0 and 2ms to move 180" width="300px">
+
+
+	<script src="../js/testMode.js"></script>
+</body>
+
+
+</html>

@@ -182,7 +182,63 @@
 			This will start our script called "start" declared in the package.json
 		</mark> file.
 	</p>
-	<img src="../imagenes/graphQL/server-started-01.PNG" alt="first time server started">
+	<img src="../imagenes/graphQL/server-started-01.PNG" style="border:solid 1px;" alt="first time server started">
+
+	<p>
+		Now that we have our server set up, let's <mark>
+			add GraphQL to it
+		</mark> (it is important to point out that the name's folder that contains our project shouldn't be name as
+		'GraphQL' because it will refuse to install the dependencies if the folder is name 'GraphQL').
+	</p>
+	<p>
+		We're going to <mark>
+			create a new file
+		</mark> and we'll call this file '<mark>
+			schema.js
+		</mark>'. This is going to be our <mark>
+			first schema
+		</mark>, in this file what I want you to do is basically <mark>
+			import 'buildSchema' from graphQL
+		</mark>.
+	</p>
+	<img src="../imagenes/graphQL/schema-js.PNG" alt="create schema.js file">
+
+	<!-- HTML generated using hilite.me -->
+	<div
+		style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+		<pre style="margin: 0; line-height: 125%"><span style="color: #75715e">// import &#39;buildSchema&#39; from graphql </span>
+<span style="color: #66d9ef">import</span> <span style="color: #f8f8f2">{</span> <span style="color: #a6e22e">buildSchema</span> <span style="color: #f8f8f2">}</span> <span style="color: #a6e22e">from</span> <span style="color: #e6db74">&#39;graphql&#39;</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #75715e">// Create an object which is called schema, and we&#39;ll use the function buildSchema that we just imported, </span>
+<span style="color: #75715e">// and then use template strings and basically start our schema. </span>
+<span style="color: #75715e">// The first thing we want <mark>to do is a query</mark>, so the <mark>type is call Query</mark>, and <mark>that query is expecting a</mark> </span>
+<span style="color: #75715e">// a <mark>property called hello</mark>, which <mark>is a string</mark>.</span>
+<span style="color: #66d9ef">const</span> <span style="color: #a6e22e">schema</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">buildSchema</span><span style="color: #f8f8f2">(</span><span style="color: #960050; background-color: #1e0010">`</span>
+    <span style="color: #a6e22e">type</span> <span style="color: #a6e22e">Query</span><span style="color: #f8f8f2">{</span>
+        <span style="color: #a6e22e">hello</span> <span style="color: #f92672">:</span> <span style="color: #f8f8f2">String</span>
+    <span style="color: #f8f8f2">}</span>
+<span style="color: #960050; background-color: #1e0010">`</span><span style="color: #f8f8f2">)</span>
+
+<span style="color: #75715e">// export the default schema</span>
+<span style="color: #66d9ef">export</span> <span style="color: #66d9ef">default</span> <span style="color: #a6e22e">schema</span><span style="color: #f8f8f2">;</span>
+</pre>
+	</div>
+
+	<p>
+		We need to <mark>
+			import some new dependencies
+		</mark> <mark>
+			and
+		</mark> the file <mark>
+			schema that we've just created
+		</mark>, and for that we're going to
+		the '<mark>
+			index.js
+		</mark>' file and import:
+	</p>
+
+	<img src="../imagenes/graphQL/import-express-graphql-and-our-schema.PNG" alt="import graphqlhttp and our custom schema">
+
 
 	<script src="../js/testMode.js"></script>
 </body>
