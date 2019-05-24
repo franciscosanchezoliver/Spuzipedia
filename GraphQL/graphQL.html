@@ -237,8 +237,57 @@
 		</mark>' file and import:
 	</p>
 
-	<img src="../imagenes/graphQL/import-express-graphql-and-our-schema.PNG" alt="import graphqlhttp and our custom schema">
+	<img src="../imagenes/graphQL/import-express-graphql-and-our-schema.PNG"
+		alt="import graphqlhttp and our custom schema">
 
+	<p>
+		We add a <mark>
+			new path
+		</mark> for '<mark>
+			/graphql
+		</mark>':
+	</p>
+	<img src="../imagenes/graphQL/new-path.PNG" alt="new path">
+
+	<p>
+		In this part in "<mark>
+			app.use
+		</mark>(/graphql)" we are telling which resolver (to retrieve data) and which schema (our
+		schema.js) want to use when we do this query.
+	</p>
+	<img src="../imagenes/graphQL/app-use.png" alt="app use">
+
+	<p>
+		To make this project work we <mark>
+			need to install 2 more dependencies
+		</mark>: "<mark>
+			npm install --save express-graphql graphql
+		</mark>"
+	</p>
+
+	<p>
+		Now we can <mark>
+			start the server
+		</mark>: "npm start". And we can <mark>
+			go to
+		</mark> the path '<mark>
+			localhost:8080/graphql
+		</mark>' . And we can see our GraphQL server running.
+	</p>
+	<img src="../imagenes/graphQL/graphql-server-started.PNG" alt="graphql server started">
+
+	<p>
+		Now we <mark>
+			click in "Docs" to see the schema
+		</mark>:
+	</p>
+	<img src="../imagenes/graphQL/docs.PNG" alt="docs button">
+	<img src="../imagenes/graphQL/schema-of-docs.png" alt="schema or doc">
+
+	<p>
+		So if we do the query our resolver will return the data:
+	</p>
+	<img src="../imagenes/graphQL/query.PNG" alt="first query">
 
 	<script src="../js/testMode.js"></script>
 </body>
