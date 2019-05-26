@@ -13,6 +13,7 @@
 	<ol>
 		<li><a href="#what-is-graphql">What is GraphQL?</a></li>
 		<li><a href="#create-a-project">Create a project</a></li>
+		<li><a href="#add-graphql-to-our-project">Add GraphQL to our project</a></li>
 	</ol>
 
 	<h2 id="what-is-graphql">What is GraphQL?</h2>
@@ -184,6 +185,8 @@
 	</p>
 	<img src="../imagenes/graphQL/server-started-01.PNG" style="border:solid 1px;" alt="first time server started">
 
+	<h2 id="add-graphql-to-our-project">Add GraphQL to our project</h2>
+	
 	<p>
 		Now that we have our server set up, let's <mark>
 			add GraphQL to it
@@ -252,8 +255,14 @@
 	<p>
 		In this part in "<mark>
 			app.use
-		</mark>(/graphql)" we are telling which resolver (to retrieve data) and which schema (our
-		schema.js) want to use when we do this query.
+		</mark>(/graphql)" we are telling <mark>
+			which resolver
+		</mark> (to retrieve data) and <mark>
+			which schema
+		</mark> (our
+		schema.js) want <mark>
+			to use
+		</mark> when we do this query.
 	</p>
 	<img src="../imagenes/graphQL/app-use.png" alt="app use">
 
@@ -288,6 +297,80 @@
 		So if we do the query our resolver will return the data:
 	</p>
 	<img src="../imagenes/graphQL/query.PNG" alt="first query">
+
+	<p>
+		To be able to make a graphQL query we need to define a schema which defines the query type and resolver for each
+		api input. So the <mark>
+			type definition
+		</mark> provides what <mark>
+			type of data we expect
+		</mark> and the <mark>
+			resolver gets the data
+		</mark> for us.
+	</p>
+
+	<p>
+		Let's <mark>
+			create a query
+		</mark> that <mark>
+			return a type of data 'Friend'
+		</mark>:
+	</p>
+	<img src="../imagenes/graphQL/type-friend.png" alt="friend data type">
+
+	<p>
+		Now we have to go to the index.js and <mark>
+			change the resolver
+		</mark>. Because right now we're resolving hello so if we were
+		to do the query with friend and returning a Friend then this wouldn't work. It would actually trow us an error
+		because the type doesn't match the resolver.
+	</p>
+	<img src="../imagenes/graphQL/new-friend-schema.png" alt="new-friend-schema">
+
+	<p>
+		Now we can query what kind of data I want to return from the friend, for example we can only get the id, first
+		name, and last name:
+	</p>
+	<img src="../imagenes/graphQL/friend-custom-query.PNG" alt="retrieve only a few fields from friend">
+
+	<p>
+		Let's say that we want to have <mark>
+			multiple emails
+		</mark> for the email field. What we would do is <mark>
+			create a new type called email
+		</mark> and then make sure that this one
+		is an <mark>
+			array of email
+		</mark>. And if you put an <mark>
+			exclamation point
+		</mark>, that means that this <mark>
+			is a mandatory
+		</mark>. If we don't have any
+		exclamation point that means that this particular field can be left empty when we first create it.
+	</p>
+
+	<img src="../imagenes/graphQL/array-of-emails.png" alt="array of data type email">
+
+	<p>
+		Now we have to <mark>
+			change the resolver
+		</mark> so we can accept multiple emails. Otherwise it's not going to work. We are going to <mark>
+			return an array of
+			emails
+		</mark>, so we will return an <mark>
+			array of objects
+		</mark>, <mark>
+			each one with a property called "email" which is a string
+		</mark>.
+	</p>
+	<img src="../imagenes/graphQL/change-resolver.png" alt="change the resolver to return an array of email">
+
+	<p>
+		Now if we query friends, we are going to get an array of emails: 
+	</p>
+	<img src="../imagenes/graphQL/query-array-of-emails.PNG" alt="query array of emails">
+
+
 
 	<script src="../js/testMode.js"></script>
 </body>
