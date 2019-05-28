@@ -14,6 +14,9 @@
 		<li><a href="#what-is-graphql">What is GraphQL?</a></li>
 		<li><a href="#create-a-project">Create a project</a></li>
 		<li><a href="#add-graphql-to-our-project">Add GraphQL to our project</a></li>
+		<li>
+			<a href="#queries-and-mutations">Queries and mutations</a>
+		</li>
 	</ol>
 
 	<h2 id="what-is-graphql">What is GraphQL?</h2>
@@ -186,7 +189,7 @@
 	<img src="../imagenes/graphQL/server-started-01.PNG" style="border:solid 1px;" alt="first time server started">
 
 	<h2 id="add-graphql-to-our-project">Add GraphQL to our project</h2>
-	
+
 	<p>
 		Now that we have our server set up, let's <mark>
 			add GraphQL to it
@@ -366,11 +369,81 @@
 	<img src="../imagenes/graphQL/change-resolver.png" alt="change the resolver to return an array of email">
 
 	<p>
-		Now if we query friends, we are going to get an array of emails: 
+		Now if we query friends, we are going to get an array of emails:
 	</p>
 	<img src="../imagenes/graphQL/query-array-of-emails.PNG" alt="query array of emails">
 
+	<h2 id="queries-and-mutations">
+		Queries and mutations
+	</h2>
 
+	<p>
+		Queries and mutations <mark>
+			are the basis
+		</mark>. First you have <mark>
+			queries
+		</mark> which are <mark>
+			reponsible for defining what will return
+		</mark>
+		when we <mark>
+			make the query
+		</mark>.
+	</p>
+	<p>
+		Next, we have <mark>
+			mutations
+		</mark>, which is the way <mark>
+			to change data</mark> (creating, updating, deleting)
+		in GraphQL.
+	</p>
+	<p>To show what a mutation is we are going to use the simplests form of Friend (without an array of email).</p>
+	<img src="../imagenes/graphQL/make-email-a-simple-field.png" alt="email as a simple field">
+
+	<p>
+		Now are are going to <mark>
+			create
+		</mark> a <mark>
+			new type "Mutation"
+		</mark> which <mark>
+			is basically a resolver
+		</mark>, in this case it is called "createFriend". This resolver will take an input called "FriendInput", and it
+		will return a Friend. We also have to create the input type "FriendInput" in the schema
+	</p>
+	<img src="../imagenes/graphQL/type-mutation-and-resolver.png" alt="type mutation and resolver">
+
+	<p>
+		Now we're going to <mark>
+			define the input
+		</mark> "FriendInput". "FriendInput" will take the same values as the type "Friend". And if you want to make any
+		field mandatory we
+		just have to add an exclamation in that particular field, for example we are going to use first name as a
+		mandatory field.
+	</p>
+
+	<img src="../imagenes/graphQL/define-type-friendinput.png" alt="define the type FriendInput">
+
+	<p>
+		The next thing we have to do is to <mark>
+			go to "index.js"
+		</mark> and <mark>
+			change the resolvers
+		</mark> because right now we only have a "friend" resolver, so basically we can query a friend but we can't do
+		any mutations. Also, I want to <mark>
+			create a database
+		</mark>(to make it as simple as possible it'll be a <mark>
+			in memory database
+		</mark>). For this we're going to <mark>
+			create a class called "Friend"
+		</mark>. So whenever we create new friends, we'll use that class to initialize a new Friend in our database. The
+		database will be an objects with friend called "friendDatabase".
+	</p>
+	<img src="../imagenes/graphQL/class-friend-and-inmemory-database.png" alt="class Friend and database in memory">
+
+	<p>
+		Now we have to <mark>
+			create the resolver to do the mutation
+		</mark>.
+	</p>
 
 	<script src="../js/testMode.js"></script>
 </body>
